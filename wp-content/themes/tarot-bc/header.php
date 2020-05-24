@@ -10,14 +10,6 @@
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --peekobot-height: 80vh;
-      --peekobot-avatar: url();
-    }
-  </style>
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/peekobot.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/peekobot.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slick.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/slick-theme.css">
   
@@ -57,11 +49,6 @@
   <header class="top-header">
     <div class="container">
       <div class="row contacts_wrap">
-        <!-- <div class="col-md-8 col-sm-8 col-xs-12 contacts">
-          <a class="contacts_email pull-left" href="mailto:info@chikurov.com">info@chikurov.com</a>
-          <a class="contacts_phone pull-right" href="tel:+74951352548">+7 (495) 135-25-48</a>
-          <a class="contacts_home" href="/">Школа Доктора Чикурова</a>
-        </div> -->
         <div class="col-xs-2 col-sm-1 col-md-1 header-logo pull-left">
           <br>
           <a href="/"><img src="<?php bloginfo('template_url'); ?>/img/school_logo_new.png" alt="" class="img-responsive logo"></a>
@@ -92,25 +79,8 @@
                   <!-- <div id="bs-example-navbar-collapse-1"> -->
                     
                     <ul class="nav navbar-nav navbar-left">
-                      <li><a class="menu" href="/seminary">Расписание</a></li>
-                      <!-- <li><a class="menu" href="#about">Биологическое центрирование</a></li> -->
-                      <li><a class="menu" href="http://school-bc.ru/" target="_blank">Онлайн Школа</a></li>
-                      <!-- <li><a class="menu" target="_blank" href="http://www.yuchikurov.info/reestr/">Реестр специалистов</a></li> -->
-                      <!-- <li class="dropdown_menu">Визардтерапия <i class="fa fa-caret-down"></i>
-                        <ul class="submenu_wrap">
-                          <li><a class="submenu" target="_blank" href="https://wizardmachine.ru/">Wizard Machine</a></li>
-                          <li><a class="submenu" target="_blank" href="https://wizardduos.ru/">Wizard Duos</a></li>
-                          <li><a class="submenu" target="_blank" href="https://wizard-lovushka.ru/">Wizard Ловушка</a></li>
-                          <li><a class="submenu" target="_blank" href="https://tarotmachine.ru/">Tarot Machine</a></li>
-                          <li><a class="submenu" target="_blank" href="https://deviatochka.ru/">Игра Девяточка</a></li>
-                          <li><a class="submenu" target="_blank" href="http://marakata.ru/">Marakata</a></li>
-                          <li><a class="submenu" target="_blank" href="http://braincleaner.ru/">Brain Cleaner</a></li>
-                          <li><a class="submenu" target="_blank" href="https://school-bc.ru/wizardtherapy">Wizard Therapy</a></li>
-                        </ul>
-                      </li> -->
-                      <!-- <li><a class="menu" href="/kniga">Книги</a></li> -->
-                      <li><a target="_blank" class="menu" href="https://shop-bc.com/">Магазин БЦ</a></li>
-                      <li><span class="menu consult">Консультации Ю.Чикурова</span></li>
+                      <li><a class="menu" href="/book">Лечебное Tarot</a></li>
+                      <li><a class="menu" href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a></li>
                     </ul>
                   </div><!-- /navbar-collapse -->
                 </div><!-- / .container-fluid -->
