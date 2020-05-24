@@ -83,8 +83,8 @@
                       <li><a class="menu" href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a></li>
                       <?php if (is_user_logged_in()) { ?>
                         <?php $cur_user = wp_get_current_user(); ?>
-                        <li><a class="menu menu_tel">Привет, <?php echo $cur_user->user_firstname; ?></a></li>
-                        <li><a class="menu menu_email" href="/logout/?_wpnonce=1fd8ce03de">Выйти</a></li>
+                        <li><a class="menu pink_text">Привет, <?php echo $cur_user->user_firstname; ?></a></li>
+                        <li><a class="menu blue_text" href="/logout/?_wpnonce=1fd8ce03de">Выйти</a></li>
                       <?php } ?>
                     </ul>
                   </div><!-- /navbar-collapse -->
