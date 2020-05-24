@@ -2025,11 +2025,11 @@ ul#myTab
 }
 .blue_text
 {
-    color: #0094e1;
+    color: #0094e1!important;
 }
 .pink_text
 {
-    color: #ff206d;
+    color: #ff206d!important;
 }
 .btn-primary
 {
