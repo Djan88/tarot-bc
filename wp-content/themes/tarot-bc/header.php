@@ -56,7 +56,7 @@
         <div class="col-xs-12 col-sm-3 col-md-2 header_contacts pull-right">
           <?php if (is_user_logged_in()) { ?>
             <?php $cur_user = wp_get_current_user(); ?>
-            <a class="menu menu_tel">Привет, <?php echo $cur_user->display_name; ?></a>
+            <a class="menu menu_tel">Привет, <?php echo $cur_user->user_firstname; ?></a>
             <a class="menu menu_email" href="/logout/?_wpnonce=1fd8ce03de">Выйти</a>
           <?php } else { ?>
             <a class="menu menu_tel" href="tel:+74951352548">+7 (495) 135-25-48</a>
