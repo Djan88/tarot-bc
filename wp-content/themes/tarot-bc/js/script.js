@@ -29,8 +29,7 @@ jQuery(document).ready(function () {
       return false;
     }
   };
-  jQuery('.login_btn').on('click', function(event) {
-    console.log('tick');
+  jQuery('#login_btn').on('click', function(event) {
     jQuery('#login').modal('show');
   });
   // var online_block_h = parseFloat(jQuery('.online_school_text').css('height'));
