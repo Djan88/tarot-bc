@@ -54,8 +54,14 @@
           <a href="/"><img src="<?php bloginfo('template_url'); ?>/img/fav180.png" alt="" class="img-responsive logo"></a>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-2 header_contacts pull-right">
-          <a class="menu menu_tel" href="tel:+74951352548">+7 (495) 135-25-48</a>
-          <a class="menu menu_email" href="mailto:info@chikurov.com">info@chikurov.com</a>
+          <?php if (is_user_logged_in()) { ?>
+            <?php $cur_user = wp_get_current_user(); ?>
+            <a class="menu menu_tel">Привет, <?php echo $cur_user; ?></a>
+            <a class="menu menu_email" href="/logout/?_wpnonce=1fd8ce03de">Выйти</a>
+          <?php } else { ?>
+            <a class="menu menu_tel" href="tel:+74951352548">+7 (495) 135-25-48</a>
+            <a class="menu menu_email" href="mailto:info@chikurov.com">info@chikurov.com</a>
+          <?php } ?>
         </div>
         <div class="col-md-9 col-sm-8 col-xs-12 main-menu">
           <div class="row">
