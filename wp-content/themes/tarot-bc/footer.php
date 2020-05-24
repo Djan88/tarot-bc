@@ -14,10 +14,7 @@
 
         <div class="menu_footer">
           <a href="/seminary">Семинары Доктора Чикурова |</a>
-          <a href="/video">Видео |</a>
-          <a href="category/otzyvy">Отзывы |</a>
-          <a href="/kniga" target="_blank">Книги Доктора Чикурова |</a>
-          <a href="/oferta" target="_blank">Оферта</a>
+          <a href="category/otzyvy">Отзывы</a>
         </div>
       </div>
     </div>
