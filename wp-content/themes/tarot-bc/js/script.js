@@ -30,6 +30,7 @@ jQuery(document).ready(function () {
     }
   };
   jQuery('.login_btn').on('click', function(event) {
+    event.preventDefault();
     jQuery('#login').modal('show');
   });
   // var online_block_h = parseFloat(jQuery('.online_school_text').css('height'));
