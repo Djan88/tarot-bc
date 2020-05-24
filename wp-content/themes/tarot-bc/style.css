@@ -2188,6 +2188,24 @@ span.bullet
     font-weight: bold;
     cursor: pointer;
 }
+.tml-field
+{
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+.tml-button
+{
+    background-color: #0094e1;
+    border: 1px solid #488dca;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 400;
+}
+.tml-button:hover
+{
+    background-color: #337ab7;
+}
 /******************************
 responsive area
 ********************************/
