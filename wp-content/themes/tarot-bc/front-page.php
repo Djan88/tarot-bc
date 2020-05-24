@@ -3,11 +3,18 @@
     <div class="container chikurov_info">
       <div class="row">
         <div class="col-md-8 col-sm-8 col-xs-12">
-          <h1 class="main_heading">Школа Доктора Чикурова</h1>
+          <h1 class="main_heading">Онлайн проект «Лечебное Tarot»</h1>
           <div class="doctor_about">
-            <p>Доктор <b>Ю. Чикуров</b>, канд.мед.наук, специалист в области неврологии, остеопатии и психологии, профессор РАНМ, Doctor Holistic Medicine EHO (PhD).</p>
-            <p>Автор книг: "Краниосакральная терапия", "Мягкие мануальные техники", "Висцеральная остеопатия", "Остеопатическое лечение внутрикостных дисфункций", "Эстетическое мануальное моделирование лица и тела", "Биологическое центрирование», «Практическая психосоматика», «Лечебное Tarot».</p>
-            <p>Основоположник новых прогрессивных направлений,  автор <a href="/seminary">практических семинаров</a> и <a target="_blank" href="http://school-bc.ru/">онлайн-курсов</a>.</p>
+            <p>Хорошо читать книгу и одновременно осваивать материал на практике.<br>Для этого я создал бесплатный онлайн-курс «Лечебное Tarot старт» ориентированный для всех интересующихся данной тематикой.</p>
+            <p>Автор книги и одноименного курса — Доктор <b>Ю. Чикуров</b>, канд.мед.наук, специалист в области неврологии, остеопатии и психологии, профессор РАНМ, Doctor Holistic Medicine EHO (PhD).</p>
+            <p><h4>Краткое содержание этого курса:</h4></p>
+            <p>Об авторе метода;</p>
+            <p>Немного предыстории;</p>
+            <p>Какие колоды карт я использую;</p>
+            <p>Открытие, базовая укладка и активация колоды;</p>
+            <p>Предназначение разных частей колоды Tarot;</p>
+            <p>Таблица соответствий частей тела и Старших Арканов;</p>
+            <p>Две простые, но эффективные техники самолечения;</p>
           </div>
           <a href="/seminary" target="_blank" class="seminars_link btn btn-success btn-lg">Расписание семинаров</a>
         </div>
@@ -21,13 +28,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>Книги</h2>
+          <h2>Книги Ю.Чикурова</h2>
         </div>
         <div class="col-md-7 col-sm-7">
-          <h3>Книги Доктора Чикурова можно <span class="blue_text">скачать</span> бесплатно с нашего сайта или <span class="pink_text">приобрести</span> в бумажном издании с подписью автора</h3>
+          <h3>Книги Доктора Чикурова можно <span class="blue_text">скачать</span> бесплатно с сайта "Школы Доктора Чикурова" или <span class="pink_text">приобрести</span> в бумажном издании с подписью автора</h3>
           <!-- <a target="_blank" href="http://www.yuchikurov.info/biologicheskoe-centrirovanie/" class="btn btn-primary btn-lg">Читать книгу</a> -->
           <div class="book_btns">
-            <a href="/kniga" class="btn btn-primary btn-lg kniga_el">Электронные книги</a>
+            <a href="https://chikurov.com/kniga" target="_blank" class="btn btn-primary btn-lg kniga_el">Электронные книги</a>
             <a target="_blank" href="https://shop-bc.com/collection/books" class="btn btn-pink btn-lg">Бумажные издания</a>
           </div>
           <!-- <button class="btn btn-primary btn-lg down_book" data-toggle="modal" data-target="#book_down">Скачать книгу бесплатно</button> -->

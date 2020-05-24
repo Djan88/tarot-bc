@@ -79,7 +79,7 @@
                   <!-- <div id="bs-example-navbar-collapse-1"> -->
                     
                     <ul class="nav navbar-nav navbar-left">
-                      <li><a class="menu" href="/book">Лечебное Tarot</a></li>
+                      <li><a class="menu" href="/book">«Лечебное Tarot»</a></li>
                       <li><a class="menu" href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a></li>
                     </ul>
                   </div><!-- /navbar-collapse -->
