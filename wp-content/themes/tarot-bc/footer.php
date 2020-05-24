@@ -15,6 +15,9 @@
         <div class="menu_footer">
           <a href="/seminary">Семинары Доктора Чикурова |</a>
           <a href="category/otzyvy">Отзывы</a>
+          <?php if (is_user_logged_in()) { ?>
+            <a href="/logout/?_wpnonce=1fd8ce03de"> | Выйти</a>
+          <?php } ?>
         </div>
       </div>
     </div>
