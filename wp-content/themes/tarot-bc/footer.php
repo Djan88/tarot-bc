@@ -43,7 +43,7 @@
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title" id="videoCoursLabel">Вход / Регистрация</h4>
+                  <h4 class="modal-title" id="videoCoursLabel">Вход</h4>
               </div>
               <div class="modal-body">
                 <?php if (!dynamic_sidebar("popup-widget-area") ) : ?>

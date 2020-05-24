@@ -17,7 +17,7 @@ setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);
         'description' => __('Виджеты во всплывающем окне'),
         'before_widget' => '<div>',
         'after_widget' => '</div>',
-        'before_title' => '<h4>',
+        'before_title' => '<h4 class="hidden">',
         'after_title' => '</h4>',
     ));
 ?>
