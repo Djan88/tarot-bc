@@ -29,6 +29,9 @@ jQuery(document).ready(function () {
       return false;
     }
   };
+  jQuery('.login_btn').on('click', function(event) {
+    jQuery('#login').modal('show');
+  });
   // var online_block_h = parseFloat(jQuery('.online_school_text').css('height'));
   // jQuery('.online .col-md-4').css('height', jQuery('.online').css('height'));
   // jQuery('.online_school_logo').css('height', online_block_h+'px');
