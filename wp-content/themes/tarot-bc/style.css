@@ -2198,13 +2198,18 @@ span.bullet
 {
     background-color: #0094e1;
     border: 1px solid #488dca;
-    border-radius: 6px;
+    border-radius: 3px;
     color: #fff;
+    padding: 5px 10px;
     font-weight: 400;
 }
 .tml-button:hover
 {
     background-color: #337ab7;
+}
+ul.tml-links
+{
+    padding: 0;
 }
 /******************************
 responsive area
