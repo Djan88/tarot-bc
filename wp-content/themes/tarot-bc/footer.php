@@ -46,7 +46,8 @@
                   <h4 class="modal-title" id="videoCoursLabel">Вход / Регистрация</h4>
               </div>
               <div class="modal-body">
-                <?php echo do_shortcode('[miniorange_social_login]')?>
+                <?php if (!dynamic_sidebar("popup-widget-area") ) : ?>
+                <?php endif; ?>
               </div>
           </div>
       </div>
