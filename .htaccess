@@ -1,0 +1,45 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
+Order Allow,Deny
+Allow from all
+Deny from 5.188.62.117
+Deny from 91.200.12.95
+Deny from 185.3.34.112
+Deny from 185.3.34.40
+Deny from 87.117.61.62
+Deny from 188.170.193.119
+Deny from 31.23.242.157
+Deny from 142.4.6.76
+Deny from 173.236.176.132
+Deny from 192.169.214.76
+Deny from 37.187.166.214
+Deny from 70.35.195.49
+Deny from 93.174.93.163
+Deny from 195.22.127.235
+Deny from 91.200.12.157
+Deny from 46.173.1.35
+Deny from 188.226.6.122
+Deny from 188.170.193.52
+Deny from 91.200.12.28
+Deny from 188.170.193.52
+Deny from 45.55.189.193
+Deny from 195.22.125.9
+Deny from 78.30.231.105
+Deny from 92.255.165.201
+Deny from 109.252.11.98
+Deny from 116.31.124.11
+Deny from 91.200.12.35
+Deny from 120.78.81.123
+Deny from 37.59.178.104
+Deny from 193.201.224.193
+Deny from 185.75.46.143
