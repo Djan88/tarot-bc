@@ -34,7 +34,7 @@
   <?php if (!is_user_logged_in()) { ?>
     <script>
       jQuery(document).ready(function () {
-        jQuery('#consult').modal('show');
+        jQuery('#login').modal('show');
       });
     </script>
   <?php } ?>
