@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php if (is_user_logged_in()) { ?>
-  <?php if (is_page(10)) { ?>
+  <?php if (is_page(10) || is_category(9)) { ?>
     <section class="seminars text-center reviews_wrap" id="lectors">
       <div class="container">
         <div class="row">

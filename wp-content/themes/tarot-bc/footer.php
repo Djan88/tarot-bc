@@ -29,9 +29,15 @@
   <!-- <script src="<?php //bloginfo('template_url'); ?>/js/loadmore.js"></script> -->
   <!-- <script src="<?php //bloginfo('template_url'); ?>/js/conversation.js"></script>   -->
   <!-- <script src="<?php //bloginfo('template_url'); ?>/js/peekobot.js"></script> -->
-  <script src="<?php bloginfo('template_url'); ?>/js/slick.min.js"></script>
+  <!-- <script src="<?php //bloginfo('template_url'); ?>/js/slick.min.js"></script> -->
   <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
-  
+  <?php if (!is_user_logged_in()) { ?>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery('#consult').modal('show');
+      });
+    </script>
+  <?php } ?>
   <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="videoCoursLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
           <div class="modal-content">
@@ -40,7 +46,7 @@
                   <h4 class="modal-title" id="videoCoursLabel">Вход / Регистрация</h4>
               </div>
               <div class="modal-body">
-                
+                [miniorange_social_login]
               </div>
           </div>
       </div>
