@@ -31,7 +31,7 @@
   <!-- <script src="<?php //bloginfo('template_url'); ?>/js/peekobot.js"></script> -->
   <!-- <script src="<?php //bloginfo('template_url'); ?>/js/slick.min.js"></script> -->
   <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
-  <?php if (!is_user_logged_in()) { ?>
+  <?php if (!is_user_logged_in() && is_front_page()) { ?>
     <script>
       jQuery(document).ready(function () {
         jQuery('#login').modal('show');
