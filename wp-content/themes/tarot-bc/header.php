@@ -90,7 +90,7 @@
                       <?php } ?>
                         <li><a class="menu blue_text" href="/logout/?_wpnonce=1fd8ce03de">Выйти</a></li>
                       <?php } else { ?>
-                        <li><a class="menu blue_text login_btn" href="#">Вход</a></li>
+                        <li><span class="menu blue_text login_btn">Вход</span></li>
                       <?php } ?>
                     </ul>
                   </div><!-- /navbar-collapse -->
