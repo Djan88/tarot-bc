@@ -2170,6 +2170,11 @@ ul#myTab
     display: inline-block;
 
 }
+span.bullet
+{
+    font-size: 30px;
+    line-height: 1px;
+}
 /******************************
 responsive area
 ********************************/
