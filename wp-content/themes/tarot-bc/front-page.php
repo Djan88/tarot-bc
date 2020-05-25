@@ -16,7 +16,7 @@
             <p><span class="bullet">•</span> Таблица соответствий частей тела и Старших Арканов;</p>
             <p><span class="bullet">•</span> Две простые, но эффективные техники самолечения;</p>
           </div>
-          <a href="/book" target="_blank" class="seminars_link btn btn-success btn-lg">Читать книгу онлайн</a>
+          <a href="/book/1" target="_blank" class="seminars_link btn btn-success btn-lg">Читать книгу онлайн</a>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12 text-center">
           <img class="chikurov_img" src="<?php bloginfo('template_url'); ?>/img/logo_big.png" alt="Чикуров Ю.В.">

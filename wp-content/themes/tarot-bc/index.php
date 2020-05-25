@@ -7,7 +7,7 @@
           <!-- <div class="col-md-12">
             <h2>«Лечебное Tarot»</h2>
           </div> -->
-          <div class="col-md-8">
+          <div class="col-md-9">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="row">
               <div class="col-md-12 seminar_content">
@@ -21,8 +21,8 @@
               <?php _e('Sorry, no posts matched your criteria.'); ?>
             <?php endif; ?>
           </div>
-          <div class="col-md-4 pages">
-            <h3>Оглавление</h3>
+          <div class="col-md-3 pages">
+            <h2>Оглавление</h2>
           </div>
         </div>
       </div>
