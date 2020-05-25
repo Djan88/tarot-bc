@@ -2211,6 +2211,10 @@ ul.tml-links
 {
     padding: 0;
 }
+#rcl-post-bar
+{
+    display: none;
+}
 /******************************
 responsive area
 ********************************/

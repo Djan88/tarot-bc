@@ -7,7 +7,7 @@
           <!-- <div class="col-md-12">
             <h2>«Лечебное Tarot»</h2>
           </div> -->
-          <div class="col-md-12">
+          <div class="col-md-8">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="container">
               <div class="row">
@@ -25,6 +25,9 @@
             <?php endwhile; else: ?>
               <?php _e('Sorry, no posts matched your criteria.'); ?>
             <?php endif; ?>
+          </div>
+          <div class="col-md-4 pages">
+            <h3>Оглавление</h3>
           </div>
         </div>
       </div>
@@ -71,5 +74,4 @@
     <?php endif; ?>
   </section>
 <?php } ?> 
-
 <?php get_footer(); ?>
