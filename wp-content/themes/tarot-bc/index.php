@@ -28,7 +28,7 @@
               <div class="col-md-12">
                 <?php
                 // The Query
-                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'order' => 'DESC') );
+                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'order' => 'ASC') );
                 while ($query_reviews->have_posts()) : $query_reviews->the_post();
                     $cur_pages_item = get_the_ID();
                     echo '<a class="pages_item';
