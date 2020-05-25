@@ -28,9 +28,9 @@
               <div class="col-md-12">
                 <?php
                 // The Query
-                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'orderby' => 'DESC') );
-                $cur_pages_item = get_the_ID();
+                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'orderby' => 'title') );
                 while ($query_reviews->have_posts()) : $query_reviews->the_post();
+                    $cur_pages_item = get_the_ID();
                     echo '<a class="pages_item';
                     if ($cur_pages_item == $cur_page) {
                       echo ' pages_item-active';
