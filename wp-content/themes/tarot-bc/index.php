@@ -9,6 +9,7 @@
           </div> -->
           <div class="col-md-9">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+              $cur_page = get_the_ID();
             <div class="row">
               <div class="col-md-12 seminar_content">
                 <?php
@@ -27,10 +28,14 @@
               <div class="col-md-12">
                 <?php
                 // The Query
-                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'orderby' => 'ASC') );
-                $cur_month = 0;
+                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'orderby' => 'DESC') );
+                $cur_pages_item = get_the_ID();
                 while ($query_reviews->have_posts()) : $query_reviews->the_post();
-                    echo '<a class="pages_item" href="';
+                    echo '<a class="pages_item';
+                    if ($cur_pages_item == $cur_page) {
+                      echo 'pages_item-active';
+                    }
+                    echo '"';
                     echo the_permalink();
                     echo '">';
                     echo the_title();
