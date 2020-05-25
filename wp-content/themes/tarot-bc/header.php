@@ -84,9 +84,9 @@
                       <?php if (is_user_logged_in()) { ?>
                         <?php $cur_user = wp_get_current_user(); ?>
                         <?php if ($cur_user->user_firstname) { ?>
-                        <li><a href="/account" class="menu pink_text">Привет, <?php echo $cur_user->user_firstname; ?></a></li>
+                        <li><span class="menu pink_text">Привет, <?php echo $cur_user->user_firstname; ?></span></li>
                       <?php } else { ?>
-                        <li><a href="/account" class="menu pink_text">Привет, <?php echo $cur_user->user_login; ?></a></li>
+                        <li><span class="menu pink_text">Привет, <?php echo $cur_user->user_login; ?></span></li>
                       <?php } ?>
                         <li><a class="menu blue_text" href="/logout/?_wpnonce=1fd8ce03de">Выйти</a></li>
                       <?php } else { ?>
