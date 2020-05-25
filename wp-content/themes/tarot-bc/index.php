@@ -49,24 +49,41 @@
   </section>
   <?php } ?> 
 <?php } else { ?> 
-    <section class="seminar text-center" id="seminar">
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2><?php the_title(); ?></h2>
-        </div>
-        <div class="col-md-12 seminar_content">
-          <?php
-          the_content(__('(more...)'));
-          edit_post_link(__('Edit This'));
-          ?>
+  <?php if (in_category(2)) { ?>
+      <section class="seminar text-center" id="seminar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>«Лечебное Tarot»</h2>
+          </div>
+          <div class="col-md-12 seminar_content">
+            Материал книги доступен только зарегистрированным пользователям.
+            <button class="btn btn-primary register">Войдите</button> для продолжения или <button class="btn btn-primary register">зарегистрируйтесь</button> и получите полный доступ к материалам сайта.
+            Это бесплатно!
+          </div>
         </div>
       </div>
-    </div>
-    <?php endwhile; else: ?>
-      <?php _e('Sorry, no posts matched your criteria.'); ?>
-    <?php endif; ?>
-  </section>
+    </section>
+  <?php } else { ?> 
+      <section class="seminar text-center" id="seminar">
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2><?php the_title(); ?></h2>
+          </div>
+          <div class="col-md-12 seminar_content">
+            <?php
+            the_content(__('(more...)'));
+            edit_post_link(__('Edit This'));
+            ?>
+          </div>
+        </div>
+      </div>
+      <?php endwhile; else: ?>
+        <?php _e('Sorry, no posts matched your criteria.'); ?>
+      <?php endif; ?>
+    </section>
+  <?php } ?> 
 <?php } ?> 
 <?php get_footer(); ?>
