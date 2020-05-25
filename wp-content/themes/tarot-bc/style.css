@@ -2231,13 +2231,13 @@ ul.tml-links
     margin: 1px;
     border-radius: 3px;
 }
-.pages_item.pages_item-active
-{
-    background-color: #ff206d;
-}
 .pages_item:hover, .pages_item:visited
 {
     background-color: #337ab7;
+}
+.pages_item.pages_item-active
+{
+    background-color: #ff206d;
 }
 
 
