@@ -58,7 +58,7 @@
           </div>
           <div class="col-md-12 seminar_content">
             Материал книги доступен только зарегистрированным пользователям.
-            <button class="btn btn-primary register">Войдите</button> для продолжения или <button class="btn btn-primary register">зарегистрируйтесь</button> и получите полный доступ к материалам сайта.
+            <button class="btn btn-primary" id="register">Войдите</button> для продолжения или <button class="btn btn-primary" id="register">зарегистрируйтесь</button> и получите полный доступ к материалам сайта.
             Это бесплатно!
           </div>
         </div>

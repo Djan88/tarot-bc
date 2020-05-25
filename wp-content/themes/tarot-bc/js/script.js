@@ -29,7 +29,7 @@ jQuery(document).ready(function () {
       return false;
     }
   };
-  jQuery('#login_btn, .register').on('click', function(event) {
+  jQuery('#login_btn, #register').on('click', function(event) {
     jQuery('#login').modal('show');
   });
   // var online_block_h = parseFloat(jQuery('.online_school_text').css('height'));
