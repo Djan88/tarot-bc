@@ -23,6 +23,23 @@
           </div>
           <div class="col-md-3 pages">
             <h2>Оглавление</h2>
+            <div class="row">
+              <div class="col-md-12">
+                <?php
+                // The Query
+                $query_reviews = new WP_Query( array( 'category_name' => 'book') );
+                $cur_month = 0;
+                while ($query_reviews->have_posts()) : $query_reviews->the_post();
+                    echo '<a class="pages_item" href="';
+                    echo the_permalink();
+                    echo '">';
+                    echo the_title();
+                    echo '</a>';
+                endwhile;
+                wp_reset_postdata();
+                ?>
+              </div>
+            </div>
           </div>
         </div>
       </div>
