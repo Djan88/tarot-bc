@@ -2215,6 +2215,45 @@ ul.tml-links
 {
     display: none;
 }
+.pages_item 
+{
+    background-color: #0094e1;
+    color: #fff!important;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    border-radius: 3px;
+}
+.pages_item.pages_item-active
+{
+    background-color: #ff206d;
+}
+.pages_item:hover, .pages_item:visited
+{
+    background-color: #337ab7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /******************************
 responsive area
 ********************************/
