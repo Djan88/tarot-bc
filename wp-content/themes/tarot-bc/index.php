@@ -12,6 +12,7 @@
               $cur_page = get_the_ID();
             <div class="row">
               <div class="col-md-12 seminar_content">
+                <?php echo $cur_page; ?>
                 <?php
                 the_content(__('(more...)'));
                 edit_post_link(__('Edit This'));
@@ -33,9 +34,9 @@
                 while ($query_reviews->have_posts()) : $query_reviews->the_post();
                     echo '<a class="pages_item';
                     if ($cur_pages_item == $cur_page) {
-                      echo 'pages_item-active';
+                      echo ' pages_item-active';
                     }
-                    echo '"';
+                    echo '" href="';
                     echo the_permalink();
                     echo '">';
                     echo the_title();
