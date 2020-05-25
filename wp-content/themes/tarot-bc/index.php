@@ -27,7 +27,7 @@
               <div class="col-md-12">
                 <?php
                 // The Query
-                $query_reviews = new WP_Query( array( 'category_name' => 'book') );
+                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'orderby' => 'ASC') );
                 $cur_month = 0;
                 while ($query_reviews->have_posts()) : $query_reviews->the_post();
                     echo '<a class="pages_item" href="';
