@@ -9,10 +9,9 @@
           </div> -->
           <div class="col-md-9">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-              $cur_page = get_the_ID();
+              <?php $cur_page = get_the_ID(); ?>
             <div class="row">
               <div class="col-md-12 seminar_content">
-                <?php echo $cur_page; ?>
                 <?php
                 the_content(__('(more...)'));
                 edit_post_link(__('Edit This'));
