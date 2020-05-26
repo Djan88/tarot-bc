@@ -2239,6 +2239,12 @@ ul.tml-links
 {
     background-color: #ff206d;
 }
+.page-content
+{
+    background: #F7FAFC;
+    padding: 15px;
+    border-radius: 6px;
+}
 
 
 
