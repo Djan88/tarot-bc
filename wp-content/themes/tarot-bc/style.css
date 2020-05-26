@@ -2244,13 +2244,13 @@ ul.tml-links
     background: #F7FAFC;
     padding: 15px;
     border-radius: 6px;
+    margin-top: 25px;
 }
 .page-heading 
 {
     font-size: 20px;
     color: #26364b;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 600;
 }
 
