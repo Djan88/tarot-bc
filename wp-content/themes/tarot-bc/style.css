@@ -2245,7 +2245,14 @@ ul.tml-links
     padding: 15px;
     border-radius: 6px;
 }
-
+.page-heading 
+{
+    font-size: 20px;
+    color: #26364b;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
 
 
 
