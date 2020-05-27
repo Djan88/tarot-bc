@@ -7,7 +7,7 @@
           <!-- <div class="col-md-12">
             <h2>«Лечебное Tarot»</h2>
           </div> -->
-          <div class="col-md-9 page-content">
+          <div class="col-md-9 page-content" onselectstart="return false" onmousedown="return false">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <?php $cur_page = get_the_ID(); ?>
             <div class="row">
