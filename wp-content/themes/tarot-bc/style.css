@@ -2249,9 +2249,14 @@ ul.tml-links
 .page-heading 
 {
     font-size: 20px;
-    color: #26364b;
+    color: #413e66;
     margin-bottom: 10px;
     font-weight: 600;
+}
+.page-content p 
+{
+    color: #000;
+    font-size: 20px;
 }
 
 
