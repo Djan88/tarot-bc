@@ -2249,6 +2249,13 @@ ul.tml-links
 {
     color: #000;
     font-size: 20px;
+    -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none;
 }
 .page-content figcaption 
 {
