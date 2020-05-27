@@ -14,6 +14,18 @@
   <!-- <link rel="stylesheet" href="<?php //bloginfo('template_url'); ?>/css/slick-theme.css"> -->
   
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
+  <?php if(is_user_logged_in() && !current_user_can('administrator')){ ?>
+    <style>
+      html.html
+      {
+          margin-top: 0!important;
+      }
+      #wpadminbar
+      {
+          display: none!important;
+      }
+    </style>
+  <?php } ?>
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/img/fav180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/img/fav32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/img/fav16.png">
