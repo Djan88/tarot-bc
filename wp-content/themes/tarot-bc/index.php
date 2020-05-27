@@ -15,7 +15,7 @@
                 <div class="pull-left page-heading">Страница <?php the_title(); ?></div>
                 <div class="pull-right"></div>
               </div>
-              <div class="col-md-12 seminar_content">
+              <div class="col-md-12 seminar_content" onmousedown="return false" onselectstart="return false">
                 <?php
                 the_content(__('(more...)'));
                 edit_post_link(__('Edit This'));
