@@ -72,7 +72,10 @@ jQuery(document).ready(function () {
   if(supportsStorage && localStorage.getItem('popupStatus')){
     popupStatus1 = localStorage.getItem('popupStatus1');
     page_ridden = localStorage.getItem('page_ridden');
-
+  }
+  if (page_ridden) {
+    jQuery('.cur_page_ridden').attr('href', page_ridden);
+    jQuery('.seminars_link').text('Продолжить чтение книги');
   }
 
   jQuery('.nav a, .close_menu').on('click', function(event) {
