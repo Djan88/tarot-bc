@@ -1,6 +1,8 @@
 jQuery(document).ready(function () {
   
-  var $page = jQuery('html, body');
+  var page_ridden,
+      $page = jQuery('html, body');
+
   jQuery('a[href*="#"]').click(function() {
       $page.animate({
           scrollTop: jQuery(jQuery.attr(this, 'href')).offset().top
@@ -31,6 +33,11 @@ jQuery(document).ready(function () {
   };
   jQuery('#login_btn, #register').on('click', function(event) {
     jQuery('#login').modal('show');
+  });
+
+  jQuery('.pages_item').on('click', function(event) {
+    localStorage.setItem('page_ridden', jQuery(this).attr('href'));
+    console.log(jQuery(this).attr('href'));
   });
   // var online_block_h = parseFloat(jQuery('.online_school_text').css('height'));
   // jQuery('.online .col-md-4').css('height', jQuery('.online').css('height'));
@@ -64,6 +71,8 @@ jQuery(document).ready(function () {
   //Получение данных из локального хранилища
   if(supportsStorage && localStorage.getItem('popupStatus')){
     popupStatus1 = localStorage.getItem('popupStatus1');
+    page_ridden = localStorage.getItem('page_ridden');
+
   }
 
   jQuery('.nav a, .close_menu').on('click', function(event) {
