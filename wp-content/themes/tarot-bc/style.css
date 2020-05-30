@@ -2267,6 +2267,7 @@ ul.tml-links
 {
     list-style: disc;
     font-size: 18px;
+    text-align: left;
 }
 
 
@@ -2868,6 +2869,7 @@ responsive area
     .chikurov_img
     {
         margin-top: 30px;
+        margin-bottom: 0;
     }
     section#doctor
     {

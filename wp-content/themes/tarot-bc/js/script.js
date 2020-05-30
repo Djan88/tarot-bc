@@ -74,7 +74,7 @@ jQuery(document).ready(function () {
     page_ridden = localStorage.getItem('page_ridden');
   }
   if (page_ridden) {
-    jQuery('.cur_page_ridden').attr('href', page_ridden);
+    jQuery('.cur_page_ridden').attr('href', page_ridden).text('Продолжить чтение');
     jQuery('.seminars_link').text('Продолжить чтение книги');
   }
 
