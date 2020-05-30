@@ -145,7 +145,7 @@ ul.nav {
     margin: 0;
     padding: 0;
 }
-.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>span, .consult {
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>span, .consult, #login_btn {
     font-size: 20px;
     color: #413e66;
     transition: all .7s ease 0s;
@@ -2173,13 +2173,13 @@ span.bullet
     font-size: 30px;
     line-height: 1px;
 }
-#login_btn 
+/*#login_btn 
 {
     font-size: 20px;
     padding: 14px 0 7px 20px;
     font-weight: bold;
     cursor: pointer;
-}
+}*/
 .tml-field
 {
     border-radius: 6px;
@@ -2303,7 +2303,7 @@ responsive area
     {
         font-size: 17px;
     }
-    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult
+    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult, #login_btn
     {
         font-size: 17px;
         padding: 14px 4px;
@@ -2398,7 +2398,7 @@ responsive area
     {
         position: relative;
     }
-    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult
+    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult, #login_btn
     {
         font-size: 12px;
         padding: 14px 3px;
@@ -2532,7 +2532,7 @@ responsive area
     {
         text-align: left;
     }
-    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult
+    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult, #login_btn
     {
         font-size: 25px;
         padding: 15px;
@@ -2779,7 +2779,7 @@ responsive area
     {
         text-align: left;
     }
-    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult
+    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult, #login_btn
     {
         font-size: 25px;
         padding: 15px;
@@ -2958,7 +2958,7 @@ responsive area
     {
         text-align: left;
     }
-    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult
+    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult, #login_btn
     {
         font-size: 25px;
         padding: 15px;
@@ -3250,7 +3250,7 @@ responsive area
     {
         text-align: left;
     }
-    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult
+    .navbar-default .navbar-nav>li>a, .dropdown_menu, .consult, #login_btn
     {
         font-size: 25px;
         padding: 15px;
