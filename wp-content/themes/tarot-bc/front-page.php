@@ -52,16 +52,14 @@
           <h1 class="main_heading">Онлайн курс</h1>
           <div class="doctor_about tarot_about">
             <p>Хорошо читать книгу и одновременно осваивать материал на практике.<br>Для этого я создал <span class="pink_text">бесплатный онлайн-курс «Лечебное Tarot старт»</span> ориентированный для всех интересующихся данной тематикой.</p>
-            <p><h4 class="blue_text">Краткое содержание этого курса:</h4></p>
-            <p><span class="bullet">•</span> Об авторе метода;</p>
-            <p><span class="bullet">•</span> Немного предыстории;</p>
+            <h3 class="blue_text">Из этого курса Вы узнаете:</h3>
             <p><span class="bullet">•</span> Какие колоды карт я использую;</p>
             <p><span class="bullet">•</span> Открытие, базовая укладка и активация колоды;</p>
             <p><span class="bullet">•</span> Предназначение разных частей колоды Tarot;</p>
             <p><span class="bullet">•</span> Таблица соответствий частей тела и Старших Арканов;</p>
             <p><span class="bullet">•</span> Две простые, но эффективные техники самолечения;</p>
           </div>
-          <a href="http://school-bc.ru/" class="btn btn-success btn-lg">Онлайн курс</a>
+          <a href="http://school-bc.ru/" class="btn btn-success btn-lg">Записаться на онлайн курс</a>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12 text-center">
           <img class="chikurov_img" src="<?php bloginfo('template_url'); ?>/img/logo_big.png" alt="Лечебное Tarot. Онлайн курс">

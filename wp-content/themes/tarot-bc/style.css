@@ -283,7 +283,7 @@ li a.active {
 .chikurov_img
 {
     max-width: 300px;
-    /*border-radius: 50%;*/
+    padding-top: 10px;
     /*box-shadow: 0 6px 16px rgba(26,61,107,.16);*/
     margin-bottom: 50px;
 }
