@@ -51,7 +51,7 @@
         <div class="col-md-8 col-sm-8 col-xs-12">
           <h2 class="main_heading">Бесплатный Онлайн курс</h2>
           <div class="doctor_about tarot_about">
-            <h3 class="blue_text">Пять уникальных уроков, которые перевернут ваши взгляды на мир Tarot!</h3>
+            <h3 class="pink_text">Пять уникальных уроков, которые перевернут ваши взгляды на мир Tarot!</h3>
             <ol>
               <li>Об авторе метода; немного предыстории; какие колоды карт я использую</li>
               <li>Открытие, базовая укладка и активация колоды</li>
@@ -60,10 +60,9 @@
               <li>Таблица соответствий Старших Арканов зонам тела; первоэлементные конституции; понятие грехопадения карты, позиции внетелесных карт;</li>
             </ol>
           </div>
-          <a href="http://school-bc.ru/" class="btn btn-success btn-lg">Записаться на онлайн курс</a>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-          <img class="chikurov_img" src="<?php bloginfo('template_url'); ?>/img/logo_big.png" alt="Лечебное Tarot. Онлайн курс">
+          <a href="http://school-bc.ru/" class="btn btn-success btn-lg">Записаться на онлайн курс</a>
         </div>
       </div>
     </div>

@@ -296,13 +296,20 @@ li a.active {
     margin-top: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
-.seminar h2, .seminars h2, .doctor h2
+.seminar h2, .seminars h2
 {
     font-size: 40px;
     color: #26364b;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+}
+.doctor h2
+{
+    font-size: 40px;
+    color: #26364b;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .about h4, .doctor h4 {
     font-size: 18px;
