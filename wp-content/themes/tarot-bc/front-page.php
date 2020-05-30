@@ -51,7 +51,7 @@
         <div class="col-md-8 col-sm-8 col-xs-12">
           <h2 class="main_heading"><span class="pink_text">Бесплатный</span> Онлайн курс</h2>
           <div class="doctor_about tarot_about">
-            <h3 class="pink_text">Пять уникальных уроков, которые перевернут ваши взгляды на мир Tarot!</h3>
+            <h3 class="blue_text">Пять уникальных уроков, которые перевернут ваши взгляды на мир Tarot!</h3>
             <ol>
               <li>Об авторе метода; немного предыстории; какие колоды карт я использую</li>
               <li>Открытие, базовая укладка и активация колоды</li>
