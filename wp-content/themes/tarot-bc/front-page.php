@@ -45,7 +45,7 @@
       </div>
     </div>
   </section>
-  <section class="doctor seminars_light" id="course">
+  <section class="doctor seminars_dark" id="course">
     <div class="container chikurov_info">
       <div class="row">
         <div class="col-md-8 col-sm-8 col-xs-12">
