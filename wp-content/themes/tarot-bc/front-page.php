@@ -49,7 +49,7 @@
     <div class="container chikurov_info">
       <div class="row">
         <div class="col-md-8 col-sm-8 col-xs-12">
-          <h2 class="main_heading">Бесплатный Онлайн курс</h2>
+          <h2 class="main_heading"><span class="pink_text">Бесплатный</span> Онлайн курс</h2>
           <div class="doctor_about tarot_about">
             <h3 class="pink_text">Пять уникальных уроков, которые перевернут ваши взгляды на мир Tarot!</h3>
             <ol>
