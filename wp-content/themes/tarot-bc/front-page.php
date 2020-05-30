@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12 text-center">
-          <a href="http://school-bc.ru/" class="btn btn-success btn-lg">Записаться на онлайн курс</a>
+          <a href="http://school-bc.ru/" class="btn btn-success order-course btn-lg">Записаться<br>на онлайн курс</a>
         </div>
       </div>
     </div>
