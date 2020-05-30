@@ -2279,7 +2279,14 @@ ul.tml-links
 }
 .order-course
 {
-    margin-top: 30px; 
+    margin-top: 30px;
+    font-size: 25px;
+    background: #0094e1;
+    border: 1px solid #027dbd;
+}
+.order-course:hover
+{
+    background: #027dbd;
 }
 
 
