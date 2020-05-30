@@ -2279,9 +2279,10 @@ ul.tml-links
 }
 .order-course
 {
-    margin-top: 30px;
+    margin-top: 90px;
     font-size: 25px;
     background: #0094e1;
+    float: right;
     border: 1px solid #027dbd;
 }
 .order-course:hover
@@ -2762,6 +2763,10 @@ responsive area
         display: inline-block;
         padding-left: 10px;
     }
+    .order-course
+    {
+        float: none;
+    }
 
 }
 @media (max-width: 670px) {
@@ -2937,6 +2942,10 @@ responsive area
         display: inline-block;
         padding-left: 10px;
         padding-top: 0;
+    }
+    .order-course
+    {
+        float: none;
     }
 
 }
@@ -3228,6 +3237,10 @@ responsive area
     {
         right: -35px;
     }
+    .order-course
+    {
+        float: none;
+    }
 }
 
 @media (max-width: 420px) {
@@ -3329,5 +3342,9 @@ responsive area
     {
         font-size: 17px;
         padding: 10px;
+    }
+    .order-course
+    {
+        float: none;
     }
 }
