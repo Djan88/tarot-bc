@@ -34,7 +34,7 @@
   <?php if (!is_user_logged_in() && is_front_page()) { ?>
     <script>
       jQuery(document).ready(function () {
-        jQuery('#login').modal('show');
+        // jQuery('#login').modal('show');
       });
     </script>
   <?php } ?>
