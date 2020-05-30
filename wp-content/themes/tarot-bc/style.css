@@ -2263,6 +2263,11 @@ ul.tml-links
     font-weight: 600;
     border-bottom: 1px solid #ff206d;
 }
+.tarot_about ol li 
+{
+    list-style: disc;
+    font-size: 18px;
+}
 
 
 
