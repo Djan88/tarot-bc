@@ -12,7 +12,7 @@
               <?php $cur_page = get_the_ID(); ?>
             <div class="row">
               <div class="col-md-12 page-heading">
-                <div class="pull-left page-heading">Страница <?php the_title(); ?></div>
+                Страница <?php the_title(); ?>
                 <div class="pull-right"></div>
               </div>
               <div class="col-md-12 seminar_content">
