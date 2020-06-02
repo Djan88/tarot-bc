@@ -7,19 +7,16 @@
           <!-- <div class="col-md-12">
             <h2>«Лечебное Tarot»</h2>
           </div> -->
-          <div class="col-md-9 page-content" >
+          <div class="col-xs-1 page-nav">
+            <?php previous_post_link('%link', '<', true); ?>
+          </div>
+          <div class="col-xs-10 page-content">
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <?php $cur_page = get_the_ID(); ?>
             <div class="row">
               <div class="col-md-12 page-heading">
                 Страница <?php the_title(); ?>
                 <div class="pull-right"></div>
-              </div>
-              <div class="col-xs-12">
-                <div class="row">
-                  <div class="col-xs-6 nav_link nav_link_left"><?php previous_post_link('%link', 'Назад <', true); ?></div>
-                  <div class="col-xs-6 nav_link nav_link_right"><?php next_post_link('%link', 'Вперед >', true); ?></div>
-                </div>
               </div>
               <div class="col-md-12 seminar_content">
                 <?php
@@ -38,7 +35,12 @@
               <?php _e('Sorry, no posts matched your criteria.'); ?>
             <?php endif; ?>
           </div>
-          <div class="col-md-3 pages">
+          <div class="col-xs-1 page-nav">
+            <?php next_post_link('%link', '>', true); ?>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 pages">
             <h2>Оглавление</h2>
             <div class="row">
               <div class="col-md-12">
