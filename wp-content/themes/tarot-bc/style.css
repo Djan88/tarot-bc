@@ -2289,6 +2289,18 @@ ul.tml-links
 {
     background: #027dbd;
 }
+.nav_link
+{
+    font-size: 20px;
+}
+.nav_link_left
+{
+    text-align: left;
+}
+.nav_link_right
+{
+    text-align: right;
+}
 
 
 

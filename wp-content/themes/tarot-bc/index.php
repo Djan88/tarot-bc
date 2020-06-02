@@ -23,8 +23,8 @@
               </div>
               <div class="col-xs-12">
                 <div class="row">
-                  <div class="col-xs-6 pull-left"><?php previous_post_link('%link', 'Предыдущая страница', true); ?></div>
-                  <div class="col-xs-6 pull-right"><?php next_post_link('%link', 'Следующая страница', true); ?></div>
+                  <div class="col-xs-6 nav_link nav_link_left"><?php previous_post_link('%link', '< Страница %title', true); ?></div>
+                  <div class="col-xs-6 nav_link nav_link_right"><?php next_post_link('%link', 'Страница %title >', true); ?></div>
                 </div>
               </div>
             </div>
