@@ -21,6 +21,12 @@
                 edit_post_link(__('Edit This'));
                 ?>
               </div>
+              <div class="col-xs-12">
+                <div class="row">
+                  <div class="col-xs-6 pull-left"><?php previous_post_link('%link', 'Предыдущая страница', true); ?></div>
+                  <div class="col-xs-6 pull-right"><?php next_post_link('%link', 'Следующая страница', true); ?></div>
+                </div>
+              </div>
             </div>
             <?php endwhile; else: ?>
               <?php _e('Sorry, no posts matched your criteria.'); ?>
