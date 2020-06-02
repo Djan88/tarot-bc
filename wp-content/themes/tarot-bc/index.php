@@ -29,12 +29,7 @@
               </div>
               <div class="col-xs-12">
                 <div class="row">
-                  <div class="col-xs-12"><?php the_posts_pagination( array(
-                      'mid_size'  => 4,
-                      'end_size' => 1,
-                      'prev_text' => 'Предыдущая',
-                      'next_text' => 'Следующая',
-                    ) ); ?>
+                  <div class="col-xs-12"><?php the_posts_pagination(); ?>
                   </div>
                 </div>
               </div>
