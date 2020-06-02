@@ -33,7 +33,7 @@ jQuery(document).ready(function () {
     }
   };
   page_h = jQuery('.page-content').css('height');
-  jQuery('.page-nav').css({
+  jQuery('.page-nav a').css({
     height: page_h,
     lineHeight: page_h
   });
