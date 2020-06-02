@@ -1,6 +1,7 @@
 jQuery(document).ready(function () {
   
   var page_ridden,
+      page_h,
       $page = jQuery('html, body');
 
   jQuery('a[href*="#"]').click(function() {
@@ -31,6 +32,11 @@ jQuery(document).ready(function () {
       return false;
     }
   };
+  page_h = jQuery('.page-content').css('height');
+  jQuery('.page-nav').css({
+    height: page_h,
+    lineHeight: page_h
+  });
   jQuery('#login_btn, #register').on('click', function(event) {
     jQuery('#login').modal('show');
   });

@@ -2289,6 +2289,16 @@ ul.tml-links
 {
     background: #027dbd;
 }
+.page-nav 
+{
+    height: 100vh;
+    line-height: 100vh;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 35px;
+    padding: 0;
+    background: #eee;
+}
 .nav_link
 {
     font-size: 20px;
