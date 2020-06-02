@@ -15,6 +15,12 @@
                 Страница <?php the_title(); ?>
                 <div class="pull-right"></div>
               </div>
+              <div class="col-xs-12">
+                <div class="row">
+                  <div class="col-xs-6 nav_link nav_link_left"><?php previous_post_link('%link', 'Назад <', true); ?></div>
+                  <div class="col-xs-6 nav_link nav_link_right"><?php next_post_link('%link', 'Вперед >', true); ?></div>
+                </div>
+              </div>
               <div class="col-md-12 seminar_content">
                 <?php
                 the_content(__('(more...)'));
@@ -23,8 +29,7 @@
               </div>
               <div class="col-xs-12">
                 <div class="row">
-                  <div class="col-xs-6 nav_link nav_link_left"><?php previous_post_link('%link', '< Страница %title', true); ?></div>
-                  <div class="col-xs-6 nav_link nav_link_right"><?php next_post_link('%link', 'Страница %title >', true); ?></div>
+                  <div class="col-xs-12"><?php wp_pagenavi(); ?></div>
                 </div>
               </div>
             </div>
