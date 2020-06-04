@@ -67,7 +67,7 @@
         </div>
       </div>
     </section>
-  <?php } else if (in_category(3)) { ?>
+  <?php } else if (is_category(3)) { ?>
       <section class="seminar text-center" id="seminar">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <div class="container">
