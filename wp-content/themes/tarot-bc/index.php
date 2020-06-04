@@ -67,7 +67,7 @@
         </div>
       </div>
     </section>
-  <?php } else if (is_category(3)) { ?>
+  <?php } else if (in_category(3)) { ?>
       <section class="seminar text-center" id="seminar">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       <div class="container">
@@ -136,6 +136,35 @@
           </div>
         </div>
       </div>
+    </section>
+  <?php } else if (in_category(3)) { ?>
+      <section class="seminar text-center" id="seminar">
+      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <?php if (is_category()) { ?>
+              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <?php } else { ?>
+              <h2><?php the_title(); ?></h2>
+            <?php } ?>
+          </div>
+          <div class="col-md-12 seminar_content">
+            <?php
+            the_content(__('(more...)'));
+            edit_post_link(__('Edit This'));
+            ?>
+          </div>
+          <div class="col-md-12 more_links">
+            <a href="/book/1" target="_blank" class="btn cur_page_ridden">Читать "Лечебное Tarot"</a>
+            <a href="https://tarot-bc.ru/voprosy-i-otvety/" class="btn">Вопросы и ответы</a>
+            <a href="http://school-bc.ru/" target="_blank" class="btn">Бесплатный Онлайн Курс</a>
+          </div>
+        </div>
+      </div>
+      <?php endwhile; else: ?>
+        <?php _e('Sorry, no posts matched your criteria.'); ?>
+      <?php endif; ?>
     </section>
   <?php } else { ?> 
       <section class="seminar text-center" id="seminar">
