@@ -141,7 +141,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2><?php the_title(); ?></h2>
+            <?php if (is_category()) { ?>
+              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <?php } else { ?>
+              <h2><?php the_title(); ?></h2>
+            <?php } ?>
           </div>
           <div class="col-md-12 seminar_content">
             <?php
