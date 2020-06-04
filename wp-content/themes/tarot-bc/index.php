@@ -156,9 +156,9 @@
             ?>
           </div>
           <div class="col-md-12 more_links">
-            <a href="/book/1" target="_blank" class="btn cur_page_ridden">Читать "Лечебное Tarot"</a>
-            <a href="https://tarot-bc.ru/voprosy-i-otvety/" class="btn">Вопросы и ответы</a>
-            <a href="http://school-bc.ru/" target="_blank" class="btn">Бесплатный Онлайн Курс</a>
+            <a href="/book/1" target="_blank" class="btn btn-primary cur_page_ridden">Читать "Лечебное Tarot"</a>
+            <a href="https://tarot-bc.ru/voprosy-i-otvety/" class="btn btn-primary">Вопросы и ответы</a>
+            <a href="http://school-bc.ru/" target="_blank" class="btn btn-primary">Бесплатный Онлайн Курс</a>
           </div>
         </div>
       </div>
