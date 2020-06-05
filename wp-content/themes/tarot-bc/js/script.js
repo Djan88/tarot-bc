@@ -68,5 +68,8 @@ jQuery(document).ready(function () {
   jQuery('.pages_show').on('click', function(event) {
     jQuery('.pages').removeClass('hidden');
   });
+  jQuery('.pages_close').on('click', function(event) {
+    jQuery('.pages').addClass('hidden');
+  });
 
 });

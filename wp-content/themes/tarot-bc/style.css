@@ -2298,6 +2298,20 @@ ul.tml-links
     z-index: 999;
     background: #fff;
 }
+.pages_close 
+{
+    position: absolute;
+    right: 20px;
+    top: 57px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0094e1;
+    cursor: pointer;
+}
+.pages_close:hover
+{
+    color: #0094e1;
+}
 .page-nav
 {
     margin-top: 25px;

@@ -44,7 +44,7 @@
             <h2>Оглавление</h2>
             <div class="row">
               <div class="pages_close">X</div>
-              <div class="col-xs-12 col-sm-10 col-sm-offset-2 pages_inner">
+              <div class="col-xs-12 col-sm-10 col-sm-offset-1 pages_inner">
                 <a href="https://tarot-bc.ru/book/1/" class="pages_link"><span class="pages_text">Intro</span><div class="pages_dots"></div><span class="pages_num pull-right">1</span></a>
                 <a href="https://tarot-bc.ru/book/5/" class="pages_link"><span class="pages_text">Благодарности</span><div class="pages_dots"></div><span class="pages_num pull-right">5</span></a>
                 <a href="https://tarot-bc.ru/book/7/" class="pages_link"><span class="pages_text">О памяти тела и телесном подсознании</span><div class="pages_dots"></div><span class="pages_num pull-right">7</span></a>
