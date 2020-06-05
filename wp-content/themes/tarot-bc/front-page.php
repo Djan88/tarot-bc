@@ -74,7 +74,7 @@
           <h2 class="main_heading">Хотите узнать больше о Tarot?</h2>
           <div class="doctor_about">
             <p>Ответы на многие вопросы вы найдете в нашем <a href="/voprosy-i-otvety/">блоге о Tarot</a></p>
-            <p>Присоединяйтесь к обсуждению в сообщесте <a target="_blank" href="https://www.facebook.com/groups/1396733250536353/">"Лечебное Tarot"</a></p>
+            <p>Присоединяйтесь к обсуждению в сообществе <a target="_blank" href="https://www.facebook.com/groups/1396733250536353/">"Лечебное Tarot"</a>. Задавайте вопросы или расскажите о своем опыте работы с Tarot</p>
           </div>
         </div>
       </div>
