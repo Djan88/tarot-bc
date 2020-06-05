@@ -2345,12 +2345,12 @@ a.pages_link.pages_link_current .pages_dots
 }
 .pages_show 
 {
-    color: #0094e1;
+    color: #ff206d;
     cursor: pointer;
 }
 .pages_show:hover
 {
-    color: #ff206d;
+    color: #0094e1;
 }
 .pages_text
 {
