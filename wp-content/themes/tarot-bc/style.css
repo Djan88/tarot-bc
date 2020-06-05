@@ -2399,7 +2399,6 @@ a.pages_link.pages_link_current .pages_dots
 .another_posts 
 {
     border-left: 1px solid #ff206d;
-    height: 100vh;
     overflow: scroll;
 }
 .pages_item 
@@ -2409,7 +2408,10 @@ a.pages_link.pages_link_current .pages_dots
     padding-bottom: 15px;
     font-size: 17px;
 }
-
+.pages_item_all, .pages_item-all
+{
+    color: #ff206d;
+}
 
 
 

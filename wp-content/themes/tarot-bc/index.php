@@ -123,7 +123,6 @@
                 <span></span>
                 <a href="/">Что такое "Лечебное Tarot"?</a>
                 <a href="/book/1" target="_blank" class="cur_page_ridden">Читать книгу "Лечебное Tarot"</a>
-                <a href="/voprosy-i-otvety/">Вопросы и ответы</a>
                 <a href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a>
               </div>
             <?php } ?>
@@ -151,6 +150,7 @@
             endwhile;
             wp_reset_postdata();
             ?>
+            <a class="pages_item pages_item_all" href="/voprosy-i-otvety/">Вопросы и ответы</a>
           </div>
         </div>
       </div>  
