@@ -5503,7 +5503,7 @@ msgstr "Ник пользователя"
 
 #: wp-includes/user.php:2977
 msgid "User First Name"
-msgstr "Имя пользователя"
+msgstr "Имя пользователя(только буквы латинского алфавита и символы)"
 
 #: wp-includes/user.php:2978
 msgid "User Last Name"
@@ -18023,4 +18023,4 @@ msgstr "При активации произошла ошибка"
 
 #: wp-activate.php:179 wp-signup.php:257
 msgid "Username:"
-msgstr "Имя пользователя  (только буквы латинского алфавита и символы):"
+msgstr "Имя пользователя:"
