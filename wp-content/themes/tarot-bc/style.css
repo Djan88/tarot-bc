@@ -2309,7 +2309,7 @@ ul.tml-links
     font-size: 24px;
     display: block;
 }
-.pages_link_current
+a.pages_link.pages_link_current
 {
     color: #ff206d;
 }
