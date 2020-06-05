@@ -66,6 +66,32 @@
                 <a href="https://tarot-bc.ru/book/101/" class="pages_link"><span class="pages_text">Карта "Дурак"</span><div class="pages_dots"></div><span class="pages_num pull-right">101</span></a>
                 <a href="https://tarot-bc.ru/book/114/" class="pages_link"><span class="pages_text">Карта "Смерть"</span><div class="pages_dots"></div><span class="pages_num pull-right">114</span></a>
                 <a href="https://tarot-bc.ru/book/117/" class="pages_link"><span class="pages_text">Несколько слов про Карму</span><div class="pages_dots"></div><span class="pages_num pull-right">117</span></a>
+                <a href="https://tarot-bc.ru/book/123/" class="pages_link"><span class="pages_text">Карта "Влюбленные"</span><div class="pages_dots"></div><span class="pages_num pull-right">123</span></a>
+                <a href="https://tarot-bc.ru/book/131/" class="pages_link"><span class="pages_text">Как лечить карту "Влюбленные"</span><div class="pages_dots"></div><span class="pages_num pull-right">131</span></a>
+                <a href="https://tarot-bc.ru/book/135/" class="pages_link"><span class="pages_text">Карта "Страшный суд"</span><div class="pages_dots"></div><span class="pages_num pull-right">135</span></a>
+                <a href="https://tarot-bc.ru/book/148/" class="pages_link"><span class="pages_text">Карта "Колесница"</span><div class="pages_dots"></div><span class="pages_num pull-right">148</span></a>
+                <a href="https://tarot-bc.ru/book/164/" class="pages_link"><span class="pages_text">Карта "XXI Мир"</span><div class="pages_dots"></div><span class="pages_num pull-right">164</span></a>
+                <a href="https://tarot-bc.ru/book/171/" class="pages_link"><span class="pages_text">Как лечить карту "Мир"</span><div class="pages_dots"></div><span class="pages_num pull-right">171</span></a>
+                <a href="https://tarot-bc.ru/book/176/" class="pages_link"><span class="pages_text">Карта "Верховная жрица"</span><div class="pages_dots"></div><span class="pages_num pull-right">176</span></a>
+                <a href="https://tarot-bc.ru/book/186/" class="pages_link"><span class="pages_text">Карта "Правосудие"</span><div class="pages_dots"></div><span class="pages_num pull-right">186</span></a>
+                <a href="https://tarot-bc.ru/book/195/" class="pages_link"><span class="pages_text">Краткое резюме по карте "Правосудие"</span><div class="pages_dots"></div><span class="pages_num pull-right">195</span></a>
+                <a href="https://tarot-bc.ru/book/196/" class="pages_link"><span class="pages_text">Карта "Колесо фортуны"</span><div class="pages_dots"></div><span class="pages_num pull-right">196</span></a>
+                <a href="https://tarot-bc.ru/book/202/" class="pages_link"><span class="pages_text">Пуповина Рода</span><div class="pages_dots"></div><span class="pages_num pull-right">202</span></a>
+                <a href="https://tarot-bc.ru/book/204/" class="pages_link"><span class="pages_text">Злость и раздражение</span><div class="pages_dots"></div><span class="pages_num pull-right">204</span></a>
+                <a href="https://tarot-bc.ru/book/211/" class="pages_link"><span class="pages_text">Карта "Башня"</span><div class="pages_dots"></div><span class="pages_num pull-right">211</span></a>
+                <a href="https://tarot-bc.ru/book/218/" class="pages_link"><span class="pages_text">Как работать с картой "Башня"</span><div class="pages_dots"></div><span class="pages_num pull-right">218</span></a>
+                <a href="https://tarot-bc.ru/book/219/" class="pages_link"><span class="pages_text">Карта "Умеренность"</span><div class="pages_dots"></div><span class="pages_num pull-right">219</span></a>
+                <a href="https://tarot-bc.ru/book/225/" class="pages_link"><span class="pages_text">Карта "Луна"</span><div class="pages_dots"></div><span class="pages_num pull-right">225</span></a>
+                <a href="https://tarot-bc.ru/book/238/" class="pages_link"><span class="pages_text">Карта "Звезда"</span><div class="pages_dots"></div><span class="pages_num pull-right">238</span></a>
+                <a href="https://tarot-bc.ru/book/244/" class="pages_link"><span class="pages_text">Карта "The Sun"</span><div class="pages_dots"></div><span class="pages_num pull-right">244</span></a>
+                <a href="https://tarot-bc.ru/book/269/" class="pages_link"><span class="pages_text">Физиологическая норма грехопадения</span><div class="pages_dots"></div><span class="pages_num pull-right">269</span></a>
+                <a href="https://tarot-bc.ru/book/280/" class="pages_link"><span class="pages_text">Типы отношений между людьми на примере взаимодействия карт Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">280</span></a>
+                <a href="https://tarot-bc.ru/book/282/" class="pages_link"><span class="pages_text">Пересмотр личной истории Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">282</span></a>
+                <a href="https://tarot-bc.ru/book/291/" class="pages_link"><span class="pages_text">Цифры мастей</span><div class="pages_dots"></div><span class="pages_num pull-right">291</span></a>
+                <a href="https://tarot-bc.ru/book/293/" class="pages_link"><span class="pages_text">Четыре стратегии реальности Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">293</span></a>
+                <a href="https://tarot-bc.ru/book/327/" class="pages_link"><span class="pages_text">Ресурс жизненной силы</span><div class="pages_dots"></div><span class="pages_num pull-right">327</span></a>
+                <a href="https://tarot-bc.ru/book/340/" class="pages_link"><span class="pages_text">Как цифроваться по Мастям и стратегиям, если у Вас еще нет оцифратора "TarotMachine"</span><div class="pages_dots"></div><span class="pages_num pull-right">340</span></a>
+                <a href="https://tarot-bc.ru/book/345/" class="pages_link"><span class="pages_text">Карты Двора</span><div class="pages_dots"></div><span class="pages_num pull-right">345</span></a>
               </div>
             </div>
           </div>
@@ -90,11 +116,13 @@
             edit_post_link(__('Edit This'));
             ?>
           </div>
-          <div class="col-md-12 more_links">
-            <a href="/book/1" target="_blank" class="btn btn-primary cur_page_ridden">Читать "Лечебное Tarot"</a>
-            <a href="https://tarot-bc.ru/voprosy-i-otvety/" class="btn btn-primary">Вопросы и ответы</a>
-            <a href="http://school-bc.ru/" target="_blank" class="btn btn-primary">Бесплатный Онлайн Курс</a>
-          </div>
+          <?php if (!is_category(3)) { ?>
+            <div class="col-md-12 more_links">
+              <a href="/book/1" target="_blank" class="btn btn-primary cur_page_ridden">Читать "Лечебное Tarot"</a>
+              <a href="https://tarot-bc.ru/voprosy-i-otvety/" class="btn btn-primary">Вопросы и ответы</a>
+              <a href="http://school-bc.ru/" target="_blank" class="btn btn-primary">Бесплатный Онлайн Курс</a>
+            </div>
+          <?php } ?>
         </div>
       </div>
       <?php endwhile; else: ?>
