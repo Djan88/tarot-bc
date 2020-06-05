@@ -2,6 +2,7 @@ jQuery(document).ready(function () {
   
   var page_ridden,
       page_h,
+      cur_page_url = location.href,
       $page = jQuery('html, body');
 
   jQuery('a[href*="#"]').click(function() {
@@ -57,4 +58,11 @@ jQuery(document).ready(function () {
   jQuery('.nav a, .close_menu').on('click', function(event) {
     jQuery('.navbar-collapse.collapse').removeClass('in');
   });
+
+  for (var i = jQuery('.pages_link').length - 1; i >= 0; i--) {
+    if (jQuery(this).attr('href') == cur_page_url) {
+      jQuery(this).addClass('pages_link_current');
+    }
+  }
+
 });
