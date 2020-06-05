@@ -150,7 +150,7 @@
             endwhile;
             wp_reset_postdata();
             ?>
-            <a class="pages_item pages_item_all" href="/voprosy-i-otvety/">Вопросы и ответы</a>
+            <a class="pages_item pages_item_all" href="/voprosy-i-otvety/">Все "Вопросы и ответы"</a>
           </div>
         </div>
       </div>  
