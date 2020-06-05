@@ -98,6 +98,26 @@
         </div>
       </div>
     </section>
+  <?php } else if (is_category(3)) { ?>
+    <section class="seminar text-center" id="seminar">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <div class="row">
+            <div class="col-md-12">
+              <?php if (is_category()) { ?>
+                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <?php } ?>
+            </div>
+          </div>
+          <?php endwhile; else: ?>
+            <?php _e('Sorry, no posts matched your criteria.'); ?>
+          <?php endif; ?>
+          </div>
+        </div>
+      </div>  
+    </section>
   <?php } else if (in_category(3)) { ?>
     <section class="seminar text-center" id="seminar">
       <div class="container">
