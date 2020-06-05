@@ -64,5 +64,9 @@ jQuery(document).ready(function () {
       jQuery(this).addClass('pages_link_current');
     }
   });
+  // Показать оглавление
+  jQuery('.pages_show').on('click', function(event) {
+    jQuery('.pages').removeClass('hidden');
+  });
 
 });

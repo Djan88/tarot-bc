@@ -2289,6 +2289,15 @@ ul.tml-links
 {
     background: #027dbd;
 }
+.pages
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #fff;
+}
 .page-nav
 {
     margin-top: 25px;
