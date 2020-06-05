@@ -59,10 +59,10 @@ jQuery(document).ready(function () {
     jQuery('.navbar-collapse.collapse').removeClass('in');
   });
 
-  for (var i = jQuery('.pages_link').length - 1; i >= 0; i--) {
+  jQuery('.pages_link').each(function(index, el) {
     if (jQuery(this).attr('href') == cur_page_url) {
       jQuery(this).addClass('pages_link_current');
     }
-  }
+  });
 
 });
