@@ -132,8 +132,8 @@
             <?php _e('Sorry, no posts matched your criteria.'); ?>
           <?php endif; ?>
           </div>
-          <div class="col-md-3">
-            <h3><?php the_title(); ?></h3>
+          <div class="col-md-3 another_posts">
+            <h3>Вопросы и ответы</h3>
             <?php
             // The Query
             $query_reviews = new WP_Query( array( 'category_name' => 'voprosy-i-otvety', 'posts_per_page=5') );
