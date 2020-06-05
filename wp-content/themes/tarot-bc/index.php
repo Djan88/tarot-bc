@@ -52,6 +52,19 @@
                 <a href="https://tarot-bc.ru/book/13/" class="pages_link"><span class="pages_text">Свойства старших арканов Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">13</span></a>
                 <a href="https://tarot-bc.ru/book/15/" class="pages_link"><span class="pages_text">Карта "Маг"</span><div class="pages_dots"></div><span class="pages_num pull-right">15</span></a>
                 <a href="https://tarot-bc.ru/book/23/" class="pages_link"><span class="pages_text">Карта "Жрец"</span><div class="pages_dots"></div><span class="pages_num pull-right">23</span></a>
+                <a href="https://tarot-bc.ru/book/29/" class="pages_link"><span class="pages_text">Карта "Отшельник"</span><div class="pages_dots"></div><span class="pages_num pull-right">29</span></a>
+                <a href="https://tarot-bc.ru/book/35/" class="pages_link"><span class="pages_text">Карта "Повешенный"</span><div class="pages_dots"></div><span class="pages_num pull-right">35</span></a>
+                <a href="https://tarot-bc.ru/book/40/" class="pages_link"><span class="pages_text">Карта "Император"</span><div class="pages_dots"></div><span class="pages_num pull-right">40</span></a>
+                <a href="https://tarot-bc.ru/book/45/" class="pages_link"><span class="pages_text">Карта "Императрица"</span><div class="pages_dots"></div><span class="pages_num pull-right">45</span></a>
+                <a href="https://tarot-bc.ru/book/52/" class="pages_link"><span class="pages_text">Карта "Умеренность"</span><div class="pages_dots"></div><span class="pages_num pull-right">52</span></a>
+                <a href="https://tarot-bc.ru/book/56/" class="pages_link"><span class="pages_text">Фрейма Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">56</span></a>
+                <a href="https://tarot-bc.ru/book/59/" class="pages_link"><span class="pages_text">Карта "The Devil"</span><div class="pages_dots"></div><span class="pages_num pull-right">59</span></a>
+                <a href="https://tarot-bc.ru/book/88/" class="pages_link"><span class="pages_text">Динамика XIX Solis на фрейме рогов The Devil</span><div class="pages_dots"></div><span class="pages_num pull-right">88</span></a>
+                <a href="https://tarot-bc.ru/book/90/" class="pages_link"><span class="pages_text">Таблица приоритетности крайних карт фреймы выглядит следующим образом:</span><div class="pages_dots"></div><span class="pages_num pull-right">90</span></a>
+                <a href="https://tarot-bc.ru/book/91/" class="pages_link"><span class="pages_text">Карта "Сила"</span><div class="pages_dots"></div><span class="pages_num pull-right">91</span></a>
+                <a href="https://tarot-bc.ru/book/101/" class="pages_link"><span class="pages_text">Карта "Дурак"</span><div class="pages_dots"></div><span class="pages_num pull-right">101</span></a>
+                <a href="https://tarot-bc.ru/book/114/" class="pages_link"><span class="pages_text">Карта "Смерть"</span><div class="pages_dots"></div><span class="pages_num pull-right">114</span></a>
+                <a href="https://tarot-bc.ru/book/117/" class="pages_link"><span class="pages_text">Несколько слов про Карму</span><div class="pages_dots"></div><span class="pages_num pull-right">117</span></a>
               </div>
             </div>
           </div>
