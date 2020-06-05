@@ -2307,12 +2307,13 @@ ul.tml-links
 {
     position: relative;
     font-size: 24px;
+    display: block;
 }
 .pages_text
 {
     background: #fff;
 }
-.pages_text
+.pages_dots
 {
     border-bottom: 2px dotted #000;
     position: absolute;
