@@ -2431,7 +2431,6 @@ a.pages_link.pages_link_current .pages_dots
 
 
 
-
 /******************************
 responsive area
 ********************************/
@@ -2639,6 +2638,12 @@ responsive area
     .books .btn 
     {
         margin-top: 20px;
+    }
+    .another_posts 
+    {
+        border-left: none;
+        border-top: 1px solid #ff206d;
+        overflow: visible;
     }
 }
 
@@ -2894,6 +2899,12 @@ responsive area
         margin-top: 20px;
         float: none;
     }
+    .another_posts 
+    {
+        border-left: none;
+        border-top: 1px solid #ff206d;
+        overflow: visible;
+    }
 
 }
 @media (max-width: 670px) {
@@ -3078,6 +3089,17 @@ responsive area
     .tarot_qestions_cat
     {
         column-count: 1;
+    }
+    .pages_inner
+    {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+    .another_posts 
+    {
+        border-left: none;
+        border-top: 1px solid #ff206d;
+        overflow: visible;
     }
 
 }
@@ -3374,6 +3396,12 @@ responsive area
         margin-top: 20px;
         float: none;
     }
+    .another_posts 
+    {
+        border-left: none;
+        border-top: 1px solid #ff206d;
+        overflow: visible;
+    }
 }
 
 @media (max-width: 420px) {
@@ -3480,5 +3508,11 @@ responsive area
     {
         margin-top: 20px;
         float: none;
+    }
+    .another_posts 
+    {
+        border-left: none;
+        border-top: 1px solid #ff206d;
+        overflow: visible;
     }
 }
