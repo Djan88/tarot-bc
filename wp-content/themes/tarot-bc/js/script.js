@@ -42,7 +42,7 @@ jQuery(document).ready(function () {
     jQuery('#login').modal('show');
   });
 
-  jQuery('.pages_item').on('click', function(event) {
+  jQuery('.page-nav, .pages_link').on('click', function(event) {
     localStorage.setItem('page_ridden', jQuery(this).attr('href'));
     console.log(jQuery(this).attr('href'));
   });
