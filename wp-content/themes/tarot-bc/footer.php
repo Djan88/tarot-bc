@@ -37,14 +37,14 @@
         // jQuery('#login').modal('show');
       });
     </script>
-    <?php if (is_user_logged_in() && in_category(2)) { ?>
-      <script>
-        jQuery(document).ready(function () {
-          localStorage.setItem('page_ridden', location.href);
-          console.log(location.href);
-        });
-      </script>
-    <?php } ?>
+  <?php } ?>
+  <?php if (is_user_logged_in() && in_category(2)) { ?>
+    <script>
+      jQuery(document).ready(function () {
+        localStorage.setItem('page_ridden', location.href);
+        console.log(location.href);
+      });
+    </script>
   <?php } ?>
   <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="videoCoursLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
