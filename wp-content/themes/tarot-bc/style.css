@@ -2404,10 +2404,16 @@ a.pages_link.pages_link_current .pages_dots
 .more_links a
 {
     display: block;
+    text-align: left;
     font-size: 18px;
     padding-bottom: 5px;
 }
-
+.more_links span
+{
+    display: block;
+    border-top: 2px solid #ff206d!;
+    width: 200px;
+}
 
 
 

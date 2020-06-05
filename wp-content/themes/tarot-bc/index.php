@@ -118,8 +118,9 @@
           </div>
           <?php if (!is_category(3)) { ?>
             <div class="col-md-12 more_links">
+              <span></span>
               <a href="/">Что такое "Лечебное Tarot"?</a>
-              <a href="/book/1" target="_blank" class="cur_page_ridden">Читать "Лечебное Tarot"</a>
+              <a href="/book/1" target="_blank" class="cur_page_ridden">Читать книгу "Лечебное Tarot"</a>
               <a href="/voprosy-i-otvety/">Вопросы и ответы</a>
               <a href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a>
             </div>
