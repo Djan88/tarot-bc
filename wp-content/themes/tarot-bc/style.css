@@ -2401,7 +2401,12 @@ a.pages_link.pages_link_current .pages_dots
 {
     text-align: right;
 }
-
+.more_links a
+{
+    display: block;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
 
 
 
