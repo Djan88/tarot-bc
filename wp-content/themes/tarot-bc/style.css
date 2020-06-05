@@ -2410,7 +2410,7 @@ a.pages_link.pages_link_current .pages_dots
 }
 .pages_item_all, .pages_item-active
 {
-    color: #ff206d;
+    color: #ff206d!important;
 }
 
 
