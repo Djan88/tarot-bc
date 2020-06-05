@@ -14826,7 +14826,7 @@ msgstr "<strong>Конфликт значений VHOST и SUBDOMAIN_INSTALL.</s
 
 #: wp-includes/user.php:2503
 msgid "<strong>Error</strong>: This username is invalid because it uses illegal characters. Please enter a valid username."
-msgstr "<strong>ОШИБКА</strong>: Это имя пользователя некорректно, поскольку оно содержит недопустимые символы. Пожалуйста, введите корректное имя пользователя."
+msgstr "<strong>ОШИБКА</strong>: Это имя пользователя некорректно, поскольку оно содержит недопустимые символы. Допускаются буквы латинского алфавита и символы."
 
 #. translators: %s: Asterisk symbol (*).
 #: wp-includes/comment-template.php:2368
