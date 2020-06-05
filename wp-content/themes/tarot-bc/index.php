@@ -118,7 +118,10 @@
   <section class="seminar text-center" id="seminar">
     <div class="container">
       <div class="row">
-        <div class="col-md-12tarot_qestions_cat">
+        <div class="col-md-12">
+          <h2>Вопроссы и ответы</h2>
+        </div>
+        <div class="col-md-12 tarot_qestions_cat">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <h4><a class="tarot_qestions_cat_item" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
         <?php endwhile; else: ?>
