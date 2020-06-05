@@ -2312,6 +2312,7 @@ ul.tml-links
 .pages_text
 {
     background: #fff;
+    padding-right: 5px;
 }
 .pages_dots
 {
@@ -2319,10 +2320,12 @@ ul.tml-links
     position: absolute;
     width: 100%;
     bottom: 3px;
+    z-index: -1;
 }
 .pages_num
 {
     background: #fff;
+    padding-left: 5px;
 }
 .nav_link
 {
