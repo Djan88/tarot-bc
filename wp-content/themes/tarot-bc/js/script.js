@@ -72,5 +72,5 @@ jQuery(document).ready(function () {
     jQuery('.pages').addClass('hidden');
   });
 
-  jQuery('#user_login.tml-field').placeholder = 'Буквы латинского алфавита и символы';
+  document.querySelector('[name="user_login"]').placeholder = 'Буквы латинского алфавита и символы';
 });
