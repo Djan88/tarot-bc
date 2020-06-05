@@ -123,7 +123,7 @@
         <div class="row">
           <div class="col-md-12">
             <?php if (is_category()) { ?>
-              <h2><a class="tarot_qestions_cat"> href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <h2><a class="tarot_qestions_cat" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
             <?php } ?>
           </div>
         </div>
