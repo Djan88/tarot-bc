@@ -67,4 +67,17 @@
       </div>
     </div>
   </section>
+  <section class="doctor seminars_light" id="faq">
+    <div class="container chikurov_info">
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="main_heading">Хотите узнать больше о Tarot?</h2>
+          <div class="doctor_about">
+            <p>Ответы на многие вопросы вы найдете в нашем <a href="/voprosy-i-otvety/">блоге о Tarot</a></p>
+            <p>Присоединяйтесь к обсуждению в сообщесте <a target="_blank" href="https://www.facebook.com/groups/1396733250536353/">"Лечебное Tarot"</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 <?php get_footer(); ?>
