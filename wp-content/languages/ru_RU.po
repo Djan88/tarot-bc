@@ -17926,7 +17926,7 @@ msgstr "Файла &laquo;%s&raquo; не существует?"
 
 #: wp-login.php:1084
 msgid "Username"
-msgstr "Имя пользователя"
+msgstr "Логин пользователя (только буквы латинского алфавита и символы)"
 
 #. translators: Name of a comment's author after being anonymized.
 #: wp-includes/comment.php:3568 wp-includes/class-wp-theme.php:897
