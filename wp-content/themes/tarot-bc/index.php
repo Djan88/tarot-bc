@@ -45,6 +45,12 @@
             <div class="row">
               <div class="col-md-12 pages_inner">
                 <a href="https://tarot-bc.ru/book/1/" class="pages_link"><span class="pages_text">Intro</span><div class="pages_dots"></div><span class="pages_num pull-right">1</span></a>
+                <a href="https://tarot-bc.ru/book/5/" class="pages_link"><span class="pages_text">Благодарности</span><div class="pages_dots"></div><span class="pages_num pull-right">5</span></a>
+                <a href="https://tarot-bc.ru/book/7/" class="pages_link"><span class="pages_text">О памяти тела и телесном подсознании</span><div class="pages_dots"></div><span class="pages_num pull-right">7</span></a>
+                <a href="https://tarot-bc.ru/book/9/" class="pages_link"><span class="pages_text">Tarot и зоны телесного подсознания</span><div class="pages_dots"></div><span class="pages_num pull-right">9</span></a>
+                <a href="https://tarot-bc.ru/book/13/" class="pages_link"><span class="pages_text">Свойства старших арканов Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">13</span></a>
+                <a href="https://tarot-bc.ru/book/15/" class="pages_link"><span class="pages_text">Карта "Маг"</span><div class="pages_dots"></div><span class="pages_num pull-right">15</span></a>
+                <a href="https://tarot-bc.ru/book/23/" class="pages_link"><span class="pages_text">Карта "Жрец"</span><div class="pages_dots"></div><span class="pages_num pull-right">23</span></a>
               </div>
             </div>
           </div>
