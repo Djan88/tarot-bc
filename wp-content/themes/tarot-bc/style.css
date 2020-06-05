@@ -2392,12 +2392,23 @@ a.pages_link.pages_link_current .pages_dots
 .more_links span
 {
     display: block;
-    border-top: 2px solid #ff206d;
+    border-top: 1px solid #ff206d;
     width: 300px;
     margin: 10px 0;
 }
-
-
+.another_posts 
+{
+    border-left: 1px solid #ff206d;
+    height: 100vh;
+    overflow: scroll;
+}
+.pages_item 
+{
+    text-align: left;
+    display: inline-block;
+    padding-bottom: 15px;
+    font-size: 17px;
+}
 
 
 
