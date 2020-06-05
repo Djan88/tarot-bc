@@ -2298,6 +2298,14 @@ ul.tml-links
     z-index: 999;
     background: #fff;
 }
+.pages_paranja
+{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    background: #fff;
+}
 .pages_close 
 {
     position: absolute;
@@ -2347,6 +2355,15 @@ a.pages_link.pages_link_current
 a.pages_link.pages_link_current .pages_dots
 {
     border-color: #ff206d;
+}
+.pages_show 
+{
+    color: #0094e1;
+    cursor: pointer;
+}
+.pages_show:hover
+{
+    color: #ff206d;
 }
 .pages_text
 {

@@ -41,6 +41,7 @@
         </div>
         <div class="row">
           <div class="col-xs-12 pages hidden">
+            <div class="pages_paranja"></div>
             <h2>Оглавление</h2>
             <div class="row">
               <div class="pages_close">X</div>
