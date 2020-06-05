@@ -2289,7 +2289,7 @@ ul.tml-links
 {
     background: #027dbd;
 }
-.page-nav
+/*.page-nav
 {
     margin-top: 25px;
     text-align: center;
@@ -2302,6 +2302,26 @@ ul.tml-links
     display: block;
     height: 100vh;
     line-height: 100vh;
+}*/
+.pages_link
+{
+    position: relative;
+    font-size: 24px;
+}
+.pages_text
+{
+    background: #fff;
+}
+.pages_text
+{
+    border-bottom: 2px dotted #000;
+    position: absolute;
+    width: 100%;
+    bottom: 3px;
+}
+.pages_num
+{
+    background: #fff;
 }
 .nav_link
 {
