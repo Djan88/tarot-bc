@@ -37,7 +37,7 @@
         // jQuery('#login').modal('show');
       });
     </script>
-    <?php if (is_user_logged_in() && is_category(2)) { ?>
+    <?php if (is_user_logged_in() && in_category(2) && is_single()) { ?>
       <script>
         jQuery(document).ready(function () {
           localStorage.setItem('page_ridden', location.href);
