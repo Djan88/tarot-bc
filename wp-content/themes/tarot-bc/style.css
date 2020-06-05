@@ -2313,6 +2313,14 @@ a.pages_link.pages_link_current
 {
     color: #ff206d;
 }
+.pages_link:hover .pages_dots
+{
+    border-color: #0094e1;
+}
+a.pages_link.pages_link_current:hover .pages_dots
+{
+    border-color: #ff206d;
+}
 .pages_text
 {
     background: #fff;
@@ -2325,10 +2333,6 @@ a.pages_link.pages_link_current
     width: 100%;
     bottom: 10px;
     z-index: -1;
-}
-.pages_link:hover .pages_dots
-{
-    border-color: #0094e1;
 }
 .pages_num
 {
