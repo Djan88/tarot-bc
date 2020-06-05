@@ -118,15 +118,9 @@
   <section class="seminar text-center" id="seminar">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12tarot_qestions_cat">
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <div class="row">
-          <div class="col-xs-12 tarot_qestions_cat">
-            <?php if (is_category()) { ?>
-              <h4><a class="tarot_qestions_cat_item" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-            <?php } ?>
-          </div>
-        </div>
+          <h4><a class="tarot_qestions_cat_item" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
         <?php endwhile; else: ?>
           <?php _e('Sorry, no posts matched your criteria.'); ?>
         <?php endif; ?>
