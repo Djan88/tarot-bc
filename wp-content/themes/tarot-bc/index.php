@@ -99,37 +99,61 @@
       </div>
     </section>
   <?php } else if (in_category(3)) { ?>
-      <section class="seminar text-center" id="seminar">
-      <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <section class="seminar text-center" id="seminar">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <?php if (is_category()) { ?>
-              <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-            <?php } else { ?>
-              <h2><?php the_title(); ?></h2>
+          <div class="col-md-9">
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <div class="row">
+            <div class="col-md-12">
+              <?php if (is_category()) { ?>
+                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+              <?php } else { ?>
+                <h2><?php the_title(); ?></h2>
+              <?php } ?>
+            </div>
+            <div class="col-md-12 seminar_content">
+              <?php
+              the_content(__('(more...)'));
+              edit_post_link(__('Edit This'));
+              ?>
+            </div>
+            <?php if (!is_category(3)) { ?>
+              <div class="col-md-12 more_links">
+                <span></span>
+                <a href="/">Что такое "Лечебное Tarot"?</a>
+                <a href="/book/1" target="_blank" class="cur_page_ridden">Читать книгу "Лечебное Tarot"</a>
+                <a href="/voprosy-i-otvety/">Вопросы и ответы</a>
+                <a href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a>
+              </div>
             <?php } ?>
           </div>
-          <div class="col-md-12 seminar_content">
+          <?php endwhile; else: ?>
+            <?php _e('Sorry, no posts matched your criteria.'); ?>
+          <?php endif; ?>
+          </div>
+          <div class="col-md-3">
+            <h3><?php the_title(); ?></h3>
             <?php
-            the_content(__('(more...)'));
-            edit_post_link(__('Edit This'));
+            // The Query
+            $query_reviews = new WP_Query( array( 'category_name' => 'voprosy-i-otvety', 'posts_per_page=5') );
+            while ($query_reviews->have_posts()) : $query_reviews->the_post();
+                $cur_pages_item = get_the_ID();
+                echo '<a class="pages_item';
+                if ($cur_pages_item == $cur_page) {
+                  echo ' pages_item-active';
+                }
+                echo '" href="';
+                echo the_permalink();
+                echo '">';
+                echo the_title();
+                echo '</a>';
+            endwhile;
+            wp_reset_postdata();
             ?>
           </div>
-          <?php if (!is_category(3)) { ?>
-            <div class="col-md-12 more_links">
-              <span></span>
-              <a href="/">Что такое "Лечебное Tarot"?</a>
-              <a href="/book/1" target="_blank" class="cur_page_ridden">Читать книгу "Лечебное Tarot"</a>
-              <a href="/voprosy-i-otvety/">Вопросы и ответы</a>
-              <a href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a>
-            </div>
-          <?php } ?>
         </div>
-      </div>
-      <?php endwhile; else: ?>
-        <?php _e('Sorry, no posts matched your criteria.'); ?>
-      <?php endif; ?>
+      </div>  
     </section>
   <?php } else { ?>
     <section class="seminar text-center" id="seminar">
