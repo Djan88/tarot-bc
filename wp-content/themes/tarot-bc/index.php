@@ -43,24 +43,8 @@
           <div class="col-xs-12 pages">
             <h2>Оглавление</h2>
             <div class="row">
-              <div class="col-md-12">
-                <?php
-                // The Query
-                $query_reviews = new WP_Query( array( 'category_name' => 'book', 'order' => 'ASC') );
-                while ($query_reviews->have_posts()) : $query_reviews->the_post();
-                    $cur_pages_item = get_the_ID();
-                    echo '<a class="pages_item';
-                    if ($cur_pages_item == $cur_page) {
-                      echo ' pages_item-active';
-                    }
-                    echo '" href="';
-                    echo the_permalink();
-                    echo '">';
-                    echo the_title();
-                    echo '</a>';
-                endwhile;
-                wp_reset_postdata();
-                ?>
+              <div class="col-md-12 pages_inner">
+                <a href="/book/1/" class="pages_link">Intro<div class="pages_dots"></div><div class="pages_num">1</div></a>
               </div>
             </div>
           </div>
