@@ -2336,11 +2336,15 @@ a.pages_link.pages_link_current
 {
     color: #ff206d;
 }
+.pages_link:hover
+{
+    color: #ff206d;
+}
 .pages_link:hover .pages_dots
 {
-    border-color: #0094e1;
+    border-color: #ff206d;
 }
-a.pages_link.pages_link_current:hover .pages_dots
+a.pages_link.pages_link_current .pages_dots
 {
     border-color: #ff206d;
 }
