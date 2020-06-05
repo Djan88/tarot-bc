@@ -2312,20 +2312,24 @@ ul.tml-links
 .pages_text
 {
     background: #fff;
-    padding-right: 5px;
+    padding-right: 10px;
 }
 .pages_dots
 {
     border-bottom: 2px dotted #000;
     position: absolute;
     width: 100%;
-    bottom: 3px;
+    bottom: 10px;
     z-index: -1;
+}
+.pages_link:hover .pages_dots
+{
+    border-color: #0094e1;
 }
 .pages_num
 {
     background: #fff;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 .nav_link
 {

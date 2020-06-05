@@ -44,7 +44,7 @@
             <h2>Оглавление</h2>
             <div class="row">
               <div class="col-md-12 pages_inner">
-                <a href="/book/1/" class="pages_link"><span class="pages_text">Intro</span><div class="pages_dots"></div><span class="pages_num pull-right">1</span></a>
+                <a href="https://tarot-bc.ru/book/1/" class="pages_link"><span class="pages_text">Intro</span><div class="pages_dots"></div><span class="pages_num pull-right">1</span></a>
               </div>
             </div>
           </div>
