@@ -3075,6 +3075,10 @@ responsive area
         margin-top: 20px;
         float: none;
     }
+    .tarot_qestions_cat
+    {
+        column-count: 1;
+    }
 
 }
 
