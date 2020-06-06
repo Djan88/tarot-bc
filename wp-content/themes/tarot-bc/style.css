@@ -2441,7 +2441,7 @@ a.pages_link.pages_link_current .pages_dots
 {
     font-size: 20px;
 }
-.question-item:nthchild(2n)
+.question-item:nth-child(2n)
 {
     background: #F7FAFC;
 }
