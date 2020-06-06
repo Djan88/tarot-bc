@@ -41,8 +41,7 @@
   <?php if (is_user_logged_in() && in_category(2)) { ?>
     <script>
       jQuery(document).ready(function () {
-        localStorage.setItem('page_ridden', location.href);
-        console.log(location.href);
+        
       });
     </script>
   <?php } ?>

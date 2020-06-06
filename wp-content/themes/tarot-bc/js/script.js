@@ -42,10 +42,10 @@ jQuery(document).ready(function () {
     jQuery('#login').modal('show');
   });
 
-  // jQuery('.page-nav, .pages_link').on('click', function(event) {
-  //   localStorage.setItem('page_ridden', jQuery(this).attr('href'));
-  //   console.log(jQuery(this).attr('href'));
-  // });
+  jQuery('.page-nav a, .pages_link').on('click', function(event) {
+    localStorage.setItem('page_ridden', jQuery(this).attr('href'));
+    console.log(jQuery(this).attr('href'));
+  });
   //Получение данных из локального хранилища
   if(supportsStorage && localStorage.getItem('page_ridden')){
     page_ridden = localStorage.getItem('page_ridden');
