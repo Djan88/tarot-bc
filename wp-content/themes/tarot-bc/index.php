@@ -44,6 +44,7 @@
           <div class="pages_paranja"></div>
           <h2>Оглавление</h2>
           <div class="row">
+            <img src="<?php bloginfo('template_url'); ?>/img/fav180.png" alt="" class="img-responsive pages_ava">
             <div class="pages_close">X</div>
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 pages_inner">
               <a href="https://tarot-bc.ru/book/1/" class="pages_link"><span class="pages_text">Intro</span><div class="pages_dots"></div><span class="pages_num pull-right">1</span></a>
