@@ -73,8 +73,8 @@
         <div class="col-xs-12">
           <h2 class="main_heading">Хотите узнать больше о Tarot?</h2>
           <div class="doctor_about">
-            <p>Ответы на многие вопросы вы найдете в нашем <a href="/voprosy-i-otvety/">блоге о Tarot</a></p>
-            <p>Присоединяйтесь к обсуждению в сообществе <a target="_blank" href="https://www.facebook.com/groups/1396733250536353/">"Лечебное Tarot"</a> в Facebook. Задавайте вопросы которые давно хотели задать или расскажите о своем опыте работы с Tarot</p>
+            <p>Ответы на многие вопросы о Tarot Вы найдете в разделе <a href="/voprosy-i-otvety/">"Вопросы и ответы"</a></p>
+            <p>Присоединяйтесь к обсуждению в сообществе <a target="_blank" href="https://www.facebook.com/groups/1396733250536353/">"Лечебное Tarot"</a> в Facebook. Задайте вопросы которые давно хотели задать, найдите единомышленников, или расскажите о своем опыте работы с Tarot</p>
           </div>
         </div>
       </div>

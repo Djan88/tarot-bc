@@ -2444,7 +2444,7 @@ a.pages_link.pages_link_current .pages_dots
 .question-item 
 {
     padding: 0 10px;
-    border-top: 2px solid #ff206d;
+    border-bottom: 2px solid #ff206d;
 }
 .question-item:nth-child(2n)
 {
