@@ -119,13 +119,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2>Вопроссы и ответы</h2>
+          <h2>Вопросы и ответы</h2>
         </div>
         <div class="col-md-12 tarot_qestions_cat">
         <?php
         // The Query
-        $query_reviews = new WP_Query( array( 'order' => 'ASC') );
-        while ($query_reviews->have_posts()) : $query_reviews->the_post();
+        $query_faq = new WP_Query( array('category_name' => 'voprosy-i-otvety', 'order' => 'ASC') );
+        while ($query_faq->have_posts()) : $query_faq->the_post();
             $cur_pages_item = get_the_ID();
             echo '<h4><a class="tarot_qestions_cat_item" href="';
             echo the_permalink();
