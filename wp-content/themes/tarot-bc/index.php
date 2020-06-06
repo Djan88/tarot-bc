@@ -136,7 +136,7 @@
             echo '<p class="qestions_text">';
             echo the_content(__('(more...)'));
             echo edit_post_link(__('Edit This'));
-            echo '</p>'
+            echo '</p>';
         endwhile;
         wp_reset_postdata();
         ?>
