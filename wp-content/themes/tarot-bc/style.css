@@ -2433,8 +2433,18 @@ a.pages_link.pages_link_current .pages_dots
     left: 30px;
     top: 30px;
 }
-
-
+.heading_in_cat a 
+{
+    font-size: 27px;
+}
+.qestions_text
+{
+    font-size: 20px;
+}
+.question-item:nthchild(2n)
+{
+    background: #F7FAFC;
+}
 
 
 

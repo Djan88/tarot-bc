@@ -128,15 +128,17 @@
         $query_faq = new WP_Query( array('category_name' => 'voprosy-i-otvety', 'order' => 'ASC') );
         while ($query_faq->have_posts()) : $query_faq->the_post();
             $cur_pages_item = get_the_ID();
+            echo '<div class="question-item">';
             echo '<h1 class="heading_in_cat"><a class="tarot_qestions_cat_item" href="';
             echo the_permalink();
             echo '">';
             echo the_title();
             echo '</a></h1>';
-            echo '<p class="qestions_text">';
+            echo '<div class="qestions_text">';
             echo the_content(__('(more...)'));
             echo edit_post_link(__('Edit This'));
-            echo '</p>';
+            echo '</div>';
+            echo '</div>';
         endwhile;
         wp_reset_postdata();
         ?>
