@@ -122,11 +122,19 @@
           <h2>Вопроссы и ответы</h2>
         </div>
         <div class="col-md-12 tarot_qestions_cat">
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <h4><a class="tarot_qestions_cat_item" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-        <?php endwhile; else: ?>
-          <?php _e('Sorry, no posts matched your criteria.'); ?>
-        <?php endif; ?>
+        <?php
+        // The Query
+        $query_reviews = new WP_Query( array( 'order' => 'ASC') );
+        while ($query_reviews->have_posts()) : $query_reviews->the_post();
+            $cur_pages_item = get_the_ID();
+            echo '<h4><a class="tarot_qestions_cat_item" href="';
+            echo the_permalink();
+            echo '">';
+            echo the_title();
+            echo '</a></h4>';
+        endwhile;
+        wp_reset_postdata();
+        ?>
         </div>
       </div>
     </div>  

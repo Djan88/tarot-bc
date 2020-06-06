@@ -2414,7 +2414,7 @@ a.pages_link.pages_link_current .pages_dots
 }
 .tarot_qestions_cat
 {
-    column-count: 2;
+    /*column-count: 2;*/
     text-align: left;
 }
 .tarot_qestions_cat_item
