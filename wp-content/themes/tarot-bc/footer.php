@@ -13,8 +13,7 @@
         <div class="clearfix"></div>
 
         <div class="menu_footer">
-          <a href="/voprosy-i-otvety/">Вопросы и ответы |</a>
-          <a href="category/otzyvy">Отзывы</a>
+          <a href="/voprosy-i-otvety/">Вопросы и ответы</a>
           <?php if (is_user_logged_in()) { ?>
             <a href="/logout/?_wpnonce=1fd8ce03de"> | Выйти</a>
           <?php } ?>
