@@ -115,7 +115,7 @@
                     
                     <ul class="nav navbar-nav navbar-left">
                       <li><a class="menu cur_page_ridden" href="/book/1">«Лечебное Tarot»</a></li>
-                      <li><a class="menu" href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a></li>
+                      <li><a class="menu" href="https://school-bc.ru/#tarotstart" target="_blank">Бесплатный Онлайн Курс</a></li>
                       <?php if (is_user_logged_in()) { ?>
                         <?php $cur_user = wp_get_current_user(); ?>
                         <?php if ($cur_user->user_firstname) { ?>

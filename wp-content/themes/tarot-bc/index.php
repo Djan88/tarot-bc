@@ -166,7 +166,7 @@
             <span></span>
             <a href="/">Что такое "Лечебное Tarot"?</a>
             <a href="/book/1" target="_blank" class="cur_page_ridden">Читать книгу "Лечебное Tarot"</a>
-            <a href="http://school-bc.ru/" target="_blank">Бесплатный Онлайн Курс</a>
+            <a href="https://school-bc.ru/#tarotstart" target="_blank">Бесплатный Онлайн Курс</a>
           </div>
         </div>
         <?php endwhile; else: ?>
