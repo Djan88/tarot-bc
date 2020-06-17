@@ -58,7 +58,6 @@
               <a href="https://tarot-bc.ru/book/35/" class="pages_link"><span class="pages_text">Карта "Повешенный"</span><div class="pages_dots"></div><span class="pages_num pull-right">35</span></a>
               <a href="https://tarot-bc.ru/book/40/" class="pages_link"><span class="pages_text">Карта "Император"</span><div class="pages_dots"></div><span class="pages_num pull-right">40</span></a>
               <a href="https://tarot-bc.ru/book/45/" class="pages_link"><span class="pages_text">Карта "Императрица"</span><div class="pages_dots"></div><span class="pages_num pull-right">45</span></a>
-              <a href="https://tarot-bc.ru/book/52/" class="pages_link"><span class="pages_text">Карта "Умеренность"</span><div class="pages_dots"></div><span class="pages_num pull-right">52</span></a>
               <a href="https://tarot-bc.ru/book/56/" class="pages_link"><span class="pages_text">Фрейма Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">56</span></a>
               <a href="https://tarot-bc.ru/book/59/" class="pages_link"><span class="pages_text">Карта "The Devil"</span><div class="pages_dots"></div><span class="pages_num pull-right">59</span></a>
               <a href="https://tarot-bc.ru/book/88/" class="pages_link"><span class="pages_text">Динамика XIX Solis на фрейме рогов The Devil</span><div class="pages_dots"></div><span class="pages_num pull-right">88</span></a>
@@ -93,6 +92,10 @@
               <a href="https://tarot-bc.ru/book/327/" class="pages_link"><span class="pages_text">Ресурс жизненной силы</span><div class="pages_dots"></div><span class="pages_num pull-right">327</span></a>
               <a href="https://tarot-bc.ru/book/340/" class="pages_link"><span class="pages_text">Как цифроваться по Мастям и стратегиям, если у Вас еще нет оцифратора "TarotMachine"</span><div class="pages_dots"></div><span class="pages_num pull-right">340</span></a>
               <a href="https://tarot-bc.ru/book/345/" class="pages_link"><span class="pages_text">Карты Двора</span><div class="pages_dots"></div><span class="pages_num pull-right">345</span></a>
+              <a href="https://tarot-bc.ru/book/349/" class="pages_link"><span class="pages_text">Техника обнуления ситуационных рядов</span><div class="pages_dots"></div><span class="pages_num pull-right">349</span></a>
+              <a href="https://tarot-bc.ru/book/354/" class="pages_link"><span class="pages_text">Общий протокол Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">354</span></a>
+              <a href="https://tarot-bc.ru/book/361/" class="pages_link"><span class="pages_text">Классический протокол Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">361</span></a>
+              <a href="https://tarot-bc.ru/book/365/" class="pages_link"><span class="pages_text">La fin</span><div class="pages_dots"></div><span class="pages_num pull-right">365</span></a>
             </div>
           </div>
         </div>
