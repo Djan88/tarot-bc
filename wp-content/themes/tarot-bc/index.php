@@ -48,54 +48,44 @@
             <div class="pages_close">X</div>
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 pages_inner">
               <a href="https://tarot-bc.ru/book/1/" class="pages_link"><span class="pages_text">Intro</span><div class="pages_dots"></div><span class="pages_num pull-right">1</span></a>
-              <a href="https://tarot-bc.ru/book/5/" class="pages_link"><span class="pages_text">Благодарности</span><div class="pages_dots"></div><span class="pages_num pull-right">5</span></a>
-              <a href="https://tarot-bc.ru/book/7/" class="pages_link"><span class="pages_text">О памяти тела и телесном подсознании</span><div class="pages_dots"></div><span class="pages_num pull-right">7</span></a>
-              <a href="https://tarot-bc.ru/book/9/" class="pages_link"><span class="pages_text">Tarot и зоны телесного подсознания</span><div class="pages_dots"></div><span class="pages_num pull-right">9</span></a>
-              <a href="https://tarot-bc.ru/book/13/" class="pages_link"><span class="pages_text">Свойства старших арканов Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">13</span></a>
-              <a href="https://tarot-bc.ru/book/15/" class="pages_link"><span class="pages_text">Карта "Маг"</span><div class="pages_dots"></div><span class="pages_num pull-right">15</span></a>
-              <a href="https://tarot-bc.ru/book/23/" class="pages_link"><span class="pages_text">Карта "Жрец"</span><div class="pages_dots"></div><span class="pages_num pull-right">23</span></a>
-              <a href="https://tarot-bc.ru/book/29/" class="pages_link"><span class="pages_text">Карта "Отшельник"</span><div class="pages_dots"></div><span class="pages_num pull-right">29</span></a>
-              <a href="https://tarot-bc.ru/book/35/" class="pages_link"><span class="pages_text">Карта "Повешенный"</span><div class="pages_dots"></div><span class="pages_num pull-right">35</span></a>
-              <a href="https://tarot-bc.ru/book/40/" class="pages_link"><span class="pages_text">Карта "Император"</span><div class="pages_dots"></div><span class="pages_num pull-right">40</span></a>
-              <a href="https://tarot-bc.ru/book/45/" class="pages_link"><span class="pages_text">Карта "Императрица"</span><div class="pages_dots"></div><span class="pages_num pull-right">45</span></a>
-              <a href="https://tarot-bc.ru/book/56/" class="pages_link"><span class="pages_text">Фрейма Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">56</span></a>
-              <a href="https://tarot-bc.ru/book/59/" class="pages_link"><span class="pages_text">Карта "The Devil"</span><div class="pages_dots"></div><span class="pages_num pull-right">59</span></a>
-              <a href="https://tarot-bc.ru/book/88/" class="pages_link"><span class="pages_text">Динамика XIX Solis на фрейме рогов The Devil</span><div class="pages_dots"></div><span class="pages_num pull-right">88</span></a>
-              <a href="https://tarot-bc.ru/book/90/" class="pages_link"><span class="pages_text">Таблица приоритетности крайних карт фреймы выглядит следующим образом:</span><div class="pages_dots"></div><span class="pages_num pull-right">90</span></a>
-              <a href="https://tarot-bc.ru/book/91/" class="pages_link"><span class="pages_text">Карта "Сила"</span><div class="pages_dots"></div><span class="pages_num pull-right">91</span></a>
-              <a href="https://tarot-bc.ru/book/101/" class="pages_link"><span class="pages_text">Карта "Дурак"</span><div class="pages_dots"></div><span class="pages_num pull-right">101</span></a>
-              <a href="https://tarot-bc.ru/book/114/" class="pages_link"><span class="pages_text">Карта "Смерть"</span><div class="pages_dots"></div><span class="pages_num pull-right">114</span></a>
-              <a href="https://tarot-bc.ru/book/117/" class="pages_link"><span class="pages_text">Несколько слов про Карму</span><div class="pages_dots"></div><span class="pages_num pull-right">117</span></a>
-              <a href="https://tarot-bc.ru/book/123/" class="pages_link"><span class="pages_text">Карта "Влюбленные"</span><div class="pages_dots"></div><span class="pages_num pull-right">123</span></a>
-              <a href="https://tarot-bc.ru/book/131/" class="pages_link"><span class="pages_text">Как лечить карту "Влюбленные"</span><div class="pages_dots"></div><span class="pages_num pull-right">131</span></a>
-              <a href="https://tarot-bc.ru/book/135/" class="pages_link"><span class="pages_text">Карта "Страшный суд"</span><div class="pages_dots"></div><span class="pages_num pull-right">135</span></a>
-              <a href="https://tarot-bc.ru/book/148/" class="pages_link"><span class="pages_text">Карта "Колесница"</span><div class="pages_dots"></div><span class="pages_num pull-right">148</span></a>
-              <a href="https://tarot-bc.ru/book/164/" class="pages_link"><span class="pages_text">Карта "XXI Мир"</span><div class="pages_dots"></div><span class="pages_num pull-right">164</span></a>
-              <a href="https://tarot-bc.ru/book/171/" class="pages_link"><span class="pages_text">Как лечить карту "Мир"</span><div class="pages_dots"></div><span class="pages_num pull-right">171</span></a>
-              <a href="https://tarot-bc.ru/book/176/" class="pages_link"><span class="pages_text">Карта "Верховная жрица"</span><div class="pages_dots"></div><span class="pages_num pull-right">176</span></a>
-              <a href="https://tarot-bc.ru/book/186/" class="pages_link"><span class="pages_text">Карта "Правосудие"</span><div class="pages_dots"></div><span class="pages_num pull-right">186</span></a>
-              <a href="https://tarot-bc.ru/book/195/" class="pages_link"><span class="pages_text">Краткое резюме по карте "Правосудие"</span><div class="pages_dots"></div><span class="pages_num pull-right">195</span></a>
-              <a href="https://tarot-bc.ru/book/196/" class="pages_link"><span class="pages_text">Карта "Колесо фортуны"</span><div class="pages_dots"></div><span class="pages_num pull-right">196</span></a>
-              <a href="https://tarot-bc.ru/book/202/" class="pages_link"><span class="pages_text">Пуповина Рода</span><div class="pages_dots"></div><span class="pages_num pull-right">202</span></a>
-              <a href="https://tarot-bc.ru/book/204/" class="pages_link"><span class="pages_text">Злость и раздражение</span><div class="pages_dots"></div><span class="pages_num pull-right">204</span></a>
-              <a href="https://tarot-bc.ru/book/211/" class="pages_link"><span class="pages_text">Карта "Башня"</span><div class="pages_dots"></div><span class="pages_num pull-right">211</span></a>
-              <a href="https://tarot-bc.ru/book/218/" class="pages_link"><span class="pages_text">Как работать с картой "Башня"</span><div class="pages_dots"></div><span class="pages_num pull-right">218</span></a>
-              <a href="https://tarot-bc.ru/book/219/" class="pages_link"><span class="pages_text">Карта "Умеренность"</span><div class="pages_dots"></div><span class="pages_num pull-right">219</span></a>
-              <a href="https://tarot-bc.ru/book/225/" class="pages_link"><span class="pages_text">Карта "Луна"</span><div class="pages_dots"></div><span class="pages_num pull-right">225</span></a>
-              <a href="https://tarot-bc.ru/book/238/" class="pages_link"><span class="pages_text">Карта "Звезда"</span><div class="pages_dots"></div><span class="pages_num pull-right">238</span></a>
-              <a href="https://tarot-bc.ru/book/244/" class="pages_link"><span class="pages_text">Карта "The Sun"</span><div class="pages_dots"></div><span class="pages_num pull-right">244</span></a>
-              <a href="https://tarot-bc.ru/book/269/" class="pages_link"><span class="pages_text">Физиологическая норма грехопадения</span><div class="pages_dots"></div><span class="pages_num pull-right">269</span></a>
-              <a href="https://tarot-bc.ru/book/280/" class="pages_link"><span class="pages_text">Типы отношений между людьми на примере взаимодействия карт Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">280</span></a>
-              <a href="https://tarot-bc.ru/book/282/" class="pages_link"><span class="pages_text">Пересмотр личной истории Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">282</span></a>
-              <a href="https://tarot-bc.ru/book/291/" class="pages_link"><span class="pages_text">Цифры мастей</span><div class="pages_dots"></div><span class="pages_num pull-right">291</span></a>
-              <a href="https://tarot-bc.ru/book/293/" class="pages_link"><span class="pages_text">Четыре стратегии реальности Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">293</span></a>
-              <a href="https://tarot-bc.ru/book/327/" class="pages_link"><span class="pages_text">Ресурс жизненной силы</span><div class="pages_dots"></div><span class="pages_num pull-right">327</span></a>
-              <a href="https://tarot-bc.ru/book/340/" class="pages_link"><span class="pages_text">Как цифроваться по Мастям и стратегиям, если у Вас еще нет оцифратора "TarotMachine"</span><div class="pages_dots"></div><span class="pages_num pull-right">340</span></a>
-              <a href="https://tarot-bc.ru/book/345/" class="pages_link"><span class="pages_text">Карты Двора</span><div class="pages_dots"></div><span class="pages_num pull-right">345</span></a>
-              <a href="https://tarot-bc.ru/book/349/" class="pages_link"><span class="pages_text">Техника обнуления ситуационных рядов</span><div class="pages_dots"></div><span class="pages_num pull-right">349</span></a>
-              <a href="https://tarot-bc.ru/book/354/" class="pages_link"><span class="pages_text">Общий протокол Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">354</span></a>
-              <a href="https://tarot-bc.ru/book/361/" class="pages_link"><span class="pages_text">Классический протокол Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">361</span></a>
-              <a href="https://tarot-bc.ru/book/365/" class="pages_link"><span class="pages_text">La fin</span><div class="pages_dots"></div><span class="pages_num pull-right">365</span></a>
+              <a href="https://tarot-bc.ru/book/4/" class="pages_link"><span class="pages_text">Благодарности</span><div class="pages_dots"></div><span class="pages_num pull-right">4</span></a>
+              <a href="https://tarot-bc.ru/book/4/" class="pages_link"><span class="pages_text">О памяти тела и телесном подсознании</span><div class="pages_dots"></div><span class="pages_num pull-right">5</span></a>
+              <a href="https://tarot-bc.ru/book/7/" class="pages_link"><span class="pages_text">Tarot и зоны телесного подсознания</span><div class="pages_dots"></div><span class="pages_num pull-right">7</span></a>
+              <a href="https://tarot-bc.ru/book/10/" class="pages_link"><span class="pages_text">Свойства старших арканов Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">10</span></a>
+              <a href="https://tarot-bc.ru/book/12/" class="pages_link"><span class="pages_text">Маг</span><div class="pages_dots"></div><span class="pages_num pull-right">12</span></a>
+              <a href="https://tarot-bc.ru/book/20/" class="pages_link"><span class="pages_text">Жрец</span><div class="pages_dots"></div><span class="pages_num pull-right">20</span></a>
+              <a href="https://tarot-bc.ru/book/26/" class="pages_link"><span class="pages_text">Отшельник</span><div class="pages_dots"></div><span class="pages_num pull-right">26</span></a>
+              <a href="https://tarot-bc.ru/book/32/" class="pages_link"><span class="pages_text">Повешенный</span><div class="pages_dots"></div><span class="pages_num pull-right">32</span></a>
+              <a href="https://tarot-bc.ru/book/37/" class="pages_link"><span class="pages_text">Император</span><div class="pages_dots"></div><span class="pages_num pull-right">37</span></a>
+              <a href="https://tarot-bc.ru/book/43/" class="pages_link"><span class="pages_text">Императрица</span><div class="pages_dots"></div><span class="pages_num pull-right">43</span></a>
+              <a href="https://tarot-bc.ru/book/49/" class="pages_link"><span class="pages_text">Умеренность</span><div class="pages_dots"></div><span class="pages_num pull-right">49</span></a>
+              <a href="https://tarot-bc.ru/book/55/" class="pages_link"><span class="pages_text">Фрейма Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">55</span></a>
+              <a href="https://tarot-bc.ru/book/57/" class="pages_link"><span class="pages_text">XV The Devil</span><div class="pages_dots"></div><span class="pages_num pull-right">57</span></a>
+              <a href="https://tarot-bc.ru/book/85/" class="pages_link"><span class="pages_text">Техника Solis на фрейме рогов The Devil</span><div class="pages_dots"></div><span class="pages_num pull-right">85</span></a>
+              <a href="https://tarot-bc.ru/book/89/" class="pages_link"><span class="pages_text">Сила</span><div class="pages_dots"></div><span class="pages_num pull-right">89</span></a>
+              <a href="https://tarot-bc.ru/book/99/" class="pages_link"><span class="pages_text">Дурак (0)</span><div class="pages_dots"></div><span class="pages_num pull-right">99</span></a>
+              <a href="https://tarot-bc.ru/book/110/" class="pages_link"><span class="pages_text">Смерть (XIII)</span><div class="pages_dots"></div><span class="pages_num pull-right">110</span></a>
+              <a href="https://tarot-bc.ru/book/119/" class="pages_link"><span class="pages_text">Влюбленные (VI)</span><div class="pages_dots"></div><span class="pages_num pull-right">119</span></a>
+              <a href="https://tarot-bc.ru/book/130/" class="pages_link"><span class="pages_text">Страшный Суд (ХХ)</span><div class="pages_dots"></div><span class="pages_num pull-right">130</span></a>
+              <a href="https://tarot-bc.ru/book/141/" class="pages_link"><span class="pages_text">Колесница (VII)</span><div class="pages_dots"></div><span class="pages_num pull-right">141</span></a>
+              <a href="https://tarot-bc.ru/book/157/" class="pages_link"><span class="pages_text">XXI Мир</span><div class="pages_dots"></div><span class="pages_num pull-right">157</span></a>
+              <a href="https://tarot-bc.ru/book/168/" class="pages_link"><span class="pages_text">Верховная Жрица (II)</span><div class="pages_dots"></div><span class="pages_num pull-right">168</span></a>
+              <a href="https://tarot-bc.ru/book/178/" class="pages_link"><span class="pages_text">Правосудие (XI)</span><div class="pages_dots"></div><span class="pages_num pull-right">178</span></a>
+              <a href="https://tarot-bc.ru/book/188/" class="pages_link"><span class="pages_text">Колесо Фортуны (Х)</span><div class="pages_dots"></div><span class="pages_num pull-right">188</span></a>
+              <a href="https://tarot-bc.ru/book/201/" class="pages_link"><span class="pages_text">Башня (XVI)</span><div class="pages_dots"></div><span class="pages_num pull-right">201</span></a>
+              <a href="https://tarot-bc.ru/book/210/" class="pages_link"><span class="pages_text">Луна (XVIII)</span><div class="pages_dots"></div><span class="pages_num pull-right">210</span></a>
+              <a href="https://tarot-bc.ru/book/222/" class="pages_link"><span class="pages_text">Звезда (XVII)</span><div class="pages_dots"></div><span class="pages_num pull-right">222</span></a>
+              <a href="https://tarot-bc.ru/book/229/" class="pages_link"><span class="pages_text">The Sun (XIX)</span><div class="pages_dots"></div><span class="pages_num pull-right">229</span></a>
+              <a href="https://tarot-bc.ru/book/248/" class="pages_link"><span class="pages_text">Физиологическая норма грехопадения Старших Арканов</span><div class="pages_dots"></div><span class="pages_num pull-right">248</span></a>
+              <a href="https://tarot-bc.ru/book/259/" class="pages_link"><span class="pages_text">Типы отношений между людьми на примере взаимодействия карт Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">259</span></a>
+              <a href="https://tarot-bc.ru/book/260/" class="pages_link"><span class="pages_text">Пересмотр личной истории Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">260</span></a>
+              <a href="https://tarot-bc.ru/book/268/" class="pages_link"><span class="pages_text">Младшие Арканы (56 карт)</span><div class="pages_dots"></div><span class="pages_num pull-right">268</span></a>
+              <a href="https://tarot-bc.ru/book/270/" class="pages_link"><span class="pages_text">Четыре стратегии реальности Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">270</span></a>
+              <a href="https://tarot-bc.ru/book/317/" class="pages_link"><span class="pages_text">Карты Двора</span><div class="pages_dots"></div><span class="pages_num pull-right">317</span></a>
+              <a href="https://tarot-bc.ru/book/320/" class="pages_link"><span class="pages_text">Техника обнуления ситуационных рядов</span><div class="pages_dots"></div><span class="pages_num pull-right">320</span></a>
+              <a href="https://tarot-bc.ru/book/325/" class="pages_link"><span class="pages_text">Общий протокол Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">325</span></a>
+              <a href="https://tarot-bc.ru/book/331/" class="pages_link"><span class="pages_text">Классический протокол Tarot</span><div class="pages_dots"></div><span class="pages_num pull-right">331</span></a>
+              <a href="https://tarot-bc.ru/book/337/" class="pages_link"><span class="pages_text">La fin</span><div class="pages_dots"></div><span class="pages_num pull-right">337</span></a>
             </div>
           </div>
         </div>
