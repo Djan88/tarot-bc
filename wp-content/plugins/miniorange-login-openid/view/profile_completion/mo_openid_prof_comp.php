@@ -12,6 +12,11 @@ function mo_openid_profile_completion(){
                         <input type="checkbox" id="profile_completion_enable" name="mo_openid_enable_profile_completion" value="1" <?php checked( get_option('mo_openid_enable_profile_completion') == '1' );?> />
                         <span class="mo_openid_checkbox_checkmark"></span>
                     </label>
+                    <label class="mo_openid_checkbox_container">
+                        <input type="checkbox" id="mo_openid_enable_profile_completion1">Prompt user for username and email without email verification. (profile completion).<a style="left: 1%; position: static; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>">PRO</a>
+                        <br>For getting profile completion without Otp verification through your email,you need to enable the both the checkboxes.</br>
+                        <span class="mo_openid_checkbox_checkmark_disable"></span>
+                    </label>
                     <p class=" mo_openid_note_style" style="color:#000000;">
                         <b><?php echo mo_sl('*NOTE:');?></b> <?php echo mo_sl("Disabling profile completion is not recommended. Instagram and Twitter don't return email address. Please keep this enabled if you are using Instagram or Twitter. This feature requires SMTP to be setup for your WordPress website since we send a code to users over email to verify their email address.");?>
                     </p>

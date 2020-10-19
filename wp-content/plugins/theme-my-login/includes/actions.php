@@ -14,11 +14,21 @@
  */
 function tml_register_default_actions() {
 
+	// Dashboard
+	tml_register_action( 'dashboard', array(
+		'title'              => __( 'Dashboard' ),
+		'slug'               => 'dashboard',
+		'callback'           => 'tml_dashboard_handler',
+		'show_on_forms'      => false,
+		'show_nav_menu_item' => is_user_logged_in(),
+	) );
+
 	// Login
 	tml_register_action( 'login', array(
 		'title'              => __( 'Log In' ),
 		'slug'               => 'login',
 		'callback'           => 'tml_login_handler',
+		'ajax_callback'      => 'tml_login_handler',
 		'show_on_forms'      => __( 'Log in' ),
 		'show_nav_menu_item' => ! is_user_logged_in(),
 	) );
@@ -38,6 +48,7 @@ function tml_register_default_actions() {
 		'title'              => __( 'Register' ),
 		'slug'               => 'register',
 		'callback'           => 'tml_registration_handler',
+		'ajax_callback'      => 'tml_registration_handler',
 		'show_on_forms'      => (bool) get_option( 'users_can_register' ),
 		'show_nav_menu_item' => ! is_user_logged_in(),
 	) );
@@ -47,6 +58,7 @@ function tml_register_default_actions() {
 		'title'             => __( 'Lost Password' ),
 		'slug'              => 'lostpassword',
 		'callback'          => 'tml_lost_password_handler',
+		'ajax_callback'     => 'tml_lost_password_handler',
 		'network'           => true,
 		'show_on_forms'     => __( 'Lost your password?' ),
 		'show_in_nav_menus' => false,
@@ -259,11 +271,26 @@ function tml_action_has_page( $action = '' ) {
 		return false;
 	}
 
-	if ( ! $page = get_page_by_path( tml_get_action_slug( $action ) ) ) {
-		return false;
+	$pages = wp_cache_get( 'tml_pages' );
+	if ( false === $pages ) {
+		$pages = get_posts( [
+			'post_name__in'          => array_map( 'tml_get_action_slug', tml_get_actions() ),
+			'post_type'              => 'page',
+			'nopaging'               => true,
+			'update_post_meta_cache' => false,
+			'update_post_term_cache' => false,
+		] );
+
+		if ( ! empty( $pages ) ) {
+			wp_cache_set( 'tml_pages', $pages );
+		}
 	}
 
-	return $page;
+	if ( $pages = wp_list_filter( $pages, [ 'post_name' => $action->get_slug() ] ) ) {
+		return reset( $pages );
+	}
+
+	return false;
 }
 
 /**
@@ -333,12 +360,33 @@ function tml_action_handler() {
 	/** This action is documented in wp-login.php */
 	do_action( 'login_form_' . tml_get_request_value( 'action' ) );
 
-	/**
-	 * Fires when a TML action is being requested.
-	 *
-	 * @since 7.0.3
-	 */
-	do_action( 'tml_action_' . tml_get_action()->get_name() );
+	if ( tml_is_ajax_request() ) {
+		/**
+		 * Fires when a TML action is being requested.
+		 *
+		 * @since 7.1
+		 */
+		do_action( 'tml_action_ajax_' . tml_get_action()->get_name() );
+	} else {
+		/**
+		 * Fires when a TML action is being requested.
+		 *
+		 * @since 7.0.3
+		 */
+		do_action( 'tml_action_' . tml_get_action()->get_name() );
+	}
+}
+
+/**
+ * Handle the 'dashboard' action.
+ *
+ * @since 7.1
+ */
+function tml_dashboard_handler() {
+	if ( ! is_user_logged_in() ) {
+		wp_redirect( wp_login_url( $_SERVER['REQUEST_URI'] ) );
+		exit;
+	}
 }
 
 /**
@@ -354,7 +402,7 @@ function tml_login_handler() {
 
 	// If the user wants ssl but the session is not ssl, force a secure cookie.
 	if ( ! empty( $_POST['log'] ) && ! force_ssl_admin() ) {
-		$user_name = sanitize_user( $_POST['log'] );
+		$user_name = sanitize_user( wp_unslash( $_POST['log'] ) );
 		$user      = get_user_by( 'login', $user_name );
 
 		if ( ! $user && strpos( $user_name, '@' ) ) {
@@ -386,15 +434,15 @@ function tml_login_handler() {
 	if ( empty( $_COOKIE[ LOGGED_IN_COOKIE ] ) ) {
 		if ( headers_sent() ) {
 			$user = new WP_Error( 'test_cookie', sprintf(
-					__( '<strong>ERROR</strong>: Cookies are blocked due to unexpected output. For help, please see <a href="%1$s">this documentation</a> or try the <a href="%2$s">support forums</a>.' ),
-					__( 'https://wordpress.org/support/article/cookies' ),
-					__( 'https://wordpress.org/support/' )
+					__( '<strong>Error</strong>: Cookies are blocked due to unexpected output. For help, please see <a href="%1$s">this documentation</a> or try the <a href="%2$s">support forums</a>.' ),
+					__( 'https://wordpress.org/support/article/cookies/' ),
+					__( 'https://wordpress.org/support/forums/' )
 				)
 			);
 		} elseif ( isset( $_POST['testcookie'] ) && empty( $_COOKIE[ TEST_COOKIE ] ) ) {
 			// If cookies are disabled we can't log in even with a valid user+pass
 			$user = new WP_Error( 'test_cookie', sprintf(
-					__( '<strong>ERROR</strong>: Cookies are blocked or not supported by your browser. You must <a href="%s">enable cookies</a> to use WordPress.' ),
+					__( '<strong>Error</strong>: Cookies are blocked or not supported by your browser. You must <a href="%s">enable cookies</a> to use WordPress.' ),
 					__( 'https://wordpress.org/support/article/cookies#enable-cookies-your-browser' )
 				)
 			);
@@ -405,7 +453,7 @@ function tml_login_handler() {
 
 	if ( ! is_wp_error( $user ) && ! $reauth ) {
 
-		if ( ( empty( $redirect_to ) || $redirect_to == 'wp-admin/' || $redirect_to == admin_url() ) ) {
+		if ( ( empty( $redirect_to ) || 'wp-admin/' == $redirect_to || admin_url() == $redirect_to ) ) {
 
 			// If the user doesn't belong to a blog, send them to user admin. If the user can't edit posts, send them to their profile.
 			if ( is_multisite() && ! get_active_blog_for_user( $user->ID ) && ! is_super_admin( $user->ID ) ) {
@@ -415,15 +463,31 @@ function tml_login_handler() {
 				$redirect_to = get_dashboard_url( $user->ID );
 
 			} elseif ( ! $user->has_cap( 'edit_posts' ) ) {
-				$redirect_to = $user->has_cap( 'read' ) ? admin_url( 'profile.php' ) : home_url();
+				if ( tml_action_exists( 'dashboard' ) ) {
+					$redirect_to = tml_get_action_url( 'dashboard' );
+				} else {
+					$redirect_to = $user->has_cap( 'read' ) ? admin_url( 'profile.php' ) : home_url();
+				}
 			}
 
-			wp_redirect( $redirect_to );
-			exit;
+			if ( tml_is_ajax_request() ) {
+				tml_send_ajax_success( array(
+					'redirect' => $redirect_to,
+				) );
+			} else {
+				wp_redirect( $redirect_to );
+				exit;
+			}
 		}
 
-		wp_safe_redirect( $redirect_to );
-		exit;
+		if ( tml_is_ajax_request() ) {
+			tml_send_ajax_success( array(
+				'redirect' => tml_validate_redirect( $redirect_to ),
+			) );
+		} else {
+			wp_safe_redirect( $redirect_to );
+			exit;
+		}
 	} else {
 		$errors = $user;
 	}
@@ -473,6 +537,12 @@ function tml_login_handler() {
 	if ( $reauth ) {
 		wp_clear_auth_cookie();
 	}
+
+	if ( tml_is_ajax_request() ) {
+		tml_send_ajax_error( array(
+			'errors' => tml_get_form()->render_errors(),
+		) );
+	}
 }
 
 /**
@@ -489,9 +559,16 @@ function tml_logout_handler() {
 	wp_logout();
 
 	if ( ! empty( $_REQUEST['redirect_to'] ) ) {
-		$redirect_to = $requested_redirect_to = $_REQUEST['redirect_to'];
+		$redirect_to           = $_REQUEST['redirect_to'];
+		$requested_redirect_to = $redirect_to;
 	} else {
-		$redirect_to = site_url( 'wp-login.php?loggedout=true' );
+		$redirect_to           = add_query_arg(
+			array(
+				'loggedout' => 'true',
+				'wp_lang'   => get_user_locale( $user ),
+			),
+			wp_login_url()
+		);
 		$requested_redirect_to = '';
 	}
 
@@ -518,13 +595,20 @@ function tml_registration_handler() {
 	}
 
 	if ( ! get_option( 'users_can_register' ) ) {
-		wp_redirect( site_url( 'wp-login.php?registration=disabled' ) );
-		exit;
+		if ( tml_is_ajax_request() ) {
+			tml_add_error( 'registerdisabled', __( 'User registration is currently not allowed.' ) );
+			tml_send_ajax_error( array(
+				'errors' => tml_get_form()->render_errors(),
+			) );
+		} else {
+			wp_redirect( site_url( 'wp-login.php?registration=disabled' ) );
+			exit;
+		}
 	}
 
 	if ( tml_is_post_request() ) {
-		$user_login = isset( $_POST['user_login'] ) ? $_POST['user_login'] : '';
-		$user_email = isset( $_POST['user_email'] ) ? $_POST['user_email'] : '';
+		$user_login = tml_get_request_value( 'user_login', 'post' );
+		$user_email = tml_get_request_value( 'user_email', 'post' );
 		$user_id = register_new_user( $user_login, $user_email );
 		if ( ! is_wp_error( $user_id ) ) {
 			$redirect_to = ! empty( $_POST['redirect_to'] ) ? $_POST['redirect_to'] : site_url( 'wp-login.php?checkemail=registered' );
@@ -539,10 +623,21 @@ function tml_registration_handler() {
 			 */
 			$redirect_to = apply_filters( 'tml_registration_redirect', $redirect_to, get_userdata( $user_id ) );
 
-			wp_safe_redirect( $redirect_to );
-			exit;
+			if ( tml_is_ajax_request() ) {
+				wp_send_json_success( array(
+					'redirect' => tml_validate_redirect( $redirect_to ),
+				) );
+			} else {
+				wp_safe_redirect( $redirect_to );
+				exit;
+			}
 		} else {
 			tml_set_errors( $user_id );
+			if ( tml_is_ajax_request() ) {
+				tml_send_ajax_error( array(
+					'errors' => tml_get_form()->render_errors(),
+				) );
+			}
 		}
 	}
 }
@@ -557,11 +652,23 @@ function tml_lost_password_handler() {
 	if ( tml_is_post_request() ) {
 		$errors = tml_retrieve_password();
 		if ( ! is_wp_error( $errors ) ) {
-			$redirect_to = ! empty( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : site_url( 'wp-login.php?checkemail=confirm' );
-			wp_safe_redirect( $redirect_to );
-			exit;
+			if ( tml_is_ajax_request() ) {
+				tml_add_error( 'confirm', __( 'Check your email for the confirmation link.' ), 'message' );
+				tml_send_ajax_success( array(
+					'notice' => tml_get_form()->render_errors(),
+				) );
+			} else {
+				$redirect_to = ! empty( $_REQUEST['redirect_to'] ) ? $_REQUEST['redirect_to'] : site_url( 'wp-login.php?checkemail=confirm' );
+				wp_safe_redirect( $redirect_to );
+				exit;
+			}
 		} else {
 			tml_set_errors( $errors );
+			if ( tml_is_ajax_request() ) {
+				tml_send_ajax_error( array(
+					'errors' => tml_get_form()->render_errors(),
+				) );
+			}
 		}
 	}
 
@@ -572,6 +679,9 @@ function tml_lost_password_handler() {
 			tml_add_error( 'expiredkey', __( 'Your password reset link has expired. Please request a new link below.' ) );
 		}
 	}
+
+	/** This filter is documented in wp-login.php */
+	do_action( 'lost_password', tml_get_errors() );
 }
 
 /**

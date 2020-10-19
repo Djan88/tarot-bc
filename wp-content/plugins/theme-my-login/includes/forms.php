@@ -31,15 +31,21 @@ function tml_register_default_forms() {
 function tml_register_login_form() {
 
 	tml_register_form( 'login', array(
-		'action' => tml_get_action_url( 'login' ),
+		'action'     => tml_get_action_url( 'login' ),
+		'attributes' => array_filter( array(
+			'data-ajax' => tml_use_ajax() ? 1 : 0,
+		) ),
 	) );
 
 	tml_add_form_field( 'login', 'log', array(
-		'type'     => 'text',
-		'label'    => tml_get_username_label( 'login' ),
-		'value'    => tml_get_request_value( 'log', 'post' ),
-		'id'       => 'user_login',
-		'priority' => 10,
+		'type'       => 'text',
+		'label'      => tml_get_username_label( 'login' ),
+		'value'      => tml_get_request_value( 'log', 'post' ),
+		'id'         => 'user_login',
+		'attributes' => array(
+			'autocapitalize' => 'off',
+		),
+		'priority'   => 10,
 	) );
 
 	tml_add_form_field( 'login', 'pwd', array(
@@ -88,16 +94,23 @@ function tml_register_login_form() {
 function tml_register_registration_form() {
 
 	tml_register_form( 'register', array(
-		'action' => tml_get_action_url( 'register' ),
+		'action'     => tml_get_action_url( 'register' ),
+		'attributes' => array_filter( array(
+			'novalidate' => 'novalidate',
+			'data-ajax' => tml_use_ajax() ? 1 : 0,
+		) ),
 	) );
 
 	if ( tml_is_default_registration_type() ) {
 		tml_add_form_field( 'register', 'user_login', array(
-			'type'     => 'text',
-			'label'    => __( 'Username' ),
-			'value'    => tml_get_request_value( 'user_login', 'post' ),
-			'id'       => 'user_login',
-			'priority' => 10,
+			'type'       => 'text',
+			'label'      => __( 'Username' ),
+			'value'      => tml_get_request_value( 'user_login', 'post' ),
+			'id'         => 'user_login',
+			'attributes' => array(
+				'autocapitalize' => 'off',
+			),
+			'priority'   => 10,
 		) );
 	} else {
 		tml_add_form_field( 'register', 'user_login', array(
@@ -185,15 +198,21 @@ function tml_register_registration_form() {
 function tml_register_lost_password_form() {
 
 	tml_register_form( 'lostpassword', array(
-		'action' => tml_get_action_url( 'lostpassword' ),
+		'action'     => tml_get_action_url( 'lostpassword' ),
+		'attributes' => array_filter( array(
+			'data-ajax' => tml_use_ajax() ? 1 : 0,
+		) ),
 	) );
 
 	tml_add_form_field( 'lostpassword', 'user_login', array(
-		'type'     => 'text',
-		'label'    => tml_get_username_label( 'lostpassword' ),
-		'value'    => '',
-		'id'       => 'user_login',
-		'priority' => 10,
+		'type'       => 'text',
+		'label'      => tml_get_username_label( 'lostpassword' ),
+		'value'      => tml_get_request_value( 'user_login', 'post' ),
+		'id'         => 'user_login',
+		'attributes' => array(
+			'autocapitalize' => 'off',
+		),
+		'priority'   => 10,
 	) );
 
 	tml_add_form_field( 'lostpassword', 'lostpassword_form', array(
@@ -223,23 +242,34 @@ function tml_register_password_reset_form() {
 
 	tml_register_form( 'resetpass', array(
 		'action'      => tml_get_action_url( 'resetpass' ),
+		'attributes'  => array(
+			'autocomplete' => 'off',
+		),
 		'render_args' => array(
 			'show_links' => false,
 		),
 	) );
 
 	tml_add_form_field( 'resetpass', 'pass1', array(
-		'type'     => 'password',
-		'label'    => __( 'New password' ),
-		'id'       => 'pass1',
-		'priority' => 10,
+		'type'       => 'password',
+		'label'      => __( 'New password' ),
+		'id'         => 'pass1',
+		'attributes' => array(
+			'autocomplete' => 'off',
+			'aria-describedby' => 'pass-strength-result',
+		),
+		'priority'   => 10,
 	) );
 
 	tml_add_form_field( 'resetpass', 'pass2', array(
-		'type'     => 'password',
-		'label'    => __( 'Confirm new password' ),
-		'id'       => 'pass2',
-		'priority' => 10,
+		'type'       => 'password',
+		'label'      => __( 'Confirm new password' ),
+		'id'         => 'pass2',
+		'attributes' => array(
+			'autocomplete' => 'off',
+			'aria-describedby' => 'pass-strength-result',
+		),
+		'priority'   => 10,
 	) );
 
 	tml_add_form_field( 'resetpass', 'indicator', array(

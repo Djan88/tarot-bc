@@ -20,7 +20,7 @@ function mo_openid_registration()
             <h3><?php echo mo_sl('Role Mapping');?></h3>
             <div>
                 <?php echo mo_sl('Universal Role');?>:
-                <select name="mapping_value_default" style="margin-left: 2%; color: #000000;width:20%;font-size: 15px; background-color: #d4d7ee" id="default_group_mapping">                    <?php
+                <select name="mapping_value_default" style="margin-left: 2%; color: #000000;width:20%;font-size: 15px; background-color: #d4d7ee" id="default_group_mapping"> <?php
                     if(get_option('mo_openid_login_role_mapping'))
                         $default_role = get_option('mo_openid_login_role_mapping');
                     else
@@ -28,6 +28,11 @@ function mo_openid_registration()
                     wp_dropdown_roles($default_role); ?>
                 </select>
                 <label style="cursor: auto" class="mo_openid_note_style"> <?php echo mo_sl('Use Role Mapping to assign this role to the all users registering through Social Login. According to the role mapped user will be granted role on the website.');?></label>
+                <label style="cursor: auto" class="mo_openid_note_style">If you want the user to select the role/profile please use our Custom Registration Form Add on.
+                    <?php if (!is_plugin_active('miniorange-login-openid-extra-attributes-addon/miniorange_openid_sso_customization_addon.php')) {?>
+                        <a style="left: 1%; position: relative; text-decoration: none" class="mo-openid-premium" href="<?php echo site_url().'/wp-admin/admin.php?page=mo_openid_settings_addOn&tab=licensing_plans'; ?>"><?php echo mo_sl('PRO');?></a>
+                    <?php } ?>
+                </label>
             </div><br><hr>
             <h3><?php echo mo_sl('Enable Email Notification to Admin');?></h3>
             <div>
@@ -45,7 +50,16 @@ function mo_openid_registration()
                         <?php checked( get_option('moopenid_social_login_avatar') == 1 );?> /><b style="font-size: 15px;"></b><span class="mo_openid_checkbox_checkmark"></span>
                 </label>
             </div>
-
+            <br/><hr>
+            <h3><?php echo mo_sl('Admin Disable bar');?><a style="left: 1%; position: relative; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('PRO');?></a></h3>
+            <div>
+                <input type="checkbox" disabled>Administrator &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" disabled>Author &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" disabled>Editor &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" disabled>Contributor &nbsp;&nbsp;&nbsp;
+                <input type="checkbox" disabled>Subscriber &nbsp;&nbsp;&nbsp;
+            </div>
+            <label style="cursor: auto" class="mo_openid_note_style"><?php echo mo_sl('This feature disables admin bar form selected roles of the users');?>.</label>
 
             <br/><hr>
             <h3><?php echo mo_sl('Send user activation link over email');?><a style="left: 1%; position: relative; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('PRO');?></a></h3>
@@ -73,8 +87,8 @@ function mo_openid_registration()
                     <br/>
                     <label style="cursor: auto"><?php echo mo_sl('Enter Page URLs to Enable Registration:');?></label>
                     <textarea rows="4" cols="50" class="mo_openid_textfield_css" style="border: 1px solid ;border-color: #0867b2;width: 100%" disabled placeholder="Please enter URLs seperated by semicolon(;)"/></textarea>
-                        <br/><label style="cursor: auto"><?php echo mo_sl('Enter Page URL to Redeirect if user is not allowed to register:');?></label>
-                        <textarea rows="4" cols="50" class="mo_openid_textfield_css" disabled style="border: 1px solid ;border-color: #0867b2;width: 100%"/></textarea>
+                    <br/><label style="cursor: auto"><?php echo mo_sl('Enter Page URL to Redeirect if user is not allowed to register:');?></label>
+                    <textarea rows="4" cols="50" class="mo_openid_textfield_css" disabled style="border: 1px solid ;border-color: #0867b2;width: 100%"/></textarea>
                 </label>
 
             </div>

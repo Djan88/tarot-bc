@@ -3,15 +3,18 @@ Contributors: vkontakte, sociallogin, cyberlord92
 Donate link: https://www.miniorange.com
 Tags: social login, facebook login, google login, twitter login, Vkontakte login, Woocommerce, social, facebook, twitter, google, login, google, social connect, social network login, social plugin, Vkontakte, LinkedIn
 Requires at least: 2.0.2
-Tested up to: 5.4
-Stable tag: 7.3.7
+Tested up to: 5.5
+Stable tag: 7.4.0
+License: GPLv2 or later
 License URI: http://miniorange.com/usecases/miniOrange_User_Agreement.pdf
 
-Social Login with Google, Facebook, Apple, Twitter, Reddit, Vkontakte, LinkedIn and more. GDPR compliant. Social sharing and social comments. 24x7 Support.
+Social Login with Google, Facebook, Apple, Twitter, Reddit, Vkontakte, LinkedIn and more. GDPR compliant. Social sharing and woocommerce social integration. 24x7 Support.
 
 == Description ==
 
-Social Login enables social login, social sharing, social comments using social login apps like Google, Facebook, Twitter, Vkontakte, LinkedIn, Windows Live, Instagram, Amazon, Salesforce, Yahoo, WordPress, apple, Paypal, disqus, pinterest, spotify, reddit, tumblr, twitch, vimeo, kakao, discord, dribbble, flickr, line, meetup, stackexchange, livejournal, snapchat, foursquare, teamsnap, naver, odnoklassniki.
+Social Plugin enables social login, social sharing, social comments using social login apps like Google, Facebook, Twitter, Vkontakte, LinkedIn, Windows Live, Instagram, Amazon, Salesforce, Yahoo, WordPress, apple, Paypal, disqus, pinterest, spotify, reddit, tumblr, twitch, vimeo, kakao, discord, dribbble, flickr, line, meetup, stackexchange, livejournal, snapchat, foursquare, teamsnap, naver, odnoklassniki.
+
+[youtube https://youtu.be/-qHgNcHxwsE]
 
 = Free Social Login Features =
 
@@ -32,8 +35,28 @@ Social Login enables social login, social sharing, social comments using social 
 *	SHORTCODE available for social login.
 *	**Support** using email and in-plugin support form.
 
+= WooCommerce Social Login Features =
+*   **WooCommerce Integration**  Auto-fill first name, last name and email are pre-filled in billing details of a user and on the Woocommerce checkout page.
+*   Woocommerce Display Options
+        * WooCommerce Login form
+        * WooCommerce Registration form
+        * WooCommerce Checkout form
+
+= BuddyPress Social Login Features =
+*   **BuddyPress Integration**   Sync profile picture from social application to BuddyPress avatar. Sync user social profile to BuddyPress custom fields.
+*   BuddyPress Display Options
+        * Before BuddyPress Registration Form
+        * Before BuddyPress Account Details
+        * After BuddyPress Registration Form Login form
+
+= BuddyBoss Social Login Features =
+*   **BuddyBoss Integration**   Sync profile picture from social application to BuddyBoss avatar. Sync user social profile to BuddyBoss custom fields.
+*   BuddyBoss Display Options
+        * Before BuddyBoss Registration Form
+        * After BuddyBoss Registration Form Login form
+
 = Free Social Sharing & Social Comments Features =
-*	Share with social applications - Facebook, Twitter, Google+, Pinterest, Reddit, Vkontakte, Tumblr, StumbleUpon, LinkedIn, Pocket, Digg, Delicious, Odnoklassniki, Email, Print, Whatsapp
+*	Share with social applications - Facebook, Twitter, Google+, Pinterest, Reddit, Vkontakte, Tumblr, StumbleUpon, LinkedIn, Pocket, Digg, Email, Print, Whatsapp
 *	**Icon Customizations** - customize shape, theme, space & size of social sharing icons.
 *	**Preview is available for Social Sharing icons**
 *	Add Social Comments using Facebook.
@@ -48,8 +71,8 @@ Social Login enables social login, social sharing, social comments using social 
 *   Social Login with Google, Facebook, Twitter, Vkontakte, LinkedIn, Windows Live, Instagram, Amazon, Salesforce, Yahoo, WordPress, apple, Paypal, disqus, pinterest, spotify, reddit, tumblr, twitch, vimeo, kakao, discord, dribbble, flickr, line, meetup, stackexchange, livejournal, snapchat, foursquare, teamsnap, naver, odnoklassniki.
 *	GDPR compliant Social Login.
 *   **Account Linking** - Link social account to WordPress account
-*	**Woocommerce display options** - Enable social login icons on the Woocommerce Checkout, Login, Registration pages.
-*	**BuddyPress display options** - Enable Social login icons on BuddyPress Registration & Account pages.
+*	**Woocommerce display options** - Enable social login icons on the Woocommerce Checkout, Woocommerce Login, Woocommerce Registration pages.
+*	**BuddyPress display options** - Enable Social login icons on BuddyPress Registration & BuddyPress Account pages.
 *   All social login free version features
 *	**Enable your own social login application with APP ID and APP Secret for Facebook, Google, Twitter, Vkontakte, LinkedIn, Instagram, Amazon, Windows Live, WordPress, Yahoo, Disqus & Salesforce **[Premium]**
 *	**Woocommerce Integration [Premium]** - Auto-fill first name, last name and email in billing details of a user logging in with social login application.
@@ -83,7 +106,7 @@ Social Login includes Facebook, Twitter, Google, Vkontakte, LinkedIn, Instagram,
 One-click social login to your WordPress site using social login applications like Google, Twitter, Facebook. This means, if your user is logged in to Google, user can comment on any blog or site by simply clicking the `google icon` - no username or password is explicitly required! Simply enable Social Login, **no setup of social media application** is required and you are done.
 
 = Social Sharing =
-Allow anyone to easily share your website content using their favorite social sharing applications. Social Sharing applications include Facebook, Twitter, Google+, Pinterest, Reddit, Vkontakte, Tumblr, StumbleUpon, LinkedIn, Pocket, Digg, Delicious, Odnoklassniki, Email, Print, Whatsapp. Customize your social sharing buttons to suit to your website's theme. Social sharing on homepage includes sharing with content or excerpt.
+Allow anyone to easily share your website content using their favorite social sharing applications. Social Sharing applications include Facebook, Twitter, Google+, Pinterest, Reddit, Vkontakte, Tumblr, StumbleUpon, LinkedIn, Pocket, Digg, Email, Print, Whatsapp and more. Customize your social sharing buttons to suit to your website's theme. Social sharing on homepage includes sharing with content or excerpt.
 
 See the <a href="https://wordpress.org/plugins/miniorange-login-openid/screenshots/">Screenshots</a> section for visuals on social sharing.
 
@@ -159,6 +182,9 @@ The vertical sharing widget for Social Sharing gives a couple of options to chan
 = I want to upgrade to the social login standard/premium plan. How can I upgrade?  =
 Please contact us through the support form for the social login standard and premium plugin.
 
+=I want user to select their role on registration=
+This feature is available in Custom registration add-on which allows the users to select their role during Registration and based on that the user will be given the privileges inside.
+
 = For any other query/problem/request =
 Please email us at info@miniorange.com. You can also submit your query from the Social plugin's configuration page.
 
@@ -177,8 +203,48 @@ Please email us at info@miniorange.com. You can also submit your query from the 
 11. Square Social share buttons - horizontal and vertical.
 12. Social Sharing icons without background.
 
+==Changelog==
+= 7.4.0 =
+* Added Documentation and videos for WooCommerce, BuddyPress, MailChimp and Paid membership Pro integrations.
+* Resolved CSS conflicts with other themes.
+* Image optimization for all application images.
+* Minor UI changes.
+* Compatible with LMS Tutor, Flatsome and BuddyBoss themes.
+* Introduces new plan for Apple, Discord and Twitch Application.
 
-== Changelog ==
+= 7.3.12 =
+* Compatible with WordPress version 5.5
+* Compatible with BuddyBoss Platform.
+* Added Meetup attributes in premium plugin.
+* Added BuddyBoss display options.
+* Minor UI changes.
+
+= 7.3.11 =
+* Updated Facebook Api for Profile picture updated.
+* Instructions updated for Facebook, Google, Linkedin, Twitter, Windows Live.
+* Conflict with Woocommerce quick edit resolved.
+* Minor UI Changes.
+
+= 7.3.10 =
+* Facebook API updated.
+* Minor UI Changes.
+
+= 7.3.9 =
+* Added the two display options for WooCommerce.
+* Added bulk instances for Social Login plans.
+* Added 25+ sharing applications in social sharing paid plan.
+* Added Buffer for share counts social sharing paid plan.
+* Added social share service button like, recommended, pin it in social share paid plan.
+* Added Twitter follow button, Email subscription, new customization of icons, different WooCommerce display options in social sharing paid plan.
+* Resolved class name conflict for Social Login apps.
+* Minor UI changes.
+
+= 7.3.8 =
+* Updated Odnoklassniki custom app fix in premium versions.
+* Updated BuddyPress mapping bug fix in premium version.
+* Updated depricated array and string fix.
+* Added Yandex app in premium applications.
+
 = 7.3.7 =
 * Updated facebook insrtuctions.
 * Minor UI changes.
@@ -713,6 +779,47 @@ SECURITY FIXES
 * First version of Social Login, Social Sharing plugin.
 
 == Upgrade Notice ==
+= 7.4.0 =
+* Added Documentation and videos for WooCommerce, BuddyPress, MailChimp and Paid membership Pro integrations.
+* Resolved CSS conflicts with other themes.
+* Image optimization for all application images.
+* Minor UI changes.
+* Compatible with LMS Tutor, Flatsome and BuddyBoss themes.
+* Introduces new plan for Apple, Discord and Twitch Application.
+
+= 7.3.12 =
+* Compatible with WordPress version 5.5
+* Compatible with BuddyBoss Platform.
+* Added Meetup attributes in premium plugin.
+* Added BuddyBoss display options.
+* Minor UI changes.
+
+= 7.3.11 =
+* Updated Facebook Api for Profile picture updated.
+* Instructions updated for Facebook, Google, Linkedin, Twitter, Windows Live.
+* Conflict with Woocommerce quick edit resolved.
+* Minor UI Changes.
+
+= 7.3.10 =
+* Facebook API updated.
+* Minor UI Changes.
+
+= 7.3.9 =
+* Added the two display options for WooCommerce.
+* Added bulk instances for Social Login plans.
+* Added 25+ sharing applications in social sharing paid plan.
+* Added Buffer for share counts social sharing paid plan.
+* Added social share service button like, recommended, pin it in social share paid plan.
+* Added Twitter follow button, Email subscription, new customization of icons, different WooCommerce display options in social sharing paid plan.
+* Resolved class name conflict for Social Login apps.
+* Minor UI changes.
+
+= 7.3.8 =
+* Updated Odnoklassniki custom app fix in premium versions.
+* Updated BuddyPress mapping bug fix in premium version.
+* Updated depricated array and string fix.
+* Added Yandex app in premium applications.
+
 = 7.3.7 =
 * Updated facebook insrtuctions.
 * Minor UI changes.

@@ -32,11 +32,12 @@
                             "Facebook Login Error",
                             "Not Receiving OTP During Registration",
                             "Does not have the features I am looking for",
-                            "Does not support login with app I am looking for",
+                            "Login Icons are not displayed on custom registration/login page",
                             "Confusing Interface",
                             "Bugs in the plugin",
                             "I dont want to register",
                             "Other Reasons:",
+                            "Remove miniOrange Logo under Icons",
                             "Installing paid version",
                         );
                         $i=0;$p=0;
@@ -115,7 +116,7 @@
 
             }else if(reason=="Bugs in the plugin"){
                 add_text_box(6,"Can you please let us know about the bug in detail?");
-            }else if(reason=="Does not support login with app I am looking for"){
+            }else if(reason=="Login Icons are not displayed on custom registration/login page"){
                 add_text_box(4,"Let us know which App are you looking for");
             }else if(reason=="Confusing Interface"){
                 show_link='<p style="background-color:#feffb2;padding:5px 10px;">If you are facing issue while setting up the plugin. Please check out this ' + '<a href="https://www.youtube.com/watch?v=Hn4gMFi8pOE" target="_blank"><b>setup video.</b></p>';
@@ -128,7 +129,12 @@
                 add_text_box(7,"");
             }
             else if(reason=="Installing paid version"){
-                add_text_box(9,"Can you please let us know on which plan you have upgraded?");
+                add_text_box(10,"Can you please let us know on which plan you have upgraded?");
+            }
+            else if(reason=="Remove miniOrange Logo under Icons"){
+                show_link='<p style="background-color:#feffb2;padding:5px 10px;"><a href="\n' +
+                    'https://plugins.miniorange.com/disable-miniorange-branding-logo" target="_blank"><b>Please refer to the guide to remove the miniOrange Icon from the login page : <b>Guide</b></p>';
+                add_text_box(9,"");
             }
             else if(reason=="Facebook Login Error"){
                 show_link='<p style="background-color:#feffb2;padding:5px 10px;">Sorry for your inconvenience. Facebook has blocked our default app so please configure your own custom app.'+'<br>'+'Follow <a href="https://faq.miniorange.com/knowledgebase/facebook-configuration-error/" target="_blank"><b>Facebook setup link</b></a> | <a href="https://www.youtube.com/watch?v=hHx-oR7XiZo&feature=youtu.be" target="_blank"><b>Setup Video.</b></a></p>';
@@ -143,13 +149,13 @@
             {
                 if(x==i)
                 {
-                    if(x==1||x==7||x==2||x==5) {jQuery('#link_id_' + x).html(show_link);jQuery('#link_id_' + x).show();} else{jQuery('#link_id_'+i).hide();}
+                    if(x==1||x==7||x==9||x==2||x==5) {jQuery('#link_id_' + x).html(show_link);jQuery('#link_id_' + x).show();} else{jQuery('#link_id_'+i).hide();}
                 }
                 else{
                     jQuery('#link_id_'+i).hide();
                 }
-                if(i==9 && x==i){jQuery('#text_'+i).hide();jQuery('#link_id_'+i).hide();}
-                if(i==x&&x!=7)
+                if(i==10 && x==i){jQuery('#text_'+i).hide();jQuery('#link_id_'+i).hide();}
+                if(i==x&&x!=7&&x!=9)
                     {jQuery('#text_'+i).show();}
                 else
                     {jQuery('#text_'+i).hide();}

@@ -94,6 +94,11 @@ function tml_admin_get_settings_sections() {
 	 * @param array $sections The settings sections.
 	 */
 	return (array) apply_filters( 'tml_admin_get_settings_sections', array(
+		'tml_settings_general' => array(
+			'title'    => __( 'General', 'theme-my-login' ),
+			'callback' => '__return_null',
+			'page'     => 'theme-my-login',
+		),
 		'tml_settings_login' => array(
 			'title'    => __( 'Log In' ),
 			'callback' => '__return_null',
@@ -121,6 +126,22 @@ function tml_admin_get_settings_sections() {
  */
 function tml_admin_get_settings_fields() {
 	$fields = array();
+
+	// General
+	$fields['tml_settings_general'] = array(
+		// AJAX
+		'tml_ajax' => array(
+			'title'             => __( 'AJAX', 'theme-my-login' ),
+			'callback'          => 'tml_admin_setting_callback_checkbox_field',
+			'sanitize_callback' => 'sanitize_text_field',
+			'args' => array(
+				'label_for' => 'tml_ajax',
+				'label'     => __( 'Enable AJAX requests', 'theme-my-login' ),
+				'value'     => '1',
+				'checked'   => get_site_option( 'tml_ajax', '1' ),
+			),
+		),
+	);
 
 	// Login
 	$fields['tml_settings_login'] = array(
@@ -460,39 +481,56 @@ function tml_admin_setting_callback_license_key_field( $args ) {
 	$status  = $extension->get_license_status();
 
 	if ( 'valid' == $status ) {
-		$input_style = sprintf( 'background-color: %s; border-color: %s;', '#b5e1b9', '#46b450' );
-		$text_style  = 'color: #46b450;';
-		$text        = __( 'Active', 'theme-my-login' );
+		$class = 'tml-license-valid';
+		$text  = __( 'Active', 'theme-my-login' );
 	} elseif ( 'invalid' == $status ) {
-		$input_style = sprintf( 'background-color: %s; border-color: %s;', '#f1adad', '#dc3232' );
-		$text_style  = 'color: #dc3232;';
-		$text        = __( 'Invalid', 'theme-my-login' );
+		$class = 'tml-license-invalid';
+		$text  = __( 'Invalid', 'theme-my-login' );
 	} else {
-		$input_style = $text_style = '';
-		$text = __( 'Inactive', 'theme-my-login' );
+		$class = 'tml-license-inactive';
+		$text  = __( 'Inactive', 'theme-my-login' );
 	}
 
-	echo sprintf( '<input style="%1$s" type="text" name="%2$s" id="%2$s" value="%3$s" class="regular-text code" %4$s />',
-		esc_attr( $input_style ),
+	echo sprintf(
+		'<input type="text" name="%1$s" id="%1$s" value="%2$s" class="regular-text code tml-license-field %3$s" maxlength="32" %4$s />',
 		esc_attr( $args['label_for'] ),
 		esc_attr( $license ),
+		esc_attr( $class ),
 		'valid' == $status ? 'readonly="readonly"' : ''
 	) . "\n";
 
-	if ( empty( $license ) ) {
-		return;
-	}
+	submit_button(
+		__( 'Deactivate', 'theme-my-login' ),
+		'secondary tml-license-button',
+		'tml_deactivate_license[' . $extension->get_name() . ']',
+		false,
+		array(
+			'data-action'    => 'deactivate',
+			'data-extension' => $extension->get_name(),
+			'style'          => ( empty( $license ) || 'valid' != $status ) ? 'display: none;' : '',
+		)
+	);
 
-	if ( 'valid' == $status ) {
-		submit_button( __( 'Deactivate', 'theme-my-login' ), 'secondary large', 'tml_deactivate_license[' . $extension->get_name() . ']', false );
-	} else {
-		submit_button( __( 'Activate', 'theme-my-login' ), 'secondary large', 'tml_activate_license[' . $extension->get_name() . ']', false );
-	}
-	?>
+	submit_button(
+		__( 'Activate', 'theme-my-login' ),
+		'secondary tml-license-button',
+		'tml_activate_license[' . $extension->get_name() . ']',
+		false,
+		array(
+			'data-action'    => 'activate',
+			'data-extension' => $extension->get_name(),
+			'style'          => ( empty( $license ) || 'valid' == $status ) ? 'display: none;' : '',
+		)
+	);
 
-	<p style="<?php echo esc_attr( $text_style ); ?>"><?php echo esc_html( $text ); ?></p>
+	echo '<div class="spinner"></div>';
 
-	<?php
+	printf(
+		'<p class="tml-license-status %1$s" style="%3$s">%2$s</p>',
+		esc_attr( $class ),
+		esc_html( $text ),
+		empty( $license ) ? 'display: none;' : ''
+	);
 }
 
 /**
@@ -549,7 +587,7 @@ function tml_admin_save_ms_settings() {
 	$whitelist_options = apply_filters( 'whitelist_options', array() );
 
 	if ( ! isset( $whitelist_options[ $option_page ] ) ) {
-		wp_die( __( '<strong>ERROR</strong>: options page not found.' ) );
+		wp_die( __( '<strong>Error</strong>: Options page not found.' ) );
 	}
 
 	foreach ( $whitelist_options[ $option_page ] as $option ) {

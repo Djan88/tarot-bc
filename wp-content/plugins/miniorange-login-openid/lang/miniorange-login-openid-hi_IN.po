@@ -1,29 +1,29 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: miniorange-login-openid\n"
-"POT-Creation-Date: 2020-01-24 16:06+0530\n"
-"PO-Revision-Date: 2020-01-24 16:06+0530\n"
+"POT-Creation-Date: 2020-07-28 19:28+0530\n"
+"PO-Revision-Date: 2020-07-28 19:29+0530\n"
 "Last-Translator: \n"
 "Language-Team: miniOrange\n"
 "Language: hi_IN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
 "X-Poedit-KeywordsList: mo_sl;__;_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: class-mo-openid-login-widget.php:42
+#: class-mo-openid-login-widget.php:40
 msgid "Login using Social Apps like Google, Facebook, LinkedIn, Microsoft, Instagram."
 msgstr "गुगल फेसबुक, लिंक्डइन, मायक्रोसॉफ्ट, इंस्टाग्रामसारख्या सोशल अॅप्स वापरुन लॉगिन करा."
 
-#: class-mo-openid-login-widget.php:542 class-mo-openid-login-widget.php:550
+#: class-mo-openid-login-widget.php:146 class-mo-openid-login-widget.php:153
 msgid "Logout"
 msgstr "लॉगआउट"
 
-#: class-mo-openid-login-widget.php:1357
+#: class-mo-openid-login-widget.php:971
 msgid ""
 "Share using horizontal widget. Lets you share with Social Apps like Google, Facebook, LinkedIn, "
 "Pinterest, Reddit."
@@ -31,7 +31,7 @@ msgstr ""
 "क्षैतिज विजेट का उपयोग करके साझा करें।गूगल, फेसबुक, लिंक्डइन,Pinterest,जैसे सोशल ऐप्स के साथ साझा करने की सुविधा देता "
 "है।"
 
-#: class-mo-openid-login-widget.php:1402
+#: class-mo-openid-login-widget.php:1016
 msgid ""
 "Share using a vertical floating widget. Lets you share with Social Apps like Google, Facebook, "
 "LinkedIn, Pinterest, Reddit."
@@ -39,199 +39,249 @@ msgstr ""
 "वर्टिकल फ्लोटिंग विजेट का उपयोग करके शेयर करें। गूगल, फेसबुक, लिंक्डइन, Pinterest, रेडडिट.जैसे सोशल ऐप्स के साथ साझा "
 "करने की सुविधा देता है"
 
-#: miniorange_openid_sso_settings.php:97
+#: miniorange_openid_sso_settings.php:98
 msgid "Login with"
 msgstr "से लोगिन करें"
 
-#: miniorange_openid_sso_settings.php:266
+#: miniorange_openid_sso_settings.php:285
 msgid "Configure OpenID"
 msgstr "ओपनआयडी कॉन्फिगर करा"
 
-#: miniorange_openid_sso_settings_page.php:55 miniorange_openid_sso_settings_page.php:487
-#: miniorange_openid_sso_settings_page.php:630 miniorange_openid_sso_settings_page.php:815
+#: miniorange_openid_sso_settings_page.php:43 miniorange_openid_sso_settings_page.php:45
+#: miniorange_openid_sso_settings_page.php:506 miniorange_openid_sso_settings_page.php:670
+#: miniorange_openid_sso_settings_page.php:854
+msgid "Upgrade Now"
+msgstr "अब अपग्रेड करें"
+
+#: miniorange_openid_sso_settings_page.php:65 miniorange_openid_sso_settings_page.php:501
+#: miniorange_openid_sso_settings_page.php:665 miniorange_openid_sso_settings_page.php:849
 msgid "miniOrange Social Login"
 msgstr "मिनीऑरेंज सोशल लॉगिन"
 
-#: miniorange_openid_sso_settings_page.php:56 miniorange_openid_sso_settings_page.php:488
-#: miniorange_openid_sso_settings_page.php:631 miniorange_openid_sso_settings_page.php:816
+#: miniorange_openid_sso_settings_page.php:66 miniorange_openid_sso_settings_page.php:502
+#: miniorange_openid_sso_settings_page.php:666 miniorange_openid_sso_settings_page.php:850
 #: view/profile/mo_openid_profile.php:23 view/profile/mo_openid_profile.php:51
 msgid "Privacy Policy"
 msgstr "गोपनीयता नीति"
 
-#: miniorange_openid_sso_settings_page.php:57 miniorange_openid_sso_settings_page.php:489
-#: miniorange_openid_sso_settings_page.php:632 miniorange_openid_sso_settings_page.php:817
+#: miniorange_openid_sso_settings_page.php:67 miniorange_openid_sso_settings_page.php:503
+#: miniorange_openid_sso_settings_page.php:667 miniorange_openid_sso_settings_page.php:851
 msgid "FAQs"
 msgstr "अक्सर पूछे जाने वाले प्रश्न"
 
-#: miniorange_openid_sso_settings_page.php:58 miniorange_openid_sso_settings_page.php:490
-#: miniorange_openid_sso_settings_page.php:633 miniorange_openid_sso_settings_page.php:818
+#: miniorange_openid_sso_settings_page.php:68 miniorange_openid_sso_settings_page.php:504
+#: miniorange_openid_sso_settings_page.php:668 miniorange_openid_sso_settings_page.php:852
 msgid "Forum"
 msgstr "मंच"
 
-#: miniorange_openid_sso_settings_page.php:59 miniorange_openid_sso_settings_page.php:98
-#: miniorange_openid_sso_settings_page.php:491 miniorange_openid_sso_settings_page.php:634
+#: miniorange_openid_sso_settings_page.php:69 miniorange_openid_sso_settings_page.php:108
+#: miniorange_openid_sso_settings_page.php:505 miniorange_openid_sso_settings_page.php:669
 msgid "Add On"
 msgstr "ऐड ऑन"
 
-#: miniorange_openid_sso_settings_page.php:60 miniorange_openid_sso_settings_page.php:492
-#: miniorange_openid_sso_settings_page.php:635 miniorange_openid_sso_settings_page.php:820
-msgid "Upgrade Now"
-msgstr "अब अपग्रेड करें"
+#: miniorange_openid_sso_settings_page.php:70
+msgid "Licensing Plan"
+msgstr "लाइसेंसिंग योजनाएं"
 
-#: miniorange_openid_sso_settings_page.php:61
+#: miniorange_openid_sso_settings_page.php:71
 msgid "What's new in miniOrange"
 msgstr "मिनीऑरेंज में नया क्या है"
 
-#: miniorange_openid_sso_settings_page.php:63
+#: miniorange_openid_sso_settings_page.php:73
 msgid "Rate us"
 msgstr "हमें रेट करें"
 
-#: miniorange_openid_sso_settings_page.php:66
+#: miniorange_openid_sso_settings_page.php:76
 msgid "Restart Tour"
 msgstr "टूर को पुनः आरंभ करें"
 
-#: miniorange_openid_sso_settings_page.php:68
+#: miniorange_openid_sso_settings_page.php:78
 msgid "Setup Plugin"
 msgstr "सेटअप प्लगइन"
 
-#: miniorange_openid_sso_settings_page.php:81 miniorange_openid_sso_settings_page.php:504
-#: miniorange_openid_sso_settings_page.php:647 miniorange_openid_sso_settings_page.php:830
+#: miniorange_openid_sso_settings_page.php:91 miniorange_openid_sso_settings_page.php:518
+#: miniorange_openid_sso_settings_page.php:682 miniorange_openid_sso_settings_page.php:864
 msgid "miniOrange"
 msgstr "मिनीऑरेंज"
 
-#: miniorange_openid_sso_settings_page.php:84
+#: miniorange_openid_sso_settings_page.php:94
 msgid "Configure Apps"
 msgstr "एप्लिकेशन कॉन्फ़िगर करें"
 
-#: miniorange_openid_sso_settings_page.php:85
+#: miniorange_openid_sso_settings_page.php:95
 msgid "Customise Social Login Icons"
 msgstr "सामाजिक लॉगिन बटन"
 
-#: miniorange_openid_sso_settings_page.php:86 view/disp_options/mo_openid_dispopt.php:98
-#: view/disp_options/mo_openid_dispopt.php:131 view/soc_com/com_Enable/mo_openid_comm_enable.php:10
+#: miniorange_openid_sso_settings_page.php:96 view/disp_options/mo_openid_dispopt.php:120
+#: view/disp_options/mo_openid_dispopt.php:153 view/soc_com/com_Enable/mo_openid_comm_enable.php:10
 #: view/soc_com/com_Enable/mo_openid_comm_enable.php:12
 #: view/soc_com/com_display_options/mo_openid_comm_disp_opt.php:41
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:214
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:217
 msgid "Display Options"
 msgstr "प्रदर्शित विकल्प"
 
-#: miniorange_openid_sso_settings_page.php:87
+#: miniorange_openid_sso_settings_page.php:97
 msgid "Redirect Options"
 msgstr "पुनर्निर्देशन विकल्प"
 
-#: miniorange_openid_sso_settings_page.php:88
+#: miniorange_openid_sso_settings_page.php:98
 msgid "Registration"
 msgstr "पंजीकरण पृष्ठ लिंक"
 
-#: miniorange_openid_sso_settings_page.php:89
+#: miniorange_openid_sso_settings_page.php:99
 msgid "GDPR"
 msgstr "जीडीपीआर सेटिंग्स"
 
-#: miniorange_openid_sso_settings_page.php:89 miniorange_openid_sso_settings_page.php:90
-#: miniorange_openid_sso_settings_page.php:91 miniorange_openid_sso_settings_page.php:93
-#: miniorange_openid_sso_settings_page.php:94 miniorange_openid_sso_settings_page.php:95
-#: miniorange_openid_sso_settings_page.php:96 view/disp_options/mo_openid_dispopt.php:28
-#: view/disp_options/mo_openid_dispopt.php:46 view/disp_options/mo_openid_dispopt.php:94
+#: miniorange_openid_sso_settings_page.php:99 miniorange_openid_sso_settings_page.php:100
+#: miniorange_openid_sso_settings_page.php:101 miniorange_openid_sso_settings_page.php:103
+#: miniorange_openid_sso_settings_page.php:104 miniorange_openid_sso_settings_page.php:105
+#: miniorange_openid_sso_settings_page.php:106 miniorange_openid_sso_settings_page.php:540
+#: miniorange_openid_sso_settings_page.php:543 miniorange_openid_sso_settings_page.php:546
+#: view/customise_social_icons/mo_openid_cust_icons.php:206 view/disp_options/mo_openid_dispopt.php:28
+#: view/disp_options/mo_openid_dispopt.php:62 view/disp_options/mo_openid_dispopt.php:67
+#: view/disp_options/mo_openid_dispopt.php:71 view/disp_options/mo_openid_dispopt.php:76
+#: view/disp_options/mo_openid_dispopt.php:81 view/disp_options/mo_openid_dispopt.php:86
+#: view/disp_options/mo_openid_dispopt.php:91 view/disp_options/mo_openid_dispopt.php:116
 #: view/premium_features/mo_openid_prem_feat.php:90 view/premium_features/mo_openid_prem_feat.php:105
 #: view/premium_features/mo_openid_prem_feat.php:121 view/premium_features/mo_openid_prem_feat.php:135
 #: view/premium_features/mo_openid_prem_feat.php:149 view/premium_features/mo_openid_prem_feat.php:160
-#: view/profile/mo_openid_profile.php:84
+#: view/profile/mo_openid_profile.php:84 view/redirect_options/mo_openid_redirect_op.php:124
+#: view/registration/mo_openid_registration.php:33 view/registration/mo_openid_registration.php:54
+#: view/registration/mo_openid_registration.php:65 view/registration/mo_openid_registration.php:82
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:120
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:124
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:133
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:17 view/soc_sha/soc_apps/mo_openid_sharing.php:210
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:223 view/soc_sha/soc_apps/mo_openid_sharing.php:234
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:245 view/soc_sha/soc_apps/mo_openid_sharing.php:256
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:267 view/soc_sha/soc_apps/mo_openid_sharing.php:278
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:289 view/soc_sha/soc_apps/mo_openid_sharing.php:300
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:311 view/soc_sha/soc_apps/mo_openid_sharing.php:322
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:335 view/soc_sha/soc_apps/mo_openid_sharing.php:346
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:357 view/soc_sha/soc_apps/mo_openid_sharing.php:368
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:379 view/soc_sha/soc_apps/mo_openid_sharing.php:392
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:403 view/soc_sha/soc_apps/mo_openid_sharing.php:415
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:426 view/soc_sha/soc_apps/mo_openid_sharing.php:437
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:450 view/soc_sha/soc_apps/mo_openid_sharing.php:461
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:472 view/soc_sha/soc_apps/mo_openid_sharing.php:483
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:494 view/soc_sha/soc_apps/mo_openid_sharing.php:507
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:518
+#: view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php:15
+#: view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php:24
+#: view/soc_sha/soc_med_ser/mo_openid_social_media_services.php:14
+#: view/soc_sha/soc_med_ser/mo_openid_social_media_services.php:27
 msgid "PRO"
 msgstr "प्रीमियम"
 
-#: miniorange_openid_sso_settings_page.php:90 view/restrict_domain/mo_openid_restrict_dom.php:11
+#: miniorange_openid_sso_settings_page.php:100 view/restrict_domain/mo_openid_restrict_dom.php:11
 #: view/restrict_domain/mo_openid_restrict_dom.php:41
 msgid "Domain Restriction"
 msgstr "रेस्ट्रिक्ट  डोमेन"
 
-#: miniorange_openid_sso_settings_page.php:91 view/link_social_account/mo_openid_Acclink.php:72
+#: miniorange_openid_sso_settings_page.php:101 view/link_social_account/mo_openid_Acclink.php:72
 msgid "Link Social Account"
 msgstr "खाता लिंक"
 
-#: miniorange_openid_sso_settings_page.php:92 view/profile_completion/mo_openid_prof_comp.php:60
+#: miniorange_openid_sso_settings_page.php:102 view/profile_completion/mo_openid_prof_comp.php:65
 msgid "Profile Completion"
 msgstr "प्रोफाइल प्राप्ति"
 
-#: miniorange_openid_sso_settings_page.php:93 view/email_settings/mo_openid_set_email.php:74
+#: miniorange_openid_sso_settings_page.php:103 view/email_settings/mo_openid_set_email.php:74
 msgid "Email Notification"
 msgstr "ई - मेल अधिसूचना"
 
-#: miniorange_openid_sso_settings_page.php:94
+#: miniorange_openid_sso_settings_page.php:104
 msgid "Recaptcha"
 msgstr "रेकॉप्टचा"
 
-#: miniorange_openid_sso_settings_page.php:95 view/premium_features/mo_openid_prem_feat.php:159
+#: miniorange_openid_sso_settings_page.php:105 view/premium_features/mo_openid_prem_feat.php:159
 msgid "Premium Features"
 msgstr "प्रीमियम सुविधाएँ"
 
-#: miniorange_openid_sso_settings_page.php:96 view/integration/mo_openid_integrate.php:116
+#: miniorange_openid_sso_settings_page.php:106 view/integration/mo_openid_integrate.php:116
 msgid "Integrations"
 msgstr "एकीकरण"
 
-#: miniorange_openid_sso_settings_page.php:97 miniorange_openid_sso_settings_page.php:523
-#: miniorange_openid_sso_settings_page.php:654
+#: miniorange_openid_sso_settings_page.php:107 miniorange_openid_sso_settings_page.php:537
+#: miniorange_openid_sso_settings_page.php:689
 msgid "Shortcodes"
 msgstr "शॉर्टकोड"
 
-#: miniorange_openid_sso_settings_page.php:99
+#: miniorange_openid_sso_settings_page.php:109
 msgid "User Profile"
 msgstr "सामाजिक प्रोफ़ाइल"
 
-#: miniorange_openid_sso_settings_page.php:184 miniorange_openid_sso_settings_page.php:575
-#: miniorange_openid_sso_settings_page.php:710 miniorange_openid_sso_settings_page.php:882
+#: miniorange_openid_sso_settings_page.php:194 miniorange_openid_sso_settings_page.php:610
+#: miniorange_openid_sso_settings_page.php:745 miniorange_openid_sso_settings_page.php:916
 msgid "NEED HELP"
 msgstr "कोई मदद चाहिए? "
 
-#: miniorange_openid_sso_settings_page.php:509
+#: miniorange_openid_sso_settings_page.php:523
 msgid ""
 "Select\n"
 "                    Social Apps"
 msgstr "सोशल एप्स का चयन करें"
 
-#: miniorange_openid_sso_settings_page.php:513 miniorange_openid_sso_settings_page.php:652
+#: miniorange_openid_sso_settings_page.php:527 miniorange_openid_sso_settings_page.php:687
 msgid "Customization"
 msgstr "अनुकूलन "
 
-#: miniorange_openid_sso_settings_page.php:516
+#: miniorange_openid_sso_settings_page.php:530
 msgid ""
 "Social\n"
 "                    Share Counts"
 msgstr "सामाजिक शेयर गिनता"
 
-#: miniorange_openid_sso_settings_page.php:520
+#: miniorange_openid_sso_settings_page.php:534
 msgid ""
 "Display\n"
 "                    Option"
 msgstr "प्रदर्शित विकल्प"
 
-#: miniorange_openid_sso_settings_page.php:650 view/soc_com/com_Enable/mo_openid_comm_enable.php:10
+#: miniorange_openid_sso_settings_page.php:540
+#, fuzzy
+#| msgid "Social Login Shortcodes"
+msgid "Social Media Services"
+msgstr "डिफ़ॉल्ट सामाजिक लॉगिन शोर्ट"
+
+#: miniorange_openid_sso_settings_page.php:543
+#, fuzzy
+#| msgid "Customization"
+msgid "Social Icons Customization"
+msgstr "अनुकूलन "
+
+#: miniorange_openid_sso_settings_page.php:546 view/soc_sha/twitter_btn/mo_twitter_btn.php:105
+msgid "Twitter Follow Button"
+msgstr ""
+
+#: miniorange_openid_sso_settings_page.php:685 view/soc_com/com_Enable/mo_openid_comm_enable.php:10
 #: view/soc_com/com_select_app/mo_openid_comm_select_app.php:20
 msgid "Select Applications"
 msgstr "एप्लिकेशन चुनें"
 
-#: miniorange_openid_sso_settings_page.php:651
+#: miniorange_openid_sso_settings_page.php:686
 msgid "Display options"
 msgstr "प्रदर्शित विकल्प"
 
-#: miniorange_openid_sso_settings_page.php:653
+#: miniorange_openid_sso_settings_page.php:688
 msgid "Enable and Add Social Comments"
 msgstr "सक्षम करें और सामाजिक टिप्पणियाँ जोड़ें"
 
-#: miniorange_openid_sso_settings_page.php:819 view/faq/mo_openid_faq.php:108
+#: miniorange_openid_sso_settings_page.php:853 view/faq/mo_openid_faq.php:108
 #: view/faq/mo_openid_faq.php:117
 msgid "Social Login"
 msgstr "सामाजिक लॉगिन"
 
-#: miniorange_openid_sso_settings_page.php:833 view/add_on/custom_registration_form.php:9
+#: miniorange_openid_sso_settings_page.php:867 view/add_on/custom_registration_form.php:9
 #: view/mo_new/mo_openid_whats_new.php:65
 msgid "Custom Registration Form"
 msgstr "कस्टम पंजीकरण फार्म"
 
-#: miniorange_openid_sso_settings_page.php:834
+#: miniorange_openid_sso_settings_page.php:868
 msgid "Go to Social Login"
 msgstr "सामाजिक लॉगिन पर जाएं"
 
-#: miniorange_openid_sso_settings_page.php:835
+#: miniorange_openid_sso_settings_page.php:869
 msgid "Licensing Plans"
 msgstr "लाइसेंसिंग योजनाएं"
 
@@ -303,6 +353,7 @@ msgid "No"
 msgstr "नहीं"
 
 #: view/add_on/custom_registration_form.php:124 view/integration/mo_openid_integrate.php:29
+#: view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php:77
 msgid "Cancel"
 msgstr "रद्द करना"
 
@@ -462,17 +513,19 @@ msgid "Last click on"
 msgstr "अंतिम पर क्लिक करें"
 
 #: view/add_on/custom_registration_form.php:160
-#: view/customise_social_icons/mo_openid_cust_icons.php:119 view/disp_options/mo_openid_dispopt.php:92
+#: view/customise_social_icons/mo_openid_cust_icons.php:115 view/disp_options/mo_openid_dispopt.php:114
 #: view/email_settings/mo_openid_set_email.php:66 view/gdpr/mo_openid_gdpr.php:33
 #: view/integration/mo_openid_integrate.php:108 view/link_social_account/mo_openid_Acclink.php:65
-#: view/profile_completion/mo_openid_prof_comp.php:52
-#: view/redirect_options/mo_openid_redirect_op.php:121 view/registration/mo_openid_registration.php:48
-#: view/restrict_domain/mo_openid_restrict_dom.php:33 view/soc_com/com_Cust/mo_openid_comm_cust.php:23
+#: view/profile_completion/mo_openid_prof_comp.php:57
+#: view/redirect_options/mo_openid_redirect_op.php:178 view/registration/mo_openid_registration.php:95
+#: view/restrict_domain/mo_openid_restrict_dom.php:33 view/soc_com/com_Cust/mo_openid_comm_cust.php:27
 #: view/soc_com/com_display_options/mo_openid_comm_disp_opt.php:36
-#: view/soc_com/com_select_app/mo_openid_comm_select_app.php:49
+#: view/soc_com/com_select_app/mo_openid_comm_select_app.php:60
 #: view/soc_sha/cust_text/mo_openid_cust_shricon.php:227
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:205
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:74
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:208
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:73
+#: view/soc_sha/soc_med_ser/mo_openid_social_media_services.php:32
+#: view/soc_sha/twitter_btn/mo_twitter_btn.php:100
 msgid "Save"
 msgstr " सहेजें "
 
@@ -484,15 +537,15 @@ msgstr "बटन"
 msgid "Social Login Add On"
 msgstr "सोशल लॉगइन ऐड ऑन"
 
-#: view/config_apps/mo_openid_config_apps.php:35
+#: view/config_apps/mo_openid_config_apps.php:34
 msgid "Active"
 msgstr "सक्रिय"
 
-#: view/config_apps/mo_openid_config_apps.php:65
+#: view/config_apps/mo_openid_config_apps.php:67
 msgid "Premium Applications"
 msgstr "प्रीमियम आवेदन"
 
-#: view/config_apps/mo_openid_config_apps.php:100
+#: view/config_apps/mo_openid_config_apps.php:102
 msgid "Configure Applications"
 msgstr "एप्लिकेशन कॉन्फ़िगर करें"
 
@@ -520,81 +573,87 @@ msgstr "वर्ग"
 msgid "Long Button"
 msgstr "पाठ के साथ लंबा बटन"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:31
+#: view/customise_social_icons/mo_openid_cust_icons.php:29
 #: view/soc_sha/cust_text/mo_openid_cust_shricon.php:29
 msgid "Theme"
 msgstr "थीम"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:34
+#: view/customise_social_icons/mo_openid_cust_icons.php:30
 #: view/soc_sha/cust_text/mo_openid_cust_shricon.php:59
 msgid "Default"
 msgstr "डिफ़ॉल्ट "
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:40
+#: view/customise_social_icons/mo_openid_cust_icons.php:36
 msgid "Custom background*"
 msgstr "कस्टम पृष्ठभूमि"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:49
+#: view/customise_social_icons/mo_openid_cust_icons.php:45
 msgid "*Custom background:"
 msgstr "कस्टम पृष्ठभूमि"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:49
+#: view/customise_social_icons/mo_openid_cust_icons.php:45
 msgid "This will change the background color of login icons"
 msgstr "कस्टम पृष्ठभूमि: यह लॉगिन आइकन की पृष्ठभूमि का रंग बदल देगा।"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:52
+#: view/customise_social_icons/mo_openid_cust_icons.php:48
 #: view/soc_sha/cust_text/mo_openid_cust_shricon.php:31
 msgid "Size of Icons"
 msgstr "प्रतीक का आकार"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:54
+#: view/customise_social_icons/mo_openid_cust_icons.php:50
 msgid "Width:"
 msgstr "चौड़ाई"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:57
+#: view/customise_social_icons/mo_openid_cust_icons.php:53
 msgid "Height:"
 msgstr "ऊंचाई"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:60
+#: view/customise_social_icons/mo_openid_cust_icons.php:56
 msgid "Curve:"
 msgstr "वक्र"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:71
+#: view/customise_social_icons/mo_openid_cust_icons.php:67
 #: view/soc_sha/cust_text/mo_openid_cust_shricon.php:30
 msgid "Space between Icons"
 msgstr "प्रतीक के बीच की जगह"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:79
+#: view/customise_social_icons/mo_openid_cust_icons.php:75
 msgid "Customize Text For Social Login Buttons / Icons"
 msgstr "सामाजिक लॉगिन बटन / प्रतीक के लिए पाठ अनुकूलित करें"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:82
+#: view/customise_social_icons/mo_openid_cust_icons.php:78
 msgid "Select color for customize text:"
 msgstr "कस्टमाइज़ टेक्स्ट के लिए रंग का चयन करें"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:90
+#: view/customise_social_icons/mo_openid_cust_icons.php:86
 msgid "Enter text to show above login widget:"
 msgstr "लॉगिन विजेट ऊपर दिखाने के लिए टेक्स्ट दर्ज करें"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:96
+#: view/customise_social_icons/mo_openid_cust_icons.php:92
 msgid "Enter text to show on your login buttons:"
 msgstr "अपने लॉगिन बटन (यदि आपके पास है) पर दिखाने के लिए पाठ दर्ज करें"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:103
+#: view/customise_social_icons/mo_openid_cust_icons.php:99
 msgid "Customize Text to show user after Login"
 msgstr "लॉगिन के बाद उपयोगकर्ता को दिखाने के लिए टेक्स्ट कस्टमाइज़ करें"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:106
+#: view/customise_social_icons/mo_openid_cust_icons.php:102
 msgid "Enter text to show before the logout link. Use ##username## to display current username:"
 msgstr ""
 "लॉगआउट लिंक से पहले दिखाने के लिए पाठ दर्ज करें। वर्तमान उपयोगकर्ता नाम प्रदर्शित करने के लिए ## उपयोगकर्ता नाम ## "
 "का उपयोग करें:"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:113
+#: view/customise_social_icons/mo_openid_cust_icons.php:109
 msgid "Enter text to show as logout link:"
 msgstr "लॉगआउट लिंक के रूप में दिखाने के लिए पाठ दर्ज करें"
 
-#: view/customise_social_icons/mo_openid_cust_icons.php:215
+#: view/customise_social_icons/mo_openid_cust_icons.php:206
+#, fuzzy
+#| msgid "Custom App"
+msgid "Custom CSS"
+msgstr "कस्टम ऐप"
+
+#: view/customise_social_icons/mo_openid_cust_icons.php:231
 msgid "Customize Login Icons"
 msgstr "साझाकरण आइकन अनुकूलित करें"
 
@@ -627,98 +686,134 @@ msgid "Contact Us"
 msgstr "संपर्क करें"
 
 #: view/disp_options/mo_openid_dispopt.php:28
-msgid "BuddyPress display options"
-msgstr "बुडडीप्रेस प्रदर्शित विकल्प"
+#, fuzzy
+#| msgid "Woocommerce display options"
+msgid "Ultimate Member display options"
+msgstr "वूकमर्स प्रदर्शित विकल्प"
 
-#: view/disp_options/mo_openid_dispopt.php:30
-msgid "Before BuddyPress Registration Form"
-msgstr "बुडडीप्रेस रजिस्ट्रेशन फॉर्म से पहले"
+#: view/disp_options/mo_openid_dispopt.php:31
+#, fuzzy
+#| msgid "Before WooCommerce Login Form"
+msgid "Before Ultimate Member Login Form Fields"
+msgstr "वूकमर्स लॉगिन फॉर्म से पहले"
 
 #: view/disp_options/mo_openid_dispopt.php:35
-msgid "Before BuddyPress Account Details"
-msgstr "बुडडीप्रेस खाते तपशील करण्यापूर्वी"
+#, fuzzy
+#| msgid "After WooCommerce Login Form"
+msgid "After Ultimate Member Login Form Fields"
+msgstr "वूकमर्स लॉगिन फॉर्म के बाद"
 
-#: view/disp_options/mo_openid_dispopt.php:40
-msgid "After BuddyPress Registration Form"
-msgstr "बुडडीप्रेस नोंदणी फॉर्म नंतर"
+#: view/disp_options/mo_openid_dispopt.php:39
+#, fuzzy
+#| msgid "Before 'Register button' of WooCommerce Registration Form"
+msgid "After 'Register button' of Ultimate Member Form"
+msgstr "वूकमर्स पंजीकरण फॉर्म के 'रजिस्टर बटन' से पहले"
 
-#: view/disp_options/mo_openid_dispopt.php:46
+#: view/disp_options/mo_openid_dispopt.php:43
+#, fuzzy
+#| msgid "Before WooCommerce Registration Form"
+msgid "Before Ultimate Member Registration Form Fields"
+msgstr "वूकमर्स पंजीकरण फॉर्म से पहले"
+
+#: view/disp_options/mo_openid_dispopt.php:47
+#, fuzzy
+#| msgid "After WooCommerce Registration Form"
+msgid "After Ultimate Member Registration Form Fields"
+msgstr "वूकमर्स पंजीकरण फॉर्म के बाद"
+
+#: view/disp_options/mo_openid_dispopt.php:52
 msgid "Woocommerce display options"
 msgstr "वूकमर्स प्रदर्शित विकल्प"
 
-#: view/disp_options/mo_openid_dispopt.php:48
+#: view/disp_options/mo_openid_dispopt.php:55
 msgid "Before WooCommerce Login Form"
 msgstr "वूकमर्स लॉगिन फॉर्म से पहले"
 
-#: view/disp_options/mo_openid_dispopt.php:53
+#: view/disp_options/mo_openid_dispopt.php:59
 msgid "Before 'Remember Me' of WooCommerce Login Form"
 msgstr "वूकमर्स लॉगिन फॉर्म के 'मुझे याद रखें' से पहले"
 
-#: view/disp_options/mo_openid_dispopt.php:57
+#: view/disp_options/mo_openid_dispopt.php:62
 msgid "After WooCommerce Login Form"
 msgstr "वूकमर्स लॉगिन फॉर्म के बाद"
 
-#: view/disp_options/mo_openid_dispopt.php:62
+#: view/disp_options/mo_openid_dispopt.php:67
 msgid "Before WooCommerce Registration Form"
 msgstr "वूकमर्स पंजीकरण फॉर्म से पहले"
 
-#: view/disp_options/mo_openid_dispopt.php:66
+#: view/disp_options/mo_openid_dispopt.php:71
 msgid "Before 'Register button' of WooCommerce Registration Form"
 msgstr "वूकमर्स पंजीकरण फॉर्म के 'रजिस्टर बटन' से पहले"
 
-#: view/disp_options/mo_openid_dispopt.php:71
+#: view/disp_options/mo_openid_dispopt.php:76
 msgid "After WooCommerce Registration Form"
 msgstr "वूकमर्स पंजीकरण फॉर्म के बाद"
 
-#: view/disp_options/mo_openid_dispopt.php:76
+#: view/disp_options/mo_openid_dispopt.php:81
 msgid "Before WooCommerce Checkout Form"
 msgstr "वूकमर्स चेकआउट फॉर्म से पहले"
 
-#: view/disp_options/mo_openid_dispopt.php:81
+#: view/disp_options/mo_openid_dispopt.php:86
 msgid "After WooCommerce Checkout Form"
 msgstr "वूकमर्स चेकआउट फॉर्म के बाद"
 
-#: view/disp_options/mo_openid_dispopt.php:87
+#: view/disp_options/mo_openid_dispopt.php:91
+msgid "BuddyPress display options"
+msgstr "बुडडीप्रेस प्रदर्शित विकल्प"
+
+#: view/disp_options/mo_openid_dispopt.php:93
+msgid "Before BuddyPress Registration Form"
+msgstr "बुडडीप्रेस रजिस्ट्रेशन फॉर्म से पहले"
+
+#: view/disp_options/mo_openid_dispopt.php:98
+msgid "Before BuddyPress Account Details"
+msgstr "बुडडीप्रेस खाते तपशील करण्यापूर्वी"
+
+#: view/disp_options/mo_openid_dispopt.php:103
+msgid "After BuddyPress Registration Form"
+msgstr "बुडडीप्रेस नोंदणी फॉर्म नंतर"
+
+#: view/disp_options/mo_openid_dispopt.php:109
 msgid "Display miniOrange logo with social login icons on selected form"
 msgstr "चयनित फ़ॉर्म पर सामाजिक लॉगिन आइकन के साथ मिनीऑरे लोगो प्रदर्शित करें"
 
-#: view/disp_options/mo_openid_dispopt.php:94
+#: view/disp_options/mo_openid_dispopt.php:116
 msgid "These features are available in premium version only. To know more about the premium plugin "
 msgstr "ये सुविधाएँ केवल प्रीमियम संस्करण में उपलब्ध हैं। प्रीमियम प्लगइन के बारे में अधिक जानने के लिए"
 
-#: view/disp_options/mo_openid_dispopt.php:94
+#: view/disp_options/mo_openid_dispopt.php:116
 msgid "click here"
 msgstr "यहां पर क्लिक करें"
 
-#: view/disp_options/mo_openid_dispopt.php:95
+#: view/disp_options/mo_openid_dispopt.php:117
 msgid "Add Login Icons"
 msgstr "लॉगिन आइकन जोड़ें"
 
-#: view/disp_options/mo_openid_dispopt.php:98
+#: view/disp_options/mo_openid_dispopt.php:120
 msgid "You can add login icons in the following areas from"
 msgstr "आप प्रदर्शन विकल्प से निम्न क्षेत्रों में लॉगिन आइकन जोड़ सकते हैं। "
 
-#: view/disp_options/mo_openid_dispopt.php:98
+#: view/disp_options/mo_openid_dispopt.php:120
 msgid "For other areas(widget areas), use Login widget"
 msgstr "अन्य क्षेत्रों (विजेट क्षेत्रों) के लिए, लॉगिन विजेट का उपयोग करें"
 
-#: view/disp_options/mo_openid_dispopt.php:100
+#: view/disp_options/mo_openid_dispopt.php:122
 msgid "Default Login Form: This option places login icons below the default login form on wp-login"
 msgstr "डिफ़ॉल्ट लॉगिन फ़ॉर्म: यह विकल्प wp-login पर डिफ़ॉल्ट लॉगिन फ़ॉर्म के नीचे लॉगिन आइकन देता है"
 
-#: view/disp_options/mo_openid_dispopt.php:101
+#: view/disp_options/mo_openid_dispopt.php:123
 msgid "Default Registration Form: This option places login icons below the default registration form"
 msgstr "डिफ़ॉल्ट पंजीकरण फॉर्म: यह विकल्प डिफ़ॉल्ट पंजीकरण फॉर्म के नीचे लॉगिन आइकन रखता है।"
 
-#: view/disp_options/mo_openid_dispopt.php:103
+#: view/disp_options/mo_openid_dispopt.php:125
 msgid "Comment Form: This option places login icons above the comment section of all your posts"
 msgstr "टिप्पणी फ़ॉर्म: यह विकल्प आपके सभी पोस्ट के टिप्पणी अनुभाग के ऊपर लॉगिन आइकन देता है।"
 
-#: view/disp_options/mo_openid_dispopt.php:108
+#: view/disp_options/mo_openid_dispopt.php:130
 msgid "Add Login Icons as Widget"
 msgstr "विजेट के रूप में लॉगिन आइकन जोड़ें"
 
-#: view/disp_options/mo_openid_dispopt.php:111
+#: view/disp_options/mo_openid_dispopt.php:133
 msgid ""
 "Go to Widgets. Among the available widgets you\n"
 "                            will find miniOrange Social Login Widget, drag it to the widget area "
@@ -728,25 +823,32 @@ msgstr ""
 "प्रकटन-> विजेट पर जाएं। उपलब्ध विगेट्स में आप मिनीऑर्ग सोशल लॉगिन विजेट प्राप्त करेंगे, इसे विजेट क्षेत्र में खींचें जहाँ आप "
 "इसे प्रदर्शित करना चाहते हैं"
 
-#: view/disp_options/mo_openid_dispopt.php:114
+#: view/disp_options/mo_openid_dispopt.php:136
 msgid "Now logout and go to your site. You will see Social Login icon for which you enabled login."
 msgstr "अब लॉगआउट करें और अपनी साइट पर जाएं। आपको ऐप आइकन दिखाई देगा जिसके लिए आपने लॉगिन सक्षम किया था।"
 
-#: view/disp_options/mo_openid_dispopt.php:115
+#: view/disp_options/mo_openid_dispopt.php:137
 msgid "Click that app icon and login with your existing app account to wordpress"
 msgstr "उस ऐप आइकन पर क्लिक करें और अपने मौजूदा ऐप अकाउंट से वर्डप्रेस पर लॉगइन करें."
 
-#: view/disp_options/mo_openid_dispopt.php:119
+#: view/disp_options/mo_openid_dispopt.php:141
 msgid "Using Shortcode"
 msgstr "उपयोग शॉर्टकोड"
 
-#: view/disp_options/mo_openid_dispopt.php:122
+#: view/disp_options/mo_openid_dispopt.php:144
+#, fuzzy
+#| msgid ""
+#| "You can use this shortcode <code id='2'>[miniorange_social_login]</code><i style= \"width: 11px;"
+#| "height: 9px;padding-left:2px;padding-top:3px\" class=\"mofa mofa-fw mofa-lg mofa-copy mo_copy "
+#| "mo_copytooltip\" onclick=\"copyToClipboard(this, '#2', '#shortcode_url2_copy')\"><span id="
+#| "\"shortcode_url2_copy\" class=\"mo_copytooltiptext\">Copy to Clipboard</span></i> to display "
+#| "social icons on any login page, post, mo_openid_popup and php pages."
 msgid ""
 "You can use this shortcode <code id='2'>[miniorange_social_login]</code><i style= \"width: 11px;"
 "height: 9px;padding-left:2px;padding-top:3px\" class=\"mofa mofa-fw mofa-lg mofa-copy mo_copy "
 "mo_copytooltip\" onclick=\"copyToClipboard(this, '#2', '#shortcode_url2_copy')\"><span id="
 "\"shortcode_url2_copy\" class=\"mo_copytooltiptext\">Copy to Clipboard</span></i> to display social "
-"icons on any login page, post, mo_openid_popup and php pages."
+"icons on any login page, post, popup and PHP pages."
 msgstr ""
 "आप किसी भी <code id='2'>[miniorange_social_login]</code> लॉगिन पेज, पोस्ट, mo_openid_popup और पीएचपी "
 "पेज पर सोशल आइकन प्रदर्शित करने के <i style=\"width: 11px;height: 9px;padding-left:2px;padding-top:3px\" "
@@ -754,7 +856,7 @@ msgstr ""
 "'#2', '#shortcode_url2_copy')\"><span id=\"shortcode_url2_copy\" class=\"mo_copytooltiptext\">लिए "
 "क्लिपबोर्ड</span></i> पर इस शॉर्टकोड कॉपी का उपयोग कर सकते हैं।"
 
-#: view/disp_options/mo_openid_dispopt.php:123
+#: view/disp_options/mo_openid_dispopt.php:145
 msgid "* Detailed information about how to use shortcode is given in <a href="
 msgstr "* शॉर्टकोड का उपयोग करने के तरीके के बारे में विस्तृत जानकारी <a href="
 
@@ -1121,10 +1223,12 @@ msgid "tab."
 msgstr "टैब "
 
 #: view/faq/mo_openid_faq.php:109 view/redirect_options/mo_openid_redirect_op.php:13
+#: view/redirect_options/mo_openid_redirect_op.php:133
 msgid "Same page where user logged in"
 msgstr "वही पृष्ठ जहाँ उपयोगकर्ता ने लॉग इन किया था"
 
 #: view/faq/mo_openid_faq.php:110 view/redirect_options/mo_openid_redirect_op.php:21
+#: view/redirect_options/mo_openid_redirect_op.php:140
 msgid "Homepage"
 msgstr "मुखपृष्ठ"
 
@@ -1271,7 +1375,7 @@ msgstr ""
 "HTML फ़ाइल पर जाएं जो आपके पृष्ठ / पोस्ट को आमंत्रित करता है और निम्न HTML स्निपेट डालें। इसके अलावा, अपनी आवश्यकता "
 "के अनुसार मार्जिन-बाएं मूल्य बढ़ाएं। फ़ाइल सहेजें।"
 
-#: view/faq/mo_openid_faq.php:155 view/soc_sha/soc_apps/mo_openid_sharing.php:570
+#: view/faq/mo_openid_faq.php:155 view/soc_sha/soc_apps/mo_openid_sharing.php:859
 msgid "Social Sharing"
 msgstr "सामाजिक साझाकरण"
 
@@ -1285,8 +1389,8 @@ msgid ""
 "content."
 msgstr "सामग्री के पहले या बाद में सामग्री के बाद, आप सामग्री से पहले सामाजिक साझाकरण आइकन डाल सकते हैं।"
 
-#: view/faq/mo_openid_faq.php:159 view/soc_sha/share_cnt/mo_openid_shrcnt.php:50
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:53 view/soc_sha/share_cnt/mo_openid_shrcnt.php:57
+#: view/faq/mo_openid_faq.php:159 view/soc_sha/share_cnt/mo_openid_shrcnt.php:49
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:52 view/soc_sha/share_cnt/mo_openid_shrcnt.php:56
 msgid "Go to"
 msgstr " पर जाएं,"
 
@@ -1565,8 +1669,14 @@ msgstr ""
 msgid "Sync Woocommerce checkout fields"
 msgstr "वूकमर्स चेकआउट फ़ील्ड सिंक करें"
 
-#: view/licensing_plans/mo_openid_lic_plans.php:1856
+#: view/licensing_plans/mo_openid_lic_plans.php:461 view/licensing_plans/mo_openid_lic_plans.php:957
 msgid "Licensing Plan For Social Login"
+msgstr "सामाजिक लॉगिन के लिए लाइसेंसिंग योजना"
+
+#: view/licensing_plans/mo_openid_lic_plans.php:810
+#, fuzzy
+#| msgid "Licensing Plan For Social Login"
+msgid "Licensing Plan For Social Sharing"
 msgstr "सामाजिक लॉगिन के लिए लाइसेंसिंग योजना"
 
 #: view/link_social_account/mo_openid_Acclink.php:19
@@ -1818,7 +1928,7 @@ msgstr ""
 msgid "for how we use your information. We don’t sell your information to any third-party organization"
 msgstr "हम आपकी जानकारी का उपयोग कैसे करते हैं। हम आपकी जानकारी को किसी तीसरे पक्ष के संगठन को नहीं बेचते हैं"
 
-#: view/profile/mo_openid_profile.php:27 view/soc_sha/soc_apps/mo_openid_sharing.php:202
+#: view/profile/mo_openid_profile.php:27 view/soc_sha/soc_apps/mo_openid_sharing.php:172
 msgid "Email"
 msgstr "मेल "
 
@@ -1878,11 +1988,11 @@ msgstr ""
 "सोशल मीडिया एप्लिकेशन से उपयोगकर्ता नाम या ईमेल की अनुपलब्धता के मामले में, उपयोगकर्ता को इसे इनपुट करने के लिए कहा "
 "जाता है"
 
-#: view/profile_completion/mo_openid_prof_comp.php:16
+#: view/profile_completion/mo_openid_prof_comp.php:21
 msgid "*NOTE:"
 msgstr "* नोट:"
 
-#: view/profile_completion/mo_openid_prof_comp.php:16
+#: view/profile_completion/mo_openid_prof_comp.php:21
 msgid ""
 "Disabling profile completion is not recommended. Instagram and Twitter don't return email address. "
 "Please keep this enabled if you are using Instagram or Twitter. This feature requires SMTP to be "
@@ -1894,94 +2004,94 @@ msgstr ""
 "वेबसाइट के लिए सेटअप करने की आवश्यकता होती है क्योंकि हम अपने ईमेल पते को सत्यापित करने के लिए ईमेल पर उपयोगकर्ताओं "
 "को एक कोड भेजते हैं।"
 
-#: view/profile_completion/mo_openid_prof_comp.php:19
+#: view/profile_completion/mo_openid_prof_comp.php:24
 msgid "Customize Text for Profile Completion"
 msgstr "प्रोफ़ाइल पूर्ण करने के लिए पाठ अनुकूलित करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:19
+#: view/profile_completion/mo_openid_prof_comp.php:24
 msgid "Preview Profile Completion form"
 msgstr "प्रोफ़ाइल पूर्ण करने के लिए पाठ अनुकूलित करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:21
+#: view/profile_completion/mo_openid_prof_comp.php:26
 msgid "Enter title of Profle Completion"
 msgstr "प्रोपल कंप्लीशन का टाइटल दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:22
+#: view/profile_completion/mo_openid_prof_comp.php:27
 msgid "Enter Username Label text"
 msgstr "उपयोगकर्ता नाम लेबल टेक्स्ट दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:23
+#: view/profile_completion/mo_openid_prof_comp.php:28
 msgid "Enter Email Label text"
 msgstr "ईमेल लेबल टेक्स्ट दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:24
+#: view/profile_completion/mo_openid_prof_comp.php:29
 msgid "Enter Submit button text"
 msgstr "सबमिट बटन टेक्स्ट दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:25
+#: view/profile_completion/mo_openid_prof_comp.php:30
 msgid "Enter instruction for Profile Completion"
 msgstr "प्रोफ़ाइल पूर्ण करने के लिए निर्देश दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:27
+#: view/profile_completion/mo_openid_prof_comp.php:32
 msgid "Enter extra instruction for Profile Completion "
 msgstr "प्रोफ़ाइल पूर्ण करने के लिए अतिरिक्त निर्देश दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:29
+#: view/profile_completion/mo_openid_prof_comp.php:34
 msgid "Enter username already exists warning message text "
 msgstr "उपयोगकर्ता नाम दर्ज करें चेतावनी संदेश पाठ पहले से मौजूद है"
 
-#: view/profile_completion/mo_openid_prof_comp.php:30
+#: view/profile_completion/mo_openid_prof_comp.php:35
 msgid "Customize Text for Email Verification"
 msgstr "ईमेल सत्यापन के लिए पाठ अनुकूलित करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:30
+#: view/profile_completion/mo_openid_prof_comp.php:35
 msgid "Preview Email Verification form"
 msgstr "ईमेल सत्यापन प्रपत्र का पूर्वावलोकन करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:32
+#: view/profile_completion/mo_openid_prof_comp.php:37
 msgid "Enter title of Email Verification form"
 msgstr "ईमेल सत्यापन फ़ॉर्म का शीर्षक दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:33
+#: view/profile_completion/mo_openid_prof_comp.php:38
 msgid "Enter Resend OTP button text"
 msgstr "ओटीपी बटन पाठ भेजें दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:34
+#: view/profile_completion/mo_openid_prof_comp.php:39
 msgid "Enter Back button text"
 msgstr "वापस बटन टेक्स्ट दर्ज करें:"
 
-#: view/profile_completion/mo_openid_prof_comp.php:35
+#: view/profile_completion/mo_openid_prof_comp.php:40
 msgid "Enter instruction for Email Verification form"
 msgstr "ईमेल सत्यापन फ़ॉर्म के लिए निर्देश दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:37
+#: view/profile_completion/mo_openid_prof_comp.php:42
 msgid "Enter verification code in Email Verification form"
 msgstr "ईमेल सत्यापन फ़ॉर्म में सत्यापन कोड दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:39
+#: view/profile_completion/mo_openid_prof_comp.php:44
 msgid "Enter Message for wrong OTP"
 msgstr "गलत ओटीपी के लिए संदेश दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:40
+#: view/profile_completion/mo_openid_prof_comp.php:45
 msgid "Customized E-mail Message"
 msgstr "अनुकूलित ई-मेल संदेश"
 
-#: view/profile_completion/mo_openid_prof_comp.php:41
+#: view/profile_completion/mo_openid_prof_comp.php:46
 #: view/soc_sha/cust_text/mo_openid_cust_shricon.php:107
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:201
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:556
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:204
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:845
 msgid "NOTE"
 msgstr "ध्यान दें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:41
+#: view/profile_completion/mo_openid_prof_comp.php:46
 msgid "Please enter"
 msgstr " दर्ज करें"
 
-#: view/profile_completion/mo_openid_prof_comp.php:41
+#: view/profile_completion/mo_openid_prof_comp.php:46
 msgid "in message where you want to show one time password."
 msgstr "संदेश में जहां आप एक बार पासवर्ड दिखाना चाहते हैं।"
 
-#: view/profile_completion/mo_openid_prof_comp.php:43
+#: view/profile_completion/mo_openid_prof_comp.php:48
 msgid "Display miniOrange logo with social login icons on profile completion forms"
 msgstr "सामाजिक लॉगिन आइकन और खाता लिंकिंग और प्रोफ़ाइल पूर्णता फॉर्मों के साथ मिनीऑरेंज लोगो प्रदर्शित करें."
 
@@ -2050,15 +2160,18 @@ msgid "Redirect URL after login:"
 msgstr "लॉगिन के बाद रीडायरेक्ट करें"
 
 #: view/redirect_options/mo_openid_redirect_op.php:32
+#: view/redirect_options/mo_openid_redirect_op.php:151
 msgid "Account dashboard"
 msgstr "खाता डैशबोर्ड"
 
 #: view/redirect_options/mo_openid_redirect_op.php:40
+#: view/redirect_options/mo_openid_redirect_op.php:157
 msgid "Custom URL"
 msgstr "कस्टम यूआरएल"
 
 #: view/redirect_options/mo_openid_redirect_op.php:51
 #: view/redirect_options/mo_openid_redirect_op.php:110
+#: view/redirect_options/mo_openid_redirect_op.php:169
 msgid "Relative URL"
 msgstr "सापेक्ष यूआरएल"
 
@@ -2087,7 +2200,13 @@ msgstr "वर्तमान पृष्ठ"
 msgid "Login Page"
 msgstr "लॉगिन वाला पन्ना"
 
-#: view/redirect_options/mo_openid_redirect_op.php:128
+#: view/redirect_options/mo_openid_redirect_op.php:124
+#, fuzzy
+#| msgid "Enable Logout Redirection"
+msgid "Enable Registration Redirection"
+msgstr "लॉगआउट पुनर्निर्देशन सक्षम करें"
+
+#: view/redirect_options/mo_openid_redirect_op.php:185
 msgid "Redirection Options"
 msgstr "पुनर्निर्देशन विकल्प"
 
@@ -2131,27 +2250,63 @@ msgstr ""
 "सामाजिक लॉगिन के माध्यम से पंजीकरण करने वाले सभी उपयोगकर्ताओं को यह भूमिका सौंपने के लिए रोल मैपिंग का उपयोग करें। "
 "रोल मैप्ड उपयोगकर्ता के अनुसार वेबसाइट पर भूमिका दी जाएगी।"
 
-#: view/registration/mo_openid_registration.php:32
+#: view/registration/mo_openid_registration.php:37
 msgid "Enable Email Notification to Admin"
 msgstr "व्यवस्थापक को ईमेल अधिसूचना सक्षम करें"
 
-#: view/registration/mo_openid_registration.php:34
+#: view/registration/mo_openid_registration.php:39
 msgid "Enable Email Notification to Admin - on User Registration"
 msgstr "उपयोगकर्ता पंजीकरण पर उपयोगकर्ता को ईमेल अधिसूचना सक्षम करें"
 
-#: view/registration/mo_openid_registration.php:38
+#: view/registration/mo_openid_registration.php:43
 msgid "This feature requires SMTP to be configured"
 msgstr "इन सुविधाओं को एसएमटीपी सेटअप करने की आवश्यकता है|"
 
-#: view/registration/mo_openid_registration.php:41
+#: view/registration/mo_openid_registration.php:46
 msgid "Set Display Picture for User"
 msgstr "उपयोगकर्ता के लिए प्रदर्शन चित्र सेट करें"
 
-#: view/registration/mo_openid_registration.php:43
+#: view/registration/mo_openid_registration.php:48
 msgid "Set Display Picture for User - on User Registration"
 msgstr "उपयोगकर्ता के लिए प्रदर्शन चित्र सेट करें -उपयोगकर्ता पंजीकरण पर"
 
-#: view/registration/mo_openid_registration.php:53
+#: view/registration/mo_openid_registration.php:54
+msgid "Admin Disable bar"
+msgstr ""
+
+#: view/registration/mo_openid_registration.php:62
+msgid "This feature disables admin bar form selected roles of the users"
+msgstr ""
+
+#: view/registration/mo_openid_registration.php:65
+msgid "Send user activation link over email"
+msgstr ""
+
+#: view/registration/mo_openid_registration.php:67
+#, fuzzy
+#| msgid "Enable Email Notification to Admin - on User Registration"
+msgid "Send user activation link over email - on User Registration"
+msgstr "उपयोगकर्ता पंजीकरण पर उपयोगकर्ता को ईमेल अधिसूचना सक्षम करें"
+
+#: view/registration/mo_openid_registration.php:82
+#, fuzzy
+#| msgid "Enable Auto Field Registration Form"
+msgid "Enable Registration For Pages"
+msgstr "ऑटो फ़ील्ड पंजीकरण फ़ॉर्म सक्षम करें"
+
+#: view/registration/mo_openid_registration.php:84
+msgid "Enable registration for specific pages"
+msgstr ""
+
+#: view/registration/mo_openid_registration.php:88
+msgid "Enter Page URLs to Enable Registration:"
+msgstr ""
+
+#: view/registration/mo_openid_registration.php:90
+msgid "Enter Page URL to Redeirect if user is not allowed to register:"
+msgstr ""
+
+#: view/registration/mo_openid_registration.php:100
 msgid "Registration Options"
 msgstr "पंजीकरण के विकल्प"
 
@@ -2361,7 +2516,21 @@ msgstr "ऐप की गिनती"
 msgid "Any value for number of icons in one row"
 msgstr "एक पंक्ति में माउस की संख्या के लिए कोई मान"
 
-#: view/shrtco/mo_openid_shrtco.php:187
+#: view/shrtco/mo_openid_shrtco.php:181
+msgid "Shortcode in php file"
+msgstr ""
+
+#: view/shrtco/mo_openid_shrtco.php:182
+msgid "You can use shortcode in PHP file as following: "
+msgstr ""
+
+#: view/shrtco/mo_openid_shrtco.php:184
+msgid ""
+"Replace SHORTCODE in above code with the required shortcode like <code>[miniorange_social_login "
+"theme=\"default\"]</code>, so the final code looks like following :"
+msgstr ""
+
+#: view/shrtco/mo_openid_shrtco.php:192
 msgid "Social Login Shortcodes"
 msgstr "डिफ़ॉल्ट सामाजिक लॉगिन शोर्ट"
 
@@ -2377,7 +2546,13 @@ msgstr "टिप्पणियाँ - डिफ़ॉल्ट लेबल"
 msgid "Comments - Facebook Label"
 msgstr "टिप्पणियाँ - फेसबुक लेबल"
 
-#: view/soc_com/com_Cust/mo_openid_comm_cust.php:30
+#: view/soc_com/com_Cust/mo_openid_comm_cust.php:23
+#, fuzzy
+#| msgid "Comments - Default Label"
+msgid "Comments - Disqus Label"
+msgstr "टिप्पणियाँ - डिफ़ॉल्ट लेबल"
+
+#: view/soc_com/com_Cust/mo_openid_comm_cust.php:34
 msgid "Customize Text For Social Comment Labels"
 msgstr "सामाजिक शेयर आइकन के लिए पाठ अनुकूलित करें"
 
@@ -2452,7 +2627,13 @@ msgstr "डिफ़ॉल्ट वर्डप्रेस टिप्पण�
 msgid "Facebook Comments"
 msgstr "फेसबुक टिप्पणियां"
 
-#: view/soc_com/com_select_app/mo_openid_comm_select_app.php:55
+#: view/soc_com/com_select_app/mo_openid_comm_select_app.php:50
+#, fuzzy
+#| msgid "Social Comments"
+msgid "Disqus Comments"
+msgstr "सामाजिक टिप्पणियाँ "
+
+#: view/soc_com/com_select_app/mo_openid_comm_select_app.php:66
 msgid "Social Comments"
 msgstr "सामाजिक टिप्पणियाँ "
 
@@ -2551,27 +2732,27 @@ msgstr "उन विकल्पों का चयन करें जहा�
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:57
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:81
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:105
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:140
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:160
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:185
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:143
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:163
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:188
 msgid "Before content"
 msgstr "सामग्री आधी"
 
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:61
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:85
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:109
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:144
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:164
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:189
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:147
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:167
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:192
 msgid "After content"
 msgstr "सामग्री नंतर"
 
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:65
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:91
 #: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:114
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:149
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:169
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:194
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:152
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:172
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:197
 msgid "Both before and after content"
 msgstr "सामग्री आधी आणि नंतर दोन्ही"
 
@@ -2579,61 +2760,75 @@ msgstr "सामग्री आधी आणि नंतर दोन्ह�
 msgid " WooCommerce Individual Product Page(Top)"
 msgstr "वूकमर्स  व्यक्तिगत उत्पाद पृष्ठ (शीर्ष)"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:130
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:124
+#, fuzzy
+#| msgid "Before WooCommerce Checkout Form"
+msgid "Below WooCommerce Product"
+msgstr "वूकमर्स चेकआउट फॉर्म से पहले"
+
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:133
 msgid "WooCommerce Individual Product Page"
 msgstr "वूकमर्स  व्यक्तिगत उत्पाद पृष्ठ"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:135
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:138
 msgid "BBPress Forums Page"
 msgstr "बीबीप्रेस मंच पृष्ठ"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:155
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:158
 msgid "BBPress Topic Page"
 msgstr "बीबीप्रेस विषय पृष्ठ"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:178
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:181
 msgid "BBPress Reply Page"
 msgstr "बीबीप्रेस उत्तर पृष्ठ"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:201
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:204
 msgid "The icons in above pages will be placed horizontally. For vertical icons, add "
 msgstr ""
 "उपरोक्त पृष्ठों के आइकन क्षैतिज रूप से रखे जाएंगे। वर्टिकल आइकन्स के लिए, मिनीऑर्ग शेयरिंग - अपियरेंस-> विजेट्स से वर्टिकल "
 "विजेट जोड़ें।"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:201
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:204
 msgid "miniOrange Sharing - Vertical"
 msgstr "मिनीओरेन्ज शेयरिंग - वर्टिकल"
 
-#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:201
+#: view/soc_sha/disp_shropt/mo_openid_disp_shropt.php:204
 msgid "widget from Appearance->Widgets."
 msgstr "सूरत से विजेट-> विजेट।"
 
 #: view/soc_sha/share_cnt/mo_openid_shrcnt.php:17
-msgid "Share counts are supported for Facebook, Vkontakte, Stumble Upon and Pinterest"
-msgstr "फेसबुक, व्हिक्टकटे, स्टम्ब्ले  अपॉन   और पिनटेरेस्ट  के लिए शेयर मायने रखता है"
+msgid ""
+"Share counts are supported for <b>Facebook</b> If you are Enabling share counts then it will give "
+"you the exact counts of share that is done by that particular social media."
+msgstr ""
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:19
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:17
+msgid ""
+" <b>Vkontakte</b>, <b>Stumble Upon</b>, <b>Buffer</b> and <b>Pinterest</b> and  are supported in "
+"Paid Version"
+msgstr ""
+
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:20
 msgid "Enable share counts"
 msgstr "शेयर गणना सक्षम करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:24
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:25
 msgid "Delete Count Session"
 msgstr "गणना सत्र हटाएं"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:47
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:46
 msgid "Facebook Access Token"
 msgstr "फेसबुक एक्सेस टोकन"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:48
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:47
 msgid "Instructions to configure Facebook Share Counts"
 msgstr "फेसबुक शेअर गणना कॉन्फिगर करण्याच्या सूचना"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:50
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:49
 msgid "Sign in with your Facebook account"
 msgstr "अपने फेसबुक खाते के साथ साइन इन करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:52
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:51
 msgid ""
 "Use an existing app if you already have one or create a new facebook\n"
 "                                        app by clicking on "
@@ -2641,95 +2836,95 @@ msgstr ""
 "यदि आप पहले से ही एक नया फेसबुक बनाते हैं या बनाते हैं तो मौजूदा ऐप का उपयोग करें\n"
 "app पर क्लिक करके"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:53 view/soc_sha/share_cnt/mo_openid_shrcnt.php:54
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:52 view/soc_sha/share_cnt/mo_openid_shrcnt.php:53
 msgid "Create App"
 msgstr "ऐप बनाएं"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:53
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:52
 msgid "My Apps"
 msgstr "मेरी एप्प्स"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:53
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:52
 msgid ""
 "and\n"
 "                                        select"
 msgstr "तथा चुनते हैं"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:54
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:53
 msgid ""
 " Enter Display Name i.e App Name and click\n"
 "                                        on"
 msgstr "डिस्प्ले नाम यानी ऐप का नाम डालें और क्लिक करें पर"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:55
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:54
 msgid "Create App ID"
 msgstr "ऐप आईडी बनाएं"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:57
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:56
 msgid "Tools"
 msgstr "उपकरण"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:57
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:56
 msgid "select"
 msgstr "चुनते हैं"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:57
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:56
 msgid "Graph API Explorer"
 msgstr "ग्राफ एपीआई एक्सप्लोरर"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:57
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:56
 msgid "and click on"
 msgstr "और पर क्लिक करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:57
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:56
 msgid ""
 "Get\n"
 "                                            Access Token"
 msgstr "पहुँच टोकन प्राप्त करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:59
 msgid "Now, go to"
 msgstr "अब, करने के लिए जाओ"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:59
 msgid "Access Token Tool"
 msgstr "टोकन टूल तक पहुंचें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:59
 msgid "and press"
 msgstr "और दबाएँ"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:59
 msgid "Debug"
 msgstr "डिबग"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:59
 msgid "option at right side for the "
 msgstr "के लिए दाईं ओर विकल्प"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:59
 msgid "User Token"
 msgstr "उपयोगकर्ता टोकन"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:61
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
 msgid "Now copy the"
 msgstr "अब कॉपी करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:61
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
 msgid "Access Token"
 msgstr "एक्सेस टोकन"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:61
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:60
 msgid ""
 "and paste it in the above field and\n"
 "                                        click on"
 msgstr "और इसे उपरोक्त क्षेत्र में पेस्ट करें और पर क्लिक करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:62
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:61
 msgid "save"
 msgstr " सहेजें "
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:65
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:64
 msgid ""
 "According to the new updates of\n"
 "                                        Facebook API it will expires after every 60 days. So to "
@@ -2739,7 +2934,7 @@ msgstr ""
 "फेसबुक एपीआई के नए अपडेट के अनुसार यह हर 60 दिनों के बाद समाप्त हो जाएगा। तो किसी भी मुद्दे से बचने के लिए इसे 60 "
 "दिनों से पहले फिर से अपडेट करें"
 
-#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:101
+#: view/soc_sha/share_cnt/mo_openid_shrcnt.php:100
 msgid "Share Counts"
 msgstr "शेयर गणना सक्षम करें"
 
@@ -2849,80 +3044,227 @@ msgstr "बाएंऑफसेट (अगर संरेखण छोड़�
 msgid "Social Sharing Shortcode"
 msgstr "डिफ़ॉल्ट सामाजिक लॉगिन शोर्ट"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:18
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:16
 msgid "Select Social Apps"
 msgstr "सोशल एप्स का चयन करें"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:20
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:18
 msgid "Select applications to enable social sharing"
 msgstr "सामाजिक साझाकरण सक्षम करने के लिए एप्लिकेशन का चयन करें"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:28
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:26
 msgid "Facebook"
 msgstr "फेसबुक"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:36
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:34
 msgid "Twitter"
 msgstr "ट्विटर"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:47
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:45
 msgid "Google"
 msgstr "गूगल"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:61
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:59
 msgid "Vkontakte"
 msgstr "व्हिक्टकटे"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:74
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:72
 msgid "Tumblr"
 msgstr "टंबलर"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:91
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:89
 msgid "StumbleUpon"
 msgstr "स्टंबलउपॉन  "
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:105
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:103
 msgid "LinkedIn"
 msgstr "लिंक्डइन"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:134
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:132
 msgid "Pinterest"
 msgstr "पिनटेरेस्ट"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:148
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:146
 msgid "Pocket"
 msgstr "पॉकेट"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:165
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:163
 msgid "Digg"
 msgstr "डिग"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:178
-msgid "Delicious"
-msgstr "डिलीशियस"
-
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:191
-msgid "Odnoklassniki"
-msgstr "ओन्नोक्लास्निकी"
-
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:214
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:184
 msgid "Print"
 msgstr "प्रिंट  "
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:228
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:195
 msgid "Whatsapp"
 msgstr "व्हाट्सएप"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:249
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:207
+msgid "Amazon_wishlist"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:220
+msgid "Telegram"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:231
+msgid "Line"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:242
+msgid "Yahoo"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:253
+msgid "Renren"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:264
+msgid "Buffer"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:275
+msgid "Instapaper"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:286
+msgid "Mewe"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:297
+msgid "Livejournal"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:308
+msgid "Mix"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:319
+#, fuzzy
+#| msgid "Email"
+msgid "Aol_mail"
+msgstr "मेल "
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:332
+msgid "Qzone"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:343
+msgid "Gmail"
+msgstr "मेल "
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:354
+msgid "Typepad_post"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:365
+msgid "Fark"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:376
+msgid "Bookmark"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:389
+msgid "Fintel"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:400
+msgid "Mendeley"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:411
+msgid "Slashdot"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:423
+msgid "Wanelo"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:434
+msgid "Classroom"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:447
+msgid "Yummly"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:458
+msgid "Hacker_news"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:469
+msgid "Kakao"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:480
+msgid "Plurk"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:491
+msgid "Trello"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:504
+msgid "Wykop"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:515
+msgid "Weibo"
+msgstr ""
+
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:537
 msgid "No apps selected"
 msgstr "कोई एप्लिकेशन नहीं चुना गया"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:556
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:845
 msgid ""
 "Custom background: This will\n"
 "                        change the background color of sharing icons"
 msgstr "कस्टम पृष्ठभूमि: यह लॉगिन आइकन की पृष्ठभूमि का रंग बदल देगा।"
 
-#: view/soc_sha/soc_apps/mo_openid_sharing.php:558
+#: view/soc_sha/soc_apps/mo_openid_sharing.php:847
 msgid "No background: This will change the font color of icons without background"
 msgstr "कोई पृष्ठभूमि नहीं: यह बिना पृष्ठभूमि के आइकन के फ़ॉन्ट रंग को बदल देगा"
+
+#: view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php:5
+msgid "Social Customize Icons"
+msgstr "सामाजिक टिप्पणियाँ"
+
+#: view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php:25
+msgid "<b> Unlock this feature if you want to setup your own customize social sharing app</b>"
+msgstr ""
+
+#: view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php:55
+msgid "Delete"
+msgstr ""
+
+#: view/soc_sha/soc_med_ser/mo_openid_social_media_services.php:4
+#, fuzzy
+#| msgid "Social Login Shortcodes"
+msgid "Social Media Service"
+msgstr "डिफ़ॉल्ट सामाजिक लॉगिन शोर्ट"
+
+#: view/soc_sha/soc_med_ser/mo_openid_social_media_services.php:13
+msgid ""
+"Enable this feature to users will get option for like, recommend and pin your website page on "
+"facebook and pinterest"
+msgstr ""
+
+#: view/soc_sha/soc_med_ser/mo_openid_social_media_services.php:26
+msgid "Enable this feature to to give user an option to E-amil subcribe on your website."
+msgstr ""
+
+#: view/soc_sha/twitter_btn/mo_twitter_btn.php:14
+msgid "Enable Twitter Follow Button"
+msgstr ""
+
+#~ msgid "Share counts are supported for Facebook, Vkontakte, Stumble Upon and Pinterest"
+#~ msgstr "फेसबुक, व्हिक्टकटे, स्टम्ब्ले  अपॉन   और पिनटेरेस्ट  के लिए शेयर मायने रखता है"
+
+#~ msgid "Delicious"
+#~ msgstr "डिलीशियस"
+
+#~ msgid "Odnoklassniki"
+#~ msgstr "ओन्नोक्लास्निकी"

@@ -4,12 +4,12 @@
  * Plugin Name: Social Login, Social Sharing by miniOrange
  * Plugin URI: https://www.miniorange.com
  * Description: Allow your users to login, comment and share with Facebook, Google, Apple, Twitter, LinkedIn etc using customizable buttons.
- * Version: 7.3.7
+ * Version: 7.4.0
  * Author: miniOrange
  * License URI: http://miniorange.com/usecases/miniOrange_User_Agreement.pdf
  */
 
-define('MO_OPENID_SOCIAL_LOGIN_VERSION', '7.3.7');
+define('MO_OPENID_SOCIAL_LOGIN_VERSION', '7.4.0');
 define('plugin_url', plugin_dir_url(__FILE__) . "includes/images/icons/");
 define('MOSL_PLUGIN_DIR',str_replace('/','\\',plugin_dir_path(__FILE__)));
 require('miniorange_openid_sso_settings_page.php');
@@ -41,7 +41,7 @@ class miniorange_openid_sso_settings
         add_action('init', 'mo_openid_login_validate' );
         add_action( 'plugins_loaded', 'mo_openid_plugin_update' ,1 );
         add_action( 'admin_enqueue_scripts', array( $this, 'mo_openid_plugin_settings_script' ) );
-        add_action( 'admin_enqueue_scripts', array( $this, 'mo_openid_plugin_settings_style' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'mo_openid_plugin_settings_admin_style' ) );
         add_action('wp_ajax_mo-openid-sso-sort-action', 'mo_openid_sso_sort_action');
         add_action('wp_ajax_mo_openid_share', 'mo_openid_share_action');
         add_action('wp_ajax_mo_openid_app_enable', 'mo_openid_sso_enable_app');
@@ -116,12 +116,19 @@ class miniorange_openid_sso_settings
         add_option( 'mo_openid_email_enable', '1');
         add_option( 'mo_openid_tour_new','0');
         add_option( 'mo_openid_deactivate_reason_form',0);
+        add_option('mo_openid_registration_email_content', 'Hello,<br><br>##User Name## has registered to your site  successfully.<br><br>Thanks,<br>miniOrange.');
+        add_option('mo_openid_user_register_message', 'Hi ##User Name##,<br><br>Thank you for registering to our site.<br><br>Thanks,<br>miniOrange.');
 
         add_option('mo_openid_user_activation_date','0');
         //GDPR options
         add_option('mo_openid_gdpr_consent_enable', 0);
         add_option( 'mo_openid_privacy_policy_text', 'terms and conditions');
         add_option( 'mo_openid_gdpr_consent_message','I accept the terms and conditions.');
+
+        //woocommerce display options
+        add_option( 'mo_openid_woocommerce_before_login_form','0');
+        add_option( 'mo_openid_woocommerce_center_login_form','0');
+
         //social sharing
         add_option( 'mo_openid_share_theme', 'oval' );
         add_option( 'mo_openid_share_custom_theme', 'default' );
@@ -134,7 +141,7 @@ class miniorange_openid_sso_settings
         add_option( 'mo_openid_share_widget_customize_text_color', '000000');
         add_option( 'mo_openid_share_widget_customize_text', 'Share with:' );
         add_option( 'mo_openid_share_email_subject','I wanted you to see this site' );
-        add_option('share_app','facebook#twitter#google#vkontakte#tumblr#stumble#linkedin#reddit#pinterest#pocket#digg#delicious#odnoklassniki#mail#print#whatsapp');
+        add_option('share_app','facebook#twitter#google#vkontakte#tumblr#stumble#linkedin#reddit#pinterest#pocket#digg#mail#print#whatsapp');
         add_option( 'mo_openid_popup_window', '0');
         add_action('mo_openid_registration_redirect','1');
         add_option('mo_sharing_icon_custom_size','35');
@@ -156,6 +163,13 @@ class miniorange_openid_sso_settings
         add_option( 'mo_disqus_shortname', '' );
         add_option( 'mo_openid_social_comment_heading_label', 'Leave a Reply' );
         add_option( 'mo_openid_login_theme', 'default' );
+
+        if(get_option('mo_openid_woocommerce_before_login_form') == 1){
+            add_action( 'woocommerce_login_form_start', array($this, 'mo_openid_add_social_login'));
+        }
+        if(get_option('mo_openid_woocommerce_center_login_form') == 1){
+            add_action( 'woocommerce_login_form', array($this, 'mo_openid_add_social_login'));
+        }
 
         if(get_option('mo_openid_default_comment_enable') == 1 ){
             add_action('comment_form_must_log_in_after', array($this, 'mo_openid_add_social_login'));
@@ -236,6 +250,9 @@ Thank you.';
     }
 
     function mo_openid_plugin_settings_script() {
+        if(strpos(get_current_screen()->id, 'miniorange-social-login-sharing_page') === false) return;
+        wp_enqueue_script( 'mo_openid_admin_settings_jquery_script', plugins_url('includes/js/social/config-jquery.js', __FILE__ ));
+        wp_enqueue_script( 'mo_openid_admin_settings_jquery1_script', plugins_url('includes/js/config-jquery-ui.js', __FILE__ ));
         wp_enqueue_script( 'mo_openid_admin_settings_phone_script', plugins_url('includes/js/phone.js', __FILE__ ));
         wp_enqueue_script( 'mo_openid_admin_settings_color_script', plugins_url('includes/jscolor/jscolor.js', __FILE__ ));
         wp_enqueue_script( 'mo_openid_admin_settings_script', plugins_url('includes/js/settings.js?version=4.9.6', __FILE__ ), array('jquery'));
@@ -244,13 +261,18 @@ Thank you.';
     }
 
     function mo_openid_plugin_settings_style() {
-        wp_enqueue_style( 'mo_openid_admin_settings_style', plugins_url('includes/css/mo_openid_style.css?version=7.3.0', __FILE__));
+        wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
         wp_enqueue_style( 'mo_openid_admin_settings_phone_style', plugins_url('includes/css/phone.css', __FILE__));
         wp_enqueue_style( 'mo-wp-bootstrap-social',plugins_url('includes/css/bootstrap-social.css', __FILE__), false );
         wp_enqueue_style( 'mo-wp-bootstrap-main',plugins_url('includes/css/bootstrap.min-preview.css', __FILE__), false );
         wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.min.css', __FILE__), false );
         wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.css', __FILE__), false );
         wp_enqueue_style( 'bootstrap_style_ass', plugins_url( 'includes/css/mo_openid_bootstrap-tour-standalone.css?version=5.1.4', __FILE__ ) );
+    }
+
+    function mo_openid_plugin_settings_admin_style(){
+        if(strpos(get_current_screen()->id, 'miniorange-social-login-sharing_page') === false) return;
+        wp_enqueue_style( 'mo_openid_admin_settings_style', plugins_url('includes/css/mo_openid_style.css?version=7.3.0', __FILE__));
     }
 
     function mo_openid_activate() {
@@ -276,6 +298,7 @@ Thank you.';
 
     function mo_custom_login_stylesheet()
     {
+        wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
         wp_enqueue_style( 'mo-wp-style',plugins_url('includes/css/mo_openid_style.css?version=7.3.0', __FILE__), false );
         wp_enqueue_style( 'mo-wp-bootstrap-social',plugins_url('includes/css/bootstrap-social.css', __FILE__), false );
         wp_enqueue_style( 'mo-wp-bootstrap-main',plugins_url('includes/css/bootstrap.min.css', __FILE__), false );
@@ -319,13 +342,13 @@ Thank you.';
             add_action('admin_notices', 'mo_openid_activation_message');
         }
 
-        $value = isset( $_POST['option']) ? $_POST['option']: '';
+        $value = isset( $_POST['option']) ? sanitize_text_field($_POST['option']): '';
         switch( $value )
         {
             case 'mo_openid_customise_social_icons':
-                $nonce = $_POST['mo_openid_customise_social_icons_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_customise_social_icons_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-customise-social-icons-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }
                 else{
                     update_option('mo_openid_login_theme',isset($_POST['mo_openid_login_theme'])? sanitize_text_field($_POST['mo_openid_login_theme']):"");
@@ -348,9 +371,9 @@ Thank you.';
             case 'mo_openid_enable_gdpr':
                 {
                     if (!mo_openid_restrict_user()) {
-                        $nonce = $_POST['mo_openid_enable_gdpr_nonce'];
+                        $nonce = sanitize_text_field($_POST['mo_openid_enable_gdpr_nonce']);
                         if (!wp_verify_nonce($nonce, 'mo-openid-enable-gdpr-nonce')) {
-                            wp_die('<strong>ERROR</strong>: Invalid Request.');
+                            wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                         } else {
                             // GDPR options
                             update_option('mo_openid_gdpr_consent_enable', isset($_POST['mo_openid_gdpr_consent_enable']) ? sanitize_text_field($_POST['mo_openid_gdpr_consent_enable']) : 0);
@@ -364,9 +387,9 @@ Thank you.';
                 }
                 break;
             case 'mo_openid_contact_us_query_option':
-                $nonce = $_POST['mo_openid_contact_us_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_contact_us_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-contact-us-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
 
                     // Contact Us query
@@ -392,9 +415,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_rateus_query_option':
-                $nonce = $_POST['mo_openid_rateus_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_rateus_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-rateus-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
 
                     // Rate Us query
@@ -418,9 +441,9 @@ Thank you.';
                 break;
 
             case 'cronmo_openid_rateus_query_option':
-                $nonce = $_POST['cronmo_openid_rateus_nonce'];
+                $nonce = sanitize_text_field($_POST['cronmo_openid_rateus_nonce']);
                 if (!wp_verify_nonce($nonce, 'cronmo-openid-rateus-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
 
                     // Rate Us query
@@ -447,9 +470,9 @@ Thank you.';
 
 
             case 'mo_openid_enable_redirect':
-                $nonce=$_POST['mo_openid_enable_redirect_nonce'];
+                $nonce=sanitize_text_field($_POST['mo_openid_enable_redirect_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-redirect-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }else {
                     //Redirect URL
                     update_option('mo_openid_login_redirect', isset($_POST['mo_openid_login_redirect'])?sanitize_text_field($_POST['mo_openid_login_redirect']):"");
@@ -466,9 +489,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_enable_registration':
-                $nonce=$_POST['mo_openid_enable_registration_nonce'];
+                $nonce=sanitize_text_field($_POST['mo_openid_enable_registration_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-registration-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }else {
                     update_option('mo_openid_auto_register_enable', isset($_POST['mo_openid_auto_register_enable']) ? sanitize_text_field($_POST['mo_openid_auto_register_enable']) : 0);
                     update_option('mo_openid_register_disabled_message',isset($_POST['mo_openid_register_disabled_message'])? sanitize_text_field($_POST['mo_openid_register_disabled_message']):"");
@@ -481,13 +504,15 @@ Thank you.';
                 break;
 
             case 'mo_openid_enable_display':
-                $nonce=$_POST['mo_openid_enable_display_nonce'];
+                $nonce=sanitize_text_field($_POST['mo_openid_enable_display_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-display-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }else {
                     update_option('mo_openid_default_login_enable', isset($_POST['mo_openid_default_login_enable']) ? sanitize_text_field($_POST['mo_openid_default_login_enable']) : 0);
                     update_option('mo_openid_default_register_enable', isset($_POST['mo_openid_default_register_enable']) ? sanitize_text_field($_POST['mo_openid_default_register_enable']) : 0);
                     update_option('mo_openid_default_comment_enable', isset($_POST['mo_openid_default_comment_enable']) ? sanitize_text_field($_POST['mo_openid_default_comment_enable']) : 0);
+                    update_option('mo_openid_woocommerce_before_login_form', isset($_POST['mo_openid_woocommerce_before_login_form']) ? sanitize_text_field($_POST['mo_openid_woocommerce_before_login_form']) : 0);
+                    update_option('mo_openid_woocommerce_center_login_form', isset($_POST['mo_openid_woocommerce_center_login_form']) ? sanitize_text_field($_POST['mo_openid_woocommerce_center_login_form']) : 0);
                     update_option('moopenid_logo_check', isset($_POST['moopenid_logo_check']) ? sanitize_text_field($_POST['moopenid_logo_check']) : 0);
                     update_option('mo_openid_message', 'Your settings are saved successfully.');
 	                mo_openid_show_success_message();
@@ -495,24 +520,20 @@ Thank you.';
                 break;
 
             case 'mo_openid_verify_license':
-                $nonce = $_POST['mo_openid_verify_license_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_verify_license_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-verify-license-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }
                 else {
                     $code = trim($_POST['openid_licence_key']);
                     $customer = new CustomerOpenID();
-                    $content = json_decode($customer->check_customer_ln($_POST['licience_type']), true);
+                    $content = json_decode($customer->check_customer_ln(sanitize_text_field($_POST['licience_type'])), true);
                     if (strcasecmp($content['status'], 'SUCCESS') == 0) {
                         $content = json_decode($customer->mo_openid_vl($code, false), true);
                         update_option('mo_openid_vl_check_t', time());
                         if (strcasecmp($content['status'], 'SUCCESS') == 0) {
                             $key = get_option('mo_openid_customer_token');
-                            if($_POST['licience_type']=="general") {
-                                update_option('mo_openid_opn_lk', MOAESEncryption::encrypt_data($code, $key));
-                                update_option('mo_openid_message', 'Your license is verified. You can now setup the plugin.');
-                            }
-                            else if($_POST['licience_type']=="extra_attributes_addon") {
+                            if($_POST['licience_type']=="extra_attributes_addon") {
                                 update_option('mo_openid_opn_lk_extra_attr_addon', MOAESEncryption::encrypt_data($code, $key));
                                 update_option('mo_openid_message', 'Your addon license is verified. You can now setup the addon plugin.');
                             }
@@ -550,9 +571,9 @@ Thank you.';
             case 'mo_openid_account_linking':
                 {
                     if (!mo_openid_restrict_user()) {
-                        $nonce = $_POST['mo_openid_enable_account_linking_nonce'];
+                        $nonce = sanitize_text_field($_POST['mo_openid_enable_account_linking_nonce']);
                         if (!wp_verify_nonce($nonce, 'mo-openid-enable-account-linking-nonce')) {
-                            wp_die('<strong>ERROR</strong>: Invalid Request.');
+                            wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                         } else {
                             update_option('mo_openid_account_linking_enable', isset($_POST['mo_openid_account_linking_enable']) ? sanitize_text_field($_POST['mo_openid_account_linking_enable']) : 0);
                             update_option('mo_account_linking_title', isset($_POST['mo_account_linking_title']) ? sanitize_text_field($_POST['mo_account_linking_title']) : "");
@@ -570,9 +591,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_profile_completion':
-                $nonce = $_POST['mo_openid_enable_profile_completion_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_enable_profile_completion_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-premium-feature-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
                     if(strpos($_POST['custom_otp_msg'], '##otp##' ) !== false) {
                         //$_POST['custom_otp_msg'] = stripslashes($_POST['custom_otp_msg']);
@@ -604,9 +625,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_enable_customize_text':
-                $nonce=$_POST['mo_openid_enable_customize_text_nonce'];
+                $nonce=sanitize_text_field($_POST['mo_openid_enable_customize_text_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-customize-text-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }else {
                     update_option('mo_sharing_icon_custom_size',isset($_POST['mo_sharing_icon_custom_size'])?sanitize_text_field($_POST['mo_sharing_icon_custom_size']):0);
                     update_option('mo_sharing_icon_space',isset($_POST['mo_sharing_icon_space'])? sanitize_text_field($_POST['mo_sharing_icon_space']):0);
@@ -627,9 +648,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_enable_share_display':
-                $nonce=$_POST['mo_openid_enable_share_display_nonce'];
+                $nonce=sanitize_text_field($_POST['mo_openid_enable_share_display_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-share-display-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }
                 else{
                     update_option('mo_share_options_enable_home_page', isset($_POST['mo_share_options_home_page']) ? sanitize_text_field($_POST['mo_share_options_home_page']) : 0);
@@ -653,9 +674,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_feedback':
-                $nonce = $_POST['mo_openid_feedback_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_feedback_nonce']);
                 if ( ! wp_verify_nonce( $nonce, 'mo-openid-feedback-nonce' ) ) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
                     $message='';
                     $email = '';
@@ -705,9 +726,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_share_cnt':
-                $nonce=$_POST['mo_openid_share_cnt_nonce'];
+                $nonce=sanitize_text_field($_POST['mo_openid_share_cnt_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-share-cnt-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 }else {
                     update_option( 'mo_openid_share_count', isset( $_POST['mo_openid_share_count']) ? sanitize_text_field($_POST['mo_openid_share_count']) : 0);
                     update_option( 'mo_openid_Facebook_share_count_api', isset( $_POST['mo_openid_Facebook_share_count_api']) ? sanitize_text_field($_POST['mo_openid_Facebook_share_count_api']) : '');
@@ -717,9 +738,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_comment_selectapp':
-                $nonce = $_POST['mo_openid_enable_comment_selectapp_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_enable_comment_selectapp_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-comment-selectapp-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
                     update_option('mo_openid_social_comment_fb', isset($_POST['mo_openid_social_comment_fb']) ? sanitize_text_field($_POST['mo_openid_social_comment_fb']) : 0);
                     update_option('mo_openid_social_comment_disqus', isset($_POST['mo_openid_social_comment_disqus']) ? sanitize_text_field($_POST['mo_openid_social_comment_disqus']) : 0);
@@ -731,9 +752,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_comment_display':
-                $nonce = $_POST['mo_openid_enable_comment_display_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_enable_comment_display_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-comment-display-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
                     update_option('mo_openid_social_comment_blogpost', isset($_POST['mo_openid_social_comment_blogpost']) ? sanitize_text_field($_POST['mo_openid_social_comment_blogpost']) : 0);
                     update_option('mo_openid_social_comment_static', isset($_POST['mo_openid_social_comment_static']) ? sanitize_text_field($_POST['mo_openid_social_comment_static']) : 0);
@@ -743,9 +764,9 @@ Thank you.';
                 break;
 
             case 'mo_openid_comment_labels':
-                $nonce = $_POST['mo_openid_enable_comment_labels_nonce'];
+                $nonce = sanitize_text_field($_POST['mo_openid_enable_comment_labels_nonce']);
                 if (!wp_verify_nonce($nonce, 'mo-openid-enable-comment-labels-nonce')) {
-                    wp_die('<strong>ERROR</strong>: Invalid Request.');
+                    wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
                 } else {
                     update_option('mo_openid_social_comment_default_label',isset($_POST['mo_openid_social_comment_default_label'])? sanitize_text_field($_POST['mo_openid_social_comment_default_label']):0);
                     update_option('mo_openid_social_comment_fb_label', isset($_POST['mo_openid_social_comment_fb_label'])?sanitize_text_field($_POST['mo_openid_social_comment_fb_label']):0);
@@ -965,20 +986,20 @@ Thank you.';
         }
         $curr_user = get_current_user_id();
         if ($curr_user == 0) {
-            $last_name = isset($_POST['last_name']) ? $_POST['last_name'] : "";
-            $first_name = isset($_POST['first_name']) ? $_POST['first_name'] : "";
-            $user_full_name = isset($_POST['user_full_name']) ? $_POST['user_full_name'] : "";
-            $user_url = isset($_POST['user_url']) ? $_POST['user_url'] : "";
-            $call = $_POST['call'];
-            $user_profile_url = isset($_POST['user_profile_url']) ? $_POST['user_profile_url'] : "";
-            $user_picture = isset($_POST['user_picture']) ? $_POST['user_picture'] : "";
-            $username = isset($_POST['username']) ? $_POST['username'] : "";
-            $user_email = isset($_POST['user_email']) ? $_POST['user_email'] : "";
-            $random_password = isset($_POST['random_password']) ? $_POST['random_password'] : "";
-            $decrypted_app_name = isset($_POST['decrypted_app_name']) ? $_POST['decrypted_app_name'] : "";
-            $decrypted_user_id = isset($_POST['decrypted_user_id']) ? $_POST['decrypted_user_id'] : "";
-            $social_app_name = isset($_POST['social_app_name']) ? $_POST['social_app_name'] : "";
-            $social_user_id = isset($_POST['social_user_id']) ? $_POST['social_user_id'] : "";
+            $last_name = isset($_POST['last_name']) ? sanitize_text_field($_POST['last_name']) : "";
+            $first_name = isset($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : "";
+            $user_full_name = isset($_POST['user_full_name']) ? sanitize_text_field($_POST['user_full_name']) : "";
+            $user_url = isset($_POST['user_url']) ? sanitize_text_field($_POST['user_url']) : "";
+            $call = sanitize_text_field($_POST['call']);
+            $user_profile_url = isset($_POST['user_profile_url']) ? sanitize_text_field($_POST['user_profile_url']) : "";
+            $user_picture = isset($_POST['user_picture']) ? sanitize_text_field($_POST['user_picture']) : "";
+            $username = isset($_POST['username']) ? sanitize_text_field($_POST['username']) : "";
+            $user_email = isset($_POST['user_email']) ? sanitize_text_field($_POST['user_email']) : "";
+            $random_password = isset($_POST['random_password']) ? sanitize_text_field($_POST['random_password']) : "";
+            $decrypted_app_name = isset($_POST['decrypted_app_name']) ? sanitize_text_field($_POST['decrypted_app_name']) : "";
+            $decrypted_user_id = isset($_POST['decrypted_user_id']) ? sanitize_text_field($_POST['decrypted_user_id']) : "";
+            $social_app_name = isset($_POST['social_app_name']) ? sanitize_text_field($_POST['social_app_name']) : "";
+            $social_user_id = isset($_POST['social_user_id']) ? sanitize_text_field($_POST['social_user_id']) : "";
         } else {
             $last_name = "";
             $first_name = "";

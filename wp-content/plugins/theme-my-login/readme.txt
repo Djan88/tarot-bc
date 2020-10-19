@@ -1,9 +1,9 @@
 === Theme My Login ===
 Contributors: thememylogin, jfarthing84
 Tags: login, register, password, branding, customize, widget, wp-login, wp-login.php
-Requires at least: 4.6
-Tested up to: 5.2.4
-Stable tag: 7.0.15
+Requires at least: 5.4
+Tested up to: 5.4.2
+Stable tag: trunk
 
 The ultimate login branding solution! Theme My Login offers matchless customization of your WordPress user experience!
 
@@ -58,6 +58,22 @@ Report bugs, suggest ideas and participate in development at [GitHub](https://gi
 
 
 == Changelog ==
+
+= 7.1.1 =
+* Implement option to enable/disable AJAX
+* Fix AJAX not working on certain server environments
+* Fix AJAX errors not displaying when the AJAX request fails
+* Revert forcing actions to the Dashboard when logged in
+
+= 7.1 =
+* Implement AJAX support
+* Introduce new Dashboard action
+* Improve performance by reducing queries
+* Require WordPress 5.4
+* Remove angle brackets from password reset link in notification
+* Add sensitive page meta tags to TML actions
+* Add missing `lost_password` action hook
+* Fix lostpassword link being rewritten on wp-login.php
 
 = 7.0.15 =
 * Fix extension update issues caused by caching
@@ -737,6 +753,9 @@ Report bugs, suggest ideas and participate in development at [GitHub](https://gi
 
 
 == Upgrade Notice ==
+
+= 7.1 =
+Theme My Login now requires WordPress 5.4+, and by extension, PHP 5.6.20+.
 
 = 7.0 =
 Modules are no longer included with the plugin. Please consider this before you upgrade!

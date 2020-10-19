@@ -14,7 +14,7 @@ function mo_openid_end_session() {
 
 function mo_openid_initialize_social_login(){
     $client_name = "wordpress";
-    $appname = $_REQUEST['app_name'];
+    $appname = sanitize_text_field($_REQUEST['app_name']);
     if($appname=='yaahoo')
         $appname='yahoo';
     $timestamp = round(microtime(true) * 1000);
@@ -44,7 +44,8 @@ function mo_openid_custom_app_oauth_redirect($appname){
         $appname='yahoo';
     }
     require('social_apps/' . $appname . '.php');
-    $social_app = new $appname();
+    $mo_appname='mo_'.$appname;
+    $social_app = new $mo_appname();
     $social_app->mo_openid_get_app_code();
 }
 
@@ -91,7 +92,8 @@ function mo_openid_process_custom_app_callback()
          $appname='yahoo';
      }
     require('social_apps/' . $appname . '.php');
-    $social_app = new $appname();
+    $mo_appname='mo_'.$appname;
+    $social_app = new $mo_appname();
     $appuserdetails = $social_app->mo_openid_get_access_token();
     mo_openid_process_user_details($appuserdetails,$appname);
 }
@@ -177,28 +179,6 @@ function mo_openid_process_user_details($appuserdetails,$appname)
         $user_name = $splitemail[0];
     }
 
-    $extended_attr = array(
-        'location_city' => $location_city,
-        'location_country' => $location_country,
-        'about_me' => $about_me,
-        'company_name' => $company_name,
-        'age' => $age,
-        'gender' => $gender,
-        'birth_date' => $birth_date,
-        'friend_list' => $friend_nos,
-        'website' => $website,
-        'field_of_study' => $field_of_study,
-        'university_name' => $university_name,
-        'places_lived' => $places_lived,
-        'position' => $position,
-        'relationship' => $relationship,
-        'contact_no' => $contact_no,
-        'industry' => $industry,
-        'head_line' => $head_line,
-        'NA' => $NA
-    );
-
-    mo_openid_save_extended_attributes_in_session($extended_attr);
 
     //Set User Full Name
     if (isset($first_name) && isset($last_name)) {
@@ -358,6 +338,8 @@ function mo_create_new_user($user_val){
     );
     $user_id 	= wp_insert_user( $userdata);
 
+    
+
     if(is_wp_error( $user_id )) {
         print_r($user_id);
         wp_die("Error Code 5: ".get_option('mo_registration_error_message'));
@@ -396,27 +378,6 @@ function mo_openid_customize_logo(){
     return $logo;
 }
 
-function mo_openid_save_extended_attributes_in_session($extended_attr){
-    mo_openid_start_session();
-    $_SESSION['location_city'] = isset($extended_attr['location_city'])?$extended_attr['location_city']:'';
-    $_SESSION['location_country'] = isset($extended_attr['$location_country'])?$extended_attr['location_country']:'';
-    $_SESSION['about_me'] = isset($extended_attr['about_me'])?$extended_attr['about_me']:'';
-    $_SESSION['company_name'] = isset($extended_attr['company_name'])?$extended_attr['company_name']:'';
-    $_SESSION['age'] = isset($extended_attr['age'])?$extended_attr['age']:'';
-    $_SESSION['gender'] = isset($extended_attr['gender'])?$extended_attr['gender']:'';
-    $_SESSION['birth_date'] = isset($extended_attr['birth_date'])?$extended_attr['birth_date']:'';
-    $_SESSION['friend_list'] = isset($extended_attr['friend_nos'])?$extended_attr['friend_list']:'';
-    $_SESSION['website'] = isset($extended_attr['website'])?$extended_attr['website']:'';
-    $_SESSION['field_of_study'] = isset($extended_attr['field_of_study'])?$extended_attr['field_of_study']:'';
-    $_SESSION['university_name'] = isset($extended_attr['university_name'])?$extended_attr['university_name']:'';
-    $_SESSION['places_lived'] = isset($extended_attr['places_lived'])?$extended_attr['places_lived']:'';
-    $_SESSION['relationship'] = isset($extended_attr['relationship'])?$extended_attr['relationship']:'';
-    $_SESSION['contact_no'] = isset($extended_attr['contact_no'])?$extended_attr['contact_no']:'';
-    $_SESSION['industry'] = isset($extended_attr['industry'])?$extended_attr['industry']:'';
-    $_SESSION['head_line'] = isset($extended_attr['head_line'])?$extended_attr['head_line']:'';
-    $_SESSION['position'] = isset($extended_attr['position'])?$extended_attr['position']:'';
-    $_SESSION['NA'] = 'NA';
-}
 
 function sso_field_mapping_add_on($user_val)
 {
@@ -1014,7 +975,7 @@ function create_customer(){
             wp_send_json(["success" => 'Registration complete!']);
         else {
             mo_openid_show_success_message();
-            header('Location: admin.php?page=mo_openid_settings&tab=licensing_plans');
+            header('Location: admin.php?page=mo_openid_general_settings&tab=licensing_plans');
         }
     }
     delete_option('mo_openid_admin_password', '');
@@ -1223,19 +1184,19 @@ function mo_pop_show_verify_password_page() {
 }
 
 function mo_openid_share_action(){
-    $nonce = $_POST['mo_openid_share_nonce'];
+    $nonce = sanitize_text_field($_POST['mo_openid_share_nonce']);
     if (!wp_verify_nonce($nonce, 'mo-openid-share')) {
-        wp_die('<strong>ERROR</strong>: Invalid Request.');
+        wp_die('<strong>ERROR</strong>: Please Go back and Refresh the page and try again!<br/>If you still face the same issue please contact your Administrator.');
     } else {
 
-        $enable_id = $_POST['enabled'];
+        $enable_id = sanitize_text_field($_POST['enabled']);
 
         if ($enable_id == "true") {
 
-            update_option($_POST['id_name'], 1);
+            update_option(sanitize_text_field($_POST['id_name']), 1);
         } else if ($enable_id == "false") {
 
-            update_option($_POST['id_name'], 0);
+            update_option(sanitize_text_field($_POST['id_name']), 0);
         }
     }
 }
@@ -1316,11 +1277,11 @@ function update_custom_data($user_id)
             if($type == "dropdown" && $_POST['user_role'])
             {
                 $user = get_user_by('ID',$user_id);
-                $user->set_role( strtolower($_POST['user_role']) );
-                update_user_meta($user_id, $field_update, $_POST['user_role']);
+                $user->set_role( strtolower(sanitize_text_field($_POST['user_role'])) );
+                update_user_meta($user_id, $field_update, sanitize_text_field($_POST['user_role']));
             }
             else
-                update_user_meta($user_id, $field_update, $_POST[$field]);
+                update_user_meta($user_id, $field_update, sanitize_text_field($_POST[$field]));
         } else {
             $flag = 0;
             $str_res = explode(";", $add_field);
@@ -1328,7 +1289,7 @@ function update_custom_data($user_id)
                 if (isset($_POST[$field . $a])) {
                     if ($flag != 0)
                         $res = $res . ";";
-                    $res = $res . $_POST[$field . $a];
+                    $res = $res . sanitize_text_field($_POST[$field . $a]);
                     $flag++;
                 }
                 $a++;
@@ -1349,7 +1310,7 @@ function mo_openid_activation_message() {
 }
 
 function mo_openid_rating_given(){
-    update_option("mo_openid_rating_given",$_POST['rating']);
+    update_option("mo_openid_rating_given",sanitize_text_field($_POST['rating']));
 }
 
 function mo_openid_add_custom_column1($columns){

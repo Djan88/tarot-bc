@@ -62,7 +62,8 @@ delete_option('mo_openid_social_comment_heading_label' );
 delete_option('app_pos' );
 delete_option('app_pos_premium');
 delete_option('mo_openid_deactivate_reason_form');
-
+delete_option( 'mo_openid_woocommerce_before_login_form');
+delete_option( 'mo_openid_woocommerce_center_login_form');
 delete_option('mo_share_options_enable_post');
 delete_option('mo_share_options_enable_home_page');
 delete_option('mo_share_options_enable_static_pages');
@@ -206,5 +207,16 @@ delete_option('mo_openid_user_activation_date');
 
 delete_option('mo_openid_registration_redirection_enable');
 delete_option('mo_openid_relative_register_redirect_url');
+
+
+delete_option('mo_openid_rating_given');
+delete_option('widget_mo_openid_sharing_hor_wid');
+delete_option('widget_mo_openid_sharing_ver_wid');
+delete_option('mo_openid_user_activation_date1');
+delete_option('mo_disqus_shortname');
+delete_option('mo_openid_user_register_message');
+delete_option('mo_openid_registration_email_content');
+delete_option('mo_openid_tour_new');
+delete_option('mo_openid_register_email_message');
 
 ?>

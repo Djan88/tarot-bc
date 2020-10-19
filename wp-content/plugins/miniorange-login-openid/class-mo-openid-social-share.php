@@ -66,7 +66,7 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 				<?php
 				if($custom_theme == 'custom'){
 					if( get_option('mo_openid_facebook_share_enable') ) {
-                        $link = esc_url('https://www.facebook.com/dialog/share?app_id=766555246789034&amp;display=popup&amp;href='.$url);
+                        $link = esc_url('https://www.facebook.com/sharer/sharer.php?u='.$url.'&src=sdkpreparse');
                         ?>
 						<a rel='nofollow' title="Facebook" onclick="popupCenter('<?php echo $link; ?>', 800, 400);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-facebook" style="padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
 						<?php
@@ -141,19 +141,6 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 						<?php
 					}
 
-					if( get_option('mo_openid_delicious_share_enable') ) {
-						$link = esc_url('http://www.delicious.com/save?v=5&noui&jump=close&url='.$url.'&amp;title='.$title);
-						?>
-						<a rel='nofollow' title="Delicious"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-delicious" style="padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-						<?php
-					}
-
-					if( get_option('mo_openid_odnoklassniki_share_enable') ) {
-						$link = esc_url('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='.$excerpt.'&amp;st._surl='.$url);
-						?>
-						<a rel='nofollow' title="Odnoklassniki"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-odnoklassniki" style="padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-						<?php
-					}
 					if( get_option('mo_openid_mail_share_enable') ) {
 						?>
 						<a rel='nofollow' title="Email this page" onclick="popupCenter('mailto:?subject=<?php echo $email_subject ?>&amp;body=<?php echo $email_body ?>',800,500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important">
@@ -184,7 +171,7 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 
 				else if($custom_theme == 'customFont'){
 					if( get_option('mo_openid_facebook_share_enable') ) {
-                        $link = esc_url('https://www.facebook.com/dialog/share?app_id=766555246789034&amp;display=popup&amp;href='.$url);
+                        $link = esc_url('https://www.facebook.com/sharer/sharer.php?u='.$url.'&src=sdkpreparse');
                         ?>
 						<a rel='nofollow' title="Facebook" onclick="popupCenter('<?php echo $link; ?>', 800, 400);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons-6?>px !important"><i class=" <?php echo $selected_theme; ?> mofa mofa-facebook" style="padding-top:4px;text-align:center;color:#<?php echo $fontColor ?> !important;font-size:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
 						<?php
@@ -259,18 +246,6 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 						<?php
 					}
 
-					if( get_option('mo_openid_delicious_share_enable') ) {
-						$link = esc_url('http://www.delicious.com/save?v=5&noui&jump=close&url='.$url.'&amp;title='.$title);
-						?>
-						<a rel='nofollow' title="Delicious"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons-6?>px !important"><i class=" <?php echo $selected_theme; ?> mofa mofa-delicious" style="padding-top:4px;text-align:center;color:#<?php echo $fontColor ?> !important;font-size:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize-4; ?>px !important;width:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize-4; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-						<?php
-					}
-					if( get_option('mo_openid_odnoklassniki_share_enable') ) {
-						$link = esc_url('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='.$excerpt.'&amp;st._surl='.$url);
-						?>
-						<a rel='nofollow' title="Odnoklassniki"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons-6?>px !important"><i class=" <?php echo $selected_theme; ?> mofa mofa-odnoklassniki" style="padding-top:4px;text-align:center;color:#<?php echo $fontColor ?> !important;font-size:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize-4; ?>px !important;width:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize-4; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-						<?php
-					}
 					if( get_option('mo_openid_mail_share_enable') ) {
 						?>
 						<a rel='nofollow' title="Email this page" onclick="popupCenter('mailto:?subject=<?php echo $email_subject ?>&amp;body=<?php echo $email_body ?>',800,500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important">
@@ -303,7 +278,7 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 
 
 					if( get_option('mo_openid_facebook_share_enable') ) {
-                        $link = esc_url('https://www.facebook.com/dialog/share?app_id=766555246789034&amp;display=popup&amp;href='.$url);
+                        $link = esc_url('https://www.facebook.com/sharer/sharer.php?u='.$url.'&src=sdkpreparse');
                         ?>
 						<a rel='nofollow' title="Facebook" onclick="popupCenter('<?php echo $link; ?>', 800, 400);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><img alt='Facebook' style= 'padding-top:2px; height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/facebook.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
 						<?php
@@ -374,18 +349,6 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 						<a rel='nofollow' title="Digg"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><img alt='Digg' style= 'padding-top:2px; height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/digg.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
 						<?php
 					}
-					if( get_option('mo_openid_delicious_share_enable') ) {
-						$link = esc_url('http://www.delicious.com/save?v=5&noui&jump=close&url='.$url.'&amp;title='.$title);
-						?>
-						<a rel='nofollow' title="Delicious"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><img alt='Delicious' style= 'padding-top:2px; height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/delicious.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
-						<?php
-					}
-					if( get_option('mo_openid_odnoklassniki_share_enable') ) {
-						$link = esc_url('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='.$excerpt.'&amp;st._surl='.$url);
-						?>
-						<a rel='nofollow' title="Odnoklassniki"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important"><img alt='Odnoklassniki' style= 'padding-top:2px; height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/odnoklassniki.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
-						<?php
-					}
 					if( get_option('mo_openid_mail_share_enable') ) {
 						?>
 						<a rel='nofollow' title="Email this page" onclick="popupCenter('mailto:?subject=<?php echo $email_subject ?>&amp;body=<?php echo $email_body ?>',800,500);" class="mo-openid-share-link" style="margin-left : <?php echo $spaceBetweenIcons?>px !important">
@@ -424,7 +387,7 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 			<?php
 			if($custom_theme == 'custom'){
 				if( get_option('mo_openid_facebook_share_enable') ) {
-                    $link = esc_url('https://www.facebook.com/dialog/share?app_id=766555246789034&amp;display=popup&amp;href='.$url);
+                    $link = esc_url('https://www.facebook.com/sharer/sharer.php?u='.$url.'&src=sdkpreparse');
                     ?>
 					<a rel='nofollow' title="Facebook" onclick="popupCenter('<?php echo $link; ?>', 800, 400);" class="mo-openid-share-link" style="margin-bottom:<?php echo $space_icons?>px !important;"><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-facebook" style="margin-bottom:<?php echo $space_icons-4?>px !important;padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
 					<?php
@@ -498,20 +461,6 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 					<a rel='nofollow' title="Digg"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-digg" style="margin-bottom:<?php echo $space_icons-4?>px!important;padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
 					<?php
 				}
-
-				if( get_option('mo_openid_delicious_share_enable') ) {
-					$link = esc_url('http://www.delicious.com/save?v=5&noui&jump=close&url='.$url.'&amp;title='.$title);
-					?>
-					<a rel='nofollow' title="Delicious"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-delicious" style="margin-bottom:<?php echo $space_icons-4?>px!important;padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-					<?php
-				}
-
-				if( get_option('mo_openid_odnoklassniki_share_enable') ) {
-					$link = esc_url('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='.$excerpt.'&amp;st._surl='.$url);
-					?>
-					<a rel='nofollow' title="Odnoklassniki"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><i class="mo-custom-share-icon <?php echo $selected_theme; ?> mofa mofa-odnoklassniki" style="margin-bottom:<?php echo $space_icons-4?>px!important;padding-top:8px;text-align:center;color:#ffffff;font-size:<?php echo ($sharingSize-16); ?>px !important;background-color:#<?php echo $custom_color?>;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-					<?php
-				}
 				if( get_option('mo_openid_mail_share_enable') ) {
 					?>
 					<a rel='nofollow' title="Email this page" onclick="popupCenter('mailto:?subject=<?php echo $email_subject ?>&amp;body=<?php echo $email_body ?>',800,500);" class="mo-openid-share-link">
@@ -541,7 +490,7 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 			}
 			else if($custom_theme == 'customFont'){
 				if( get_option('mo_openid_facebook_share_enable') ) {
-                    $link = esc_url('https://www.facebook.com/dialog/share?app_id=766555246789034&amp;display=popup&amp;href='.$url);
+                    $link = esc_url('https://www.facebook.com/sharer/sharer.php?u='.$url.'&src=sdkpreparse');
                     ?>
 					<a rel='nofollow' title="Facebook" onclick="popupCenter('<?php echo $link; ?>', 800, 400);" class="mo-openid-share-link"><i class=" <?php echo $selected_theme; ?> mofa mofa-facebook" style="margin-bottom:<?php echo $space_icons-4?>px !important;padding-top : 4px !important;text-align:center;color:#<?php echo $fontColor ?> !important;font-size:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
 					<?php
@@ -616,19 +565,6 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 					<?php
 				}
 
-				if( get_option('mo_openid_delicious_share_enable') ) {
-					$link = esc_url('http://www.delicious.com/save?v=5&noui&jump=close&url='.$url.'&amp;title='.$title);
-					?>
-					<a rel='nofollow' title="Delicious" onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><i class=" <?php echo $selected_theme; ?> mofa mofa-delicious" style="margin-bottom:<?php echo $space_icons-4?>px !important;padding-top:4px;text-align:center;color:#<?php echo $fontColor ?> !important;font-size:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-					<?php
-				}
-
-				if( get_option('mo_openid_odnoklassniki_share_enable') ) {
-					$link = esc_url('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='.$excerpt.'&amp;st._surl='.$url);
-					?>
-					<a rel='nofollow' title="Odnoklassniki" onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><i class=" <?php echo $selected_theme; ?> mofa mofa-odnoklassniki" style="margin-bottom:<?php echo $space_icons-4?>px !important;padding-top:4px;text-align:center;color:#<?php echo $fontColor ?> !important;font-size:<?php echo $sharingSize; ?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important"></i></a>
-					<?php
-				}
 				if( get_option('mo_openid_mail_share_enable') ) {
 					?>
 					<a rel='nofollow' title="Email this page" onclick="popupCenter('mailto:?subject=<?php echo $email_subject ?>&amp;body=<?php echo $email_body ?>',800,500);" class="mo-openid-share-link">
@@ -658,7 +594,7 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 			}
 			else{
 				if( get_option('mo_openid_facebook_share_enable') ) {
-                    $link = esc_url('https://www.facebook.com/dialog/share?app_id=766555246789034&amp;display=popup&amp;href='.$url);
+                    $link = esc_url('https://www.facebook.com/sharer/sharer.php?u='.$url.'&src=sdkpreparse');
                     ?>
 					<a rel='nofollow' title="Facebook" onclick="popupCenter('<?php echo $link; ?>', 800, 400);" class="mo-openid-share-link"><img alt='Facebook' style= 'margin-bottom:<?php echo $space_icons-6?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;background-color:white;' src="<?php echo plugins_url( 'includes/images/icons/facebook.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
 					<?php
@@ -730,20 +666,6 @@ $url = $http . $_SERVER["HTTP_HOST"] . $_SERVER['REQUEST_URI'];
 					$link = esc_url('http://digg.com/submit?url='.$url.'&amp;title='.$title);
 					?>
 					<a rel='nofollow' title="Digg"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><img alt='Digg' style= 'margin-bottom:<?php echo $space_icons-6?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/digg.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
-					<?php
-				}
-
-				if( get_option('mo_openid_delicious_share_enable') ) {
-					$link = esc_url('http://www.delicious.com/save?v=5&noui&jump=close&url='.$url.'&amp;title='.$title);
-					?>
-					<a rel='nofollow' title="Delicious"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><img alt='Delicoius' style= 'margin-bottom:<?php echo $space_icons-6?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/delicious.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
-					<?php
-				}
-
-				if( get_option('mo_openid_odnoklassniki_share_enable') ) {
-					$link = esc_url('http://www.odnoklassniki.ru/dk?st.cmd=addShare&st.s=1&st.comments='.$excerpt.'&amp;st._surl='.$url);
-					?>
-					<a rel='nofollow' title="Odnoklassniki"  onclick="popupCenter('<?php echo $link; ?>', 800, 500);" class="mo-openid-share-link" ><img  alt='Odnoklassniki' style= 'margin-bottom:<?php echo $space_icons-6?>px !important;height:<?php echo $sharingSize; ?>px !important;width:<?php echo $sharingSize; ?>px !important;' src="<?php echo plugins_url( 'includes/images/icons/odnoklassniki.png', __FILE__ )?>" class="mo-openid-app-share-icons <?php echo $selected_theme; ?>" ></a>
 					<?php
 				}
 

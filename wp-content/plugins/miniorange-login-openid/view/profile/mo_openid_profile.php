@@ -81,7 +81,7 @@ function mo_openid_profile(){
                 </tr>
                 </tbody>
             </table>
-            <br/><label style="cursor: auto"><a href="<?php echo get_site_url() . "/wp-admin/admin.php?page=mo_openid_settings&tab=licensing_plans";?>"><?php echo mo_sl('Click here');?></a><?php echo mo_sl(' to check our');?> <a style="left: 1%; position: static; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('PRO');?></a> <?php echo mo_sl('plans');?></label>
+            <br/><label style="cursor: auto"><a href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Click here');?></a><?php echo mo_sl(' to check our');?> <a style="left: 1%; position: static; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('PRO');?></a> <?php echo mo_sl('plans');?></label>
         </div>
         <?php
     }

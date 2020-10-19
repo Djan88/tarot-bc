@@ -657,7 +657,7 @@ class Theme_My_Login_Form_Field {
 						$option .= ' checked="checked"';
 					}
 					$option .= '>' . "\n";
-					$option .= '<label class="tml-label" for="' . $id . '">' . esc_html( $label ) . "</label>\n";
+					$option .= '<label class="tml-label" for="' . $id . '">' . $label . "</label>\n";
 
 					$options[] = $option;
 				}
@@ -686,6 +686,13 @@ class Theme_My_Login_Form_Field {
 				$output .= $label;
 				$output .= $args['control_before'];
 				$output .= '<textarea name="' . $this->get_name() . '"' . $attributes . '>' . $this->get_value() . "</textarea>\n";
+				$output .= $args['control_after'];
+				break;
+
+			case 'button' :
+			case 'submit' :
+				$output .= $args['control_before'];
+				$output .= '<button name="' . $this->get_name() . '" type="' . $this->get_type() . '"' . $attributes . '>' . $this->get_value() . "</button>\n";
 				$output .= $args['control_after'];
 				break;
 

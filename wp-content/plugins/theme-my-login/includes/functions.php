@@ -296,6 +296,9 @@ function tml_do_login_head() {
 	// This is already attached to "wp_head"
 	remove_action( 'login_head', 'wp_print_head_scripts', 9 );
 
+	// Don't index TML actions
+	add_action( 'login_head', 'wp_sensitive_page_meta' );
+
 	/** This action is documented in wp-login.php */
 	do_action( 'login_head' );
 }
@@ -377,7 +380,7 @@ function tml_filter_site_url( $url, $path, $scheme ) {
 		parse_str( $parsed_url['query'], $query );
 
 		// Encode the query args
-		$query = array_map( 'rawurlencode', $query );
+		$query = tml_array_map_recursive( 'rawurlencode', $query );
 	}
 
 	/**
@@ -476,6 +479,12 @@ function tml_filter_logout_url( $url, $redirect ) {
  * @return string The lostpassword URL.
  */
 function tml_filter_lostpassword_url( $url, $redirect ) {
+	global $pagenow;
+
+	// Bail if currently visiting wp-login.php
+	if ( 'wp-login.php' == $pagenow ) {
+		return $url;
+	}
 
 	// Bail if logout action doesn't exist for some reason
 	if ( ! tml_action_exists( 'lostpassword' ) ) {
@@ -671,13 +680,13 @@ function tml_validate_new_user_password( $errors = null ) {
 
 	if ( tml_allow_user_passwords() ) {
 		if ( empty( $_POST['user_pass1'] ) || empty( $_POST['user_pass2'] ) ) {
-			$errors->add( 'empty_password', __( '<strong>ERROR</strong>: Please enter a password.', 'theme-my-login' ) );
+			$errors->add( 'empty_password', __( '<strong>Error</strong>: Please enter a password.', 'theme-my-login' ) );
 
 		} elseif ( false !== strpos( stripslashes( $_POST['user_pass1'] ), "\\" ) ) {
-			$errors->add( 'password_backslash', __( '<strong>ERROR</strong>: Passwords may not contain the character "\\".', 'theme-my-login' ) );
+			$errors->add( 'password_backslash', __( '<strong>Error</strong>: Passwords may not contain the character "\\".', 'theme-my-login' ) );
 
 		} elseif ( $_POST['user_pass1'] !== $_POST['user_pass2'] ) {
-			$errors->add( 'password_mismatch', __( '<strong>ERROR</strong>: Please enter the same password in both password fields.', 'theme-my-login' ) );
+			$errors->add( 'password_mismatch', __( '<strong>Error</strong>: Please enter the same password in both password fields.', 'theme-my-login' ) );
 		}
 	}
 
@@ -795,7 +804,7 @@ function tml_get_username_label( $action = '' ) {
  */
 function tml_enforce_login_type( $user, $username, $password ) {
 	if ( tml_is_email_login_type() && null == $user ) {
-		return new WP_Error( 'invalid_email', __( '<strong>ERROR</strong>: Invalid email address.' ) );
+		return new WP_Error( 'invalid_email', __( '<strong>Error</strong>: Invalid email address.' ) );
 	}
 	return $user;
 }
@@ -1039,4 +1048,90 @@ function tml_is_get_request() {
  */
 function tml_is_post_request() {
 	return 'POST' === strtoupper( $_SERVER['REQUEST_METHOD'] );
+}
+
+/**
+ * Determine if the current request is an AJAX request.
+ *
+ * @since 7.1
+ *
+ * @return bool
+ */
+function tml_is_ajax_request() {
+	return (bool) tml_get_request_value( 'ajax' );
+}
+
+/**
+ * Send an AJAX success response.
+ *
+ * @since 7.1
+ *
+ * @param mixed $data Data to send with the response.
+ */
+function tml_send_ajax_success( $data = null ) {
+	/**
+	 * Filters the AJAX success data.
+	 *
+	 * @since 7.1
+	 *
+	 * @param mixed $data The AJAX success data.
+	 */
+	$data = apply_filters( 'tml_ajax_success_data', $data );
+
+	wp_send_json_success( $data );
+}
+
+/**
+ * Send an AJAX error response.
+ *
+ * @since 7.1
+ *
+ * @param mixed $data Data to send with the response.
+ */
+function tml_send_ajax_error( $data = null ) {
+	/**
+	 * Filters the AJAX error data.
+	 *
+	 * @since 7.1
+	 *
+	 * @param mixed $data The AJAX error data.
+	 */
+	$data = apply_filters( 'tml_ajax_error_data', $data );
+
+	wp_send_json_error( $data );
+}
+
+/**
+ * Validate a URL for redirection.
+ *
+ * @since 7.1
+ *
+ * @param string $url The URL to validate.
+ * @return string The validated URL.
+ */
+function tml_validate_redirect( $url ) {
+	return wp_validate_redirect( wp_sanitize_redirect( $url ),
+		/** This filter is documented in wp-includes/pluggable.php */
+		apply_filters( 'wp_safe_redirect_fallback', admin_url(), 302 )
+	);
+}
+
+/**
+ * Map a user defined callback to an array recursively.
+ *
+ * @since 7.0.16
+ *
+ * @param string $callback The name of the callback.
+ * @param array  $array    The array to be mapped.
+ * @return array The resulting array.
+ */
+function tml_array_map_recursive( $callback, $array ) {
+	foreach ( $array as $key => $value ) {
+		if ( is_array( $value ) ) {
+			$array[ $key ] = tml_array_map_recursive( $callback, $value );
+		} else {
+			$array[ $key ] = call_user_func( $callback, $value );
+		}
+	}
+	return $array;
 }

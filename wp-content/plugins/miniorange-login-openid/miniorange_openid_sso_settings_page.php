@@ -34,11 +34,23 @@ require('view/soc_com/com_Enable/mo_openid_comm_enable.php');
 require('view/soc_com/com_shrtco/comm_shrtco.php');
 include('view/add_on/custom_registration_form.php');
 include('view/mo_new/mo_openid_whats_new.php');
+require('view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php');
+require ('view/soc_sha/twitter_btn/mo_twitter_btn.php');
+require('view/soc_sha/soc_med_ser/mo_openid_social_media_services.php');
 
 function mo_register_openid() {
 ?>
-    <div id="upgrade_notice" class="update-nag" style="width: 92.5%;margin-left: 0%;"><strong>Special WOOCOMMERCE, BUDDYPRESS & MAILCHIMP INTEGRATION PLUGINS. Click here to <a id="pricing" style="background: #FFA335;border-color: #FFA335;color: white;" class="button" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a>
-        </strong></div>
+
+    <div id="upgrade_notice" class="mo_openid_notice mo_openid_notice-warning" >
+        <p><b>Special WOOCOMMERCE, BUDDYPRESS & MAILCHIMP INTEGRATION PLUGINS.</b> Click here to
+            <a id="pricing" style="background: #FFA335;border-color: #FFA335;color: white;" class="button" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a>
+            <br>
+        </p>
+        <p><b>New SOCIAL SHARING PLUGIN </b>is available with attractive features. Click here to
+            <a id="pricing" style="background: #FFA335;border-color: #FFA335;color: white;" class="button" href="<?php echo site_url().'/wp-admin/admin.php?page=mo_openid_social_sharing_settings&tab=licensing_plans'; ?>"><?php echo mo_sl('Upgrade Now');?></a>
+        </p>
+    </div>
+
 <?php
     
     if( isset( $_GET[ 'tab' ]) && $_GET[ 'tab' ] !== 'register' ) {
@@ -62,13 +74,13 @@ function mo_register_openid() {
                 <td> <a id="faq" style="margin-top: 23px" class="button" <?php echo $active_tab == 'faq' ? 'nav-tab-active' : ''; ?> href="<?php echo add_query_arg( array('tab' => 'faq'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('FAQs');?></a></td>
                 <td> <a id="forum" style="margin-top: 23px" class="button" <?php echo $active_tab == 'forum' ? 'nav-tab-active' : ''; ?>" href="https://wordpress.org/support/plugin/miniorange-login-openid/" target="_blank"><?php echo mo_sl('Forum');?></a></td>
                 <td> <a id="addon" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button" <?php echo $active_tab == 'add_on' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Add On');?></a></td>
-                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a></td>
+                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Licensing Plan');?></a></td>
                 <td> <a id="whats_new" style="margin-top: 23px;background: #62B772;border-color: #62B772;color: white;" class="button"<?php echo $active_tab == 'whats_new' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'whats_new'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl("What's new in miniOrange");?></a></td>
                 <td>
                     <a id="mo_openid_rateus_modal" onclick="asdf(this)" style="margin-top: 23px" class="button" ><?php echo mo_sl('Rate us');?></a>
                 </td>
                 <td>
-                    <button id="mo_openid_restart_gtour" style="margin-top: 23px;background: #0867B2;border-color: #0867B2;color: white; float: right" class="button" onclick="window.location= base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=config_apps';restart_tour()" value="Restart Tour"><?php echo mo_sl('Restart Tour');?></button>
+                    <button id="mo_openid_restart_gtour" style="margin-top: 23px;background: #0867B2;border-color: #0867B2;color: white; float: right" class="button" onclick="window.location= base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=config_apps';restart_tour()" value="Restart Tour"><?php echo mo_sl('Restart Tour');?></button>
                 </td>
                 <td><a id="mo_openid_setup_plugin" style="margin-top: 23px;background: #0867B2;border-color: #0867B2;color: white; float: right" class="button" href="https://youtu.be/u6Jgcr3xWOw" target="_blank"><?php echo mo_sl('Setup Plugin');?></a></td>
             </tr>
@@ -345,7 +357,7 @@ function mo_register_openid() {
                     backdrop:'body',
                     backdropPadding:'6',
                     onNext: function(){
-                        window.location= base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=disp_opt';
+                        window.location= base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=disp_opt';
                     }
                 },
                 {
@@ -358,7 +370,7 @@ function mo_register_openid() {
                     backdropPadding:'6',
                     onNext: function() {
                         // e.preventDefault();
-                        window.location = base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=licensing_plans'
+                        window.location = base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=licensing_plans'
                     }
                 },{
                     element: "#pricing",
@@ -421,7 +433,7 @@ function mo_register_openid() {
             new_tour1.start();
         }
         function restart_tour() {
-            window.location= base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=config_apps';
+            window.location= base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=config_apps';
             new_tour1.restart();
         }
 
@@ -429,17 +441,17 @@ function mo_register_openid() {
 
             var tour_variable = "plugin_tour";
             jQuery.ajax({
-                url:base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=config_apps', //the page containing php script
+                url:base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=config_apps', //the page containing php script
                 method: "POST", //request type,
                 data: {update_tour_status: tour_variable},
                 dataType: 'text',
                 success:function(result){
-                    window.location= base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=config_apps';
+                    window.location= base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=config_apps';
                 }
             });
         }
         function end_new_tour1() {
-            window.location= base_url+'/wp-admin/admin.php?page=mo_openid_settings&tab=config_apps';
+            window.location= base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=config_apps';
         }
 
 
@@ -531,6 +543,16 @@ function mo_register_sharing_openid()
                 <a id="short_code" class="tablinks<?php if ($active_tab == "short_code") echo '_active'; ?>"
                    href="<?php echo add_query_arg(array('tab' => 'short_code'), $_SERVER['REQUEST_URI']); ?>"><?php echo mo_sl('Shortcodes');?></a>
 
+                <a id="social_media_services" class="tablinks<?php if ($active_tab == "social_media_services") echo '_active'; ?>"
+                   href="<?php echo add_query_arg(array('tab' => 'social_media_services'), $_SERVER['REQUEST_URI']); ?>"><?php echo mo_sl('Social Media Services');?><span style="margin-left: 1%" class="mo-openid-premium"><?php echo mo_sl('PRO');?></span></a>
+
+                <a id="social_icons_customization" class="tablinks<?php if ($active_tab == "social_icons_customization") echo '_active'; ?>"
+                   href="<?php echo add_query_arg(array('tab' => 'social_icons_customization'), $_SERVER['REQUEST_URI']); ?>"><?php echo mo_sl('Social Icons Customization');?><span style="margin-left: 2%" class="mo-openid-premium"><?php echo mo_sl('PRO');?></span></a>
+
+                <a id="mo_twitter_btn" class="tablinks<?php if ($active_tab == "mo_twitter_btn") echo '_active'; ?>"
+                   href="<?php echo add_query_arg(array('tab' => 'mo_twitter_btn'), $_SERVER['REQUEST_URI']); ?>"><?php echo mo_sl('Twitter Follow Button');?><span style="margin-left: 1%" class="mo-openid-premium"><?php echo mo_sl('PRO');?></span></a>
+
+
             </div>
         </div>
 
@@ -560,7 +582,7 @@ function mo_register_sharing_openid()
                                         mo_openid_short_code();
                                         break;
                                     case 'licensing_plans':
-                                        mo_openid_licensing_plans();
+                                        mo_openid_licensing_plan_sharing();
                                         break;
                                     case 'faq':
                                         mo_openid_faq();
@@ -571,6 +593,17 @@ function mo_register_sharing_openid()
                                     case 'add_on':
                                         header('Location: '.site_url().'/wp-admin/admin.php?page=mo_openid_settings_addOn');
                                         break;
+                                    case 'social_media_services':
+                                        mo_openid_social_media_services();
+                                        break;
+                                    case 'social_icons_customization':
+                                        mo_openid_social_icons_customization();
+                                        break;
+                                    case 'mo_twitter_btn':
+                                        mo_twitter_btn();
+                                        break;
+
+
                                 }
                                 ?>
                             </td>
