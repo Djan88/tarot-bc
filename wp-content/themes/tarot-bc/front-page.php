@@ -41,9 +41,7 @@
             <p>Автор книг: "Краниосакральная терапия", "Мягкие мануальные техники", "Висцеральная остеопатия", "Остеопатическое лечение внутрикостных дисфункций", "Эстетическое мануальное моделирование лица и тела", "Биологическое центрирование», «Практическая психосоматика», «Лечебное Tarot».</p>
             <p>Основоположник новых прогрессивных направлений,  автор <a target="_blank" href="https://chikurov.com/seminary">практических семинаров</a> и <a target="_blank" href="http://school-bc.ru/">онлайн-курсов</a>.</p>
           </div>
-          <?php if(current_user_can('administrator')){ ?>
-            <a button class="pull-left btn btn-primary btn-lg" id="massage_btn">Консультации Ю. Чикурова</a>
-          <?php } ?>
+          <a button class="pull-left btn btn-primary btn-lg" id="massage_btn">Консультации Ю. Чикурова</a>
           <a href="https://chikurov.com" target="_blank" class="pull-right btn btn-success btn-lg">Школа Доктора Чикурова</a>
         </div>
       </div>
