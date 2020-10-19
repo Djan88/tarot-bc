@@ -69,7 +69,7 @@
                 <div>
                   Коррекция кармы и ситуационных рядов - индивидуальная очная консультация у профессора Чикурова
                 </div>
-                <?php echo do_shortcode('[contact-form-7 id="2470" title="Заявка Коррекция кармы"]')?>
+                <?php echo do_shortcode('[contact-form-7 id="5" title="Контактная форма 1"]')?>
               </div>
           </div>
       </div>
