@@ -41,6 +41,9 @@ jQuery(document).ready(function () {
   jQuery('#login_btn, #register').on('click', function(event) {
     jQuery('#login').modal('show');
   });
+  jQuery('#massage_btn').on('click', function(event) {
+    jQuery('#massage').modal('show');
+  });
 
   jQuery('.page-nav a, .pages_link').on('click', function(event) {
     localStorage.setItem('page_ridden', jQuery(this).attr('href'));
