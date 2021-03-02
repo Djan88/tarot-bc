@@ -111,14 +111,6 @@ function mtnc_admin_print_custom_styles()
     'mtnc',
                 array(
                         'path' => MTNC_URI,
-                        'weglot_install_url' => add_query_arg(
-                                array(
-                                        'action' => 'mtnc_install_weglot',
-                                        'rnd' => rand()
-                                ),
-                                admin_url('admin.php')
-                        ),
-                        'weglot_dialog_upsell_title' => '<img alt="Weglot" title="Weglot" src="' . MTNC_URI . 'images/weglot-logo-white.png' . '">',
                         'cm_settings' =>  $cm_settings,
                         'site_url' => home_url(),
                         'first_install_date' => $firstInstallDateTimeTimeStamp,
@@ -265,19 +257,4 @@ function mtnc_generate_plugin_page()
     </form>
   </div>
 <?php
-// weglot install dialog
-echo '<div id="weglot-upsell-dialog" style="display: none;" title="Weglot"><span class="ui-helper-hidden-accessible"><input type="text"/></span>';
-echo '<div style="padding: 20px; font-size: 15px;">';
-echo '<ul class="mtnc-list">';
-echo '<li>Best-rated WordPress multilingual plugin</li>';
-echo '<li>Simple 5-minute set-up. No coding required</li>';
-echo '<li>Accelerated translation management: Machine & human translations with access to professional translators</li>';
-echo '<li>Compatible with any WordPress theme or plugin</li>';
-echo '<li>Optimized for multilingual SEO</li>';
-echo '<li>10-day Free trial and free plan available</li>';
-echo '</ul>';
-echo '<p class="upsell-footer"><a class="button button-primary" id="install-weglot">Install &amp; activate Weglot to make your site multilingual</a></p>';
-echo '</div>';
-echo '</div>';
-// weglot install dialog
 }

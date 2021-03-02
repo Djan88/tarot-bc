@@ -16,6 +16,9 @@ function count_convert($count)
 
 //shortcode for horizontal sharing
 function mo_openid_share_shortcode( $atts = '', $title = '', $excerpt = '' ) {
+    wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
+    wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.min.css', __FILE__), false );
+    wp_enqueue_style( 'mo_openid_admin_settings_style', plugins_url('includes/css/mo_openid_style.css?version=7.3.0', __FILE__));
 
     $html = '';
     $selected_theme = isset( $atts['shape'] )? esc_attr($atts['shape']) : esc_attr(get_option('mo_openid_share_theme'));
@@ -390,6 +393,10 @@ function mo_openid_share_shortcode( $atts = '', $title = '', $excerpt = '' ) {
 }
 
 function mo_openid_vertical_share_shortcode( $atts = '', $title = '', $excerpt = '' ) {
+    wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
+    wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.min.css', __FILE__), false );
+    wp_enqueue_style( 'mo_openid_admin_settings_style', plugins_url('includes/css/mo_openid_style.css?version=7.3.0', __FILE__));
+
     $html = '';
     $selected_theme = isset( $atts['shape'] )? esc_attr($atts['shape']) : esc_attr(get_option('mo_openid_share_theme'));
     $selected_direction = esc_attr(get_option('mo_openid_share_widget_customize_direction'));

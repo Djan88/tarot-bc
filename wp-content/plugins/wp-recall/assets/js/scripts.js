@@ -3,11 +3,11 @@ jQuery( function( $ ) {
 	rcl_do_action( 'rcl_init' );
 } );
 
-jQuery( window ).load( function() {
+jQuery( window ).on('load', function () {
 	jQuery( 'body' ).on( 'drop', function( e ) {
 		return false;
 	} );
-	jQuery( document.body ).bind( "drop", function( e ) {
+	jQuery( document.body ).on( "drop", function( e ) {
 		e.preventDefault();
 	} );
 } );
@@ -107,9 +107,13 @@ function rcl_init_ajax_tab() {
 				}
 
 				if ( !data.post.subtab_id ) {
-					jQuery( '#lk-content' ).animateCss( 'fadeIn' );
+					if ( typeof animateCss !== 'undefined' ) {
+						jQuery( '#lk-content' ).animateCss( 'fadeIn' );
+					}
 				} else {
-					jQuery( '#lk-content .rcl-subtab-content' ).animateCss( 'fadeIn' );
+					if ( typeof animateCss !== 'undefined' ) {
+						jQuery( '#lk-content .rcl-subtab-content' ).animateCss( 'fadeIn' );
+					}
 				}
 
 				rcl_do_action( 'rcl_upload_tab', {
@@ -139,7 +143,7 @@ function rcl_get_options_url_params() {
 
 function rcl_add_dropzone( idzone ) {
 
-	jQuery( document.body ).bind( "drop", function( e ) {
+	jQuery( document.body ).on( "drop", function( e ) {
 		var dropZone = jQuery( idzone ),
 			node = e.target,
 			found = false;
@@ -162,7 +166,7 @@ function rcl_add_dropzone( idzone ) {
 		}
 	} );
 
-	jQuery( idzone ).bind( 'dragover', function( e ) {
+	jQuery( idzone ).on( 'dragover', function( e ) {
 		var dropZone = jQuery( idzone ),
 			timeout = window.dropZoneTimeout;
 
@@ -250,19 +254,6 @@ function rcl_manage_user_black_list( e, user_id, confirmText ) {
 	return false;
 }
 
-/*rcl_add_action( 'rcl_init', 'rcl_init_update_requared_checkbox' );*/
-function rcl_init_update_requared_checkbox() {
-
-	jQuery( 'body form' ).find( '.required-checkbox' ).each( function() {
-		rcl_update_require_checkbox( this );
-	} );
-
-	jQuery( 'body form' ).on( 'click', '.required-checkbox', function() {
-		rcl_update_require_checkbox( this );
-	} );
-
-}
-
 function rcl_show_tab( id_block ) {
 	jQuery( ".rcl-tab-button .recall-button" ).removeClass( "active" );
 	jQuery( "#lk-content .recall_content_block" ).removeClass( "active" );
@@ -273,7 +264,7 @@ function rcl_show_tab( id_block ) {
 
 rcl_add_action( 'rcl_init', 'rcl_init_recallbar_hover' );
 function rcl_init_recallbar_hover() {
-	jQuery( "#recallbar .menu-item-has-children" ).hover( function() {
+	jQuery( "#recallbar .menu-item-has-children" ).on('hover', function() {
 		jQuery( this ).children( ".sub-menu" ).css( {
 			'visibility': 'visible'
 		} );
@@ -386,7 +377,7 @@ function rcl_init_close_popup() {
 
 rcl_add_action( 'rcl_init', 'rcl_init_click_overlay' );
 function rcl_init_click_overlay() {
-	jQuery( '#rcl-overlay' ).click( function() {
+	jQuery( '#rcl-overlay' ).on('click', function() {
 		rcl_hide_float_login_form();
 		jQuery( '#rcl-overlay' ).fadeOut();
 		jQuery( '#rcl-popup' ).empty();

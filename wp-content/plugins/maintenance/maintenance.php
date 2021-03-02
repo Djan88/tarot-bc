@@ -3,12 +3,12 @@
 	Plugin Name: Maintenance
 	Plugin URI: https://wpmaintenancemode.com/
 	Description: Put your site in maintenance mode, away from the public view. Use maintenance plugin if your website is in development or you need to change a few things, run an upgrade. Make it only accessible to logged in users.
-	Version: 3.97
+	Version: 4.01
 	Author: WebFactory Ltd
 	Author URI: https://www.webfactoryltd.com/
 	License: GPL2
 
-  Copyright 2013-2020  WebFactory Ltd  (email : support@webfactoryltd.com)
+  Copyright 2013-2021  WebFactory Ltd  (email : support@webfactoryltd.com)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -23,9 +23,6 @@
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-
-require_once 'wp301/wp301.php';
-new wf_wp301(__FILE__, 'toplevel_page_maintenance');
 
 class MTNC
 {
@@ -51,14 +48,10 @@ class MTNC
     add_action('init', array(&$this, 'mtnc_admin_bar'));
     add_action('init', array(&$this, 'mtnc_set_global_options'), 1);
 
-    add_action('admin_action_mtnc_install_weglot', array(&$this, 'install_weglot'));
-
     add_filter(
       'plugin_action_links_' . plugin_basename(__FILE__),
       array(&$this, 'plugin_action_links')
     );
-    add_filter('install_plugins_table_api_args_featured', array(&$this, 'featured_plugins_tab'));
-    add_filter('install_plugins_table_api_args_recommended', array(&$this, 'featured_plugins_tab'));
   }
 
   // add settings link to plugins page
@@ -73,7 +66,7 @@ class MTNC
 
   public function mtnc_constants()
   {
-    define('MTNC_VERSION', '3.8');
+    define('MTNC_VERSION', '4.0');
     define('MTNC_DB_VERSION', 2);
     define('MTNC_WP_VERSION', get_bloginfo('version'));
     define('MTNC_DIR', trailingslashit(plugin_dir_path(__FILE__)));
@@ -98,6 +91,9 @@ class MTNC
     require_once MTNC_INCLUDES . 'functions.php';
     require_once MTNC_INCLUDES . 'update.php';
     require_once MTNC_DIR . 'load/functions.php';
+
+    require_once dirname(__FILE__) . '/wf-flyout/wf-flyout.php';
+    new wf_flyout(__FILE__);
   }
 
   public function mtnc_admin()
@@ -154,6 +150,7 @@ class MTNC
     if (function_exists('rocket_clean_domain')) {
       rocket_clean_domain();
     }
+    do_action( 'cache_enabler_clear_complete_cache' );
   }
 
   public function mtnc_user_logout()
@@ -183,128 +180,6 @@ class MTNC
   {
     add_action('admin_bar_menu', 'mtnc_add_toolbar_items', 100);
   }
-
-  // helper function for adding plugins to fav list
-  function featured_plugins_tab($args)
-  {
-    add_filter('plugins_api_result', array(&$this, 'plugins_api_result'), 10, 3);
-
-    return $args;
-  } // featured_plugins_tab
-
-  // add single plugin to list of favs
-  static function add_plugin_favs($plugin_slug, $res)
-  {
-    if (!isset($res->plugins) || !is_array($res->plugins)) {
-      return $res;
-    }
-
-    if (!empty($res->plugins) && is_array($res->plugins)) {
-      foreach ($res->plugins as $plugin) {
-        if (is_object($plugin) && !empty($plugin->slug) && $plugin->slug == $plugin_slug) {
-          return $res;
-        }
-      } // foreach
-    }
-
-    $plugin_info = get_transient('wf-plugin-info-' . $plugin_slug);
-    if ($plugin_info && is_object($plugin_info)) {
-      array_unshift($res->plugins, $plugin_info);
-    } else {
-      $plugin_info = plugins_api('plugin_information', array(
-        'slug'   => $plugin_slug,
-        'is_ssl' => is_ssl(),
-        'fields' => array(
-          'banners'           => true,
-          'reviews'           => true,
-          'downloaded'        => true,
-          'active_installs'   => true,
-          'icons'             => true,
-          'short_description' => true,
-        )
-      ));
-      if (!is_wp_error($plugin_info)) {
-        array_unshift($res->plugins, $plugin_info);
-        set_transient('wf-plugin-info-' . $plugin_slug, $plugin_info, DAY_IN_SECONDS * 7);
-      }
-    }
-
-    return $res;
-  } // add_plugin_favs
-
-  // add our plugins to recommended list
-  function plugins_api_result($res, $action, $args)
-  {
-    remove_filter('plugins_api_result', array(__CLASS__, 'plugins_api_result'), 10, 3);
-
-    $res = $this->add_plugin_favs('simple-author-box', $res);
-    $res = $this->add_plugin_favs('eps-301-redirects', $res);
-    $res = $this->add_plugin_favs('wp-force-ssl', $res);
-    $res = $this->add_plugin_favs('security-ninja', $res);
-
-    return $res;
-  } // plugins_api_result
-
-
-  // auto download / install / activate Weglot plugin
-  function install_weglot()
-  {
-    if (false === current_user_can('administrator')) {
-      wp_die('Sorry, you have to be an admin to run this action.');
-    }
-
-    $plugin_slug = 'weglot/weglot.php';
-    $plugin_zip = 'https://downloads.wordpress.org/plugin/weglot.latest-stable.zip';
-
-    @include_once ABSPATH . 'wp-admin/includes/plugin.php';
-    @include_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
-    @include_once ABSPATH . 'wp-admin/includes/plugin-install.php';
-    @include_once ABSPATH . 'wp-admin/includes/file.php';
-    @include_once ABSPATH . 'wp-admin/includes/misc.php';
-    echo '<style>
-		body{
-			font-family: sans-serif;
-			font-size: 14px;
-			line-height: 1.5;
-			color: #444;
-		}
-		</style>';
-
-    echo '<div style="margin: 20px; color:#444;">';
-    echo 'If things are not done in a minute <a target="_parent" href="' . admin_url('plugin-install.php?s=weglot&tab=search&type=term') . '">install the plugin manually via Plugins page</a><br><br>';
-    echo 'Starting ...<br><br>';
-
-    wp_cache_flush();
-    $upgrader = new Plugin_Upgrader();
-    echo 'Check if Weglot is already installed ... <br />';
-    if ($this->is_plugin_installed($plugin_slug)) {
-      echo 'Weglot is already installed! <br /><br />Making sure it\'s the latest version.<br />';
-      $upgrader->upgrade($plugin_slug);
-      $installed = true;
-    } else {
-      echo 'Installing Weglot.<br />';
-      $installed = $upgrader->install($plugin_zip);
-    }
-    wp_cache_flush();
-
-    if (!is_wp_error($installed) && $installed) {
-      echo 'Activating Weglot.<br />';
-      $activate = activate_plugin($plugin_slug);
-
-      if (is_null($activate)) {
-        echo 'Weglot Activated.<br />';
-
-        echo '<script>setTimeout(function() { top.location = "admin.php?page=maintenance"; }, 1000);</script>';
-        echo '<br>If you are not redirected in a few seconds - <a href="admin.php?page=maintenance" target="_parent">click here</a>.';
-      }
-    } else {
-      echo 'Could not install Weglot. You\'ll have to <a target="_parent" href="' . admin_url('plugin-install.php?s=weglot&tab=search&type=term') . '">download and install manually</a>.';
-    }
-
-    echo '</div>';
-  } // install_weglot
-
-
 
   function is_plugin_installed($slug)
   {

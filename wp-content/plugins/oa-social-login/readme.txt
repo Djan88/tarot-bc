@@ -2,8 +2,8 @@
 Contributors: OneAll.com, ClaudeSchlesser, socialloginoneall
 Tags: social login, social plugin, facebook, facebook login, twitter, google login, twitter login, google, linkedin
 Requires at least: 3.0
-Tested up to: 5.4
-Stable tag: 5.6
+Tested up to: 5.5
+Stable tag: 5.7
 Requires PHP: 5.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

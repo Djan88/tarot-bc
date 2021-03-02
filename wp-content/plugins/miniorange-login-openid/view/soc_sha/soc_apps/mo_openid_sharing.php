@@ -2,7 +2,6 @@
 require_once( ABSPATH . 'wp-includes/plugin.php' );
 function mo_openid_share_apps()
 {
-wp_enqueue_style( 'mo-openid-share-font-awesome',plugins_url('includes/css/mo-font-awesome.css', __FILE__), false );
 
     ?>
 

@@ -53,7 +53,22 @@ class CustomerOpenID {
             'headers' => $headers
         );
         $response = self::mo_openid_wp_remote_post($url, $args);
-        return $response['body'];
+        if($response['body']==NULL)
+        {
+            if($_POST['action']=='mo_register_new_user')
+                wp_send_json(["error" => 'There was an error creating an account for you. Please try again.']);
+            else {
+                update_option('mo_openid_message', 'There was an error creating an account for you. Please try again.');
+                update_option('mo_openid_registration_status', 'error creating an account');
+                mo_openid_show_error_message();
+                if (get_option('regi_pop_up') == "yes") {
+                    update_option('pop_regi_msg', get_option('mo_openid_message'));
+                    mo_openid_registeration_modal();
+                }
+            }
+        }
+        else
+            return $response['body'];
     }
 
     function get_customer_key() {
@@ -154,6 +169,7 @@ class CustomerOpenID {
         $customerKey = $this->defaultCustomerKey;
         $apiKey = $this->defaultApiKey;
 
+        $phone_number = get_option('mo_openid_admin_phone');
         $currentTimeInMillis = self::get_timestamp();
         $stringToHash 		= $customerKey .  $currentTimeInMillis . $apiKey;
         $hashValue 			= hash("sha512", $stringToHash);
@@ -162,23 +178,22 @@ class CustomerOpenID {
         $site_url=site_url();
         $activation_date=get_option('mo_openid_user_activation_date1');
         $deactivationdate = date("Y-m-d");
-
+        $version = get_option('mo_openid_social_login_version');
         $store_activation= strtotime($activation_date);
         $store_deactivation=  strtotime($deactivationdate);
         $diff = $store_deactivation-$store_activation;
         $total_activation_days= abs(round($diff / 86400));
-
         global $user;
         $user= wp_get_current_user();
 
 
         $query =" MiniOrange Social Login [Free] ";
         $content='<div >Hello, <br><br>First Name :<br><br>Last  Name :
-								<br><br>Company :
-								<br><br>Phone Number : '.$phone.'
+								<br><br>Company : '.$_SERVER['HTTP_HOST'].'
+								<br><br>Phone Number : '.$phone_number.'
 								<br><br>Email : <a href="mailto:'.$fromEmail.'" target="_blank">'.$fromEmail.'</a>
 								<br><br>Activation time : '.$activation_date.' - '.$deactivationdate.'  ['.$total_activation_days.']
-								<br><br>Plugin Deactivated: '.$query.'
+								<br><br>Plugin Deactivated: '.$query.''. $version.'
 								<br><br>Reason: <b>'.$message.'</b></div>';
 
 
@@ -367,6 +382,24 @@ class CustomerOpenID {
                 'applicationName' => 'wp_social_login_extra_attributes_addon'
             );
         }
+        else if($licience_type=="WP_SOCIAL_LOGIN_WOOCOMMERCE_ADDON") {
+            $fields = array(
+                'customerId' => $customerKey,
+                'applicationName' => 'WP_SOCIAL_LOGIN_WOOCOMMERCE_ADDON'
+            );
+        }
+        else if($licience_type=="WP_SOCIAL_LOGIN_MAILCHIMP_ADDON") {
+            $fields = array(
+                'customerId' => $customerKey,
+                'applicationName' => 'WP_SOCIAL_LOGIN_MAILCHIMP_ADDON'
+            );
+        }
+        else if($licience_type=="WP_SOCIAL_LOGIN_BUDDYPRESS_ADDON") {
+            $fields = array(
+                'customerId' => $customerKey,
+                'applicationName' => 'WP_SOCIAL_LOGIN_BUDDYPRESS_ADDON'
+            );
+        }
         $field_string = json_encode($fields);
         $headers = array(
             "Content-Type" => "application/json",
@@ -479,8 +512,12 @@ class CustomerOpenID {
         if(!is_wp_error($response)){
             return $response;
         } else {
-            update_option('mo_openid_message', 'Unable to connect to the Internet. Please try again.');
-            mo_openid_success_message();
+            if ($_POST['action'] == 'mo_register_new_user')
+                wp_send_json(["error" => 'Unable to connect to the Internet. Please try again.']);
+            else {
+                update_option('mo_openid_message', 'Unable to connect to the Internet. Please try again.');
+                mo_openid_success_message();
+            }
         }
     }
 

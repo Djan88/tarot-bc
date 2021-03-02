@@ -28,12 +28,12 @@ function mo_openid_custom_registration_form()
             <tr>
                 <td colspan="2">
                     <hr>
-                    <p>
-                        <br><center>
-                        <iframe width="450" height="250" src="https://www.youtube.com/embed/cEvU9d3YBus"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-                                style=""></iframe></center>
-                    </p>
+                        <p>
+                            <br><center>
+                            <iframe width="450" height="250" src="https://www.youtube.com/embed/cEvU9d3YBus"
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+                                    style=""></iframe></center>
+                        </p>
                 </td>
             </tr>
         </table>
@@ -139,7 +139,7 @@ function mo_openid_custom_registration_form()
                                                 <b><?php echo mo_sl('Existing
                                                     Field');?></b> <?php echo mo_sl('column. For example, if you are saving');?> <b><?php echo mo_sl('First Name');?></b> <?php echo mo_sl('as');?>
                                                 <b><?php echo mo_sl('fname');?></b>
-                                                <?php echo mo_sl('in wp_usermeta field then enter fname in Existing Field
+                                                <?php echo mo_sl('in wp_usermeta field then enter <b>fname</b> in <b>Existing Field</b>
                                                 column.');?>
                                             </li>
                                             <li> <?php echo mo_sl('Select field name under the ');?><b><?php echo mo_sl('Field');?></b> <?php echo mo_sl('dropdown');?>.</li>
@@ -190,9 +190,8 @@ function mo_openid_custom_registration_form()
         <script type="text/javascript">
             //to set heading name
             jQuery('#mo_openid_page_heading').text('<?php echo mo_sl('Social Login Add On'); ?>');
-            $mo=jQuery;
-            $mo(document).ready(function($){
-                $("#mosocial_purchase_cust_addon_verify").on("click",function(){
+            jQuery(document).ready(function($){
+                jQuery("#mosocial_purchase_cust_addon_verify").on("click",function(){
                     jQuery.ajax({
                         url: "<?php echo admin_url("admin-ajax.php");?>", //the page containing php script
                         method: "POST", //request type,
@@ -214,21 +213,22 @@ function mo_openid_custom_registration_form()
             });
 
             function mo_verify_add_on_license_key() {
-                $.ajax({
+                jQuery.ajax({
                     type: 'POST',
                     url: '<?php echo admin_url("admin-ajax.php"); ?>',
                     data: {
                         action:'verify_addon_licience',
+                        plan_name: 'extra_attributes_addon',
                     },
                     crossDomain :!0, dataType:"html",
                     success: function(data) {
                         var flag=0;
-                        $("input").each(function(){
+                        jQuery("input").each(function(){
                             if($(this).val()=="mo_openid_verify_license") flag=1;
                         });
                         if(!flag) {
-                            $(data).insertBefore("#mo_openid_extra_attributes_addon_video");
-                            $("#customization_ins").find($("#cust_supp")).css("display", "none");
+                            jQuery(data).insertBefore("#mo_openid_extra_attributes_addon_video");
+                            jQuery("#customization_ins").find(jQuery("#cust_supp")).css("display", "none");
                         }
                     },
                     error: function (data){}

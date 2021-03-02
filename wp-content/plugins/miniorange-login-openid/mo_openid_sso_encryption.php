@@ -16,7 +16,7 @@ class MOAESEncryption {
      */
     public static function encrypt_data($data, $key) {
         $key    = openssl_digest($key, 'sha256');
-        $method = 'AES-128-ECB';
+        $method = 'AES-128-CBC';
         $ivSize = openssl_cipher_iv_length($method);
         $iv     = openssl_random_pseudo_bytes($ivSize);
         $strCrypt = openssl_encrypt ($data, $method, $key,OPENSSL_RAW_DATA||OPENSSL_ZERO_PADDING, $iv);
@@ -31,7 +31,7 @@ class MOAESEncryption {
     public static function decrypt_data($data, $key) {
         $strIn = base64_decode($data);
         $key    = openssl_digest($key, 'sha256');
-        $method = 'AES-128-ECB';
+        $method = 'AES-128-CBC';
         $ivSize = openssl_cipher_iv_length($method);
         $iv     = substr($strIn,0,$ivSize);
         $data   = substr($strIn,$ivSize);

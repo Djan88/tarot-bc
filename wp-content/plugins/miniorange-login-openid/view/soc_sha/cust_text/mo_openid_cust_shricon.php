@@ -1,6 +1,5 @@
 <?php
 function mo_openid_customize_icons(){
-    wp_enqueue_style( 'mo-openid-share-font-awesome',plugins_url('includes/css/mo-font-awesome.css', __FILE__), false );
     ?>
 <!--    <link rel="stylesheet" type="text/css">-->
     <form id="customize_text" name="customize_text" method="post" action="">

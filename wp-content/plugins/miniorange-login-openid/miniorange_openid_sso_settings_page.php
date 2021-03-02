@@ -8,13 +8,11 @@ require('view/config_apps/mo_openid_config_apps.php');
 require('view/customise_social_icons/mo_openid_cust_icons.php');
 require('view/disp_options/mo_openid_dispopt.php');
 require('view/email_settings/mo_openid_set_email.php');
-require('view/faq/mo_openid_faq.php');
 require('view/gdpr/mo_openid_gdpr.php');
 require('view/integration/mo_openid_integrate.php');
 require('view/licensing_plans/mo_openid_lic_plans.php');
 require('view/link_social_account/mo_openid_Acclink.php');
 require('view/premium_features/mo_openid_prem_feat.php');
-require('view/privacy_policy/mo_openid_priv_pol.php');
 require('view/profile_completion/mo_openid_prof_comp.php');
 require('view/recaptcha/mo_openid_recap.php');
 require('view/redirect_options/mo_openid_redirect_op.php');
@@ -33,28 +31,28 @@ require('view/soc_com/com_select_app/mo_openid_comm_select_app.php');
 require('view/soc_com/com_Enable/mo_openid_comm_enable.php');
 require('view/soc_com/com_shrtco/comm_shrtco.php');
 include('view/add_on/custom_registration_form.php');
-include('view/mo_new/mo_openid_whats_new.php');
+require('view/add_on/mo_woocommerce_add_on.php');
+require('view/add_on/mo_mailchimp_add_on.php');
+require('view/add_on/mo_buddypress_add_on.php');
 require('view/soc_sha/soc_med_cust/mo_openid_social_media_cust.php');
 require ('view/soc_sha/twitter_btn/mo_twitter_btn.php');
 require('view/soc_sha/soc_med_ser/mo_openid_social_media_services.php');
 
 function mo_register_openid() {
-?>
-
+if(!strpos($_SERVER['REQUEST_URI'], "mo_openid_general_settings&tab=licensing_plans")) {
+    ?>
     <div id="upgrade_notice" class="mo_openid_notice mo_openid_notice-warning" >
-        <p><b>Special WOOCOMMERCE, BUDDYPRESS & MAILCHIMP INTEGRATION PLUGINS.</b> Click here to
-            <a id="pricing" style="background: #FFA335;border-color: #FFA335;color: white;" class="button" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a>
-            <br>
+        <p style="font-size: larger"><b>Facebook Data Use Checkup:</b> If you are facing any sudden issues in your facebook application then kindly verify your app as per the latest Facebook policy
+            <a href="https://plugins.miniorange.com/data-use-checkup-process-in-facebook-app-wordpress-social-login" target="_blank">here</a>.
         </p>
-        <p><b>New SOCIAL SHARING PLUGIN </b>is available with attractive features. Click here to
+        <p><b>New SOCIAL SHARING PLUGIN </b>is available with attractive features.
             <a id="pricing" style="background: #FFA335;border-color: #FFA335;color: white;" class="button" href="<?php echo site_url().'/wp-admin/admin.php?page=mo_openid_social_sharing_settings&tab=licensing_plans'; ?>"><?php echo mo_sl('Upgrade Now');?></a>
         </p>
     </div>
-
-<?php
-    
-    if( isset( $_GET[ 'tab' ]) && $_GET[ 'tab' ] !== 'register' ) {
-        $active_tab = $_GET[ 'tab' ];
+    <?php
+}
+    if (isset($_GET['tab']) && $_GET['tab'] !== 'register') {
+        $active_tab = $_GET['tab'];
     } else {
         $active_tab = 'config_apps';
     }
@@ -62,27 +60,31 @@ function mo_register_openid() {
         $disable="disabled";
     else
         $disable="";
-    ?>
-
-
+    if($active_tab == 'licensing_plans') {
+        ?>
+        <div style="text-align:center;"><h1>Social Login Plugin</h1></div>
+        <div><a style="margin-top: 0px;background: #d0d0d0;border-color: #1162b5;color: #151515; float: left" class="button" href= <?php echo (isset($_COOKIE['extension_current_url']) ? $_COOKIE['extension_current_url']:site_url());?> ><span class="dashicons dashicons-arrow-left-alt" style="vertical-align: middle;"></span><b style="font-size: 15px;"> &nbsp;&nbsp;Back To Plugin Configuration</b></a></div>
+        <?php
+        mo_openid_licensing_plans();
+    }
+    else
+    {
+        ?>
     <div>
         <table>
             <tr>
                 <td><img id="logo" style="margin-top: 25px" src="<?php echo plugin_dir_url(__FILE__);?>includes/images/logo.png"></td>
                 <td>&nbsp;<a style="text-decoration:none" href="https://plugins.miniorange.com/" target="_blank"><h1 style="color: #c9302c"><?php echo mo_sl('miniOrange Social Login');?> &nbsp;</h1></a></td>
-                <td> <a id="privacy" style="margin-top: 23px" class="button" <?php echo $active_tab == 'privacy_policy' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'privacy_policy'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Privacy Policy');?></a></td>
-                <td> <a id="faq" style="margin-top: 23px" class="button" <?php echo $active_tab == 'faq' ? 'nav-tab-active' : ''; ?> href="<?php echo add_query_arg( array('tab' => 'faq'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('FAQs');?></a></td>
                 <td> <a id="forum" style="margin-top: 23px" class="button" <?php echo $active_tab == 'forum' ? 'nav-tab-active' : ''; ?>" href="https://wordpress.org/support/plugin/miniorange-login-openid/" target="_blank"><?php echo mo_sl('Forum');?></a></td>
                 <td> <a id="addon" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button" <?php echo $active_tab == 'add_on' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Add On');?></a></td>
-                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Licensing Plan');?></a></td>
-                <td> <a id="whats_new" style="margin-top: 23px;background: #62B772;border-color: #62B772;color: white;" class="button"<?php echo $active_tab == 'whats_new' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'whats_new'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl("What's new in miniOrange");?></a></td>
+                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>" onclick="mo_openid_extension_switch()"><?php echo mo_sl('Licensing Plan');?></a></td>
                 <td>
                     <a id="mo_openid_rateus_modal" onclick="asdf(this)" style="margin-top: 23px" class="button" ><?php echo mo_sl('Rate us');?></a>
                 </td>
                 <td>
                     <button id="mo_openid_restart_gtour" style="margin-top: 23px;background: #0867B2;border-color: #0867B2;color: white; float: right" class="button" onclick="window.location= base_url+'/wp-admin/admin.php?page=mo_openid_general_settings&tab=config_apps';restart_tour()" value="Restart Tour"><?php echo mo_sl('Restart Tour');?></button>
                 </td>
-                <td><a id="mo_openid_setup_plugin" style="margin-top: 23px;background: #0867B2;border-color: #0867B2;color: white; float: right" class="button" href="https://youtu.be/u6Jgcr3xWOw" target="_blank"><?php echo mo_sl('Setup Plugin');?></a></td>
+                <td><a id="mo_openid_setup_plugin" style="margin-top: 23px;background: #0867B2;border-color: #0867B2;color: white; float: right" class="button" href="https://youtu.be/ln17jan6t1Y" target="_blank"><?php echo mo_sl('Setup Plugin');?></a></td>
             </tr>
         </table>
     </div>
@@ -121,20 +123,18 @@ function mo_register_openid() {
         </style>
         <div id="mo_openid_settings" style="width: 85%; float: right;">
             <div style="background-color: #FFFFFF;width: 90%;border-radius: 0px 15px 15px 0px;">
-                <div class="mo_container">
+<!--                <div class="mo_container">-->
                     <h3 id="mo_openid_page_heading" class="mo_openid_highlight" style="color: white;margin: 0;padding: 23px;border-radius: 0px 15px 0px 0px;">&nbsp</h3>
                     <div id="mo_openid_msgs"></div>
-                    <table style="width:100%;">
+<!--                </div>-->
+                <table style="width:100%;">
+                    <?php
+                    }
+                    ?>
                         <tr>
                             <td style="vertical-align:top;">
                                 <?php
                                 switch ($active_tab){
-                                    case 'licensing_plans':
-                                        mo_openid_licensing_plans();
-                                        break;
-                                        case 'whats_new':
-                                            mo_openid_miniorange_new();
-                                        break;
                                     case 'config_apps':
                                         mo_openid_show_apps();
                                         break;
@@ -153,9 +153,6 @@ function mo_register_openid() {
                                     case 'domain_restriction':
                                         mo_openid_restrict_domain();
                                         break;
-                                    case 'faq':
-                                        mo_openid_faq();
-                                        break;
                                     case 'gdpr':
                                         mo_openid_gdpr();
                                         break;
@@ -173,9 +170,6 @@ function mo_register_openid() {
                                         break;
                                     case 'premium_features':
                                         mo_openid_premium_features();
-                                        break;
-                                    case 'privacy_policy':
-                                        mo_openid_privacy_policy();
                                         break;
                                     case 'integration':
                                         mo_openid_integrations();
@@ -197,8 +191,8 @@ function mo_register_openid() {
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src= "<?php echo plugins_url('/includes/js/phone.js',__FILE__); ?>"></script>
-        <input type="button" id="myBtn" class="support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP'); ?>">
+        <script type="text/javascript" src= "<?php echo plugins_url('/includes/js/mo_openid_phone.js',__FILE__); ?>"></script>
+        <input type="button" id="myBtn" class="mo_support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP'); ?>">
     </div>
     <?php include('view/support_form/miniorange_openid_support_form.php');?>
     <script>
@@ -233,9 +227,6 @@ function mo_register_openid() {
         function wordpress_support() {
             window.open("https://wordpress.org/support/plugin/miniorange-login-openid","_blank");
         }
-        function faq_support(){
-            window.open("https://faq.miniorange.com/kb/social-login", "_blank");
-        }
 
         function mo_openid_valid_query(f) {
             !(/^[a-zA-Z?,.\(\)\/@ 0-9]*$/).test(f.value) ? f.value = f.value.replace(/[^a-zA-Z?,.\(\)\/@ 0-9]/, '') : null;
@@ -247,6 +238,15 @@ function mo_register_openid() {
             jQuery("#mo_openid_rateus_myModal").hide();
             jQuery("#mo_openid_rating-5").prop('checked',false);
 
+        }
+        function mo_openid_extension_switch(){
+            var extension_url = window.location.href;
+            var cookie_names = "extension_current_url";
+            var d = new Date();
+            d.setTime(d.getTime() + (2 * 24 * 60 * 60 * 1000));
+            var expired = "expires="+d.toUTCString();
+            document.cookie = cookie_names + "=" + extension_url + ";" + expired + ";path=/";
+            <?php update_option('mo_openid_extension_tab','0');?>
         }
         function form_popup(rating){
             jQuery.ajax({
@@ -390,12 +390,12 @@ function mo_register_openid() {
                         return_value = "" +
                             "<div style='width:13% !important;font-size: unset !important' class=\"mo_openid_popover\" role=\"tooltip\"> " +
                             "<div class=\"mo_openid_arrow\" ></div> " +
-                            "<h3 class=\"mo_openid_popover-header\" style=\"margin-top:0px;\"></h3> " +
+                            "<h3 class=\"mo_openid_popover-header\" style=\"font-size: 1rem;\"></h3> " +
                             "<div class=\"mo_openid_popover-body\"></div> " +
                             "<div class=\"mo_openid_popover-navigation\"> " +
                             "<div class=\"mo_openid_tour_btn-group\" style=\"width: 100%;\"> " +
-                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;\" data-role=\"next\">Next &raquo;</button>&nbsp;&nbsp;" +
-                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;\" data-role=\"end\" onclick=\"end_new_tour1();\">Skip</button>" +
+                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;font-size: 1.5rem;\" data-role=\"next\">Next &raquo;</button>&nbsp;&nbsp;" +
+                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;font-size: 1.5rem;\" data-role=\"end\" onclick=\"end_new_tour1();\">Skip</button>" +
                             "<div style=\"width:47%;margin-top: -7%;\">" +
                             "<h4  style=\"float:right;margin-left: 53%;\">" + (new_tour1.getCurrentStep() + 1) + "/8</h4>" +
                             "</div>" +
@@ -411,8 +411,8 @@ function mo_register_openid() {
                             "<div class=\"mo_openid_popover-body\"></div> " +
                             "<div class=\"mo_openid_popover-navigation\"> " +
                             "<div class=\"mo_openid_tour_btn-group\" style=\"width: 100%;\"> " +
-                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;\" data-role=\"next\">Next &raquo;</button>&nbsp;&nbsp;" +
-                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;\" data-role=\"end\" onclick=\"end_new_tour1();\">Skip</button>" +
+                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;font-size: 1.5rem;\" data-role=\"next\">Next &raquo;</button>&nbsp;&nbsp;" +
+                            "<button class=\"mo_openid_tour_btn mo_openid_tour_btn-sm mo_openid_tour_btn-secondary mo_openid_tour_btn_next-success\" style=\"width: 54%;height: 0%;font-size: 1.5rem;\" data-role=\"end\" onclick=\"end_new_tour1();\">Skip</button>" +
                             "<div style=\"width:47%;margin-top: -7%;\">" +
                             "<h4  style=\"float:right;margin-left: 53%;\">" + (new_tour1.getCurrentStep() + 1) + "/8</h4>" +
                             "</div>" +
@@ -492,11 +492,29 @@ function mo_register_openid() {
 
 function mo_register_sharing_openid()
 {
+    if(!strpos($_SERVER['REQUEST_URI'], "mo_openid_social_sharing_settings&tab=licensing_plans")) {
+        ?>
+        <div id="upgrade_notice" class="mo_openid_notice mo_openid_notice-warning" >
+            <p style="font-size: larger"><b>New SOCIAL SHARING PLUGIN </b>is available with attractive features.
+                <a id="pricing" style="background: #FFA335;border-color: #FFA335;color: white;" class="button" href="<?php echo site_url().'/wp-admin/admin.php?page=mo_openid_social_sharing_settings&tab=licensing_plans'; ?>"><?php echo mo_sl('Upgrade Now');?></a>
+            </p>
+        </div>
+        <?php
+    }
     if (isset($_GET['tab']) && $_GET['tab'] !== 'register') {
         $active_tab = $_GET['tab'];
     } else {
         $active_tab = 'soc_apps';
     }
+
+    if($active_tab == 'licensing_plans'){
+        ?>
+        <div style="text-align:center;"><h1>Social Login Plugin</h1></div>
+        <div><a style="margin-top: 0px;background: #d0d0d0;border-color: #1162b5;color: #151515; float: left" class="button" href= <?php echo (isset($_COOKIE['extension_current_url']) ? $_COOKIE['extension_current_url']:site_url());?> ><span class="dashicons dashicons-arrow-left-alt" style="vertical-align: middle;"></span><b style="font-size: 15px;"> &nbsp;&nbsp;Back To Plugin Configuration</b></a></div>
+        <?php
+    }
+    else
+        {
     ?>
 
     <div>
@@ -506,11 +524,9 @@ function mo_register_sharing_openid()
                          src="<?php echo plugin_dir_url(__FILE__); ?>includes/images/logo.png"></td>
                 <td>&nbsp;<a style="text-decoration:none" href="https://plugins.miniorange.com/"
                              target="_blank"><h1 style="color: #c9302c"><?php echo mo_sl('miniOrange Social Login');?></h1></a></td>
-                <td> <a id="privacy" style="margin-top: 23px" class="button" <?php echo $active_tab == 'privacy_policy' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'privacy_policy'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Privacy Policy');?></a></td>
-                <td> <a id="faq" style="margin-top: 23px" class="button" <?php echo $active_tab == 'faq' ? 'nav-tab-active' : ''; ?> href="<?php echo add_query_arg( array('tab' => 'faq'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('FAQs');?></a></td>
                 <td> <a id="forum" style="margin-top: 23px" class="button" <?php echo $active_tab == 'forum' ? 'nav-tab-active' : ''; ?>" href="https://wordpress.org/support/plugin/miniorange-login-openid/" target="_blank"><?php echo mo_sl('Forum');?></a></td>
                 <td> <a id="addon" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button" <?php echo $active_tab == 'add_on' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Add On');?></a></td>
-                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a></td>
+                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>" onclick="mo_openid_extension_switch()"><?php echo mo_sl('Upgrade Now');?></a></td>
                 <td>
             </tr>
         </table>
@@ -562,6 +578,9 @@ function mo_register_sharing_openid()
                     <h3 id="mo_openid_page_heading" class="mo_openid_highlight" style="color: white;margin: 0;padding: 23px;border-radius: 0px 15px 0px 0px;">&nbsp</h3>
                     <div id="mo_openid_msgs"></div>
                     <table style="width:100%;">
+                        <?php
+                        }
+                        ?>
                         <tr>
                             <td style="vertical-align:top;">
                                 <?php
@@ -584,12 +603,6 @@ function mo_register_sharing_openid()
                                     case 'licensing_plans':
                                         mo_openid_licensing_plan_sharing();
                                         break;
-                                    case 'faq':
-                                        mo_openid_faq();
-                                        break;
-                                    case 'privacy_policy':
-                                        mo_openid_privacy_policy();
-                                        break;
                                     case 'add_on':
                                         header('Location: '.site_url().'/wp-admin/admin.php?page=mo_openid_settings_addOn');
                                         break;
@@ -602,8 +615,6 @@ function mo_register_sharing_openid()
                                     case 'mo_twitter_btn':
                                         mo_twitter_btn();
                                         break;
-
-
                                 }
                                 ?>
                             </td>
@@ -612,13 +623,22 @@ function mo_register_sharing_openid()
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="<?php echo plugins_url('/includes/js/phone.js', __FILE__); ?>"></script>
+        <script type="text/javascript" src="<?php echo plugins_url('/includes/js/mo_openid_phone.js', __FILE__); ?>"></script>
 
-        <input type="button" id="myBtn" class="support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP');?>">
+        <input type="button" id="myBtn" class="mo_support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP');?>">
 
     </div>
     <?php include('view/support_form/miniorange_openid_support_form.php');?>
     <script>
+        function mo_openid_extension_switch(){
+            var extension_url = window.location.href;
+            var cookie_names = "extension_current_url";
+            var d = new Date();
+            d.setTime(d.getTime() + (2 * 24 * 60 * 60 * 1000));
+            var expired = "expires="+d.toUTCString();
+            document.cookie = cookie_names + "=" + extension_url + ";" + expired + ";path=/";
+            <?php update_option('mo_openid_extension_tab','0');?>
+        }
         jQuery("#contact_us_phone").intlTelInput();
         function mo_openid_support_form(abc) {
             jQuery("#contact_us_phone").intlTelInput();
@@ -642,9 +662,6 @@ function mo_register_sharing_openid()
             window.open("https://wordpress.org/support/plugin/miniorange-login-openid","_blank");
 
         }
-        function faq_support(){
-            window.open("https://faq.miniorange.com/kb/social-login", "_blank");
-        }
 
         function mo_openid_valid_query(f) {
             !(/^[a-zA-Z?,.\(\)\/@ 0-9]*$/).test(f.value) ? f.value = f.value.replace(/[^a-zA-Z?,.\(\)\/@ 0-9]/, '') : null;
@@ -661,6 +678,14 @@ function mo_comment_openid() {
     } else {
         $active_tab = 'select_applications';
     }
+    if($active_tab == 'licensing_plans') {
+        ?>
+        <div style="text-align:center;"><h1>Social Login Plugin</h1></div>
+        <div><a style="margin-top: 0px;background: #d0d0d0;border-color: #1162b5;color: #151515; float: left" class="button" href= <?php echo (isset($_COOKIE['extension_current_url']) ? $_COOKIE['extension_current_url']:site_url());?> ><span class="dashicons dashicons-arrow-left-alt" style="vertical-align: middle;"></span><b style="font-size: 15px;"> &nbsp;&nbsp;Back To Plugin Configuration</b></a></div>
+        <?php
+    }
+    else
+    {
     ?>
     <div>
 
@@ -670,11 +695,9 @@ function mo_comment_openid() {
                              src="<?php echo plugin_dir_url(__FILE__); ?>includes/images/logo.png"></td>
                     <td>&nbsp;<a style="text-decoration:none" href="https://plugins.miniorange.com/"
                                  target="_blank"><h1 style="color: #c9302c"><?php echo mo_sl('miniOrange Social Login');?></h1></a></td>
-                    <td> <a id="privacy" style="margin-top: 23px" class="button" <?php echo $active_tab == 'privacy_policy' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'privacy_policy'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Privacy Policy');?></a></td>
-                    <td> <a id="faq" style="margin-top: 23px" class="button" <?php echo $active_tab == 'faq' ? 'nav-tab-active' : ''; ?> href="<?php echo add_query_arg( array('tab' => 'faq'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('FAQs');?></a></td>
                     <td> <a id="forum" style="margin-top: 23px" class="button" <?php echo $active_tab == 'forum' ? 'nav-tab-active' : ''; ?>" href="https://wordpress.org/support/plugin/miniorange-login-openid/" target="_blank"><?php echo mo_sl('Forum');?></a></td>
                     <td> <a id="addon" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button" <?php echo $active_tab == 'add_on' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Add On');?></a></td>
-                    <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a></td>
+                    <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>" onclick="mo_openid_extension_switch()"><?php echo mo_sl('Upgrade Now');?></a></td>
                     <td>
                 </tr>
             </table>
@@ -706,6 +729,9 @@ function mo_comment_openid() {
                     <h3 id="mo_openid_page_heading" class="mo_openid_highlight" style="color: white;margin: 0;padding: 23px;border-radius: 0px 15px 0px 0px;">&nbsp</h3>
                     <div id="mo_openid_msgs"></div>
                     <table style="width:100%;">
+                        <?php
+                        }
+                        ?>
                         <tr>
                             <td style="vertical-align:top;">
                                 <?php
@@ -728,12 +754,6 @@ function mo_comment_openid() {
                                     case 'licensing_plans':
                                         mo_openid_licensing_plans();
                                         break;
-                                    case 'faq':
-                                        mo_openid_faq();
-                                        break;
-                                    case 'privacy_policy':
-                                        mo_openid_privacy_policy();
-                                        break;
                                     case 'add_on':
                                         header('Location: '.site_url().'/wp-admin/admin.php?page=mo_openid_settings_addOn');
                                         break;
@@ -747,9 +767,9 @@ function mo_comment_openid() {
 
 
         </div></div>
-    <script type="text/javascript" src= "<?php echo plugins_url('/includes/js/phone.js',__FILE__); ?>"></script>
+    <script type="text/javascript" src= "<?php echo plugins_url('/includes/js/mo_openid_phone.js',__FILE__); ?>"></script>
 
-    <input type="button" id="myBtn" class="support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP');?>">
+    <input type="button" id="myBtn" class="mo_support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP');?>">
 
     <?php include('view/support_form/miniorange_openid_support_form.php');?>
     <script>
@@ -772,7 +792,7 @@ function mo_comment_openid() {
             var t=parseInt(e.value.trim());t>50?e.value=50:35>t&&(e.value=35)
         }
         jQuery(document).ready(function(){
-            let sel = jQuery(".mo_support_input_container");
+            var sel = jQuery(".mo_support_input_container");
             sel.each(function(){
                 if(jQuery(this).find(".mo_support_input").val() !== "")
                     jQuery(this).addClass("mo_has_value");
@@ -785,6 +805,15 @@ function mo_comment_openid() {
         });
     </script>
     <script>
+        function mo_openid_extension_switch(){
+            var extension_url = window.location.href;
+            var cookie_names = "extension_current_url";
+            var d = new Date();
+            d.setTime(d.getTime() + (2 * 24 * 60 * 60 * 1000));
+            var expired = "expires="+d.toUTCString();
+            document.cookie = cookie_names + "=" + extension_url + ";" + expired + ";path=/";
+            <?php update_option('mo_openid_extension_tab','0');?>
+        }
         jQuery(document).ready(function ()
         {
             jQuery("#bkgOverlay").delay(4800).fadeIn(400);
@@ -828,9 +857,6 @@ function mo_comment_openid() {
             window.open("https://wordpress.org/support/plugin/miniorange-login-openid","_blank");
 
         }
-        function faq_support(){
-            window.open("https://faq.miniorange.com/kb/social-login", "_blank");
-        }
 
         function mo_openid_valid_query(f) {
             !(/^[a-zA-Z?,.\(\)\/@ 0-9]*$/).test(f.value) ? f.value = f.value.replace(/[^a-zA-Z?,.\(\)\/@ 0-9]/, '') : null;
@@ -843,22 +869,43 @@ function mo_comment_openid() {
 }
 
 function mo_openid_addon_desc_page() {
+    
     if( isset( $_GET[ 'tab' ]) && $_GET[ 'tab' ] !== 'register' ) {
         $active_tab = $_GET[ 'tab' ];
-    } else {
+    }
+    elseif (isset($_REQUEST) && $_REQUEST['page'] == 'mo_openid_settings_addOn')
+        $active_tab = 'custom_registration_form';
+    elseif (isset($_REQUEST) && $_REQUEST['page'] == 'mo_openid_woocommerce_add_on')
+        $active_tab = 'mo_woocommerce_add_on';
+    elseif (isset($_REQUEST) && $_REQUEST['page'] == 'mo_openid_mailchimp_add_on')
+        $active_tab = 'mo_mailchimp_add_on';
+    elseif (isset($_REQUEST) && $_REQUEST['page'] == 'mo_openid_buddypress_add_on')
+        $active_tab = 'mo_buddypress_add_on';
+    else {
         $active_tab = 'custom_registration_form';
     }
+
+if($active_tab =='licensing_plans') {
     ?>
-    <div>
+    <div style="text-align:center;"><h1>Social Login Plugin</h1></div>
+        <div><a style="margin-top: 0px;background: #d0d0d0;border-color: #1162b5;color: #151515; float: left" class="button" href= <?php echo (isset($_COOKIE['extension_current_url']) ? $_COOKIE['extension_current_url']:site_url());?> ><span class="dashicons dashicons-arrow-left-alt" style="vertical-align: middle;"></span><b style="font-size: 15px;"> &nbsp;&nbsp;Back To Plugin Configuration</b></a></div>
+        <?php
+        mo_openid_licensing_plans();
+}
+else
+{
+
+    ?>
+     <div>
         <table>
             <tr>
                 <td><img id="logo" style="margin-top: 25px" src="<?php echo plugin_dir_url(__FILE__);?>includes/images/logo.png"></td>
-                <td>&nbsp;<a style="text-decoration:none" href="https://plugins.miniorange.com/" target="_blank"><h1 style="color: #c9302c"><?php echo mo_sl('miniOrange Social Login');?> &nbsp;</h1></a></td>
-                <td> <a id="privacy" style="margin-top: 23px" class="button" <?php echo $active_tab == 'privacy_policy' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'privacy_policy'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Privacy Policy');?></a></td>
-                <td> <a id="faq" style="margin-top: 23px" class="button" <?php echo $active_tab == 'faq' ? 'nav-tab-active' : ''; ?> href="<?php echo add_query_arg( array('tab' => 'faq'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('FAQs');?></a></td>
-                <td> <a id="forum" style="margin-top: 23px" class="button" <?php echo $active_tab == 'forum' ? 'nav-tab-active' : ''; ?>" href="https://wordpress.org/support/plugin/miniorange-login-openid/" target="_blank"><?php echo mo_sl('Forum');?></a></td>
-                <td> <a id="mo_openid_go_back" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'mo_openid_go_back' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'mo_openid_go_back'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Social Login');?></a></td>
-                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Upgrade Now');?></a></td>
+                <td>&nbsp;<a style="text-decoration:none" href="https://plugins.miniorange.com/" target="_blank"><h1 style="color: #c9302c">miniOrange Social Login &nbsp;</h1></a></td>
+                <td> <a id="privacy" style="margin-top: 23px" class="button" <?php echo $active_tab == 'privacy_policy' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'privacy_policy'), $_SERVER['REQUEST_URI'] ); ?>">Privacy Policy</a></td>
+                <td> <a id="faq" style="margin-top: 23px" class="button" <?php echo $active_tab == 'faq' ? 'nav-tab-active' : ''; ?> href="<?php echo add_query_arg( array('tab' => 'faq'), $_SERVER['REQUEST_URI'] ); ?>">FAQs</a></td>
+                <td> <a id="forum" style="margin-top: 23px" class="button" <?php echo $active_tab == 'forum' ? 'nav-tab-active' : ''; ?>" href="https://wordpress.org/support/plugin/miniorange-login-openid/" target="_blank">Forum</a></td>
+                <td> <a id="pricing" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'licensing_plans' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>" onclick="mo_openid_extension_switch()">Licensing Plans</a></td>
+                <td> <a id="mo_openid_go_back" style="margin-top: 23px;background: #FFA335;border-color: #FFA335;color: white;" class="button"<?php echo $active_tab == 'mo_openid_go_back' ? 'nav-tab-active' : ''; ?>" href="<?php echo add_query_arg( array('tab' => 'mo_openid_go_back'), $_SERVER['REQUEST_URI'] ); ?>">Social Login</a></td>
             </tr>
         </table>
     </div>
@@ -868,27 +915,36 @@ function mo_openid_addon_desc_page() {
             <div style="height:54px;margin-top: 9px;border-bottom: 0px;text-align:center;">
                 <div><img style="float:left;margin-left:8px;width: 43px;height: 45px;padding-top: 5px;" src="<?php echo plugin_dir_url(__FILE__);?>includes/images/logo.png"></div>
                 <br>
-                <span style="font-size:20px;color:white;float:left;"><?php echo mo_sl('miniOrange');?></span>
+                <span style="font-size:20px;color:white;float:left;">miniOrange</span>
             </div>
             <div class="mo_openid_tab" style="min-height:395px;width:100%; height: 445px;border-radius: 0px 0px 0px 15px;">
-                <a id="custom_registration_form" class="tablinks<?php if($active_tab=="custom_registration_form") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'custom_registration_form'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Custom Registration Form');?></a>
-                <a id="mo_openid_go_back" class="tablinks<?php if($active_tab=="mo_openid_go_back") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'mo_openid_go_back'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Go to Social Login');?></a>
-                <a id="mo_openid_licensing_plans_tab" class="tablinks<?php if($active_tab=="mo_openid_licensing_plans_tab") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'mo_openid_licensing_plans_tab'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('Licensing Plans');?></a>
+                <a id="custom_registration_form" class="tablinks<?php if($active_tab=="custom_registration_form") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'custom_registration_form'), $_SERVER['REQUEST_URI'] ); ?>">Custom Registration Form</a>
+                <a id="mo_woocommerce_add_on" class="tablinks<?php if($active_tab=="mo_woocommerce_add_on") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'mo_woocommerce_add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('WooCommerce Add on');?></a>
+                <a id="mo_buddypress_add_on" class="tablinks<?php if($active_tab=="mo_buddypress_add_on") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'mo_buddypress_add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('BuddyPress Add on');?></a>
+                <a id="mo_mailchimp_add_on" class="tablinks<?php if($active_tab=="mo_mailchimp_add_on") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'mo_mailchimp_add_on'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('MailChimp Add on');?></a>
+                <a id="mo_openid_go_back" class="tablinks<?php if($active_tab=="mo_openid_go_back") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'mo_openid_go_back'), $_SERVER['REQUEST_URI'] ); ?>">Go to Social Login</a>
+                <a id="mo_openid_licensing" class="tablinks<?php if($active_tab=="mo_openid_licensing_plans") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>" onclick="mo_openid_extension_switch()">Licensing Plans</a>
+                <a id="profile_com" style="display: none;"> class="tablinks<?php if($active_tab=="profile_com") echo '_active';?>" href="<?php echo add_query_arg( array('tab' => 'profile_com'), $_SERVER['REQUEST_URI'] ); ?>">Profile</a>
             </div>
         </div>
+
         <div id="mo_openid_settings" style="width: 85%; float: right;">
             <div style="background-color: #FFFFFF;width: 90%;border-radius: 0px 15px 15px 0px;">
                 <div class="mo_container">
                     <h3 id="mo_openid_page_heading" class="mo_openid_highlight" style="color: white;margin: 0;padding: 23px;border-radius: 0px 15px 0px 0px;">&nbsp</h3>
                     <div id="mo_openid_msgs"></div>
+                    <?php
+
+                    }
+                    ?>
+
                     <table style="width:100%;">
                         <tr>
                             <td style="vertical-align:top;">
                                 <?php
                                 switch ($active_tab){
-                                    case 'mo_openid_licensing_plans_tab':
-                                    case 'licensing_plans':
-                                        mo_openid_licensing_plans_addon();
+                                        case 'profile_com':
+                                        mo_openid_profile();
                                         break;
                                     case 'privacy_policy':
                                         mo_openid_privacy_policy();
@@ -901,11 +957,53 @@ function mo_openid_addon_desc_page() {
                                             if(is_plugin_active('miniorange-login-openid-extra-attributes-addon/miniorange_openid_sso_customization_addon.php'))
                                                 do_action('customization_addon');
                                             else {
-                                                mo_openid_show_addon_message_page();
+                                                $addon_message_type = 'Custom Registration Addon';
+                                                mo_openid_show_addon_message_page($addon_message_type);
                                             }
                                         }
                                         else
                                             mo_openid_custom_registration_form();
+                                        break;
+                                    case 'mo_woocommerce_add_on':
+                                        if(mo_openid_is_wca_license_key_verified()) {
+                                            if (is_plugin_active('miniorange-login-openid-woocommerce-addon/miniorange_openid_woocommerce_integration_addon.php')) {
+                                                do_action('mo_wc_addon');
+                                            }
+                                            else {
+                                                $addon_message_type = 'WooCommerce Addon';
+                                                mo_openid_show_addon_message_page($addon_message_type);
+                                            }
+                                        }
+                                        else
+                                            mo_openid_woocommerce_add_on();
+                                        break;
+                                    case 'mo_mailchimp_add_on':
+                                        if(mo_openid_is_mailc_license_key_verified()) {
+                                            if (is_plugin_active('miniorange-login-openid-mailchimp-addon/miniorange_openid_mailchimp_addon.php')) {
+                                                do_action('mo_mailchimp_addon');
+                                            }
+                                            else {
+                                                $addon_message_type = 'MailChimp Addon';
+                                                mo_openid_show_addon_message_page($addon_message_type);
+                                            }
+                                        }
+                                        else
+                                            mo_openid_mailchimp_add_on();
+                                        break;
+                                    case 'mo_buddypress_add_on':
+                                        if(mo_openid_is_bpp_license_key_verified()) {
+                                            if (is_plugin_active('miniorange-login-openid-buddypress-addon/mo_openid_buddypress_display_addon.php')) {
+                                                do_action('buddypress_integration_addon');
+                                            }
+                                            else {
+                                                $addon_message_type = 'BuddyPress Addon';
+                                                mo_openid_show_addon_message_page($addon_message_type);
+                                            }
+                                        }
+                                        else
+                                            mo_openid_buddypress_addon_display();
+                                        break;
+                                    case 'setup_video':
                                         break;
                                     case 'mo_openid_go_back':
                                         header('Location: '.site_url().'/wp-admin/admin.php?page=mo_openid_general_settings');
@@ -919,8 +1017,8 @@ function mo_openid_addon_desc_page() {
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src= "<?php echo plugins_url('/includes/js/phone.js',__FILE__); ?>"></script>
-        <input type="button" id="myBtn" class="support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP');?>">
+ <script type="text/javascript" src= "<?php echo plugins_url('/includes/js/mo_openid_phone.js',__FILE__); ?>"></script>
+        <input type="button" id="myBtn" class="mo_support-help-button" data-show="false" onclick="mo_openid_support_form('')" value="<?php echo mo_sl('NEED HELP');?>">
     </div>
     <?php include('view/support_form/miniorange_openid_support_form.php');?>
     <script>
@@ -943,12 +1041,19 @@ function mo_openid_addon_desc_page() {
                 }
             }
         }
+        function mo_openid_extension_switch(){
+            var extension_url = window.location.href;
+                var cookie_names = "extension_current_url";
+                var d = new Date();
+                d.setTime(d.getTime() + (2 * 24 * 60 * 60 * 1000));
+                var expired = "expires="+d.toUTCString();
+                document.cookie = cookie_names + "=" + extension_url + ";" + expired + ";path=/";
+
+            <?php update_option('mo_openid_extension_tab','1');?>
+        }
         function wordpress_support() {
             window.open("https://wordpress.org/support/plugin/miniorange-login-openid","_blank");
 
-        }
-        function faq_support(){
-            window.open("https://faq.miniorange.com/kb/social-login", "_blank");
         }
 
         function mo_openid_valid_query(f) {

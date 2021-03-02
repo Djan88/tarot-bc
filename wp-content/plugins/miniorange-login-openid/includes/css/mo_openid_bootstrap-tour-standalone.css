@@ -420,7 +420,7 @@ fieldset[disabled] a.mo_openid_tour_btn {
 
 .mo_openid_tour_btn-sm, .mo_openid_tour_btn-group-sm > .mo_openid_tour_btn {
   padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.2rem; }
 
@@ -605,7 +605,7 @@ tbody.mo_openid_collapse.show {
   word-spacing: normal;
   white-space: normal;
   line-break: auto;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: padding-box;
@@ -716,7 +716,7 @@ tbody.mo_openid_collapse.show {
 .mo_openid_popover-header {
   padding: 8px 14px;
   margin-bottom: 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #FFF;
   background-color: #000;
   border-bottom: 1px solid #ebebeb;

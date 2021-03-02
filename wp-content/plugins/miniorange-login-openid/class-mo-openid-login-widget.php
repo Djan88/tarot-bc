@@ -61,6 +61,15 @@ class mo_openid_login_wid extends WP_Widget {
 
     public function openidloginForm(){
 
+        if ($GLOBALS['pagenow'] === 'wp-login.php') {
+            ?>
+            <script
+                    src="https://code.jquery.com/jquery-1.12.4.js"
+                    integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+                    crossorigin="anonymous"></script>
+            <?php
+        }
+
         $selected_theme = esc_attr(get_option('mo_openid_login_theme'));
         $appsConfigured = get_option('mo_openid_google_enable') | get_option('mo_openid_salesforce_enable') | get_option('mo_openid_facebook_enable') | get_option('mo_openid_linkedin_enable') | get_option('mo_openid_instagram_enable') | get_option('mo_openid_amazon_enable') | get_option('mo_openid_windowslive_enable') | get_option('mo_openid_twitter_enable') | get_option('mo_openid_vkontakte_enable')| get_option('mo_openid_yahoo_enable');
         $spacebetweenicons = esc_attr(get_option('mo_login_icon_space'));
@@ -439,6 +448,11 @@ class mo_openid_login_wid extends WP_Widget {
     }
 
     public function select_app($select_apps,$app_values){
+        wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.min.css', __FILE__), false );
+        wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
+        wp_enqueue_style( 'mo-wp-bootstrap-social',plugins_url('includes/css/bootstrap-social.css', __FILE__), false );
+        wp_enqueue_style( 'mo-wp-bootstrap-main',plugins_url('includes/css/bootstrap.min-preview.css', __FILE__), false );
+
         $gdpr_setting = $app_values['gdpr_setting'];
         $spacebetweenicons = $app_values['spacebetweenicons'];
         $customWidth = $app_values['customWidth'];
@@ -562,7 +576,7 @@ class mo_openid_login_wid extends WP_Widget {
                     }
                     if($app_dis!="disable")
                         $html .= "onClick=\"moOpenIdLogin('google','" . $custom_app . "');\"";
-                    $html.="> <i style='padding-top:" . ($customHeight - 29) . "px !important;border-right:none;' class='mofa'><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 70 70\" style=\"padding-left: 8%;\" ><defs><path id=\"a\" d=\"M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z\"/></defs><clipPath id=\"b\"><use xlink:href=\"#a\" overflow=\"visible\"/></clipPath><path clip-path=\"url(#b)\" fill=\"#FBBC05\" d=\"M0 37V11l17 13z\"/><path clip-path=\"url(#b)\" fill=\"#EA4335\" d=\"M0 11l17 13 7-6.1L48 14V0H0z\"/><path clip-path=\"url(#b)\" fill=\"#34A853\" d=\"M0 37l30-23 7.9 1L48 0v48H0z\"/><path clip-path=\"url(#b)\" fill=\"#4285F4\" d=\"M48 48L17 24l-4-3 35-10z\"/></svg></i><span style=\"color:#ffffff;\">" . $buttonText . " Google</span></a>";
+                    $html.="> <i style='padding-top:" . ($customHeight - 29) . "px !important;border-right:none;' class='mofa'><svg xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"none\" fill-rule=\"evenodd\"><path fill=\"#4285F4\" fill-rule=\"nonzero\" d=\"M20.64 12.2045c0-.6381-.0573-1.2518-.1636-1.8409H12v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z\"></path><path fill=\"#34A853\" fill-rule=\"nonzero\" d=\"M12 21c2.43 0 4.4673-.806 5.9564-2.1805l-2.9087-2.2581c-.8059.54-1.8368.859-3.0477.859-2.344 0-4.3282-1.5831-5.036-3.7104H3.9574v2.3318C5.4382 18.9832 8.4818 21 12 21z\"></path><path fill=\"#FBBC05\" fill-rule=\"nonzero\" d=\"M6.964 13.71c-.18-.54-.2822-1.1168-.2822-1.71s.1023-1.17.2823-1.71V7.9582H3.9573A8.9965 8.9965 0 0 0 3 12c0 1.4523.3477 2.8268.9573 4.0418L6.964 13.71z\"></path><path fill=\"#EA4335\" fill-rule=\"nonzero\" d=\"M12 6.5795c1.3214 0 2.5077.4541 3.4405 1.346l2.5813-2.5814C16.4632 3.8918 14.426 3 12 3 8.4818 3 5.4382 5.0168 3.9573 7.9582L6.964 10.29C7.6718 8.1627 9.6559 6.5795 12 6.5795z\"></path><path d=\"M3 3h18v18H3z\"></path></g></svg></i><span style=\"color:#ffffff;\">" . $buttonText . " Google</span></a>";
                 } else {
                     $html .= "<a class='" . $dis . " login-button' rel='nofollow'";if($app_dis!="disable")$html.=" onClick=\"moOpenIdLogin('google','" . $custom_app . "');\""; $html.=" title= ' " . $customTextofTitle . " Google'><img alt='Google' style='width:" . $customSize . "px !important;height: " . $customSize . "px !important;margin-left: " . ($spacebetweenicons) . "px !important' src='" . plugins_url('includes/images/icons/google.png', __FILE__) . "' class='" . $dis . " login-button " . $selected_theme . "' ></a>";
                 }
@@ -867,6 +881,7 @@ class mo_openid_login_wid extends WP_Widget {
     }
 
     private function mo_openid_load_login_script() {
+        wp_enqueue_script( 'js-cookie-script',plugins_url('includes/js/mo_openid_jquery.cookie.min.js', __FILE__), array('jquery'));
         if(!get_option('mo_openid_gdpr_consent_enable')){?>
             <script>
                 jQuery(".btn-mo").prop("disabled",false);

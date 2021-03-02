@@ -25,8 +25,11 @@ if ( ! empty( $page_description ) ) {
 	$page_description = apply_filters( 'wpautop', stripslashes( $page_description ) );
 }
 
-$bg      = wp_get_attachment_image_src( $mt_options['body_bg'], 'full' );
-$body_bg = esc_url( $bg[0] );
+if (!empty($mt_options['body_bg'])) {
+  $bg = wp_get_attachment_image_src( $mt_options['body_bg'], 'full' );
+  $body_bg = esc_url( $bg[0] );
+}
+
 if ( ! empty( $mt_options['bg_image_portrait'] ) ) {
 	$bg_image_portrait = wp_get_attachment_image_src( $mt_options['bg_image_portrait'], 'full' );
 	$bg_image_portrait = ! empty( $bg_image_portrait ) ? $bg_image_portrait[0] : false;
@@ -76,10 +79,6 @@ $google_fonts = mtnc_add_google_fonts();
 		echo '<link rel="stylesheet" href="' . esc_url( 'https://fonts.googleapis.com/css?family=' . esc_attr( $google_fonts[1] ) . '|' . esc_attr( $google_fonts[0] ) ) . '">';
 	} elseif ( ! empty( $google_fonts[0] ) ) {
 		echo '<link rel="stylesheet" href="' . esc_url( 'https://fonts.googleapis.com/css?family=' . esc_attr( $google_fonts[0] ) ) . '">';
-  }
-  if (mtnc_is_weglot_setup()) {
-    echo '<link rel="stylesheet" href="' . WEGLOT_URL_DIST . '/css/front-css.css?v=' . WEGLOT_VERSION . '" type="text/css">';
-    echo '<script src="' . WEGLOT_URL_DIST . '/front-js.js?v=' . WEGLOT_VERSION . '"></script>';
   }
 	?>
 </head>
@@ -132,9 +131,13 @@ $google_fonts = mtnc_add_google_fonts();
 		<?php mtnc_do_button_login_form(); ?>
 	</div>
 <?php endif; ?>
-<?php do_action( 'load_options_style' ); ?>
-<?php do_action( 'load_custom_scripts' );
+<?php
+  do_action( 'load_options_style' );
+  do_action( 'load_custom_scripts' );
 
+  if (!is_callable('is_plugin_active')) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+  }
 ?>
 
 </body>

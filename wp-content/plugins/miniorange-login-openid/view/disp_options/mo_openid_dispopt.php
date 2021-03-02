@@ -47,6 +47,21 @@ function mo_openid_disp_opt()
                     <input disabled type="checkbox" id="ultimate_register_form_end" /><?php echo mo_sl("After Ultimate Member Registration Form Fields");?>
                     <span class="mo_openid_checkbox_checkmark"></span>
                 </label>
+                <br/><br/>
+                <b style="font-size:17px;"><?php echo mo_sl("MemberPress display options");?> </b><a style="left: 1%; position: relative; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('PRO');?></a><br><br>
+
+                <label class="mo_openid_checkbox_container_disable">
+                    <input disabled type="checkbox"/><?php echo mo_sl("After MemberPress Login Form");?>
+                    <span class="mo_openid_checkbox_checkmark"></span>
+                </label>
+                <label class="mo_openid_checkbox_container_disable">
+                    <input disabled type="checkbox"/><?php echo mo_sl("After MemberPress Account Form");?>
+                    <span class="mo_openid_checkbox_checkmark"></span>
+                </label>
+                <label class="mo_openid_checkbox_container_disable">
+                    <input disabled type="checkbox"/><?php echo mo_sl("After MemberPress Checkout Form");?>
+                    <span class="mo_openid_checkbox_checkmark"></span>
+                </label>
             </div>
             <div style="width:50%; background:white; float:right; border: 1px transparent;">
                 <b style="font-size:17px;"><?php echo mo_sl('Woocommerce display options');?></b><br><br><br>
@@ -104,6 +119,24 @@ function mo_openid_disp_opt()
                     <input type="checkbox"  /><br><br>
                     <span class="mo_openid_checkbox_checkmark_disable"></span>
                 </label>
+                <br/>
+                <b style="font-size: 17px;"><?php echo mo_sl('Paid Memberships Pro display options');?> <a style="left: 1%; position: relative; text-decoration: none" class="mo-openid-premium" href="<?php echo add_query_arg( array('tab' => 'licensing_plans'), $_SERVER['REQUEST_URI'] ); ?>"><?php echo mo_sl('PRO');?></a></b><br><br>
+
+                <label class="mo_openid_checkbox_container_disable"><?php echo mo_sl('Before Paid Memberships Pro Checkout Page Submit Button');?>
+                    <input type="checkbox"  /><br>
+                    <span class="mo_openid_checkbox_checkmark_disable"></span>
+                </label>
+
+                <label class="mo_openid_checkbox_container_disable"><?php echo mo_sl('After Paid Memberships Pro Checkout Page Level Cost');?>
+                    <input type="checkbox"  /><br>
+                    <span class="mo_openid_checkbox_checkmark_disable"></span>
+                </label>
+
+                <label class="mo_openid_checkbox_container_disable"><?php echo mo_sl('After Paid Memberships Pro Checkout Page Username');?>
+                    <input type="checkbox"  /><br><br>
+                    <span class="mo_openid_checkbox_checkmark_disable"></span>
+                </label>
+
             </div>
             <div style="height:available;display: inline; width:100%; background:white; float:right; border: 1px transparent; padding-bottom: 10px;" >
                 <label class="mo_openid_checkbox_container"><?php echo mo_sl('Display miniOrange logo with social login icons on selected form');?>

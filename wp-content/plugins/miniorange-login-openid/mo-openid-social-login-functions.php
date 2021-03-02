@@ -594,6 +594,38 @@ function mo_openid_is_customer_addon_license_key_verified() {
     }
 }
 
+function mo_openid_is_wca_license_key_verified() {
+    $licenseKey = get_option('mo_openid_opn_lk_wca_addon');
+    $email      = get_option('mo_openid_admin_email');
+    $customerKey = get_option('mo_openid_admin_customer_key');
+    if(  !$licenseKey || ! $email || ! $customerKey || ! is_numeric( trim( $customerKey ) ) ){
+        return 0;
+    }else {
+        return 1;
+    }
+}
+
+function mo_openid_is_bpp_license_key_verified() {
+    $licenseKey = get_option('mo_openid_opn_lk_bpp_addon');
+    $email      = get_option('mo_openid_admin_email');
+    $customerKey = get_option('mo_openid_admin_customer_key');
+    if(  !$licenseKey || ! $email || ! $customerKey || ! is_numeric( trim( $customerKey ) ) ){
+        return 0;
+    }else {
+        return 1;
+    }
+}
+
+function mo_openid_is_mailc_license_key_verified() {
+    $licenseKey = get_option('mo_openid_opn_lk_mailc_addon');
+    $email      = get_option('mo_openid_admin_email');
+    $customerKey = get_option('mo_openid_admin_customer_key');
+    if(  !$licenseKey || ! $email || ! $customerKey || ! is_numeric( trim( $customerKey ) ) ){
+        return 0;
+    }else {
+        return 1;
+    }
+}
 function mo_openid_show_addon_message_page()
 {
     ?>
@@ -627,7 +659,14 @@ function mo_openid_show_addon_message_page()
 }
 
 function  mo_openid_show_verify_addon_license_page(){
-    wp_send_json(["html"=> mo_openid_show_verify_license_page('extra_attributes_addon')]);
+    if(sanitize_text_field($_POST['plan_name'])=='extra_attributes_addon')
+        wp_send_json(["html"=> mo_openid_show_verify_license_page('extra_attributes_addon')]);
+    else if(sanitize_text_field($_POST['plan_name'])=='WP_SOCIAL_LOGIN_WOOCOMMERCE_ADDON')
+    wp_send_json(["html"=> mo_openid_show_verify_license_page('WP_SOCIAL_LOGIN_WOOCOMMERCE_ADDON')]);
+    else if(sanitize_text_field($_POST['plan_name'])=='WP_SOCIAL_LOGIN_MAILCHIMP_ADDON')
+        wp_send_json(["html"=> mo_openid_show_verify_license_page('WP_SOCIAL_LOGIN_MAILCHIMP_ADDON')]);
+    else if(sanitize_text_field($_POST['plan_name'])=='WP_SOCIAL_LOGIN_BUDDYPRESS_ADDON')
+        wp_send_json(["html"=> mo_openid_show_verify_license_page('WP_SOCIAL_LOGIN_BUDDYPRESS_ADDON')]);
 }
 
 function mo_openid_show_verify_license_page($licience_type){
@@ -643,8 +682,13 @@ function mo_openid_show_verify_license_page($licience_type){
                 <input class="mo_openid_table_textbox" required type="text" style="margin-left:40px;width:300px;"
                        name="openid_licence_key" placeholder="Enter your license key to activate the plugin"/>
             </p>
-            <p><b><font color="#FF0000">*</font>Please check this to confirm that you have read it: </b>&nbsp;&nbsp;<input required type="checkbox" name="license_conditions"/></p>
-
+            <p>
+                <label class="mo_openid_checkbox_container">
+                    <b><font color="#FF0000">*</font>Please check this to confirm that you have read it</b>
+                    <input style="position: absolute; left:0;top: 88%" required type="checkbox" name="license_conditions"/>
+                    <span class="mo_openid_checkbox_checkmark"></span>
+                </label>
+            </p>
 
             <ol>
                 <li>License key you have entered here is associated with this site instance. In future, if you are re-installing the plugin or your site for any reason. You should deactivate and then delete the plugin from wordpress console and should not manually delete the plugin folder. So that you can resuse the same license key.</li><br>
@@ -941,18 +985,29 @@ function mo_openid_registeration_modal(){
 }
 
 function create_customer(){
-    delete_option('mo_openid_sms_otp_count');
-    delete_option('mo_openid_email_otp_count');
     $customer = new CustomerOpenID();
     $customerKey = json_decode( $customer->create_customer(), true );
     if( strcasecmp( $customerKey['status'], 'CUSTOMER_USERNAME_ALREADY_EXISTS') == 0 ) {
         get_current_customer();
     }
+    else if((strcasecmp( $customerKey['status'], 'INVALID_EMAIL_QUICK_EMAIL' ) == 0) && (strcasecmp( $customerKey['message'], 'This is not a valid email. please enter a valid email.' ) == 0) ){
+        if($_POST['action']=='mo_register_new_user')
+            wp_send_json(["error" => 'There was an error creating an account for you. You may have entered an invalid Email-Id. (We discourage the use of disposable emails) Please try again with a valid email.']);
+        else {
+            update_option('mo_openid_message', 'There was an error creating an account for you. You may have entered an invalid Email-Id. <b> (We discourage the use of disposable emails) </b> Please try again with a valid email.');
+            update_option('mo_openid_registration_status', 'EMAIL_IS_NOT_VALID');
+            mo_openid_show_error_message();
+            if (get_option('regi_pop_up') == "yes") {
+                update_option('pop_regi_msg', get_option('mo_openid_message'));
+                mo_openid_registeration_modal();
+            }
+        }
+    }
     else if((strcasecmp( $customerKey['status'], 'FAILED' ) == 0) && (strcasecmp( $customerKey['message'], 'Email is not enterprise email.' ) == 0) ){
         if($_POST['action']=='mo_register_new_user')
             wp_send_json(["error" => 'There was an error creating an account for you. You may have entered an invalid Email-Id. (We discourage the use of disposable emails) Please try again with a valid email.']);
         else {
-            update_option('mo_openid_message', ' There was an error creating an account for you. You may have entered an invalid Email-Id. <b> (We discourage the use of disposable emails) </b> Please try again with a valid email.');
+            update_option('mo_openid_message', 'There was an error creating an account for you. You may have entered an invalid Email-Id. <b> (We discourage the use of disposable emails) </b> Please try again with a valid email.');
             update_option('mo_openid_registration_status', 'EMAIL_IS_NOT_ENTERPRISE');
             mo_openid_show_error_message();
             if (get_option('regi_pop_up') == "yes") {

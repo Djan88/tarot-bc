@@ -221,23 +221,6 @@ function rcl_update_post_custom_fields( $post_id, $id_form = false ) {
 		}
 	}
 
-	//support of uploader in admin
-	if ( isset( $_POST['post_uploader'] ) && $_POST['post_uploader'] ) {
-		global $user_ID;
-
-		$editPost = new Rcl_EditPost();
-
-		$editPost->rcl_add_attachments_in_temps( array(
-			'user_id' => $user_ID
-		) );
-
-		$editPost->update_post_gallery();
-
-		rcl_delete_temp_media_by_args( array(
-			'user_id'			 => $user_ID,
-			'uploader_id__in'	 => array( 'post_uploader', 'post_thumbnail' )
-		) );
-	}
 }
 
 rcl_ajax_action( 'rcl_save_temp_async_uploaded_thumbnail', true );
@@ -253,7 +236,10 @@ function rcl_save_temp_async_uploaded_thumbnail() {
 		) );
 	}
 
-	rcl_update_tempgallery( $attachment_id, $attachment_url );
+	rcl_add_temp_media(array(
+		'media_id' => $attachment_id,
+		'uploader_id' => 'post_uploader'
+	));
 
 	wp_send_json( array(
 		'save' => true

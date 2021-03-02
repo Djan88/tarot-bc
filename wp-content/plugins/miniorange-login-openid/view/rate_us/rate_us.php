@@ -6,19 +6,19 @@ echo'  <div id="mo_openid_rateus_myModal" class="mo_openid_modal_rateus">
                         <div class="mo_openid_rateus_modal_content" id="color_change" style="background-color: #FFFFFF">
                             <div id="moOpenIdRateUs">
                             
-                                <span class="star-cb-group" >
+                                <span class="mo_openid_star-cb-group" >
                                         <table style="width: 100%"><tr style="background-color: #0867b2"><td>
                                                     <span style="margin-top: 2%;margin-right: 2%" class="mo_openid_rateus_close">&times;</span>
                                             <center><h2 style="color: #FFFFFF"><strong>Rate Us</strong></h2></center></td></tr>
                                 </table><form>
                                             <fieldset class="mo-openid-star-back-rateus"  id="mo_openid_fieldset" style="margin-top: 20%">
-                                               <span class="star-cb-group">
+                                               <span class="mo_openid_star-cb-group">
                                                     <input type="radio" id="mo_openid_rating-5" name="mo_openid_rating" value="5" onclick="window.open(\'https://wordpress.org/support/plugin/miniorange-login-openid/reviews/\', \'_blank\'); five_star();"  /><label for="mo_openid_rating-5">5</label>
                                                     <input type="radio" id="mo_openid_rating-4" name="mo_openid_rating" value="4" onclick="form_popup(4); " /><label for="mo_openid_rating-4">4</label>
                                                     <input type="radio" id="mo_openid_rating-3" name="mo_openid_rating" value="3" onclick="form_popup(3); " /><label for="mo_openid_rating-3">3</label>
                                                     <input type="radio" id="mo_openid_rating-2" name="mo_openid_rating" value="2" onclick="form_popup(2); " /><label for="mo_openid_rating-2">2</label>
                                                     <input type="radio" id="mo_openid_rating-1" name="mo_openid_rating" value="1" onclick="form_popup(1); " /><label for="mo_openid_rating-1">1</label>
-                                                    <input type="radio" id="mo_openid_rating-0" name="mo_openid_rating" value="0" class="star-cb-clear" /><label for="mo_openid_rating-0">0</label>
+                                                    <input type="radio" id="mo_openid_rating-0" name="mo_openid_rating" value="0" class="mo_openid_star-cb-clear" /><label for="mo_openid_rating-0">0</label>
                                                 </span>
                                             </fieldset>
                                         </form>

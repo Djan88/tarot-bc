@@ -4,12 +4,12 @@
  * Plugin Name: Social Login, Social Sharing by miniOrange
  * Plugin URI: https://www.miniorange.com
  * Description: Allow your users to login, comment and share with Facebook, Google, Apple, Twitter, LinkedIn etc using customizable buttons.
- * Version: 7.4.0
+ * Version: 7.4.6
  * Author: miniOrange
  * License URI: http://miniorange.com/usecases/miniOrange_User_Agreement.pdf
  */
 
-define('MO_OPENID_SOCIAL_LOGIN_VERSION', '7.4.0');
+define('MO_OPENID_SOCIAL_LOGIN_VERSION', '7.4.6');
 define('plugin_url', plugin_dir_url(__FILE__) . "includes/images/icons/");
 define('MOSL_PLUGIN_DIR',str_replace('/','\\',plugin_dir_path(__FILE__)));
 require('miniorange_openid_sso_settings_page.php');
@@ -36,7 +36,6 @@ class miniorange_openid_sso_settings
 
         add_action( 'plugins_loaded', array( $this, 'social_load_textdomain'));
         add_action('admin_menu', array($this, 'new_miniorange_openid_menu'));
-        add_action('init', array( $this, 'mo_openid_plugin_settings_style' ));
         add_action( 'admin_init',  array( $this, 'miniorange_openid_save_settings' ) );
         add_action('init', 'mo_openid_login_validate' );
         add_action( 'plugins_loaded', 'mo_openid_plugin_update' ,1 );
@@ -83,7 +82,7 @@ class miniorange_openid_sso_settings
         add_option('mo_openid_admin_api_key','BjIZyuSDTE90MVWp4pRLr3dzrFs8h74T');
         add_option('mo_openid_customer_token','6osoapPWEgGlBRgT');
         add_option('app_pos','facebook#google#vkontakte#twitter#instagram#linkedin#amazon#salesforce#windowslive#yahoo');
-        update_option('app_pos_premium','apple#paypal#wordpress#disqus#pinterest#yandex#spotify#reddit#tumblr#twitch#vimeo#kakao#discord#dribbble#flickr#line#meetup#stackexchange#livejournal#snapchat#foursquare#teamsnap#naver#odnoklassniki#wiebo#wechat#baidu#renren#qq');
+        update_option('app_pos_premium','apple#paypal#wordpress#github#hubspot#mailru#disqus#pinterest#yandex#spotify#reddit#tumblr#twitch#vimeo#kakao#discord#dribbble#flickr#line#meetup#stackexchange#livejournal#snapchat#foursquare#teamsnap#naver#odnoklassniki#wiebo#wechat#baidu#renren#qq');
         add_option('mo_openid_default_login_enable',1);
         add_option( 'mo_openid_login_theme', 'longbutton' );
         add_option( 'mo_openid_register_email_message', 'Hello,<br><br>##User Name## has registered to your site  successfully.<br><br>Thanks,<br>miniOrange' );
@@ -101,7 +100,7 @@ class miniorange_openid_sso_settings
         add_option( 'mo_openid_login_widget_customize_logout_text', 'Logout?' );
         add_option('mo_login_openid_login_widget_customize_textcolor','000000');
         add_option( 'mo_openid_login_widget_customize_text', 'Connect with' );
-        add_option( 'moopenid_logo_check', 1);
+        add_option( 'moopenid_logo_check', 0);
         add_option( 'mo_openid_enable_profile_completion','0' );
         add_option( 'mo_openid_account_linking_enable','0' );
         add_option( 'mo_openid_auto_register_enable', '1');
@@ -146,7 +145,7 @@ class miniorange_openid_sso_settings
         add_action('mo_openid_registration_redirect','1');
         add_option('mo_sharing_icon_custom_size','35');
         add_option('mo_openid_share_email_body','Check out this site ##url##');
-
+        add_option('mo_openid_apps_list','0');
         add_option( 'mo_share_options_enable_post_position', 'before');
         add_option( 'mo_share_options_home_page_position', 'before');
         add_option( 'mo_share_options_static_pages_position', 'before');
@@ -183,7 +182,7 @@ class miniorange_openid_sso_settings
         if(get_option('mo_openid_default_login_enable') == 1) {
             add_action('login_form', array($this, 'mo_openid_add_social_login'));
             if (strpos($_SERVER["REQUEST_URI"], "mo_openid_general_settings") > 0) {
-                add_action('login_enqueue_scripts', array($this, 'mo_custom_login_stylesheet'));
+               add_action('login_enqueue_scripts', array($this, 'mo_custom_login_stylesheet'));
             }
         }
 
@@ -251,28 +250,25 @@ Thank you.';
 
     function mo_openid_plugin_settings_script() {
         if(strpos(get_current_screen()->id, 'miniorange-social-login-sharing_page') === false) return;
-        wp_enqueue_script( 'mo_openid_admin_settings_jquery_script', plugins_url('includes/js/social/config-jquery.js', __FILE__ ));
-        wp_enqueue_script( 'mo_openid_admin_settings_jquery1_script', plugins_url('includes/js/config-jquery-ui.js', __FILE__ ));
-        wp_enqueue_script( 'mo_openid_admin_settings_phone_script', plugins_url('includes/js/phone.js', __FILE__ ));
+        wp_enqueue_script( 'mo_openid_admin_settings_jquery1_script', plugins_url('includes/js/mo-openid-config-jquery-ui.js', __FILE__ ));
+        wp_enqueue_script( 'mo_openid_admin_settings_phone_script', plugins_url('includes/js/mo_openid_phone.js', __FILE__ ));
         wp_enqueue_script( 'mo_openid_admin_settings_color_script', plugins_url('includes/jscolor/jscolor.js', __FILE__ ));
-        wp_enqueue_script( 'mo_openid_admin_settings_script', plugins_url('includes/js/settings.js?version=4.9.6', __FILE__ ), array('jquery'));
+        wp_enqueue_script( 'mo_openid_admin_settings_script', plugins_url('includes/js/mo_openid_settings.js?version=4.9.6', __FILE__ ), array('jquery'));
         wp_enqueue_script( 'mo_openid_admin_settings_phone_script', plugins_url('includes/js/bootstrap.min.js', __FILE__ ));
         wp_enqueue_script( 'bootstrap_script_tour', plugins_url( 'includes/js/mo_openid_bootstrap-tour-standalone.min.js', __FILE__ ));
     }
 
-    function mo_openid_plugin_settings_style() {
-        wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
-        wp_enqueue_style( 'mo_openid_admin_settings_phone_style', plugins_url('includes/css/phone.css', __FILE__));
-        wp_enqueue_style( 'mo-wp-bootstrap-social',plugins_url('includes/css/bootstrap-social.css', __FILE__), false );
-        wp_enqueue_style( 'mo-wp-bootstrap-main',plugins_url('includes/css/bootstrap.min-preview.css', __FILE__), false );
-        wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.min.css', __FILE__), false );
-        wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.css', __FILE__), false );
-        wp_enqueue_style( 'bootstrap_style_ass', plugins_url( 'includes/css/mo_openid_bootstrap-tour-standalone.css?version=5.1.4', __FILE__ ) );
-    }
 
     function mo_openid_plugin_settings_admin_style(){
         if(strpos(get_current_screen()->id, 'miniorange-social-login-sharing_page') === false) return;
+        wp_enqueue_style( 'mo-wp-bootstrap-social',plugins_url('includes/css/bootstrap-social.css', __FILE__), false );
+        wp_enqueue_style( 'mo-wp-bootstrap-main',plugins_url('includes/css/bootstrap.min-preview.css', __FILE__), false );
+        wp_enqueue_style( 'mo-wp-style-icon',plugins_url('includes/css/mo_openid_login_icons.css?version=7.3.0', __FILE__), false );
+        wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.min.css', __FILE__), false );
+        wp_enqueue_style( 'mo-openid-sl-wp-font-awesome',plugins_url('includes/css/mo-font-awesome.css', __FILE__), false );
         wp_enqueue_style( 'mo_openid_admin_settings_style', plugins_url('includes/css/mo_openid_style.css?version=7.3.0', __FILE__));
+        wp_enqueue_style( 'bootstrap_style_ass', plugins_url( 'includes/css/mo_openid_bootstrap-tour-standalone.css?version=5.1.4', __FILE__ ) );
+        wp_enqueue_style( 'mo_openid_admin_settings_phone_style', plugins_url('includes/css/phone.css', __FILE__));
     }
 
     function mo_openid_activate() {
@@ -292,7 +288,10 @@ Thank you.';
         $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-General Settings','Social Login', 'administrator','mo_openid_general_settings','mo_register_openid' );
         $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-General Settings','Social Sharing', 'administrator','mo_openid_social_sharing_settings','mo_register_sharing_openid' );
         $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-General Settings','Social Commenting', 'administrator','mo_openid_social_commenting_settings','mo_comment_openid');
-        $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-Add_On','Add-On', 'administrator','mo_openid_settings_addOn','mo_openid_addon_desc_page');
+        $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-Add_On','Custom Registration Add-On', 'administrator','mo_openid_settings_addOn','mo_openid_addon_desc_page');
+        $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-WooCommerce_Add_On','WooCommerce Add-On', 'administrator','mo_openid_woocommerce_add_on','mo_openid_addon_desc_page');
+        $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-BuddyPress_Add_On','BuddyPress Add-On', 'administrator','mo_openid_buddypress_add_on','mo_openid_addon_desc_page');
+        $page = add_submenu_page( 'mo_openid_settings', 'MiniOrange-MailChimp_Add_On','MailChimp Add-On', 'administrator','mo_openid_mailchimp_add_on','mo_openid_addon_desc_page');
         remove_submenu_page('mo_openid_settings','mo_openid_settings');
     }
 
@@ -308,6 +307,9 @@ Thank you.';
     }
 
     function mo_openid_add_social_login(){
+
+       add_action( 'wp_enqueue_scripts', array( $this, 'mo_openid_plugin_script' ) ,5);
+
         if(!is_user_logged_in() && strpos( $_SERVER['QUERY_STRING'], 'disable-social-login' ) == false){
             $mo_login_widget = new mo_openid_login_wid();
             $mo_login_widget->openidloginForm();
@@ -330,15 +332,16 @@ Thank you.';
     }
 
     function mo_openid_plugin_script() {
-        wp_enqueue_script( 'js-cookie-script',plugins_url('includes/js/jquery.cookie.min.js', __FILE__), array('jquery'));
-        wp_enqueue_script( 'mo-social-login-script',plugins_url('includes/js/social_login.js', __FILE__), array('jquery') );
+
+        wp_enqueue_script( 'js-cookie-script',plugins_url('includes/js/mo_openid_jquery.cookie.min.js', __FILE__), array('jquery'));
+        wp_enqueue_script( 'mo-social-login-script',plugins_url('includes/js/mo-openid-social_login.js', __FILE__), array('jquery') );
     }
 
     function miniorange_openid_save_settings()
     {
         if(is_admin() && get_option('Activated_Plugin')=='Plugin-Slug') {
             delete_option('Activated_Plugin');
-            update_option('mo_openid_message','Go to plugin <b><a href="admin.php?page=mo_openid_settings">settings</a></b> to enable Social Login, Social Sharing by miniOrange.');
+            update_option('mo_openid_message','Go to plugin <b><a href="admin.php?page=mo_openid_general_settings">settings</a></b> to enable Social Login, Social Sharing by miniOrange.');
             add_action('admin_notices', 'mo_openid_activation_message');
         }
 
@@ -535,7 +538,19 @@ Thank you.';
                             $key = get_option('mo_openid_customer_token');
                             if($_POST['licience_type']=="extra_attributes_addon") {
                                 update_option('mo_openid_opn_lk_extra_attr_addon', MOAESEncryption::encrypt_data($code, $key));
-                                update_option('mo_openid_message', 'Your addon license is verified. You can now setup the addon plugin.');
+                                update_option('mo_openid_message', 'Your Custom Registration addon license is verified. You can now setup the addon plugin.');
+                            }
+                            else if($_POST['licience_type']=="WP_SOCIAL_LOGIN_WOOCOMMERCE_ADDON") {
+                                update_option('mo_openid_opn_lk_wca_addon', MOAESEncryption::encrypt_data($code, $key));
+                                update_option('mo_openid_message', 'Your WooCommerce addon license is verified. You can now setup the addon plugin.');
+                            }
+                            else if($_POST['licience_type']=="WP_SOCIAL_LOGIN_BUDDYPRESS_ADDON") {
+                                update_option('mo_openid_opn_lk_bpp_addon', MOAESEncryption::encrypt_data($code, $key));
+                                update_option('mo_openid_message', 'Your BuddyPress addon license is verified. You can now setup the addon plugin.');
+                            }
+                            else if($_POST['licience_type']=="WP_SOCIAL_LOGIN_MAILCHIMP_ADDON") {
+                                update_option('mo_openid_opn_lk_mailc_addon', MOAESEncryption::encrypt_data($code, $key));
+                                update_option('mo_openid_message', 'Your MailChimp addon license is verified. You can now setup the addon plugin.');
                             }
                             $key = get_option('mo_openid_customer_token');
                             update_option('mo_openid_site_ck_l', MOAESEncryption::encrypt_data("true", $key));
@@ -780,7 +795,7 @@ Thank you.';
     }
 
     public function mo_get_output( $atts ){
-            $miniorange_widget = new mo_openid_login_wid();
+        $miniorange_widget = new mo_openid_login_wid();
             $html = $miniorange_widget->openidloginFormShortCode( $atts );
             return $html;
     }
@@ -798,16 +813,10 @@ Thank you.';
         delete_option('mo_openid_verify_customer');
         delete_option( 'mo_openid_admin_customer_valid');
         delete_option( 'mo_openid_admin_customer_plan');
-        delete_option( 'mo_openid_facebook_enable');
-        delete_option( 'mo_openid_google_enable');
-        delete_option( 'mo_openid_vkontakte_enable');
-        delete_option( 'mo_openid_twitter_enable');
-        delete_option( 'mo_openid_salesforce_enable');
-        delete_option( 'mo_openid_amazon_enable');
-        delete_option( 'mo_openid_linkedin_enable');
-        delete_option( 'mo_openid_instagram_enable');
-        delete_option( 'mo_openid_windowslive_enable');
-        delete_option( 'mo_openid_yahoo_enable');
+        delete_option('mo_openid_opn_lk_extra_attr_addon');
+        delete_option('mo_openid_opn_lk_wca_addon');
+        delete_option('mo_openid_opn_lk_bpp_addon');
+        delete_option('mo_openid_opn_lk_mailc_addon');
     }
 
 

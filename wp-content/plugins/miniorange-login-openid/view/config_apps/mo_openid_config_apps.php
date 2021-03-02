@@ -54,7 +54,7 @@ function mo_openid_show_apps()
                 <br/>
             </td>
             <div>
-                <label style="cursor: auto; margin-left: 3%;" class="mo_openid_note_style">Are you looking for rest API solution to authorized users for your Android or IOS app? <a style="cursor: pointer" onclick="mo_openid_support_form('Rest API requirments ')">Click here</a> and send us your requirments we will help you out.</label>
+                <label style="cursor: auto; margin-left: 3%;" class="mo_openid_note_style">Are you looking for rest API solution to authorized users for your <b>Android</b> or <b>IOS</b> app? <a style="cursor: pointer" onclick="mo_openid_support_form('Rest API requirments ')">Click here</a> and send us your requirments we will help you out.</label>
             </div>
         </tr>
         <tr>
@@ -82,7 +82,7 @@ function mo_openid_show_apps()
                                      alt="<?php echo $apps?>"/>
                             </div>
                             <div id="mo-openid-hover-app-sett-show" style="display: block">
-                                <div style="display: inline-block; text-align: center;width: 100%;position: absolute;font-size: 13px;"><span style="color:black"><?php echo strtoupper($apps)?></span></div>
+                                <div style="display: inline-block; text-align: center;width: 100%;position: absolute;font-size: 13px;"><span style="color:black"><?php if($apps == 'mailru') $apps='mail.ru'; echo strtoupper($apps)?></span></div>
                             </div>
                         </div>
                         <?php
@@ -798,7 +798,7 @@ function mo_openid_show_apps()
                 jQuery( "#mo_register_customer_toggle").hide();
             }
             else {
-                document.getElementById('mo_openid_ajax_wait_img').style.display = 'block';
+               document.getElementById('mo_openid_ajax_wait_img').style.display = 'block';
                 document.getElementById('mo_openid_ajax_wait_fade').style.display = 'block';
                 jQuery ("#mo_facebook_notice").hide();
                 jQuery.ajax({
@@ -842,17 +842,13 @@ function mo_openid_show_apps()
                     jQuery("#mo_ssl_notice").show();
                 }
             }
-            else if(application_name == 'linkedin'){
-                jQuery("#mo_ssl_notice").text("LinkedIn custom application needs to be verified for the scope permissions.You can also use our pre-configured application where you don't have to create custom application.")
-            jQuery("#mo_ssl_notice").show();
 
-            }
             else {
                 jQuery("#mo_set_pre_config_app").show();
                 jQuery("#mo_ssl_notice").hide();
             }
             if(application_name == 'salesforce'){
-                document.getElementById('mo_openid_ajax_wait_img').style.display = 'none';
+               document.getElementById('mo_openid_ajax_wait_img').style.display = 'none';
                 document.getElementById('mo_openid_ajax_wait_fade').style.display = 'none';
                 handle_salesforce();
             }
@@ -1008,20 +1004,20 @@ function mo_openid_show_apps()
             var popup2 = '<div class="mo_openid_popup" popup-name="popup-2" border="1" id = "mo_openid_delay_registration" style="display:none; float: left; width: 100%; overflow: hidden">' +
                  '<div class="mo_openid_rateus_modal_content" style="background-color: #FFFFFF; margin-top: 10% ">'+
                     '<div id="cronmoOpenIdRateUs">\n' +
-                        '<span class="star-cb-group" >\n' +
+                        '<span class="mo_openid_star-cb-group" >\n' +
                             '<table style="width: 100%"><tr style="background-color: #0867b2"><td>\n' +
                                 '<span style="margin-top: 2%;margin-right: 2%" class="mo_openid_close-button">&times;</span>\n' +
                                 '<center><h2 style="color: #FFFFFF"><strong>Rate Us</strong></h2></center></td></tr>\n' +
                             '</table>' +
                             '<form>\n' +
                                 '<fieldset class="mo-openid-star-back-rateus"  id="cronmo_openid_fieldset" style="margin-top: 14%">\n' +
-                                    '<span class="star-cb-group">\n' +
+                                    '<span class="mo_openid_star-cb-group">\n' +
                                         '<input type="radio" id="cronrating-5" name="rating" value="5" onclick="five_star();window.open(\'https://wordpress.org/support/plugin/miniorange-login-openid/reviews/\', \'_blank\');"  /><label for="cronrating-5">5</label>\n' +
                                         '<input type="radio" class="mo_start_less5" id="cronrating-4" name="rating" value="4" /><label for="cronrating-4">4</label>\n' +
                                         '<input type="radio" class="mo_start_less5" id="cronrating-3" name="rating" value="3" /><label for="cronrating-3">3</label>\n' +
                                         '<input type="radio" class="mo_start_less5" id="cronrating-2" name="rating" value="2" /><label for="cronrating-2">2</label>\n' +
                                         '<input type="radio" class="mo_start_less5" id="cronrating-1" name="rating" value="1" /><label for="cronrating-1">1</label>\n' +
-                                        '<input type="radio" id="cronrating-0" name="rating" value="0" class="star-cb-clear" /><label for="cronrating-0">0</label>\n' +
+                                        '<input type="radio" id="cronrating-0" name="rating" value="0" class="mo_openid_star-cb-clear" /><label for="cronrating-0">0</label>\n' +
                                     '</span>\n' +
                                 '</fieldset>\n' +
                             '</form>\n' +

@@ -1,10 +1,10 @@
 ﻿=== WordPress Social Login (Google, Twitter, Vkontakte) ===
 Contributors: vkontakte, sociallogin, cyberlord92
 Donate link: https://www.miniorange.com
-Tags: social login, facebook login, google login, twitter login, Vkontakte login, Woocommerce, social, facebook, twitter, google, login, google, social connect, social network login, social plugin, Vkontakte, LinkedIn
+Tags: Social login, facebook login, google login, twitter login, Vkontakte login, Woocommerce, social, facebook, twitter, google, login, google, social connect, social network login, social plugin, Vkontakte, LinkedIn
 Requires at least: 2.0.2
-Tested up to: 5.5
-Stable tag: 7.4.0
+Tested up to: 5.6
+Stable tag: 7.4.6
 License: GPLv2 or later
 License URI: http://miniorange.com/usecases/miniOrange_User_Agreement.pdf
 
@@ -18,77 +18,99 @@ Social Plugin enables social login, social sharing, social comments using social
 
 = Free Social Login Features =
 
-*   Social Login with Facebook, Google, Twitter, Vkontakte, LinkedIn, Instagram, Amazon, Windows Live, Salesforce & Yahoo
-*	**NO SETUP required for default social login apps.**
-*	Setup your own social login application with APP ID and APP Secret for Facebook, Google, Twitter, Vkontakte, LinkedIn, Instagram, Amazon, Windows Live & Yahoo
-*	**Preview is available for Social Login icons**
-*	**Icon Customizations** - customize shape, theme, space & size of social login icons.
+*   Social Login with <a href="https://plugins.miniorange.com/configure-facebook-social-login-in-wordpress" target="_blank">Facebook</a>, <a href="https://plugins.miniorange.com/login-with-google-using-wordpress-social-login" target="_blank">Google</a>, <a href="https://plugins.miniorange.com/configure-twitter-with-social-login-in-wordpress" target="_blank">Twitter</a>, <a href="http://plugins.miniorange.com/configure-vkontakte-with-social-login-in-wordpress" target="_blank">Vkontakte</a>, <a href="https://plugins.miniorange.com/configure-linkedin-with-social-login-in-wordpress" target="_blank">LinkedIn</a>, <a href="http://plugins.miniorange.com/configure-amazon-with-social-login-in-wordpress" target="_blank">Amazon</a>, <a href="https://plugins.miniorange.com/configure-windowslive-with-social-login-in-wordpress" target="_blank">Windows Live</a>, Salesforce & <a href="https://plugins.miniorange.com/guide-to-configure-yahoo-social-login-in-wordpress" target="_blank">Yahoo</a>
+*  **NO SETUP required for default social login apps.**
+*  Setup your own social login application with APP ID and APP Secret for Facebook, Google, Twitter, Vkontakte, LinkedIn, Instagram, Amazon, Windows Live & Yahoo
+*  **Preview is available for Social Login icons**
+*  **Icon Customizations** - customize shape, theme, space & size of social login icons.
 *   **Profile completion** (username, email) - Prompt user for email & username if social login app doesn't return it. Email is verified with verification code.
-*	**Assign Roles to users** - Assign WordPress roles to users logging in with social login application.
+*  **Assign Roles to users** - Assign WordPress roles to users logging in with social login application.
 *   Add the Social Login Icons on: login page, registration page, comment form or anywhere on your site using our Social Login widget/ shortcode.
 *   Sync Social Profile Picture with WordPress.
-*	Enable Email Notification to admin when user registers with social login application.
-*	Enable/disable user registration.
-*	Customize Login Redirect URL.
-*	Customize Logout Redirect URL.
+*  Enable Email Notification to admin when user registers with social login application.
+*  Enable/disable user registration.
+*  Customize Login Redirect URL.
+*  Customize Logout Redirect URL.
 *   Customizable Text For Social Login Icons.
-*	SHORTCODE available for social login.
-*	**Support** using email and in-plugin support form.
+*  SHORTCODE available for social login.
+*  **Support** using email and in-plugin support form.
 
-= WooCommerce Social Login Features =
+= <a href="https://plugins.miniorange.com/guide-to-configure-woocommerce-with-wordpress-social-login" target="_blank">WooCommerce Social Login Features</a> <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>=
 *   **WooCommerce Integration**  Auto-fill first name, last name and email are pre-filled in billing details of a user and on the Woocommerce checkout page.
 *   Woocommerce Display Options
-        * WooCommerce Login form
-        * WooCommerce Registration form
-        * WooCommerce Checkout form
+        * Before/After WooCommerce Login form
+        * Before/After WooCommerce Registration form
+        * Before/After WooCommerce Checkout form
 
-= BuddyPress Social Login Features =
+
+= <a href="https://plugins.miniorange.com/guide-to-configure-buddypress-with-wordpress-social-login" target="_blank">BuddyPress Social Login Features</a> <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>=
 *   **BuddyPress Integration**   Sync profile picture from social application to BuddyPress avatar. Sync user social profile to BuddyPress custom fields.
 *   BuddyPress Display Options
         * Before BuddyPress Registration Form
         * Before BuddyPress Account Details
         * After BuddyPress Registration Form Login form
 
-= BuddyBoss Social Login Features =
+= <a href="https://plugins.miniorange.com/guide-to-configure-paid-membership-pro-with-wordpress-social-login" target="_blank">Paid Memberships Pro <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>=
+*   **Paid Memberships Pro**   Assigned Selected Paid membership level at the time of registration .
+*   Paid Memberships Pro Display Options
+        * Paid Memberships Pro Checkout Page Before Submit button
+        * Paid Memberships Pro Checkout Page After Level Cost
+        * Paid Memberships Pro Checkout Page After Username
+
+
+= BuddyBoss Social Login Features <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>=
 *   **BuddyBoss Integration**   Sync profile picture from social application to BuddyBoss avatar. Sync user social profile to BuddyBoss custom fields.
 *   BuddyBoss Display Options
         * Before BuddyBoss Registration Form
         * After BuddyBoss Registration Form Login form
 
+= Ultimate Member - Social Login Features <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>=
+*  Ultimate Member Display Options
+        * Before Ultimate Member Login Form Fields
+        * After Ultimate Member Login Form Fields
+        * Before Ultimate Member Registration Form Fields
+        * After Ultimate Member Registration Form Fields
+        * After Ultimate Member Register button
+
+= MemberPress - Social Login Features <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>=
+* MemberPress Display Options
+        * After MemberPress Login Form
+        * After MemberPress Account Form
+        * After MemberPress Checkout Form
+
 = Free Social Sharing & Social Comments Features =
-*	Share with social applications - Facebook, Twitter, Google+, Pinterest, Reddit, Vkontakte, Tumblr, StumbleUpon, LinkedIn, Pocket, Digg, Email, Print, Whatsapp
-*	**Icon Customizations** - customize shape, theme, space & size of social sharing icons.
-*	**Preview is available for Social Sharing icons**
-*	Add Social Comments using Facebook.
-*	Add Social Comments using Disqus.
+*  Share with social applications - Facebook, Twitter, Google+, Pinterest, Reddit, Vkontakte, Tumblr, StumbleUpon, LinkedIn, Pocket, Digg, Email, Print, Whatsapp
+*  **Icon Customizations** - customize shape, theme, space & size of social sharing icons.
+*  **Preview is available for Social Sharing icons**
+*  Add Social Comments using Facebook.
+*  Add Social Comments using Disqus.
 *   Add social sharing icons on homepage, posts, feeds, content pages, WooCommerce product page etc.
-*	Add a horizontal social sharing widget.
+*  Add a horizontal social sharing widget.
 *   Add a floating vertical social sharing widget.
-*	**Support** using email and in-plugin support form.
+*  **Support** using email and in-plugin support form.
 
 = Premium Social Login Features =
 
 *   Social Login with Google, Facebook, Twitter, Vkontakte, LinkedIn, Windows Live, Instagram, Amazon, Salesforce, Yahoo, WordPress, apple, Paypal, disqus, pinterest, spotify, reddit, tumblr, twitch, vimeo, kakao, discord, dribbble, flickr, line, meetup, stackexchange, livejournal, snapchat, foursquare, teamsnap, naver, odnoklassniki.
-*	GDPR compliant Social Login.
-*   **Account Linking** - Link social account to WordPress account
-*	**Woocommerce display options** - Enable social login icons on the Woocommerce Checkout, Woocommerce Login, Woocommerce Registration pages.
-*	**BuddyPress display options** - Enable Social login icons on BuddyPress Registration & BuddyPress Account pages.
+*  GDPR compliant Social Login.
+*  **Woocommerce display options** - Enable social login icons on the Woocommerce Checkout, Woocommerce Login, Woocommerce Registration pages.
+*  **BuddyPress display options** - Enable Social login icons on BuddyPress Registration & BuddyPress Account pages.
 *   All social login free version features
-*	**Enable your own social login application with APP ID and APP Secret for Facebook, Google, Twitter, Vkontakte, LinkedIn, Instagram, Amazon, Windows Live, WordPress, Yahoo, Disqus & Salesforce **[Premium]**
-*	**Woocommerce Integration [Premium]** - Auto-fill first name, last name and email in billing details of a user logging in with social login application.
-*	**BuddyPress Integration [Premium]** - Sync profile picture from social application to BuddyPress avatar. Sync user social profile to BuddyPress custom fields.
-*	**Test Configuration [Premium]** - Test configuration of your social login app in admin panel before making your app live.
-*	**Social Login Opens in a New Window [Premium]** - Social Login opens in a new window instead of the same window.
-*	**Domain restriction [Premium]** - Option to restrict social login for users with a domain specified in the admin dashboard.
-*	**MailChimp Integration [Premium]** - A social login user is added as a subscriber to a mailing list in MailChimp when that user registers using Social Login. First name, last name and email are also captured for that user in the Mailing List. Option is available to download csv file that has list of emails of all users in WordPress.
-*	**Email Notification to multiple admins [Premium]** - Option to send email notification to multiple admins when user registers.
-*	**Welcome email to end users [Premium]** - Option to send email notification to user when he registers using social login application.
-*	**Customizable Email Notification template [Premium]** - customize content of email sent to admin when user registers using social login.
-*	**Customizable welcome email template [Premium]** - customize content of welcome email sent to registering users.
-*	**Extended Profile Data [Premium]** - Extended profile data feature requires additional configuration. You need to have your own social media app and permissions from social media providers to collect extended user data.
-*	**Social Analytics Dashboard Access [Premium]**
+*  **Enable your own social login application with APP ID and APP Secret for Facebook, Google, Twitter, Vkontakte, LinkedIn, Instagram, Amazon, Windows Live, WordPress, Yahoo, Disqus & Salesforce **[Premium]**
+*  **Woocommerce Integration <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Auto-fill first name, last name and email in billing details of a user logging in with social login application.
+*  **BuddyPress Integration <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Sync profile picture from social application to BuddyPress avatar. Sync user social profile to BuddyPress custom fields.
+*  **Test Configuration <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Test configuration of your social login app in admin panel before making your app live.
+*  **Social Login Opens in a New Window <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Social Login opens in a new window instead of the same window.
+*  **Domain restriction <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Option to restrict social login for users with a domain specified in the admin dashboard.
+*  **<a href="https://plugins.miniorange.com/guide-to-configure-mailchimp-integration-with-wordpress-social-login" target="_blank">MailChimp Integration</a> [Premium]** - A social login user is added as a subscriber to a mailing list in MailChimp when that user registers using Social Login. First name, last name and email are also captured for that user in the Mailing List. Option is available to download csv file that has list of emails of all users in WordPress.
+*  **Email Notification to multiple admins <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Option to send email notification to multiple admins when user registers.
+*  **Welcome email to end users <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Option to send email notification to user when he registers using social login application.
+*  **Customizable Email Notification template <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - customize content of email sent to admin when user registers using social login.
+*  **Customizable welcome email template <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - customize content of welcome email sent to registering users.
+*  **Extended Profile Data <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - Extended profile data feature requires additional configuration. You need to have your own social media app and permissions from social media providers to collect extended user data.
+*  **Social Analytics Dashboard Access [Premium]**
 *   Customizable Logout Text
-*	**Custom Integration [Premium]** - If you have a specific custom requirement in the Social Login Plugin, we can implement and integrate it in the Social Login Plugin for you. This includes all those custom features that come under the scope of Social Login/ Sharing/ Comments. These features are chargeable. Please send us a query through the support forum to get in touch with us about your custom requirements.
+*  **Custom Integration <a href="https://plugins.miniorange.com/social-login-social-sharing" target="_blank">[Premium]</a>** - If you have a specific custom requirement in the Social Login Plugin, we can implement and integrate it in the Social Login Plugin for you. This includes all those custom features that come under the scope of Social Login/ Sharing/ Comments. These features are chargeable. Please send us a query through the support forum to get in touch with us about your custom requirements.
 
 = How is this plugin better than other plugins available =
 * **Support for 10 apps in free plan** - Social Login with Facebook, Google, Twitter, LinkedIn, Instagram, Vkontakte, Windows Live, Amazon, Salesforce, Yahoo all available in the free plan.
@@ -114,7 +136,7 @@ See the <a href="https://wordpress.org/plugins/miniorange-login-openid/screensho
 Allow users to social comment on your website using supported social media commenting apps such as Facebook and Google. Social Comments does not require the users to be registered or logged in on your site for adding comments.
 
 = Easy Integration =
-Social Login is the easiest to configure and conveniently allows you to setup and start using the plugin in seconds. Easy integration with your website with options to add Social login on login page, registration page and comments section. Add `miniOrange - Social Login` widget to add social login in widget area. Add shortcode [miniorange_social_login] to add social login in other places. Add social sharing applications to home page, posts, content pages, WooCommerce product page, bbPress forums, bbPress topics, bbPress replies and anywhere on your site using widgets. For Social Sharing, use `miniOrange Sharing - Vertical` for floating vertical widget and `miniOrange Sharing - Horizontal` for horizontal widget to add social sharing in widget area. Add shortcode [miniorange_social_sharing] for horizontal sharing icons and [miniorange_social_sharing_vertical] for vertical sharing icons.
+Social Login is the easiest to configure and conveniently allows you to setup and start using the plugin in seconds. Easy integration with your website with options to add Social login on login page, registration page and comments section. Add `miniOrange - Social Login` widget to add social login in widget area. Add shortcode <a href="https://plugins.miniorange.com/guide-to-display-social-login-icons-using-shortcode-in-wordpress" target="_blank">[miniorange_social_login] </a>to add social login in other places. Add social sharing applications to home page, posts, content pages, WooCommerce product page, bbPress forums, bbPress topics, bbPress replies and anywhere on your site using widgets. For Social Sharing, use `miniOrange Sharing - Vertical` for floating vertical widget and `miniOrange Sharing - Horizontal` for horizontal widget to add social sharing in widget area. Add shortcode [miniorange_social_sharing] for horizontal sharing icons and [miniorange_social_sharing_vertical] for vertical sharing icons.
 
 = Single sign-on =
 Single Sign-On using Social Login creates a single authentication system for multiple web properties allowing users to navigate websites with a single account.
@@ -124,7 +146,7 @@ All other Social Login and Social Sharing applications are supported through a s
 = Website - =
 These additional features are available upon request. Send an email to info@miniorange.com if you need any of these features.
 
-User Profile Data, integration with external softwares like salesforce, box, office 365 etc, and Social Analytics.
+User Profile Data, integration with external software like salesforce, box, office 365 etc, and Social Analytics.
 This can also captures users’ profile data, with their permission, and automatically creates a profile in miniOrange database and you can download it using a CSV file or a PDF file.
 
 Check out our website for other plugins <a href="https://www.miniorange.com/plugins" >https://www.miniorange.com/plugins</a> or <a href="https://wordpress.org/plugins/search.php?q=miniorange" >click here</a> to see all our listed WordPress plugins.
@@ -204,6 +226,41 @@ Please email us at info@miniorange.com. You can also submit your query from the 
 12. Social Sharing icons without background.
 
 ==Changelog==
+= 7.4.6 =
+* Updated Instructions for Facebook, Google, Twitter and LinkedIn
+* Updated Licensing Plan page
+* Introduced All inclusive Plan
+* Added bulk instances for Social Login plans.
+* Minor UI Changes.
+
+= 7.4.5 =
+* Updated Google SVG and resolved conflicts.
+* Added notice for Facebook Data Check.
+* Added Paid Membership Pro display options in premium plugins.
+* Minor UI Changes.
+
+= 7.4.4 =
+* Removed banner.
+* Minor UI Changes.
+
+= 7.4.3 =
+* Compatible with WordPress version 5.5
+* New Christmas offer released.
+* Minor UI changes.
+
+= 7.4.2 =
+* Resolved JS and CSS issue with BuddyBoss and LearnPress plugins.
+* Resolved plugin load time issue.
+* Resolved Facebook redirection issue.
+* Resolved Sharing vertical/horizontal view.
+* Minor UI changes.
+
+= 7.4.1 =
+* Updated jQuery deprecated function.
+* Minor UI changes.
+* Added MemberPress display options in premium version.
+* Added Social Login Applications like GitHub, HubSpot, mail.ru in premium version.
+
 = 7.4.0 =
 * Added Documentation and videos for WooCommerce, BuddyPress, MailChimp and Paid membership Pro integrations.
 * Resolved CSS conflicts with other themes.
@@ -242,11 +299,11 @@ Please email us at info@miniorange.com. You can also submit your query from the 
 = 7.3.8 =
 * Updated Odnoklassniki custom app fix in premium versions.
 * Updated BuddyPress mapping bug fix in premium version.
-* Updated depricated array and string fix.
+* Updated deprecated array and string fix.
 * Added Yandex app in premium applications.
 
 = 7.3.7 =
-* Updated facebook insrtuctions.
+* Updated instructions for Social login application : facebook .
 * Minor UI changes.
 * New Licensing plan.
 * Added feature to select role by the user in the Add-on.
@@ -268,11 +325,11 @@ Please email us at info@miniorange.com. You can also submit your query from the 
 * Fixed add-on update value issue.
 
 = 7.3.2 =
-* Updated Yahoo API.
+* Updated Social login application Yahoo API.
 * Updated feedback on deactivation.
 * Minor UI changes.
 * Added a new social login plugin for woocommerce integration.
-* Added auto as a paramater for width in shortcode of social login icons.
+* Added auto as a parameter for width in shortcode of social login icons.
 * Added Reddit, Foursquare, Snapchat, Teamsnap, Live Journal, Odnoklassniki, Naver.
 
 = 7.3.1 =
@@ -287,13 +344,13 @@ Please email us at info@miniorange.com. You can also submit your query from the 
 * Major UI changes.
 * Added translation.
 * Added setup plugin video button
-* Added Wechat, Baidu, Renren & QQ app in premium section.
+* Added Social login applications like Wechat, Baidu, Renren & QQ app in premium section.
 * Added top-up plans
 
 = 7.2.7 =
 * Major UI changes.
 * Drag and change positions of icons.
-* Added Custom app for google, vkontakte, instagram, linkedin, amazon, salesforce, windowslive, and yahoo.
+* Added Custom app for Social login applications like google, vkontakte, instagram, linkedin, amazon, salesforce, windowslive, and yahoo.
 * Added copy to clipboard option.
 * Added Copy to clipboard for instructions to setup custom apps and shortcodes.
 * Added Social Share count Feature.
@@ -310,7 +367,7 @@ Please email us at info@miniorange.com. You can also submit your query from the 
 = 7.2.5 =
 * Fixed Profile completion form issue.
 * Minor UI fixes.
-* Added Add-on UI.
+* Added Add-on UI in the Social login plugin.
 
 = 7.2.4 =
 * Made contact us changes.
@@ -338,7 +395,7 @@ SECURITY FIXES
 * Added nonce check for all forms
 * Added sanitization and escape
 * Changed cURL calls to WordPress HTTP API calls
-* Fixed issue on custom app delete
+* Fixed issue on Social login custom app delete
 
 = 7.1.6 =
 * Fixed Non-English Character issue in the username.
@@ -348,10 +405,10 @@ SECURITY FIXES
 = 7.1.5 =
 * Fixed issue of getting '#_=_' string appended to URL after login with Facebook.
 * <a href="https://developers.google.com/+/web/people/" >Google+ APIs </a> will shut down soon, so updated Google OAuth 2 APIs.
-* UI changes.
+* UI changes (Social login plugin).
 
 = 7.1.4 =
-* Add Yahoo as social login option in dafault apps.
+* Add Yahoo as social login option in default apps.
 * Fixed Permalink issue.
 * Added  Customizable text for OTP email notification.
 * Fixed session issue for account linking.
@@ -371,7 +428,7 @@ SECURITY FIXES
 * Added plugin tour buttons to give an overview of features
 * Updated registration flow for better visibility
 * Updated custom apps to prefill scopes with default values to reduce confusion
-* Fixed auto user creation issue for Facebook
+* Fixed auto user creation issue for Social login Facebook application
 
 = 7.0.5 =
 * Social Login plugin Description Update.
@@ -380,22 +437,22 @@ SECURITY FIXES
 * Social login redirect issue fixed.
 
 = 7.0.3 =
-* "Malformed URL" issue fixed for custom apps
+* "Malformed URL" issue fixed for Social login custom apps
 * Added  Customizable text for account linking, profile completion and OTP verification form.
 * Allow non-English characters for page and post title.(Removed sanitize_title in the filter)
 * minor UI changes.
 
 = 7.0.2 =
 * Slider Issue fixed.
-* CSS Issue Fixed
+* CSS Issue Fixed (Social login plugin)
 * Minor bug fixes.
 
 = 7.0.1 =
-* Fixed GDPR related bug.
+* Fixed GDPR related bug in Social login plugin.
 
 = 7.0.0 =
-* Minor bug fixes.
-* Increased resolution of Facebook profile picture.
+* Minor bug fixes (Social login plugin).
+* Increased resolution of profile picture Social login application : Facebook .
 
 = 6.6.9 =
 * Fixed GDPR related bug.
@@ -424,9 +481,9 @@ SECURITY FIXES
 *   Fix for issue in login (International Characters)
 
 = 6.6.2 =
-*   Updated Readme
+*   Updated Readme  (Social login plugin)
 *   Removed the message 'No user is returned'
-*   Fix for conflict with other plugins that call wp_login hook
+*   Fix for conflict of Social login plugin with other plugins that call wp_login hook
 
 = 6.6.1 =
 *   Fix for issue in editing/uploading BuddyPress profile picture
@@ -434,9 +491,9 @@ SECURITY FIXES
 *   Removed rows in account linking table that have empty field values
 
 = 6.6.0 =
-*   Added resend otp in Profile Completion
+*   Added resend otp in Profile Completion when user resisters through Social login.
 *   Added column timestamp in account linking table
-*   Added option to disable custom app
+*   Added option to disable particular Social login custom app
 *   Added include_email parameter in for twitter custom app
 *   Added prompt to ask user for confirmation on custom app deletion
 *   Code cleanup
@@ -466,7 +523,7 @@ SECURITY FIXES
 
 = 6.3.0 =
 *   Added payment link to Standard Plan
-*   Minor bug fix in login script
+*   Minor bug fix in login script (Social login plugin)
 
 = 6.2.6 =
 *   Fix for bug in auto scroll script
@@ -500,258 +557,258 @@ SECURITY FIXES
 *   Fix for Error in Insert Query
 
 = 6.0.2 =
-*   Minor Changes in Readme & Licensing Plans tab
+*   Minor Changes in Readme & Licensing Plans tab (Social login plugin)
 
 = 6.0.1 =
 *   Minor Changes in Readme
 
 = 6.0.0 =
-*	Added Account Linking feature (Links social account to existing WordPress account)
-*	Revised Payment Plans
-*	Compatibility with PHP 7.2.1
+*  Added Account Linking feature (Links social account to existing WordPress account)
+*  Revised Payment Plans
+*  Compatibility with PHP 7.2.1
 
 = 5.5.2 =
-*	Compatibility with International characters.
+*  Compatibility with International characters.
 
 = 5.5.1 =
-*	Major Security Fix in login flow. Mandatory Update is required.
+*  Major Security Fix in login flow. Mandatory Update is required.
 
 = 5.5 =
-*	Bug Fix in login flow
+*  Bug Fix in login flow
 
 = 5.4.1 =
-*	Added Compatibility with miniOrange 2 Factor Authentication Plugin
+*  Added Compatibility with miniOrange 2 Factor Authentication Plugin
 
 = 5.3.1 =
-*	Removed mcrypt dependency
+*  Removed mcrypt dependency
 
 = 5.2.2 =
-*	Added WhatsApp share for Desktop site
+*  Added WhatsApp share for Desktop site
 
 = 5.2.1 =
-*	Fixed Issue related to Custom User Role with Admin capabilities
+*  Fixed Issue related to Custom User Role with Admin capabilities
 
 = 5.2 =
-*	Minor Change
+*  Minor Change
 
 = 5.1.10 =
-*	Compatibility with 4.9
+*  Compatibility with 4.9
 
 = 5.1.9 =
-*	Bug Fix in Profile Completion Feature
+*  Bug Fix in Profile Completion Feature
 
 = 5.1.8 =
-*	Minor Bug Fix
+*  Minor Bug Fix  (Social login plugin)
 
 = 5.1.7 =
-*	Added Profile Completion Feature
+*  Added Profile Completion Feature  (Social login plugin)
 
 = 5.1.6 =
-*	Minor Bug Fix
+*  Minor Bug Fix  (Social login plugin)
 
 = 5.1.5 =
-*	Another Bug fix in Facebook share
+*  Another Bug fix in Facebook share
 
 = 5.1.4 =
-*	Bug fix in Facebook share
-*	Bug fix in sending OTP
-*	Fix for URL indexing
+*  Bug fix in Facebook share
+*  Bug fix in sending OTP
+*  Fix for URL indexing
 
 = 5.1.3 =
-*	Improved Social Login for non-English characters
-*	Changed Payment Plans
-*	Compatibility with 4.8
+*  Improved Social Login for non-English characters
+*  Changed Payment Plans
+*  Compatibility with 4.8
 
 = 5.1.2 =
-*	Updating Readme
+*  Updating Readme
 
 = 5.1.1 =
-*	Security fix for Social Login
-*	Minor fix - clean up data during Social Login
-*	UI changes
+*  Security fix for Social Login
+*  Minor fix - clean up data during Social Login
+*  UI changes (Social login plugin)
 
 = 5.1 =
-*	Added option to change heading color through UI (Social Login & Sharing)
-*	Added shortcode options for heading and heading color (Social Login & Sharing)
-*	Updated Help & Troubleshooting and Shortcode section
+*  Added option to change heading color through UI (Social Login & Sharing)
+*  Added shortcode options for heading and heading color (Social Login & Sharing)
+*  Updated Help & Troubleshooting and Shortcode section
 
 = 5.0.6 =
-*	Compatibility with 4.7
-*	UI fixes for theme Twenty Seventeen
+*  Compatibility with 4.7
+*  UI fixes for theme Twenty Seventeen
 
 = 5.0.5 =
-*	Fix for Social Login URL redirect
+*  Fix for Social Login URL redirect
 
 = 5.0.4 =
-*	Fix for Whatsapp Share URL issue
+*  Fix for Whatsapp Share URL issue
 
 = 5.0.3 =
-*	Added additional validation for OTP
-*	UI Changes
+*  Added additional validation for OTP
+*  UI Changes (Social login plugin)
 
 = 5.0.1 =
-*	Update to support WordPress version 4.6
-*	Fixed Facebook comments script issue
-*	UI changes
+*  Update to support WordPress version 4.6
+*  Fixed Facebook comments script issue
+*  UI changes (Social login plugin)
 
 = 5.0.0 =
-*	Added Share with Email, Print, Whatsapp
-*	Added option to modify email subject and body
-*	Fixed spacing issue in horizontal sharing icons
+*  Added Share with Email, Print, Whatsapp
+*  Added option to modify email subject and body (Social login)
+*  Fixed spacing issue in horizontal sharing icons
 
 = 4.9.9 =
-*	Added support for s2Members plugin in Social Login (Support Query)
+*  Added support for s2Members plugin in Social Login (Support Query)
 
 = 4.9.8 =
-*	Added logout text customization in Social Login
-*	Added url attribute to Social Sharing shortcode to share custom URL
-*	Fix for check license
-*	Enhancement in UI
+*  Added logout text customization in Social Login
+*  Added url attribute to Social Sharing shortcode to share custom URL
+*  Fix for check license
+*  Enhancement in UI
 
 = 4.9.7 =
-*	Fix for warning when adding Social Sharing shortcode through PHP
-*	Fix for fetching title when Social Sharing shortcode is added through PHP
+*  Fix for warning when adding Social Sharing shortcode through PHP
+*  Fix for fetching title when Social Sharing shortcode is added through PHP
 
 = 4.9.6 =
-*	Added Troubleshooting Questions
-*	Minor UI Fixes
+*  Added Troubleshooting Questions
+*  Minor UI Fixes
 
 = 4.9.5 =
-*	Added support for syncing social login avatar with BuddyPress profile
-*	Changes and fixes related to WordPress 4.5
-*	Fix to save username without spaces (support query)
+*  Added support for syncing social login avatar with BuddyPress profile
+*  Changes and fixes related to WordPress 4.5
+*  Fix to save username without spaces (support query)
 
 = 4.9.4 =
-*	Added language support during Social Login
-*	Added questions in Help & Troubleshooting
+*  Added language support during Social Login
+*  Added questions in Help & Troubleshooting
 
 = 4.9.3 =
-*	Security fix for saving plugin settings
+*  Security fix for saving plugin settings
 
 = 4.9.2 =
-*	Added Social Sharing support for bbPress forms, topics, replies
-*	Fix for role mapping
-*	Fix for json_last_error error in previous PHP versions
-*	Enhancement in forgot password
+*  Added Social Sharing support for bbPress forms, topics, replies
+*  Fix for role mapping
+*  Fix for json_last_error error in previous PHP versions
+*  Enhancement in forgot password
 
 = 4.9.1 =
-*	Fix in setting role for new user registration
+*  Fix in setting role for new user registration
 
 = 4.9 =
-*	Added option to set universal role for users registering through Social Login
-*	Major fix for login of users already previously registered in WordPress - old PHP versions
-*	Minor UI changes
+*  Added option to set universal role for users registering through Social Login
+*  Major fix for login of users already previously registered in WordPress - old PHP versions
+*  Minor UI changes
 
 = 4.8.5 =
-*	Added Login in registration page and Register in login page for in-plugin authentication
-*	Improved licensing page
+*  Added Login in registration page and Register in login page for in-plugin authentication
+*  Improved licensing page
 
 = 4.8.4 =
-*	Fix for error in 4.8.3 version for old PHP Versions
+*  Fix for error in 4.8.3 version for old PHP Versions
 
 = 4.8.3 =
-*	Added option to hide Vertical Floating icons on mobile
-*	Added option to customize edge of long button - Social Login
-*	Added extra options for licensing
-*	Fix - Redirecting from Social Login gives "restricted due to security rule" error
+*  Added option to hide Vertical Floating icons on mobile
+*  Added option to customize edge of long button - Social Login
+*  Added extra options for licensing
+*  Fix - Redirecting from Social Login gives "restricted due to security rule" error
 
 = 4.8.2 =
-*	Fix - Show orignal avatar if Social Login Avatar is not available
-*	Fix - Social Comments fix for IE
+*  Fix - Show original avatar if Social Login Avatar is not available
+*  Fix - Social Comments fix for IE
 
 = 4.8.1 =
-*	Added extra options for licensing
-*	Fix - Disabling custom avatar now removes previously set picture from Social Login
-*	Fix - Avatar from Social Login was not getting fetched in all cases
+*  Added extra options for licensing
+*  Fix - Disabling custom avatar now removes previously set picture from Social Login
+*  Fix - Avatar from Social Login was not getting fetched in all cases
 
 = 4.8 =
-*	Added Social Comments
-*	Added more position options for Homepage and Static page for Social Sharing
-*	Fix - Changed Google+ icons
-*	Fix - Background color of Social Login long buttons
+*  Added Social Comments
+*  Added more position options for Homepage and Static page for Social Sharing
+*  Fix - Changed Google+ icons
+*  Fix - Background color of Social Login long buttons
 
 = 4.7.3 =
-*	Fix - Added alt for Social Login images
-*	Fix - Improved validation for Social Login
-*	Fix - Social Sharing Vertical widget sharing URL
-*	Added Troubleshooting questions
+*  Fix - Added alt for Social Login images
+*  Fix - Improved validation for Social Login
+*  Fix - Social Sharing Vertical widget sharing URL
+*  Added Troubleshooting questions
 
 = 4.7.2 =
-*	Added extra options for licensing
+*  Added extra options for licensing
 
 = 4.7.1 =
-*	Session fix on logout
-*	Redirect back to previous scroll position in page after Social Login
-*	Compatibility with WordPress 4.4
+*  Session fix on logout
+*  Redirect back to previous scroll position in page after Social Login
+*  Compatibility with WordPress 4.4
 
 = 4.7 =
-*	Added support for WooCommerce Login Form (Social Login)
-*	Fix - Login redirect for posts
+*  Added support for WooCommerce Login Form (Social Login)
+*  Fix - Login redirect for posts
 
 = 4.6 =
-*	Bug Fix
+*  Bug Fix
 
 = 4.5 =
-*	Get user information such as name, username after Social Login (Social Login)
-*	Provision of associating social media profile picture with user profile(Social Login)
-*	Security fix - added encryption for incoming user data (Social Login)
+*  Get user information such as name, username after Social Login (Social Login)
+*  Provision of associating social media profile picture with user profile(Social Login)
+*  Security fix - added encryption for incoming user data (Social Login)
 
 = 4.4.1 =
-*	Additional option of validating account using phone number
+*  Additional option of validating account using phone number
 
 = 4.4 =
-*	Added Social media appliction Vkontakte on social login
-*	Added support for adding Social Share icons on WooCommerce Product Page
-*	Fix - logout redirect in Current Page option
-*	Fix - Sharing URL in horizontal Social Sharing widget
+*  Added Social media application Vkontakte on social login
+*  Added support for adding Social Share icons on WooCommerce Product Page
+*  Fix - logout redirect in Current Page option
+*  Fix - Sharing URL in horizontal Social Sharing widget
 
 = 4.3 =
-*	Added Social media applications - Vkontakte, Tumblr, StumbleUpon, Pocket, Digg, Delicious, Odnoklassniki for Social sharing
-*	Added title to Social Login and Social Sharing icons, visible on hover
-*	Redirect after logout is now optional
-*	Improved Help & Troubleshooting
+*  Added Social media applications - Vkontakte, Tumblr, StumbleUpon, Pocket, Digg, Delicious, Odnoklassniki for Social sharing
+*  Added title to Social Login and Social Sharing icons, visible on hover
+*  Redirect after logout is now optional when user login with Social login plugin
+*  Improved Help & Troubleshooting
 
 = 4.2.2 =
-*	Fix - minimum width of Social Login long button reduced
+*  Fix - minimum width of Social Login long button reduced
 
 = 4.2.1 =
-*	Minor bug fix
+*  Minor bug fix
 
 = 4.2 =
-*	Added feature of disabling User Auto registration in Social Login
-*	Change in troubleshooting instructions
+*  Added feature of disabling User Auto registration in Social Login
+*  Change in troubleshooting instructions
 
 = 4.1.1 =
-*	Change in shortcode instructions
-*	Change in troubleshooting instructions
+*  Change in Social login->shortcode instructions
+*  Change in troubleshooting instructions
 
 = 4.1 =
-*	Added social media application Twitter on Social Login
-*	Added shortcode support for Social Login and Social Sharing(horizontal and vertical)
-*	Added Redirect URL for logout
-*	Added Troubleshooting section in plugin
-*	Social Sharing icons can be added before and after content
-*	Updated API for Facebook sharing
-*	Updated reset password API to send email
-*	Bug fixes for Social Sharing icons
-*	Improved theme compatibility
+*  Added social media application Twitter on Social Login
+*  Added shortcode support for Social Login and Social Sharing(horizontal and vertical)
+*  Added Redirect URL for logout
+*  Added Troubleshooting section in plugin
+*  Social Sharing icons can be added before and after content
+*  Updated API for Facebook sharing
+*  Updated reset password API to send email
+*  Bug fixes for Social login and Social Sharing icons
+*  Improved theme compatibility with Social Login plugin
 
 = 4.0.1 =
-*	Added support for excerpt in Social Sharing
-*	Improved Social Login functionality and optimization
-*	Improved theme compatibility
+*  Added support for excerpt in Social Sharing
+*  Improved Social Login functionality and optimization
+*  Improved theme compatibility
 
 = 4.0 =
-*	Set Redirect URL for Social Login
-*	Vertical floating sharing widget and horizontal sharing widget for Social Sharing
-*	Preview & Customize buttons and icons - new themes and option to change size for Social Login and Social Sharing
-*	Twitter username for Social Sharing
+*  Set Redirect URL for Social Login
+*  Vertical floating sharing widget and horizontal sharing widget for Social Sharing
+*  Preview & Customize buttons and icons - new themes and option to change size for Social Login and Social Sharing
+*  Twitter username for Social Sharing
 
 = 3.0.5 =
 * Bug fix for Social Login for older php versions.
 
 = 3.0.4 =
-* Bug fix for Social Sharing.
+* Bug fix for Social login and Social Sharing.
 
 = 3.0.3 =
 * Added social media applications Instagram, Windows Live, Amazon to social login widgets
@@ -779,6 +836,41 @@ SECURITY FIXES
 * First version of Social Login, Social Sharing plugin.
 
 == Upgrade Notice ==
+= 7.4.6 =
+* Updated Instructions for Facebook, Google, Twitter and LinkedIn
+* Updated Licensing Plan page
+* Introduced All inclusive Plan
+* Added bulk instances for Social Login plans.
+* Minor UI Changes.
+
+= 7.4.5 =
+* Updated Google SVG and resolved conflicts.
+* Added notice for Facebook Data Check.
+* Added Paid Membership Pro display options in premium plugins.
+* Minor UI Changes.
+
+= 7.4.4 =
+* Removed banner.
+* Minor UI Changes.
+
+= 7.4.3 =
+* Compatible with WordPress version 5.5
+* New Christmas offer released.
+* Minor UI changes.
+
+= 7.4.2 =
+* Resolved JS and CSS issue with Buddyboss and LearnPress plugins.
+* Resolved plugin load time issue.
+* Resolved Facebook redirection issue.
+* Resolved Sharing vertical/horizontal view.
+* Minor UI changes.
+
+= 7.4.1 =
+* Updated jQuery deprecated function.
+* Minor UI changes.
+* Added MemberPress display options in premium version.
+* Added Social Login Applications like GitHub, HubSpot, mail.ru in premium version.
+
 = 7.4.0 =
 * Added Documentation and videos for WooCommerce, BuddyPress, MailChimp and Paid membership Pro integrations.
 * Resolved CSS conflicts with other themes.
@@ -817,11 +909,11 @@ SECURITY FIXES
 = 7.3.8 =
 * Updated Odnoklassniki custom app fix in premium versions.
 * Updated BuddyPress mapping bug fix in premium version.
-* Updated depricated array and string fix.
+* Updated deprecated array and string fix.
 * Added Yandex app in premium applications.
 
 = 7.3.7 =
-* Updated facebook insrtuctions.
+* Updated instructions for Social login application : facebook .
 * Minor UI changes.
 * New Licensing plan.
 * Added feature to select role by the user in the Add-on.
@@ -843,7 +935,7 @@ SECURITY FIXES
 * Fixed add-on update value issue.
 
 = 7.3.2 =
-* Updated Yahoo API.
+* Updated Social login application Yahoo API.
 * Updated feedback on deactivation.
 * Minor UI changes.
 * Added a new social login plugin for woocommerce integration.
@@ -862,13 +954,13 @@ SECURITY FIXES
 * Major UI changes.
 * Added translation.
 * Added setup plugin video button
-* Added Wechat, Baidu, Renren & QQ app in premium section.
+* Added Social login applications like Wechat, Baidu, Renren & QQ app in premium section.
 * Added top-up plans
 
 = 7.2.7 =
 * Major UI changes.
 * Drag and change positions of icons.
-* Added Custom app for google, vkontakte, instagram, linkedin, amazon, salesforce, windowslive, and yahoo.
+* Added Custom app for Social login applications like google, vkontakte, instagram, linkedin, amazon, salesforce, windowslive, and yahoo.
 * Added copy to clipboard option.
 * Added Copy to clipboard for instructions to setup custom apps and shortcodes.
 * Added Social Share count Feature.
@@ -885,7 +977,7 @@ SECURITY FIXES
 = 7.2.5 =
 * Fixed Profile completion form issue.
 * Minor UI fixes.
-* Added Add-on UI.
+* Added Add-on UI in the Social login plugin.
 
 = 7.2.4 =
 * Made contact us changes.
@@ -913,7 +1005,7 @@ SECURITY FIXES
 * Added nonce check for all forms
 * Added sanitization and escape
 * Changed cURL calls to WordPress HTTP API calls
-* Fixed issue on custom app delete
+* Fixed issue on Social login custom app delete
 
 = 7.1.6 =
 * Fixed Non-English Character issue in the username.
@@ -923,12 +1015,12 @@ SECURITY FIXES
 = 7.1.5 =
 * Fixed issue of getting '#_=_' string appended to URL after login with Facebook.
 * <a href="https://developers.google.com/+/web/people/" >Google+ APIs </a> will shut down soon, so updated Google OAuth 2 APIs.
-* UI changes.
+* UI changes (Social login plugin).
 
 = 7.1.4 =
-* Add Yahoo as social login option in dafault apps.
+* Add Yahoo as social login option in default apps.
 * Fixed Permalink issue.
-* Added Customizable text for OTP email notification.
+* Added  Customizable text for OTP email notification.
 * Fixed session issue for account linking.
 
 = 7.1.3 =
@@ -946,7 +1038,7 @@ SECURITY FIXES
 * Added plugin tour buttons to give an overview of features
 * Updated registration flow for better visibility
 * Updated custom apps to prefill scopes with default values to reduce confusion
-* Fixed auto user creation issue for Facebook
+* Fixed auto user creation issue for Social login Facebook application
 
 = 7.0.5 =
 * Social Login plugin Description Update.
@@ -955,22 +1047,22 @@ SECURITY FIXES
 * Social login redirect issue fixed.
 
 = 7.0.3 =
-* "Malformed URL" issue fixed for custom apps
+* "Malformed URL" issue fixed for Social login custom apps
 * Added  Customizable text for account linking, profile completion and OTP verification form.
 * Allow non-English characters for page and post title.(Removed sanitize_title in the filter)
 * minor UI changes.
 
 = 7.0.2 =
 * Slider Issue fixed.
-* CSS Issue Fixed
+* CSS Issue Fixed (Social login plugin)
 * Minor bug fixes.
 
 = 7.0.1 =
-* Fixed GDPR related bug.
+* Fixed GDPR related bug in Social login plugin.
 
 = 7.0.0 =
-* Minor bug fixes.
-* Increased resolution of Facebook profile picture.
+* Minor bug fixes (Social login plugin).
+* Increased resolution of profile picture Social login application : Facebook .
 
 = 6.6.9 =
 * Fixed GDPR related bug.
@@ -980,7 +1072,7 @@ SECURITY FIXES
 
 = 6.6.8 =
 *   Fix for issue during update profile.
-*   Fixed minor database warnings.
+*   Fixed minor database warnings
 
 = 6.6.7 =
 *   Fixed security warning in Chrome related to GDPR.
@@ -999,9 +1091,9 @@ SECURITY FIXES
 *   Fix for issue in login (International Characters)
 
 = 6.6.2 =
-*   Updated Readme
+*   Updated Readme  (Social login plugin)
 *   Removed the message 'No user is returned'
-*   Fix for conflict with other plugins that call wp_login hook
+*   Fix for conflict of Social login plugin with other plugins that call wp_login hook
 
 = 6.6.1 =
 *   Fix for issue in editing/uploading BuddyPress profile picture
@@ -1009,9 +1101,9 @@ SECURITY FIXES
 *   Removed rows in account linking table that have empty field values
 
 = 6.6.0 =
-*   Added resend otp in Profile Completion 
+*   Added resend otp in Profile Completion when user resisters through Social login.
 *   Added column timestamp in account linking table
-*   Added option to disable custom app
+*   Added option to disable particular Social login custom app
 *   Added include_email parameter in for twitter custom app
 *   Added prompt to ask user for confirmation on custom app deletion
 *   Code cleanup
@@ -1041,7 +1133,7 @@ SECURITY FIXES
 
 = 6.3.0 =
 *   Added payment link to Standard Plan
-*   Minor bug fix in login script
+*   Minor bug fix in login script (Social login plugin)
 
 = 6.2.6 =
 *   Fix for bug in auto scroll script
@@ -1075,266 +1167,266 @@ SECURITY FIXES
 *   Fix for Error in Insert Query
 
 = 6.0.2 =
-*   Minor Changes in Readme & Licensing Plans tab
+*   Minor Changes in Readme & Licensing Plans tab (Social login plugin)
 
 = 6.0.1 =
 *   Minor Changes in Readme
 
 = 6.0.0 =
-*	Added Account Linking feature (Links social account to existing WordPress account)
-*	Revised Payment Plans
-*	Compatibility with PHP 7.2.1
+*  Added Account Linking feature (Links social account to existing WordPress account)
+*  Revised Payment Plans
+*  Compatibility with PHP 7.2.1
 
 = 5.5.2 =
-*	Compatibility with International characters.
+*  Compatibility with International characters.
 
 = 5.5.1 =
-*	Major Security Fix in login flow. Mandatory Update is required. 
+*  Major Security Fix in login flow. Mandatory Update is required.
 
 = 5.5 =
-*	Bug Fix in login flow
+*  Bug Fix in login flow
 
 = 5.4.1 =
-*	Added Compatibility with miniOrange 2 Factor Authentication Plugin
+*  Added Compatibility with miniOrange 2 Factor Authentication Plugin
 
 = 5.3.1 =
-*	Removed mcrypt dependency
+*  Removed mcrypt dependency
 
 = 5.2.2 =
-*	Added WhatsApp share for Desktop site
+*  Added WhatsApp share for Desktop site
 
 = 5.2.1 =
-*	Fixed Issue related to Custom User Role with Admin capabilities
+*  Fixed Issue related to Custom User Role with Admin capabilities
 
 = 5.2 =
-*	Minor Change
+*  Minor Change
 
 = 5.1.10 =
-*	Compatibility with 4.9
+*  Compatibility with 4.9
 
 = 5.1.9 =
-*	Bug Fix in Profile Completion Feature
+*  Bug Fix in Profile Completion Feature
 
 = 5.1.8 =
-*	Minor Bug Fix
+*  Minor Bug Fix  (Social login plugin)
 
 = 5.1.7 =
-*	Added Profile Completion Feature
+*  Added Profile Completion Feature  (Social login plugin)
 
 = 5.1.6 =
-*	Minor Bug Fix
+*  Minor Bug Fix  (Social login plugin)
 
 = 5.1.5 =
-*	Another Bug fix in Facebook share
+*  Another Bug fix in Facebook share
 
 = 5.1.4 =
-*	Bug fix in Facebook share
-*	Bug fix in sending OTP
-*	Fix for URL indexing 
+*  Bug fix in Facebook share
+*  Bug fix in sending OTP
+*  Fix for URL indexing
 
 = 5.1.3 =
-*	Improved Social Login for non-English characters
-*	Changed Payment Plans
-*	Compatibility with 4.8
+*  Improved Social Login for non-English characters
+*  Changed Payment Plans
+*  Compatibility with 4.8
 
 = 5.1.2 =
-*	Updating Readme
+*  Updating Readme
 
 = 5.1.1 =
-*	Security fix for Social Login
-*	Minor fix - clean up data during Social Login
-*	UI changes
+*  Security fix for Social Login
+*  Minor fix - clean up data during Social Login
+*  UI changes (Social login plugin)
 
 = 5.1 =
-*	Added option to change heading color through UI (Social Login & Sharing)
-*	Added shortcode options for heading and heading color (Social Login & Sharing)
-*	Updated Help & Troubleshooting and Shortcode section
+*  Added option to change heading color through UI (Social Login & Sharing)
+*  Added shortcode options for heading and heading color (Social Login & Sharing)
+*  Updated Help & Troubleshooting and Shortcode section
 
 = 5.0.6 =
-*	Compatibility with 4.7
-*	UI fixes for theme Twenty Seventeen
+*  Compatibility with 4.7
+*  UI fixes for theme Twenty Seventeen
 
 = 5.0.5 =
-*	Fix for Social Login URL redirect
+*  Fix for Social Login URL redirect
 
 = 5.0.4 =
-*	Fix for Whatsapp Share URL issue
+*  Fix for Whatsapp Share URL issue
 
 = 5.0.3 =
-*	Added additional validation for OTP
-*	UI Changes
+*  Added additional validation for OTP
+*  UI Changes (Social login plugin)
 
 = 5.0.1 =
-*	Update to support WordPress version 4.6
-*	Fixed Facebook comments script issue
-*	UI changes
+*  Update to support WordPress version 4.6
+*  Fixed Facebook comments script issue
+*  UI changes (Social login plugin)
 
 = 5.0.0 =
-*	Added Share with Email, Print, Whatsapp
-*	Added option to modify email subject and body
-*	Fixed spacing issue in horizontal sharing icons
+*  Added Share with Email, Print, Whatsapp
+*  Added option to modify email subject and body (Social login)
+*  Fixed spacing issue in horizontal sharing icons
 
 = 4.9.9 =
-*	Added support for s2Members plugin in Social Login (Support Query)
+*  Added support for s2Members plugin in Social Login (Support Query)
 
 = 4.9.8 =
-*	Added logout text customization in Social Login
-*	Added url attribute to Social Sharing shortcode to share custom URL
-*	Fix for check license
-*	Enhancement in UI
+*  Added logout text customization in Social Login
+*  Added url attribute to Social Sharing shortcode to share custom URL
+*  Fix for check license
+*  Enhancement in UI
 
 = 4.9.7 =
-*	Fix for warning when adding Social Sharing shortcode through PHP
-*	Fix for fetching title when Social Sharing shortcode is added through PHP
+*  Fix for warning when adding Social Sharing shortcode through PHP
+*  Fix for fetching title when Social Sharing shortcode is added through PHP
 
 = 4.9.6 =
-*	Added Troubleshooting Questions
-*	Minor UI Fixes
+*  Added Troubleshooting Questions
+*  Minor UI Fixes
 
 = 4.9.5 =
-*	Added support for syncing Social Login avatar with BuddyPress profile
-*	Changes and fixes related to WordPress 4.5
-*	Fix to save username without spaces (support query)
+*  Added support for syncing social login avatar with BuddyPress profile
+*  Changes and fixes related to WordPress 4.5
+*  Fix to save username without spaces (support query)
 
 = 4.9.4 =
-*	Added language support during Social Login
-*	Added questions in Help & Troubleshooting
+*  Added language support during Social Login
+*  Added questions in Help & Troubleshooting
 
 = 4.9.3 =
-*	Security fix for saving plugin settings
+*  Security fix for saving plugin settings
 
 = 4.9.2 =
-*	Added Social Sharing support for bbPress forms, topics, replies
-*	Fix for role mapping
-*	Fix for json_last_error error in previous PHP versions
-*	Enhancement in forgot password
+*  Added Social Sharing support for bbPress forms, topics, replies
+*  Fix for role mapping
+*  Fix for json_last_error error in previous PHP versions
+*  Enhancement in forgot password
 
 = 4.9.1 =
-*	Fix in setting role for new user registration
+*  Fix in setting role for new user registration
 
 = 4.9 =
-*	Added option to set universal role for users registering through Social Login
-*	Major fix for login of users already previously registered in WordPress - old PHP versions
-*	Minor UI changes
+*  Added option to set universal role for users registering through Social Login
+*  Major fix for login of users already previously registered in WordPress - old PHP versions
+*  Minor UI changes
 
 = 4.8.5 =
-*	Added Login in registration page and Register in login page for in-plugin authentication
-*	Improved licensing page
+*  Added Login in registration page and Register in login page for in-plugin authentication
+*  Improved licensing page
 
 = 4.8.4 =
-*	Fix for error in 4.8.3 version for old PHP Versions
+*  Fix for error in 4.8.3 version for old PHP Versions
 
 = 4.8.3 =
-*	Added option to hide Vertical Floating icons on mobile
-*	Added option to customize edge of long button - Social Login
-*	Added extra options for licensing
-*	Fix - Redirecting from Social Login gives "restricted due to security rule" error
+*  Added option to hide Vertical Floating icons on mobile
+*  Added option to customize edge of long button - Social Login
+*  Added extra options for licensing
+*  Fix - Redirecting from Social Login gives "restricted due to security rule" error
 
 = 4.8.2 =
-*	Fix - Show orignal avatar if Social Login Avatar is not available
-*	Fix - Social Comments fix for IE
+*  Fix - Show original avatar if Social Login Avatar is not available
+*  Fix - Social Comments fix for IE
 
 = 4.8.1 =
-*	Added extra options for licensing
-*	Fix - Disabling custom avatar now removes previously set picture from Social Login
-*	Fix - Avatar from Social Login was not getting fetched in all cases
+*  Added extra options for licensing
+*  Fix - Disabling custom avatar now removes previously set picture from Social Login
+*  Fix - Avatar from Social Login was not getting fetched in all cases
 
 = 4.8 =
-*	Added Social Comments
-*	Added more position options for Homepage and Static page for Social Sharing
-*	Fix - Changed Google+ icons
-*	Fix - Background color of Social Login long buttons
+*  Added Social Comments
+*  Added more position options for Homepage and Static page for Social Sharing
+*  Fix - Changed Google+ icons
+*  Fix - Background color of Social Login long buttons
 
 = 4.7.3 =
-*	Fix - Added alt for Social Login images
-*	Fix - Improved validation for Social Login
-*	Fix - Social Sharing Vertical widget sharing URL
-*	Added Troubleshooting questions
+*  Fix - Added alt for Social Login images
+*  Fix - Improved validation for Social Login
+*  Fix - Social Sharing Vertical widget sharing URL
+*  Added Troubleshooting questions
 
 = 4.7.2 =
-*	Added extra options for licensing
+*  Added extra options for licensing
 
 = 4.7.1 =
-*	Session fix on logout
-*	Redirect back to previous scroll position in page after Social Login
-*	Compatibility with WordPress 4.4
+*  Session fix on logout
+*  Redirect back to previous scroll position in page after Social Login
+*  Compatibility with WordPress 4.4
 
 = 4.7 =
-*	Added support for WooCommerce Login Form (Social Login)
-*	Fix - Login redirect for post pages
+*  Added support for WooCommerce Login Form (Social Login)
+*  Fix - Login redirect for posts
 
 = 4.6 =
-* 	Bug Fix
+*  Bug Fix
 
 = 4.5 =
-*	Get user information such as name, username after Social Login (Social Login)
-*	Provision of associating user profile picture with user profile on social media(Social Login)
-*	Security fix - added encryption for incoming user data (Social Login)
+*  Get user information such as name, username after Social Login (Social Login)
+*  Provision of associating social media profile picture with user profile(Social Login)
+*  Security fix - added encryption for incoming user data (Social Login)
 
 = 4.4.1 =
-*	Additional option of validating account using phone number
+*  Additional option of validating account using phone number
 
 = 4.4 =
-*	Added Social media application Vkontakte on social login
-*	Added support for adding Social Share icons on WooCommerce Product Page
-*	Fix - logout redirect in Current Page option
-*	Fix - Sharing URL in horizontal Social Sharing widget
+*  Added Social media application Vkontakte on social login
+*  Added support for adding Social Share icons on WooCommerce Product Page
+*  Fix - logout redirect in Current Page option
+*  Fix - Sharing URL in horizontal Social Sharing widget
 
 = 4.3 =
-*	Added Social media applications Vkontakte, Tumblr, StumbleUpon, Pocket, Digg, Delicious, Odnoklassnikiv on Social Sharing
-*	Added title to Social Login and Social Sharing icons, visible on hover
-*	Redirect after logout is now optional
-*	Improved Help & Troubleshooting
+*  Added Social media applications - Vkontakte, Tumblr, StumbleUpon, Pocket, Digg, Delicious, Odnoklassniki for Social sharing
+*  Added title to Social Login and Social Sharing icons, visible on hover
+*  Redirect after logout is now optional when user login with Social login plugin
+*  Improved Help & Troubleshooting
 
 = 4.2.2 =
-*	Fix - minimum width of Social Login long button reduced
+*  Fix - minimum width of Social Login long button reduced
 
-= 4.2.1 = 
-*	Minor bug fix
+= 4.2.1 =
+*  Minor bug fix
 
 = 4.2 =
-*	Added feature of disabling User Auto registration in Social Login
-*	Change in troubleshooting instructions
+*  Added feature of disabling User Auto registration in Social Login
+*  Change in troubleshooting instructions
 
 = 4.1.1 =
-*	Change in shortcode instructions
-*	Change in troubleshooting instructions
+*  Change in Social login->shortcode instructions
+*  Change in troubleshooting instructions
 
 = 4.1 =
-*	Added social login on social media application Twitter
-*	Added shortcode support for Social Login and Social Sharing(horizontal and vertical)
-*	Added Redirect URL for logout
-*	Added Troubleshooting section in plugin
-*	Social Sharing icons can be added before and after content
-*	Updated API for Facebook sharing
-*	Updated reset password API to send email 
-*	Bug fixes for Social Sharing icons
-*	Improved theme compatibility
+*  Added social media application Twitter on Social Login
+*  Added shortcode support for Social Login and Social Sharing(horizontal and vertical)
+*  Added Redirect URL for logout
+*  Added Troubleshooting section in plugin
+*  Social Sharing icons can be added before and after content
+*  Updated API for Facebook sharing
+*  Updated reset password API to send email
+*  Bug fixes for Social login and Social Sharing icons
+*  Improved theme compatibility with Social Login plugin
 
 = 4.0.1 =
-*	Added support for excerpt in Social Sharing
-*	Improved Social Login functionality and optimization
-*	Improved theme compatibility
+*  Added support for excerpt in Social Sharing
+*  Improved Social Login functionality and optimization
+*  Improved theme compatibility
 
 = 4.0 =
-*	Set Redirect URL for Social Login
-*	Vertical floating sharing widget and horizontal sharing widget for Social Sharing
-*	Preview & Customize buttons and icons - new themes and option to change size for Social Login and Social Sharing
-*	Twitter username for Social Sharing
+*  Set Redirect URL for Social Login
+*  Vertical floating sharing widget and horizontal sharing widget for Social Sharing
+*  Preview & Customize buttons and icons - new themes and option to change size for Social Login and Social Sharing
+*  Twitter username for Social Sharing
 
 = 3.0.5 =
 * Bug fix for Social Login for older php versions.
 
 = 3.0.4 =
-* Bug fix for Social Sharing.
+* Bug fix for Social login and Social Sharing.
 
 = 3.0.3 =
 * Added social media applications Instagram, Windows Live, Amazon to social login widgets
-* Added social media applications like Twitter, Pinterest and Reddit on social sharing. 
+* Added social media applications like Twitter, Pinterest and Reddit on social sharing.
 * Added more theme options to select Social Login and Social Sharing icons.
 
 = 3.0.2 =
-* Added Social login with social media applications Facebook, Linkedin. 
+* Added Social login for social media applications Facebook, Linkedin.
 * Added new social sharing buttons for social media applications - Facebook, Google, LinkedIn.
 
 = 3.0.1 =

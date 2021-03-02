@@ -34,7 +34,6 @@ function mo_openid_social_icons_customization(){
                 <?php
                 // $user_id=get_current_user_id();
                 // $user_info = get_userdata($user_id);
-                //var_dump(get_option('mo_openid_custom_social_sharing'));
                 if(get_option('mo_openid_custom_social_sharing')) {
                     $custom_attr = get_option('mo_openid_custom_social_sharing');
                     $k=count($custom_attr);

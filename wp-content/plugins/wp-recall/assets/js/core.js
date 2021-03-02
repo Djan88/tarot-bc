@@ -181,7 +181,7 @@ function rcl_init_cookie() {
 			if ( document.cookie && document.cookie !== '' ) {
 				var cookies = document.cookie.split( ';' );
 				for ( var i = 0; i < cookies.length; i++ ) {
-					var cookie = jQuery.trim( cookies[i] );
+					var cookie = cookies[i].trim();
 					if ( cookie.substring( 0, name.length + 1 ) === ( name + '=' ) ) {
 						cookieValue = decodeURIComponent( cookie.substring( name.length + 1 ) );
 						break;
@@ -205,15 +205,6 @@ function rcl_add_dynamic_field( e ) {
 
 function rcl_remove_dynamic_field( e ) {
 	jQuery( e ).parents( '.dynamic-value' ).remove();
-}
-
-function rcl_update_require_checkbox( e ) {
-	var name = jQuery( e ).attr( 'name' );
-	var chekval = jQuery( 'form input[name="' + name + '"]:checked' ).val();
-	if ( chekval )
-		jQuery( 'form input[name="' + name + '"]' ).attr( 'required', false );
-	else
-		jQuery( 'form input[name="' + name + '"]' ).attr( 'required', true );
 }
 
 function rcl_rand( min, max ) {
@@ -248,7 +239,9 @@ function rcl_notice( text, type, time_close ) {
 			jQuery( '#rcl-notice' ).html( html );
 	}
 
-	jQuery( '#rcl-notice > div' ).last().animateCss( 'slideInLeft' );
+	if ( typeof animateCss !== 'undefined' ) {
+		jQuery( '#rcl-notice > div' ).last().animateCss( 'slideInLeft' );
+	}
 
 	if ( time_close ) {
 		setTimeout( function() {
@@ -793,11 +786,12 @@ function rcl_init_table( table_id ) {
 		list.sort( function( a, b ) {
 			var aVal = jQuery( a ).find( '[data-' + sortby + '-value]' ).data( sortby + '-value' );
 			var bVal = jQuery( b ).find( '[data-' + sortby + '-value]' ).data( sortby + '-value' );
-			//if(isNaN(aVal))
-			if ( route == 'asc' )
-				return ( aVal < bVal ) - ( aVal > bVal ); //по возрастанию
-			else
-				return ( aVal > bVal ) - ( aVal < bVal ); //по убыванию
+
+			if ( route == 'desc' ) {
+				return (aVal < bVal) - (aVal > bVal); //по возрастанию
+			}else {
+				return (aVal > bVal) - (aVal < bVal); //по убыванию
+			}
 		} );
 
 		sortCell.attr( 'data-route', ( route == 'desc' ? 'asc' : 'desc' ) );
@@ -1015,7 +1009,7 @@ function RclForm( form ) {
 				var value = false;
 
 				if ( field.attr( 'type' ) == 'checkbox' ) {
-					if ( field.is( ":checked" ) )
+					if ( jQuery( 'input[name="' + field.attr( 'name' ) + '"]:checked' ).val() )
 						value = true;
 				} else if ( field.attr( 'type' ) == 'radio' ) {
 					if ( jQuery( 'input[name="' + field.attr( 'name' ) + '"]:checked' ).val() )
@@ -1234,7 +1228,7 @@ var RclUploaders = [ ];
 		jQuery( 'body' ).on( 'drop', function( e ) {
 			return false;
 		} );
-		jQuery( document.body ).bind( "drop", function( e ) {
+		jQuery( document.body ).on( "drop", function( e ) {
 			e.preventDefault();
 		} );
 
@@ -1761,3 +1755,25 @@ function rcl_add_attachment_in_editor( attach_id, editor_name, e ) {
 }
 
 /** new uploader scripts end **/
+
+function rcl_update_require_checkbox( e ) {
+	var name = jQuery( e ).attr( 'name' );
+	var chekval = jQuery( 'form input[name="' + name + '"]:checked' ).val();
+	if ( chekval )
+		jQuery( 'form input[name="' + name + '"]' ).attr( 'required', false );
+	else
+		jQuery( 'form input[name="' + name + '"]' ).attr( 'required', true );
+}
+
+/*rcl_add_action( 'rcl_init', 'rcl_init_update_requared_checkbox' );*/
+function rcl_init_update_requared_checkbox() {
+
+	jQuery( 'body form' ).find( '.required-checkbox' ).each( function() {
+		rcl_update_require_checkbox( this );
+	} );
+
+	jQuery( 'body form' ).on( 'click', '.required-checkbox', function() {
+		rcl_update_require_checkbox( this );
+	} );
+
+}
