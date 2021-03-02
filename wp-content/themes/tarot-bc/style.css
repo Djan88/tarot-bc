@@ -291,7 +291,7 @@ li a.active {
 {
     color: #26364b;
 }
-.seminars_link, .book_link
+.seminars_link, .book_link, .reference_link
 {
     margin-top: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -2450,7 +2450,11 @@ a.pages_link.pages_link_current .pages_dots
 {
     background: #fff;
 }
-
+.btn-link
+{
+    color: #0094e1;
+    border: 1px solid #0094e1;
+}
 
 
 

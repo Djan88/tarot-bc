@@ -21,6 +21,9 @@
           </div>
           <a href="/book/1" class="seminars_link btn btn-success btn-lg cur_page_ridden">Читать книгу онлайн</a>
           <a href="https://shop-bc.com/product/kniga-lechebnoe-tarot-chikurov-yuv" target="_blank" class="book_link btn btn-primary btn-lg">Купить бумажное издание</a>
+          <?php if (!is_user_logged_in() && is_user_can('administrator')) { ?>
+            <a href="<?php bloginfo('template_url'); ?>/img/reference.pdf" class="reference_link btn btn-link btn-lg">Предметный указатель</a>
+          <?php } ?>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-12 text-center">
           <img class="chikurov_img" src="<?php bloginfo('template_url'); ?>/img/tarot.png" alt="Лечебное Tarot">
