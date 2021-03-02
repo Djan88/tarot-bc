@@ -2450,7 +2450,7 @@ a.pages_link.pages_link_current .pages_dots
 {
     background: #fff;
 }
-.btn-link
+.btn-link.reference_link
 {
     color: #0094e1;
     border: 1px solid #0094e1;
